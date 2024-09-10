@@ -22,7 +22,7 @@ Este repositorio pretende ser una introdución a C.
 <tipo de dato> <nombre de variable> [, nombre de variable];
 ```
 
-** En C existen cinco tipos de datos según puede verse en la tabla siguiente: **
+**En C existen cinco tipos de datos según puede verse en la tabla siguiente:**
 
 
 
