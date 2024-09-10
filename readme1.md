@@ -35,6 +35,7 @@ Este repositorio pretende ser una introdución a C.
 |void|Sin tipo (uso especial)|
 
 
+
 **También tenemos modificadores de esos datos:**
 
 |**Modificador**|**Tipos de actuación**|**Descripción**||
