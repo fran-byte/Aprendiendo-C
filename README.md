@@ -15,4 +15,12 @@ Este repositorio pretende ser una introdución a C.
 | unsigned | void     | volatile | while    |          |          |          |
 
 ## Tipos de datos, modificadores de tipo y modificadores de acceso
-<tipo de dato> <nombre de variable> (, nombre de variable);
+(tipo de dato) (nombre de variable) (, nombre de variable);
+
+|Tipo de dato| Descripción                              |
+|------------|------------------------------------------|
+|char        |Carácter o entero pequeño (byte)          |
+|int         |Entero                                    |
+|float       | Punto flotante                           |
+|double      | Punto flotante (mayor rango quefloat)    |
+|void        | Sin tipo (uso especial)                  |
