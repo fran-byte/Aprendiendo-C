@@ -33,4 +33,4 @@ Este repositorio pretende ser una introdución a C.
 |signed     |  char |  int        |  Con signo (por defecto)  |
 |unsigned   |  char |  int        |  Sin signo                |
 |long       |  int  |  double     |  Largo                    |
-|short      |  int                |  Corto                    |
+|short      |  int  |             |  Corto                    |
