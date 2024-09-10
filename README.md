@@ -28,7 +28,7 @@ Este repositorio pretende ser una introdución a C.
 
 - Existen, además, cuatro modificadores de tipo:
 |Modificador|  Tipos de actuación |Descripción                |
-|-----------|---------------------|---------------------------|
+|-----------|-------|-------------|---------------------------|
 |signed     |  char |  int        |  Con signo (por defecto)  |
 |unsigned   |  char |  int        |  Sin signo                |
 |long       |  int  |  double     |  Largo                    |
