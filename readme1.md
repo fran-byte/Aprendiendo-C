@@ -8,14 +8,14 @@ Este repositorio pretende ser una introdución a C.
 ## Palabras reservadas
 
 
-
-|auto|break|case|char|const|continue|default|
+| <!-> | <!-> | <!-> | <!-> | <!-> | <!-> | <!-> |
 | - | - | - | - | - | - | - |
+|auto|break|case|char|const|continue|default|
 |do|double|else|enum|extern|float|for|
 |goto|if|int|long|register|return|short|
 
 
-1. **- Identificadores.**
+## 1.- Identificadores.
 
 
 ```
