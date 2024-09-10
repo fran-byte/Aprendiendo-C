@@ -15,6 +15,7 @@ Este repositorio pretende ser una introdución a C.
 | unsigned | void     | volatile | while    |          |          |          |
 
 ## Tipos de datos, modificadores de tipo y modificadores de acceso
+- En C existen cinco tipos de datos:
 (tipo de dato) (nombre de variable) (, nombre de variable);
 
 |Tipo de dato| Descripción                              |
@@ -24,3 +25,11 @@ Este repositorio pretende ser una introdución a C.
 |float       | Punto flotante                           |
 |double      | Punto flotante (mayor rango quefloat)    |
 |void        | Sin tipo (uso especial)                  |
+
+- Existen, además, cuatro modificadores de tipo:
+|Modificador|  Tipos de actuación |Descripción                |
+|-----------|---------------------|---------------------------|
+|signed     |  char |  int        |  Con signo (por defecto)  |
+|unsigned   |  char |  int        |  Sin signo                |
+|long       |  int  |  double     |  Largo                    |
+|short      |  int                |  Corto                    |
