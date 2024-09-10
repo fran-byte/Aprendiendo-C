@@ -53,7 +53,7 @@ Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de datos
 
 ||**Rango de valores posibles en (notación matemática)**|||||
 | :- | - | :- | :- | :- | :- |
-|**Tipo de variable declarada**||**16 bits**|**32 bits**|||
+|**Tipo de variable declarada**|**16 bits**|**32 bits**||||
 |char / signed char||[-128 , 127]|[-128 , 127]|||
 |unsigned char||[0 , 255]|[0 , 255]|||
 |int / signed int||[-32768 , 32767]|[-2147483647 , 2147483648]|||
