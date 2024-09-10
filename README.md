@@ -42,7 +42,8 @@ datos, así, es posible definir una variable de tipo unsigned long int (entero l
 signo).
 
 
-|                                    | Rango de valores posibles en (notación matemática)  |  Tipo de variable declarada 16 bits 32 bits  |
+|                                    |  Rango de valores posibles en (notación matemática) | 
+| Tipo de variable declarada         |  16 bits                                            |  32 bits                                    |
 |------------------------------------|-----------------------------------------------------|----------------------------------------------|
 |  char / signed char                |  (-128 , 127)                                       |  (-128 , 127)                                |
 unsigned char [0 , 255] [0 , 255]
