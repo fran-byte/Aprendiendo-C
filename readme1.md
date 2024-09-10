@@ -87,17 +87,17 @@ Limitan  el  uso  que  puede  realizarse  de  las  variables declaradas.
 |const|Variable de valor constante|
 |volatile|Variable  cuyo  valor  es  modificado externamente|
 
-*Tabla 2.2.4: Modificadores de acceso en C.*
+*const* asegura de que su valor no será modificado por el programa, salvo en el momento de su declaración asignándole un valor inicial.
 
-La declaración de una variable como *const* permite asegurarse de que su valor no será modificado por el programa, excepto en el momento de su declaración, en el cual debe asignársele un valor inicial. Así, si declaramos la siguiente variable:
+```
+const int x = 650;
+```
 
-const int x=237;
+Si intentamos modificar el valor de *x*, tal como *x=x+10;*, producirá un error en tiempo de compilación.
 
-Cualquier intento posterior de modificar el valor de *x*, tal como *x=x+5;*, producirá un error en tiempo de compilación.
+*volatile*, indica al compilador que la variable puede modificarse por un proceso externo al propio programa (como la hora del sistema), y por ello, que no trate de optimizar dicha variable suponiéndole un valor constante, etc. Cada vez que se usa la variable, se realice una comprobación de su valor.
 
-La declaración de una variable como *volatile*, indica al compilador que dicha variable puede modificarse por un proceso externo al propio programa (tal como la hora del sistema), y por ello, que no trate de optimizar dicha variable suponiéndole un valor constante, etc. Ello fuerza a que cada vez que se usa la variable, se realice una comprobación de su valor.
-
-Los modificadores *const* y *volatile* pueden usarse de forma conjunta en ciertos casos, por lo cual no son excluyentes el uno del otro. Ello es posible si se declara una variable que actualizara el reloj del sistema, (proceso externo al programa), y que no queremos pueda modificarse en el interior del programa. Por ello, podremos declarar:
+*const* y *volatile* pueden usarse de forma conjunta en ciertos casos, por lo cual no son excluyentes el uno del otro. Ello es posible si se declara una variable que actualizara el reloj del sistema, (proceso externo al programa), y que no queremos pueda modificarse en el interior del programa. Por ello, podremos declarar:
 
 volatile const unsigned long int hora;
 
