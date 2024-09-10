@@ -15,7 +15,7 @@ Este repositorio pretende ser una introdución a C.
 |goto|if|int|long|register|return|short|
 
 
-## 1.- Identificadores.
+## 1.- IDENTIFICADORES
 
 
 ```
@@ -101,71 +101,43 @@ Si intentamos modificar el valor de *x*, tal como *x=x+10;*, producirá un error
 
 volatile const unsigned long int hora;
 
-3. **- Declaración de variables y alcance.**
+## 2. - Declaración de variables y alcance.
 
-En C, las variables pueden ser declaradas en cuatro lugares del módulo del 
+Podemos declarar las variables en cuatro lugares del módulo del programa:
 
-programa:
+- Variables **globales** Fuera de todas las funciones del programa, accesibles desde cualquier parte del programa.
+- Variables **locales** dentro de una función, accesibles tan solo por la función en las que se declaran.
+- Variable como **parámetros** a la función, accesibles de igual forma que si se declararan dentro de la función.
+- Variable **local de bloque** del programa, accesible tan solo dentro del bloque donde se declara.
 
-- Fuera de todas las funciones del programa, son las llamadas variables globales, accesibles desde cualquier parte del programa.
-- Dentro de una función, son las llamadas variables locales, accesibles tan solo por la función en las que se declaran.
-- Como parámetros a la función, accesibles de igual forma que si se declararan dentro de la función.
-- Dentro de un bloque de código del programa, accesible tan solo dentro del bloque donde se declara. Esta forma de declaración puede interpretarse como una variable local del bloque donde se declara.
-
-Para un mejor comprensión, veamos un pequeño programa de C con variables declaradas de las cuatro formas posibles:![ref2]
-
+```
 #include <stdio.h>
-
 int sum; /\* Variable global, accesible desde cualquier parte \*/          /\* del programa\*/
-
 void suma(int x) /\* Variable local declarada como parámetro, \*/                  /\* accesible solo por la función suma\*/
-
 {
-
-sum=sum+x;
-
-return;
-
+  sum=sum+x;
+  return;
 }
-
 void intercambio(int \*a,int \*b)
-
 {
-
-if (\*a>\*b)
-
-{
-
-`      `int inter; /\* Variable local, accesible solo dentro del \*/                  /\* bloque donde se declara\*/
-
-inter=\*a;
-
-\*a=\*b;
-
-\*b=inter;
-
-}
-
+  if (\*a>\*b)
+  {
+    int inter; /\* Variable local, accesible solo dentro del \*/                  /\* bloque donde se declara\*/
+    inter=\*a;
+    \*a=\*b;
+    \*b=inter;
+  }
 return;
-
 }
-
 int main(void) /\*Función principal del programa\*/
-
 {
-
-`   `int contador,a=9,b=0; /\*Variables locales, accesibles solo \*/                          /\* por main\*/
-
-`   `sum=0;
-
-`   `intercambio(&a,&b);
-
-`   `for(contador=a;contador<=b;contador++) suma(contador);    printf(“%d\n”,suma);
-
-`   `return(0);
-
+  int contador,a=9,b=0; /\*Variables locales, accesibles solo \*/                          /\* por main\*/
+  sum=0;
+  intercambio(&a,&b);
+  for(contador=a;contador<=b;contador++) suma(contador);    printf(“%d\n”,suma);
+  return(0);
 }
-
+```
 4. **- Especificadores de almacenamiento de los tipos de datos.**
 
 Una vez explicada la declaración de variables y su alcance, vamos a proceder a explicar como es posible modificar el alcance del almacenamiento de los datos. Ello es posible realizarlo mediante los especificadores de almacenamiento. Existen cuatro especificadores de almacenamiento. Estos especificadores de almacenamiento, cuando 
