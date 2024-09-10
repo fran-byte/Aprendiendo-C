@@ -87,19 +87,21 @@ Limitan  el  uso  que  puede  realizarse  de  las  variables declaradas.
 |const|Variable de valor constante|
 |volatile|Variable  cuyo  valor  es  modificado externamente|
 
-*const* asegura de que su valor no será modificado por el programa, salvo en el momento de su declaración asignándole un valor inicial.
+**const** asegura de que su valor no será modificado por el programa, salvo en el momento de su declaración asignándole un valor inicial.
 
 ```
 const int x = 650;
 ```
 
-Si intentamos modificar el valor de *x*, tal como *x=x+10;*, producirá un error en tiempo de compilación.
+Si intentamos modificar el valor de **x**, tal como **x=x+10;**, producirá un error en tiempo de compilación.
 
-*volatile*, indica al compilador que la variable puede modificarse por un proceso externo al propio programa (como la hora del sistema), y por ello, que no trate de optimizar dicha variable suponiéndole un valor constante, etc. Cada vez que se usa la variable, se realice una comprobación de su valor.
+**volatile**, indica al compilador que la variable puede modificarse por un *proceso externo* al propio programa (como la hora del sistema), y por ello, que no trate de optimizar dicha variable suponiéndole un valor constante, etc. Cada vez que se usa la variable, se realice una comprobación de su valor.
 
-*const* y *volatile* pueden usarse de forma conjunta en ciertos casos, por lo cual no son excluyentes el uno del otro. Ello es posible si se declara una variable que actualizara el reloj del sistema, (proceso externo al programa), y que no queremos pueda modificarse en el interior del programa. Por ello, podremos declarar:
+**const** y **volatile** pueden usarse de forma conjunta en ciertos casos, por lo cual no son excluyentes el uno del otro. Ello es posible si se declara una variable que actualizara el reloj del sistema, (proceso externo al programa), y que no queremos pueda modificarse en el interior del programa. Por ello, podremos declarar:
 
+```
 volatile const unsigned long int hora;
+```
 
 ## 2. - Declaración de variables y alcance.
 
@@ -112,10 +114,10 @@ Podemos declarar las variables en cuatro lugares del módulo del programa:
 
 ``` c
 #include <stdio.h>
-int sum; /* Variable global, accesible desde cualquier parte del programa*/
+int add; /* Variable global, accesible desde cualquier parte del programa*/
 void suma(int x) /* Variable local declarada como parámetro, accesible solo por la función suma*/
 {
-  sum = sum + x;
+  add = add + x;
   return;
 }
 void intercambio(int *a, int *b)
@@ -132,17 +134,15 @@ return;
 int main(void) /*Función principal del programa\*
 {
   int contador, a = 9, b = 0; /*Variables locales, accesibles solo por main*/
-  sum = 0;
+  add = 0;
   intercambio(&a, &b);
-  for(contador=a; contador<=b; contador++) suma(contador); printf(“%d\n” ,suma);
+  for(contador=a; contador<=b; contador++) suma(contador); printf(“%d\n” ,add);
   return(0);
 }
 ```
-4. **- Especificadores de almacenamiento de los tipos de datos.**
+## 3. - Especificadores de almacenamiento de los tipos de datos.
 
-Una vez explicada la declaración de variables y su alcance, vamos a proceder a explicar como es posible modificar el alcance del almacenamiento de los datos. Ello es posible realizarlo mediante los especificadores de almacenamiento. Existen cuatro especificadores de almacenamiento. Estos especificadores de almacenamiento, cuando 
-
-se usan, deben preceder a la declaración del tipo de dato de la variable. Estos especificadores de almacenamiento son:
+Modificar el alcance del almacenamiento de los datos es posible realizarlo mediante los especificadores de almacenamiento. Existen cuatro especificadores de almacenamiento. Estos especificadores de almacenamiento, cuando se usan, deben preceder a la declaración del tipo de dato de la variable. Estos especificadores de almacenamiento son:
 
 
 
@@ -153,21 +153,21 @@ se usan, deben preceder a la declaración del tipo de dato de la variable. Estos
 |static||Variable estática|
 |register||Variable registro|
 
-*Tabla 2.4.1: Especificadores de almacenamiento en C.![ref2]*
 
-El especificador *auto*  se usa para declarar que una variable local existe solamente mientras estemos dentro de la subrutina o bloque de programa donde se declara, pero, dado que por defecto toda variable local es *auto*, no suele usarse.
+El especificador *auto*  se usa para declarar que una variable local existe solamente mientras estemos dentro de la subrutina o bloque de programa donde se declara, pero, dado que por defecto toda variable local es **auto**, no suele usarse.
 
-El especificador *extern* se usa en el desarrollo de programas compuestos por varios módulos. El modificador *extern* se usa sobre las variables globales del módulo, de forma que si una variable global se declara como *extern*, el compilador no crea un almacenamiento para ella en memoria, sino que, tan solo tiene en cuenta que dicha variable ya ha sido declarada en otro modulo del programa y es del tipo de dato que se indica.
+El especificador **extern** se usa en el desarrollo de programas compuestos por varios módulos. El modificador **extern** se usa sobre las variables globales del módulo, de forma que si una variable global se declara como **extern**, el compilador no crea un almacenamiento para ella en memoria, sino que, tan solo tiene en cuenta que dicha variable ya ha sido declarada en otro modulo del programa y es del tipo de dato que se indica.
 
-El especificador *static* actúa según el alcance de la variable:
+El especificador **static** actúa según el alcance de la variable:
 
-- Para variables locales, el especificador *static* indica que dicha variable local debe almacenarse de forma permanente en memoria, tal y como si fuera una variable global, pero su alcance será el que correspondería a una variable local declarada en la subrutina o bloque. El principal efecto que provoca la declaración como *static* de una variable local es el hecho de que la variable conserva su valor entre llamadas a la función.
-- Para variables globales, el especificador *static* indica que dicha variable global es local al módulo del programa donde se declara, y, por tanto, no será conocida por ningún otro módulo del programa.
+- Para variables locales, el especificador **static** indica que dicha variable local debe almacenarse de forma permanente en memoria, tal y como si fuera una variable global, pero su alcance será el que correspondería a una variable local declarada en la subrutina o bloque. El principal efecto que provoca la declaración como **static** de una variable local es el hecho de que la variable conserva su valor entre llamadas a la función.
+- Para variables globales, el especificador *s*tatic** indica que dicha variable global es local al módulo del programa donde se declara, y, por tanto, no será conocida por ningún otro módulo del programa.
 
-El especificador *register* se aplica solo a variables locales de tipo *char* e *int*. Dicho especificador indica al compilador que, caso de ser posible, mantenga esa variable en un registro de la CPU y no cree por ello una variable en la memoria. Se pueden declarar como *register* cuantas variables se deseen, pues el compilador ignorara dicha  declaración  caso  de  no  poder  ser  satisfecha.  El  uso  de  variables  con especificador de almacenamiento *register*  permite colocar en registros de la CPU variables muy frecuentemente usadas, tales como contadores de bucles, etc.
+El especificador **register** se aplica solo a variables locales de tipo **char** e **int**. Dicho especificador indica al compilador que, caso de ser posible, mantenga esa variable en un registro de la CPU y no cree por ello una variable en la memoria. Se pueden declarar como *register* cuantas variables se deseen, pues el compilador ignorara dicha  declaración  caso  de  no  poder  ser  satisfecha.  El  uso  de  variables  con especificador de almacenamiento **register** permite colocar en registros de la CPU variables muy frecuentemente usadas, tales como contadores de bucles, etc.
 
 Algunos ejemplos de uso de los especificadores de almacenamiento son:
 
+```
 register unsigned int a;
 
 static float b;
@@ -175,10 +175,11 @@ static float b;
 extern int c;
 
 static const unsigned long int d;
+```
 
-5. **- Constantes.**
+## 4. - Constantes.
 
-En C, las constantes se refieren a los valores fijos que el programa no puede alterar. Algunos ejemplos de constantes de C son:![ref2]
+Valores fijos que el programa no puede alterar. Algunos ejemplos de constantes de C son:
 
 
 
