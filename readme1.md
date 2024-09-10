@@ -60,7 +60,7 @@ unsigned long int (entero largo sin signo).
 ```
 
 
-||**Rango de valores posibles en (notación matemática)**||
+||**Rango de valores posibles en (notación matemática)**|| 
 | :- | - | :- |
 |**Tipo de variable declarada**|**16 bits**|**32 bits**|
 |char / signed char|[-128 , 127]|[-128 , 127]|
