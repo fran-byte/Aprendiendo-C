@@ -110,7 +110,7 @@ Podemos declarar las variables en cuatro lugares del módulo del programa:
 - Variable como **parámetros** a la función, accesibles de igual forma que si se declararan dentro de la función.
 - Variable **local de bloque** del programa, accesible tan solo dentro del bloque donde se declara.
 
-```
+``` c
 #include <stdio.h>
 int sum; /* Variable global, accesible desde cualquier parte del programa*/
 void suma(int x) /* Variable local declarada como parámetro, accesible solo por la función suma*/
