@@ -22,7 +22,7 @@ Este repositorio pretende ser una introdución a C.
 <tipo de dato> <nombre de variable> [, nombre de variable];
 ```
 
-- En C existen cinco tipos de datos según puede verse en la tabla siguiente:
+ ** En C existen cinco tipos de datos según puede verse en la tabla siguiente: **
 
 
 
@@ -47,7 +47,7 @@ Este repositorio pretende ser una introdución a C.
 ```
 unsigned char a; long double b; short int i;
 ```
-Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de datos, así, es posible definir una variable de tipo *unsigned long int*** (entero largo sin signo).
+** Doble modificadores seguidos a un mismo tipo de datos **
 
 
 
@@ -66,9 +66,9 @@ Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de datos
 |double|[-1.7E+308 , -1.7E-308], 0 , [1.7E-308 , 1.7E+308]|[-1.7E+308 , -1.7E-308], 0 , [1.7E-308 , 1.7E+308]|
 |long double|[-3.4E+4932 , -1.1E-4932], 0 , [3.4E-4932 , 1.1E+4932]|[-3.4E-4932 , -1.1E+4932], 0 , [3.4E-4932 , 1.1E+4932]|
 
-*Tabla 2.2.3: Rango de valores de las variables en C.*
 
-Además de los modificadores de tipo existen modificadores de acceso. Los modificadores  de  acceso  limitan  el  uso  que  puede  realizarse  de  las  variables declaradas. Los modificadores de acceso anteceden a la declaración del tipo de dato de la variable y son los siguientes:![ref2]
+** Modificadores de acceso **
+Limitan  el  uso  que  puede  realizarse  de  las  variables declaradas.
 
 
 
