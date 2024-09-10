@@ -46,12 +46,14 @@ Este repositorio pretende ser una introdución a C.
 |short|int|Corto||
 
 ```
-unsigned char a; long double b; short int i;
+unsigned char a;
+long double b;
+short int i;
 ```
 Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de datos, así, es posible definir una variable de tipo :
 
 ```
-*unsigned long int*** (entero largo sin signo).
+unsigned long int (entero largo sin signo).
 ```
 
 
