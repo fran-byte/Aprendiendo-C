@@ -8,7 +8,7 @@ Este repositorio pretende ser una introdución a C.
 ## Palabras reservadas
 
 
-| <!-> | <!-> | <!-> | <!-> | <!-> | <!-> | <!-> |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 | - | - | - | - | - | - | - |
 |auto|break|case|char|const|continue|default|
 |do|double|else|enum|extern|float|for|
@@ -22,7 +22,7 @@ Este repositorio pretende ser una introdución a C.
 <tipo de dato> <nombre de variable> [, nombre de variable];
 ```
 
-En C existen cinco tipos de datos según puede verse en la tabla siguiente:
+- En C existen cinco tipos de datos según puede verse en la tabla siguiente:
 
 
 
@@ -34,15 +34,6 @@ En C existen cinco tipos de datos según puede verse en la tabla siguiente:
 |double|Punto flotante (mayor rango que *float*)|
 |void|Sin tipo (uso especial)|
 
-*Tabla 2.2.1: Tipos de datos en C.* Algunos ejemplos de variables de C serían:
-
-float a;
-
-int b,c;
-
-char caracter,otro\_caracter;![ref2]
-
-Existen, además, cuatro modificadores de tipo, los cuales se aplican sobre los tipos de datos anteriormente citados. Los modificadores de tipo permiten cambiar el tamaño, etc., de los tipos de datos anteriormente especificados. Estos modificadores, que sintácticamente anteceden a la declaración del tipo de dato, son:
 
 
 
@@ -53,13 +44,10 @@ Existen, además, cuatro modificadores de tipo, los cuales se aplican sobre los 
 |long|int|double|Largo|
 |short|int|Corto||
 
-*Tabla 2.2.2: Modificadores de los tipos de datos en C.* Es por ello, que podemos declarar variables como:
-
+```
 unsigned char a; long double b; short int i;
-
-Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de datos, así, es posible definir una variable de tipo *unsigned long int*** (entero largo sin signo). El rango de valores de que permite cada variable depende del sistema operativo sobre el cual se trabaje (MS-DOS, Windows95/98/NT/2000, UNIX/Linux), por lo cual 
-
-conviene referirse al manual del compilador para conocerlo. De forma general, los sistemas operativos de 16 bits (MS-DOS, Windows 16 bits) poseen un rango y los de 32 bits (Windows 32 bits, UNIX/Linux) otro.
+```
+Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de datos, así, es posible definir una variable de tipo *unsigned long int*** (entero largo sin signo).
 
 
 
