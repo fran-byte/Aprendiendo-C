@@ -30,11 +30,11 @@ int a;
 
 |**Tipo de dato**|**Descripción.**|
 | - | - |
-|char|Carácter o entero pequeño (byte)|
-|int|Entero|
-|float|Punto flotante|
-|double|Punto flotante (mayor rango que *float*)|
-|void|Sin tipo (uso especial)|
+|**char**|Carácter o entero pequeño (byte)|
+|**int**|Entero|
+|**float**|Punto flotante|
+|**double**|Punto flotante (mayor rango que *float*)|
+|**void**|Sin tipo (uso especial)|
 
 
 
@@ -52,7 +52,7 @@ unsigned char a;
 long double b;
 short int i;
 ```
-Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de datos, así, es posible definir una variable de tipo :
+Es posible, además, aplicar **dos modificadores** seguidos a un mismo tipo de datos, así, es posible definir una variable de tipo :
 
 ```
 unsigned long int (entero largo sin signo).
