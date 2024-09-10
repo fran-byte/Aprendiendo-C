@@ -27,6 +27,7 @@ Este repositorio pretende ser una introdución a C.
 |void        | Sin tipo (uso especial)                  |
 
 - Existen, además, cuatro modificadores de tipo:
+  
 |Modificador| Tipos | de actuación |Descripción               |
 |-----------|-------|-------------|---------------------------|
 |signed     |  char |  int        |  Con signo (por defecto)  |
