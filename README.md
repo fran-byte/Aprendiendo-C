@@ -15,4 +15,4 @@ Este repositorio pretende ser una introdución a C.
 | unsigned | void     | volatile | while    |          |          |          |
 
 ## Tipos de datos, modificadores de tipo y modificadores de acceso
-<tipo de dato> <nombre de variable> [, nombre de variable];
+<tipo de dato> <nombre de variable> (, nombre de variable);
