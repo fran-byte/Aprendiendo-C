@@ -142,7 +142,7 @@ int main(void) /*Función principal del programa\*
 ```
 ## 3. - Especificadores de almacenamiento de los tipos de datos.
 
-Modificar el alcance del almacenamiento de los datos es posible realizarlo mediante los especificadores de almacenamiento. Existen cuatro especificadores de almacenamiento. Estos especificadores de almacenamiento, cuando se usan, deben preceder a la declaración del tipo de dato de la variable. Estos especificadores de almacenamiento son:
+Los especificadores de almacenamiento deben preceder a la declaración del tipo de dato de la variable. Estos especificadores de almacenamiento son:
 
 
 
@@ -154,16 +154,16 @@ Modificar el alcance del almacenamiento de los datos es posible realizarlo media
 |register||Variable registro|
 
 
-El especificador *auto*  se usa para declarar que una variable local existe solamente mientras estemos dentro de la subrutina o bloque de programa donde se declara, pero, dado que por defecto toda variable local es **auto**, no suele usarse.
+**auto** se usa para declarar que una variable local existe dentro de la subrutina o bloque de programa donde se declara, es por defecto y no se suele usar.
 
-El especificador **extern** se usa en el desarrollo de programas compuestos por varios módulos. El modificador **extern** se usa sobre las variables globales del módulo, de forma que si una variable global se declara como **extern**, el compilador no crea un almacenamiento para ella en memoria, sino que, tan solo tiene en cuenta que dicha variable ya ha sido declarada en otro modulo del programa y es del tipo de dato que se indica.
+**extern** se usa en programas compuestos por varios módulos, se usa sobre las variables globales del módulo, y el compilador no crea un almacenamiento para ella en memoria, sino que, tan solo tiene en cuenta que dicha variable ya ha sido declarada en otro modulo del programa y es del tipo de dato que se indica.
 
-El especificador **static** actúa según el alcance de la variable:
+**static** actúa según el alcance de la variable:
 
-- Para variables locales, el especificador **static** indica que dicha variable local debe almacenarse de forma permanente en memoria, tal y como si fuera una variable global, pero su alcance será el que correspondería a una variable local declarada en la subrutina o bloque. El principal efecto que provoca la declaración como **static** de una variable local es el hecho de que la variable conserva su valor entre llamadas a la función.
-- Para variables globales, el especificador **static** indica que dicha variable global es local al módulo del programa donde se declara, y, por tanto, no será conocida por ningún otro módulo del programa.
+- Para variables locales, **static** indica que la variable local debe almacenarse de forma permanente en memoria, como si fuera una variable global, pero su alcance como variable local declarada en la subrutina o bloque,conservando su valor entre llamadas a la función.
+- Para variables globales, **static** indica que la variable global es local al módulo del programa donde se declara, y, no será conocida por ningún otro módulo del programa.
 
-El especificador **register** se aplica solo a variables locales de tipo **char** e **int**. Dicho especificador indica al compilador que, caso de ser posible, mantenga esa variable en un registro de la CPU y no cree por ello una variable en la memoria. Se pueden declarar como **register** cuantas variables se deseen, pues el compilador ignorara dicha  declaración  caso  de  no  poder  ser  satisfecha.  El  uso  de  variables  con especificador de almacenamiento **register** permite colocar en registros de la CPU variables muy frecuentemente usadas, tales como contadores de bucles, etc.
+**register** se aplica solo a variables locales de tipo **char** e **int**, indicando al compilador, si es posible, mantenga esa variable en un registro de la CPU y no cree una variable en la memoria. Se pueden declarar cuantas variables se deseen, pues el compilador ignorara dicha  declaración  caso  de  no  poder  ser  satisfecha.  Y permite colocar en registros de la CPU variables usadas, como contadores de bucles, etc.
 
 Algunos ejemplos de uso de los especificadores de almacenamiento son:
 
@@ -179,7 +179,7 @@ static const unsigned long int d;
 
 ## 4. - Constantes.
 
-Valores fijos que el programa no puede alterar. Algunos ejemplos de constantes de C son:
+Valores fijos que el programa no puede alterar:
 
 
 
@@ -197,15 +197,17 @@ Valores fijos que el programa no puede alterar. Algunos ejemplos de constantes d
 |float|12\.45 4.34e-3 -2.8e9|
 |double|-34.657 -2.2e-7 1.0e100|
 
-*Tabla 2.5.1: Tipos de constantes en C.*
 
-Existen, además, algunos tipos de constantes, distintos a los anteriores, que es necesario resaltar de forma particular. Estos tipos de constantes son las constantes hexadecimales y octales, las constantes de cadena, y las constantes de barra invertida.
+Otras constantes son las constantes hexadecimales y octales, las constantes de cadena, y las constantes de barra invertida.
 
-Las constantes hexadecimales y octales son constantes enteras, pero definidas en base 16 (constantes hexadecimales) o en base 8 (constantes octales). Las constantes de tipo hexadecimal comienzan por los caracteres *0x*** seguidas del número deseado. Las constantes de tipo octal comienzan por un cero (*0*). Por ejemplo, son constantes hexadecimales *0x34* (52 decimal), *0xFFFF* (65535 decimal); y constantes octales *011* (9 decimal), *0173* (123 decimal)
+Las constantes hexadecimales y octales son **constantes enteras**, pero definidas en base 16 (constantes hexadecimales) o en base 8 (constantes octales).
 
-Las constantes de cadena son conjuntos de caracteres que se encierran entre comillas dobles. Por ejemplo, son constantes de cadena *“Esto es una constante de cadena”*, *“Estos son unos apuntes de C”*, etc.
+Las constantes de tipo hexadecimal comienzan por los caracteres *0x*** seguidas del número deseado. 
+Las constantes de tipo octal comienzan por un cero (*0*). Por ejemplo, son constantes hexadecimales *0x34* (52 decimal), *0xFFFF* (65535 decimal); y constantes octales *011* (9 decimal), *0173* (123 decimal)
 
-Las  constantes de caracteres de barra invertida  se  usan para introducir caracteres que es imposible introducir por el teclado (tales como retorno de carro, etc.). Estas constantes son proporcionadas por C para que sea posible introducir dichas caracteres como constantes en los programas en los cuales sea necesario. Estas constantes de caracteres de barra invertida son:
+Las constantes de cadena son conjuntos de caracteres que se encierran entre comillas dobles. *“Esto es una constante de cadena”*
+
+Las  constantes de caracteres de barra invertida (tales como retorno de carro, etc.). Estas constantes son proporcionadas por C para que sea posible introducir dichas caracteres como constantes en los programas en los cuales sea necesario:
 
 
 
@@ -225,19 +227,16 @@ Las  constantes de caracteres de barra invertida  se  usan para introducir carac
 |\o|Constante octal|
 |\x|Constante hexadecimal|
 
-*Tabla 2.5.2: Constantes de barra invertida en C.*
 
-El uso de las constantes de barra invertida es igual que el de cualquier otro carácter, así, si *ch* es una variable de tipo *char*, podemos hacer: *ch=‘\t’*, o *ch=‘\x20’* (carácter espacio), etc., de igual forma que realizaríamos con cualquier otra constante de carácter. Además, las constantes de barra invertida pueden usarse en el interior de constantes de cadena como un carácter más, por ello, podemos poner escribir la constante de cadena: *"Esto es una linea\n"*.![ref2]
+Son igual que el de cualquier otro carácter, así, si *ch* es una variable de tipo *char*, podemos hacer: *ch=‘\t’*, o *ch=‘\x20’* (carácter espacio), etc., de igual forma que realizaríamos con cualquier otra constante de carácter.
 
-**Tema 3 - Operadores aritméticos, relaciónales y lógicos; operador asignación; operador sizeof y operadores avanzados (operadores sobre bits y** 
+Las constantes de barra invertida pueden usarse en el interior de constantes de cadena como un carácter más, por ello: *"Esto es una linea\n"*.
 
-**operador ?).**
+## 5. - Operadores aritméticos, relaciónales y lógicos; operador asignación; operador sizeof y operadores avanzados (operadores sobre bits y operador ?)
 
-1. **- Operadores aritméticos.**
+5.1. **- Operadores aritméticos.**
 
-Los operadores aritméticos existentes en C son, ordenados de mayor a menor 
-
-precedencia:
+Los operadores aritméticos existentes en C son, ordenados de mayor a menor precedencia:
 
 
 
@@ -363,7 +362,7 @@ Ejecutara las funciones *f1()* y *f2()* si *t* es distinto de cero, y la funció
 
 vale cero.![ref2]
 
-**Tema 4 - Conversión de tipos de datos.**
+## 4 - Conversión de tipos de datos.
 
 1. **- Conversión automática de tipos de datos.**
 
