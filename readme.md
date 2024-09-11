@@ -15,7 +15,7 @@ Este repositorio pretende ser una introdución a C.
 |goto|if|int|long|register|return|short|
 
 
-## 1.- IDENTIFICADORES
+## 1.- IDENTIFICADORES, TIPOS DE DATOS, VARIABLES...
 
 
 ```
@@ -24,7 +24,7 @@ Este repositorio pretende ser una introdución a C.
 int a;
 ```
 
-## Tipos de datos
+## 1.1. - Tipos de datos
 
 
 
@@ -38,7 +38,7 @@ int a;
 
 
 
-## Modificadores de Tipos de datos
+**Modificadores de Tipos de datos**
 
 |**Modificador**|**Tipos de actuación**|**Descripción**||
 | - | - | - | :- |
@@ -52,7 +52,7 @@ unsigned char a;
 long double b;
 short int i;
 ```
-## Doble modificador a un mismo tipo de datos
+**Dble modificador a un mismo tipo de datos**
 Así, es posible definir una variable de tipo :
 
 ```
@@ -77,7 +77,7 @@ unsigned long int (entero largo sin signo).
 
 
 
-## Modificadores de acceso. 
+**Modificadores de acceso.** 
 Limitan  el  uso  que  puede  realizarse  de  las  variables declaradas. 
 
 
@@ -103,7 +103,7 @@ Si intentamos modificar el valor de **x**, tal como **x=x+10;**, producirá un e
 volatile const unsigned long int hora;
 ```
 
-## 2. - Declaración de variables y alcance.
+## 1.2- Declaración de variables y alcance.
 
 Podemos declarar las variables en cuatro lugares del módulo del programa:
 
@@ -140,7 +140,7 @@ int main(void) /*Función principal del programa\*
   return(0);
 }
 ```
-## 3. - Especificadores de almacenamiento de los tipos de datos.
+## 1.3.- Especificadores de almacenamiento de los tipos de datos.
 
 Los especificadores de almacenamiento deben preceder a la declaración del tipo de dato de la variable. Estos especificadores de almacenamiento son:
 
@@ -177,7 +177,7 @@ extern int c;
 static const unsigned long int d;
 ```
 
-## 4. - Constantes.
+## 1.4.- Constantes.
 
 Valores fijos que el programa no puede alterar:
 
@@ -232,9 +232,9 @@ Son igual que el de cualquier otro carácter, así, si *ch* es una variable de t
 
 Las constantes de barra invertida pueden usarse en el interior de constantes de cadena como un carácter más, por ello: *"Esto es una linea\n"*.
 
-## 5. - Operadores aritméticos, relaciónales y lógicos; operador asignación; operador sizeof y operadores avanzados (operadores sobre bits y operador ?)
+## 2. - Operadores aritméticos, relaciónales y lógicos; operador asignación; operador sizeof y operadores avanzados (operadores sobre bits y operador ?)
 
-5.1. **- Operadores aritméticos.**
+## 2.1.- Operadores aritméticos.
 
 Los operadores aritméticos existentes en C son, ordenados de mayor a menor precedencia:
 
@@ -246,7 +246,6 @@ Los operadores aritméticos existentes en C son, ordenados de mayor a menor prec
 |**-**|Menos unario|||||
 |**\*** |Multiplicación.|**/**|División|**%**|Módulo|
 |**+**|Suma|**-**|Resta|||
-*Tabla 3.1.1: Operadores aritméticos en C.*
 
 Los operadores ++, -- y % solo pueden usarse con datos de tipo *int* o *char*. El operador incremento (++), incrementa en una unidad el valor de la variable sobre la que se aplica, el operador decremento (--), decrementa en una unidad el valor de la variable, y el operador módulo (%), calcula el resto de una división de dos variables de tipo entero o carácter.
 
@@ -262,7 +261,7 @@ int var1=10,var2;
 
 var2=var1++; /\* Pone 10 en var2, pues primero asigna su valor \*/              /\* a var2, y luego incrementa var1 \*/![ref2]
 
-2. **- Operadores relaciónales y lógicos.**
+## 2.2- Operadores relaciónales y lógicos.
 
 Los operadores relaciónales y lógicos de C, ordenados de mayor a menor 
 
@@ -277,11 +276,10 @@ prioridad son:
 |==|Igual|!=|No igual|||||
 |&&|And|||||||
 ||||Or|||||||
-*Tabla 3.2.1: Operadores relacionales y lógicos en C.*
 
 Los operadores relaciónales y lógicos tiene menor prioridad que los operadores aritméticos antes descritos, así , escribir *10>3+9* es equivalente a escribir *10>(3+9)*.
 
-3. **- Operador asignación.**
+## 2.3.- Operador asignación.
 
 El lenguaje C, a diferencia de otros lenguajes tales como Pascal, no diferencia la asignación de cualquier otro operador del lenguaje. Para C, la asignación es un operador, el llamado operador asignación (=), el cual posee la prioridad más baja de todos los operadores. Es por ello que en C podemos escribir expresiones del tipo:
 
@@ -289,7 +287,7 @@ if ((c=a\*b)<0) /\* if es la comprobación condicional de C, que \*/            
 
 Esta expresión asigna a la variable *c* el valor de *a\*b* y devuelve su valor para compararlo con el valor constante *0*. Los paréntesis son necesarios pues el operador asignación tiene la prioridad mas baja de todos los operadores.
 
-4. **- Operador sizeof.**
+## 2.4.- Operador sizeof.
 
 El operador *sizeof* es un operador en tiempo de compilación. El operador *sizeof* devuelve el tamaño de una variable o tipo de dato durante la compilación, no durante la ejecución del programa. Veamos algunos ejemplos:
 
@@ -299,7 +297,7 @@ El operador *sizeof* es un operador en tiempo de compilación. El operador *size
 
 Si tenemos *char a[20]*, *sizeof(a)* devuelve el valor 20, y si tenemos *float a[6]*, *sizeof(a)*** devuelve el valor 24 (4\*6).
 
-5. **- Operadores sobre bits.![ref2]**
+## 2.5.- Operadores sobre bits.
 
 El lenguaje C posee operadores que actúan a nivel de bits sobre los datos, estos operadores son:
 
@@ -314,7 +312,6 @@ El lenguaje C posee operadores que actúan a nivel de bits sobre los datos, esto
 |^|Xor|O exclusivo (XOR)|
 |||Or|O|
 
-*Tabla 3.5.1: Operadores sobre bits en C.*
 
 Los operadores &, | y** ^ actúan sobre dos operandos, mientras que ~ ,<< **y *>>*** actúan sobre un solo operando. Veamos su actuación sobre dos valores cualquiera:
 
@@ -329,14 +326,13 @@ Los operadores &, | y** ^ actúan sobre dos operandos, mientras que ~ ,<< **y *>
 |^|0xB2|0x79|0xCB|
 |||0xB2|0x79|0xFB|
 
-*Tabla 3.5.2: Ejemplos de operaciones sobre bits en C.*
 
 Donde los números que acompañan a los operadores << y** >> indican cuantas posiciones se desplaza el operando. La prioridad de los operadores sobre bits es:
 
 - El operador ~ tiene la misma prioridad que los operadores ++ y .**--**.
 - Los operadores <<  y >>  tienen la prioridad situada entre los operadores aritméticos y los operadores relaciónales y lógicos.
 - Los operadores &, ^ y |  tienen la prioridad situada entre los operadores relaciónales y los operadores lógicos (&& y ||).
-6. **- El operador ?.**
+## 2.6.- El operador ?.
 
 El operador ? se usa para reemplazar las sentencias *if/else* (que veremos con posterioridad) de formato general:
 
@@ -344,7 +340,7 @@ if (condición)    expresión; else
 
 `   `expresión;
 
-Donde expresión debe ser una expresión sencilla y no otra sentencia de C. El operador ? es un operador ternario cuyo formato general es:![ref2]
+Donde expresión debe ser una expresión sencilla y no otra sentencia de C. El operador ? es un operador ternario cuyo formato general es:!
 
 Exp1 ? Exp2 : Exp3;
 
@@ -360,11 +356,11 @@ Asignara el valor 100 a *y* si *x* es mayor de 10, y el valor 200 en caso contra
 
 Ejecutara las funciones *f1()* y *f2()* si *t* es distinto de cero, y la función *printf* si *t* 
 
-vale cero.![ref2]
+vale cero.
 
-## 4 - Conversión de tipos de datos.
+## 3 - Conversión de tipos de datos.
 
-1. **- Conversión automática de tipos de datos.**
+## 3.1.- Conversión automática de tipos de datos.
 
 El lenguaje C permite que en una misma expresión aparezcan diferentes tipos de datos, encargándose el compilador de realizar las operaciones de forma correcta. El compilador del lenguaje C, cuando en una misma expresión aparecen dos o más tipos de datos, convierte todos los operandos al tipo del operando más grande existente de acuerdo con las dos reglas siguientes:
 
@@ -399,7 +395,7 @@ Ahora procedemos a realizar la suma de los dos primeros resultados *(ch / i) + (
 
 Y por último, realizamos la resta final, siendo los dos operandos de tipo *double* y el resultado final, por tanto, de tipo *double*.
 
-2. **- Conversión forzada de tipos datos.**
+## 3.2.- Conversión forzada de tipos datos.
 
 En C, existe, además, de la conversión automática de tipos de datos, la posibilidad de forzar la conversión de un tipo de datos en otro tipo de datos. Esta conversión de un tipo de datos en otro se llama “casts”, y su sintaxis es:
 
@@ -413,11 +409,11 @@ La operación asigna a *c* el valor *1.0* en vez de el valor *1.5*, ello se debe
 
 c=(float)a/b;
 
-Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonces, aplicando las reglas de conversión automática de tipos, se realiza la división en coma flotante. Este proceso da lugar a que el resultado de la operación sea *1.5*, y dicho valor sea el asignado a la variable *c*.![ref2]
+Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonces, aplicando las reglas de conversión automática de tipos, se realiza la división en coma flotante. Este proceso da lugar a que el resultado de la operación sea *1.5*, y dicho valor sea el asignado a la variable *c*.!
 
-**Tema 5 - Sentencias de control y bucles.**
+## 4 - Sentencias de control y bucles.
 
-1. **- Sentencia de control if.**
+## 4.1.- Sentencia de control if.
 
 Antes de empezar a explicar las sentencias de control del lenguaje C, conviene explicar los conceptos de verdadero/falso y de sentencia que posee el lenguaje C.
 
@@ -459,7 +455,7 @@ Las sentencias de control *if* pueden ir anidadas. Un *if* anidado es una senten
 
 if (x)
 
-if (y) printf(“1”);![ref2]
+if (y) printf(“1”);
 
 else printf(“2”);
 
