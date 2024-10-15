@@ -259,7 +259,7 @@ Mientras que el siguiente código funciona de forma distinta:
 
 int var1=10,var2;
 
-var2=var1++; /\* Pone 10 en var2, pues primero asigna su valor \*/              /\* a var2, y luego incrementa var1 \*/![ref2]
+var2=var1++; /\* Pone 10 en var2, pues primero asigna su valor \*/              /\* a var2, y luego incrementa var1 \*/
 
 ## 2.2- Operadores relaciónales y lógicos.
 
@@ -389,7 +389,7 @@ f de float pasa a double.
 
 Al ser los dos operandos de igual tipo, realizamos la primera operación, *(ch / i)*, y el resultado es de tipo *int*. De igual forma, para la segunda operación, *(f \* d)*, y el resultado es de tipo *double*.
 
-Para la tercera operación, y dado que las variables no son del mismo tipo, se aplica la segunda regla, convirtiéndose el *int* en *double*, realizándose la suma *(f + i)* como dos datos de tipo *double*, y siendo por tanto el resultado un *double*.![ref2]
+Para la tercera operación, y dado que las variables no son del mismo tipo, se aplica la segunda regla, convirtiéndose el *int* en *double*, realizándose la suma *(f + i)* como dos datos de tipo *double*, y siendo por tanto el resultado un *double*.
 
 Ahora procedemos a realizar la suma de los dos primeros resultados *(ch / i) + (f \* d)*, como uno de ellos es de tipo *int***,** y el otro de tipo *double*, el *int* se convierte en *double* por la segunda regla, y el resultado es un *double*.
 
@@ -503,7 +503,7 @@ break;
 
 `   `default: cont=-10; /\* Se ejecuta si valor no es 0 o 5 \*/ }
 
-char d;![ref2]
+char d;
 
 int cont=0;
 
@@ -571,7 +571,7 @@ int i,suma=0; for(i=1;i<=100;i++)
 
 suma=suma+i;
 
-int i,j;![ref2]
+int i,j;
 
 for(i=0,j=100;j>i;i++,j--) {
 
@@ -627,7 +627,7 @@ if (d==‘\x1B’)
 
 break;
 
-}![ref2]
+}
 
 5. **- Bucle do/while.**
 
@@ -687,14 +687,14 @@ int x;
 
 for(x=1;x<=100;x++) /\* Esta rutina imprime en pantalla los \*/
 
-{                   /\*números pares \*/![ref2]
+{                   /\*números pares \*/
 
 if (x%2)
 
 continue;
 printf(“%d\n”,x);
 
-}![ref2]
+}
 
 **Tema 6 - Arrays, cadenas y punteros.**
 
@@ -746,7 +746,7 @@ Es por ello, que es misión del programador comprobar que no se produzca el desb
 
 Una  cadena,  también  llamada  string,  es  un  tipo  especial  de  array unidimensional. Una cadena es un array de caracteres (*char*) que termina con un carácter especial (el carácter *‘\0’*). Es por ello, que la declaración de una cadena de caracteres se realiza exactamente igual que la declaración de un array unidimensional de caracteres:
 
-char cadena[tamaño];![ref2]
+char cadena[tamaño];
 
 Como toda cadena debe terminar en el carácter *‘\0’*, es por ello que si se quiere usar una cadena de 20 caracteres, debe declararse de tamaño 21 (20 caracteres + carácter terminador).
 
@@ -790,7 +790,7 @@ char cadena[]=“Esto es una cadena”;
 
 2. **– Punteros.**
 
-Los punteros son una de las poderosas herramientas que ofrece el lenguaje C a los programadores, sin embargo, son también una de las más peligrosas, el uso de punteros sin inicializar, etc., es una fuente frecuente de errores en los programas de C, y además, suele producir fallos muy difíciles de localizar y depurar.![ref2]
+Los punteros son una de las poderosas herramientas que ofrece el lenguaje C a los programadores, sin embargo, son también una de las más peligrosas, el uso de punteros sin inicializar, etc., es una fuente frecuente de errores en los programas de C, y además, suele producir fallos muy difíciles de localizar y depurar.
 
 Un  puntero  es  una  variable  que  contiene  una  dirección  de  memoria. Normalmente esa dirección es una posición de memoria de otra variable, por lo cual se suele decir que el puntero “apunta” a la otra variable.
 
@@ -832,7 +832,7 @@ b=15; a=&b; c=\*a;
 
 Entonces la variable *c*** contendrá el valor *15*, pues *\*a* devuelve el valor de la dirección que sigue (a la que “apunta” la variable puntero), y con anterioridad hemos hecho que *a* contenga la dirección de memoria de la variable *b*** usando para ello el operador *&*.
 
-Con las variables de tipo puntero es posible realizar algunas operaciones:![ref2]
+Con las variables de tipo puntero es posible realizar algunas operaciones:
 
 - Asignación de punteros. Es posible asignar el valor de una variable de tipo puntero a otra variable de tipo puntero. Por ejemplo:
 
@@ -868,7 +868,7 @@ Existe una estrecha relación entre los punteros y los arrays. Consideremos el s
 
 char str[80],\*p; p=str;
 
-Este fragmento de código pone en la variable puntero p la dirección del primer elemento del array *str*. Entonces, es posible acceder al valor de la quinta posición del array mediante *str[4]*** y** *\*(p+4)* (recuérdese que los índices de los arrays empiezan en 0). Esta estrecha relación entre los arrays y los punteros queda más evidente si se tiene ![ref2] en cuenta que el nombre del array sin índice es la dirección de comienzo del array, y, si además,  se  tiene  en  cuenta  que  un  puntero  puede  indexarse  como  un  array unidimensional, por lo cual, en el ejemplo anterior, podríamos referenciar ese elemento como *p[4]*.
+Este fragmento de código pone en la variable puntero p la dirección del primer elemento del array *str*. Entonces, es posible acceder al valor de la quinta posición del array mediante *str[4]*** y** *\*(p+4)* (recuérdese que los índices de los arrays empiezan en 0). Esta estrecha relación entre los arrays y los punteros queda más evidente si se tiene  en cuenta que el nombre del array sin índice es la dirección de comienzo del array, y, si además,  se  tiene  en  cuenta  que  un  puntero  puede  indexarse  como  un  array unidimensional, por lo cual, en el ejemplo anterior, podríamos referenciar ese elemento como *p[4]*.
 
 Es posible obtener la dirección de un elemento cualquiera del array de la siguiente forma:
 
@@ -892,7 +892,7 @@ int a,\*b,\*\*c; b=&a; c=&b;
 
 Y entonces, *\*\*c* tiene el valor de la variable *a*, pues *c* es un puntero a una variable que ya es de tipo puntero.
 
-Este concepto de puntero a puntero podría extenderse a puntero a puntero a puntero, etc., pero no nos ocuparemos de ello. Además, existe el concepto de puntero a una función, al cual nos referiremos en el tema dedicado a las funciones.![ref2]
+Este concepto de puntero a puntero podría extenderse a puntero a puntero a puntero, etc., pero no nos ocuparemos de ello. Además, existe el concepto de puntero a una función, al cual nos referiremos en el tema dedicado a las funciones.
 
 **Tema 7 - Funciones.** El formato general de una función de C es:
 
@@ -926,7 +926,7 @@ Esa función es equivalente a otra que tuviera como última línea una sentencia
 
 2. **- Argumentos de las funciones, llamada por valor y por ![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.005.png)"referencia".**
 
-Una vez conocido el uso de la función *return*, podemos introducirnos en la explicación de las funciones. En primer lugar, si una función usa argumentos, es ![ref2] necesario declarar variables que acepten los argumentos de la función. Veamos un ejemplo:
+Una vez conocido el uso de la función *return*, podemos introducirnos en la explicación de las funciones. En primer lugar, si una función usa argumentos, es  necesario declarar variables que acepten los argumentos de la función. Veamos un ejemplo:
 
 int EstaEn(char \*cad,char c) /\* Devuelve 1 si el carácter c \*/ {                            /\* esta en el string cad \*/
 
@@ -994,7 +994,7 @@ printf(“Al principio valen a=%d b=%f\n”,a,b);    Alfa(&a,b);
 
 `   `printf(“Después de Beta valen a=%d b=%f\n”,a,b); }
 
-Este programa mostrara en pantalla:![ref2]
+Este programa mostrara en pantalla:
 
 Al principio valen a=6 b=9.87 Después de Alfa  valen a=5 b=9.87 Después de Beta valen a=5 b=14.7
 
@@ -1033,7 +1033,7 @@ Array[5] vale: 8.6 y array[3] vale: 0
 La  función *main()*,  como  toda  función  de  C,  acepta  argumentos.  Los argumentos que acepta la función *main()* son un entero (*int argc*), un array de punteros a strings (*char \*argv[]*), y otro array de punteros a strings (*char \*env[]*). Aunque los nombres de dichos argumentos no tienen porque ser *argc*, *argv*, y *env*, en toda la literatura de C se usan dichos nombres, y aquí los respetaremos. El significado de los parámetros *argc*, *argv* y *env* es el siguiente:
 
 - El parámetro *argc* contiene el número de argumentos en la línea de ordenes de la llamada al programa.
-- El parámetro *argv* contiene un puntero a cada uno de los argumentos (strings) de la línea de ordenes de la llamada al programa.![ref2]
+- El parámetro *argv* contiene un puntero a cada uno de los argumentos (strings) de la línea de ordenes de la llamada al programa.
 - El parámetro *env* contiene un puntero a cada una de las variables de ambiente (strings) del sistema operativo.
 
   Veamos un ejemplo de programa que use argumentos en la línea de ordenes:
@@ -1082,7 +1082,7 @@ if (num==0) return 1;
 
 return num\*Factorial(num-1);
 
-}![ref2]
+}
 
 La recursividad es una poderosa herramienta de programación, sin embargo, presenta dos problemas:
 
@@ -1105,7 +1105,7 @@ Generalmente, los punteros a funciones se usan en la programación de bajo nivel
 
 7. **- El modificador de almacenamiento static aplicado a funciones.**
 
-Al igual que en el caso de las variables globales, es posible aplicar delante de una función el modificador de almacenamiento *static*. Dicho modificador hace que la función sobre la que se aplica sea local al módulo donde se encuentra, y no pueda ser conocida por los restantes módulos del programa, de igual forma a como sucedía con las variables globales. Esta modificación del alcance de una función permite realizar un mejor encapsulado del código y simplificar la programación en proyectos de gran envergadura.![ref2]
+Al igual que en el caso de las variables globales, es posible aplicar delante de una función el modificador de almacenamiento *static*. Dicho modificador hace que la función sobre la que se aplica sea local al módulo donde se encuentra, y no pueda ser conocida por los restantes módulos del programa, de igual forma a como sucedía con las variables globales. Esta modificación del alcance de una función permite realizar un mejor encapsulado del código y simplificar la programación en proyectos de gran envergadura.
 
 **Tema 8 - Estructuras, campos de bit, uniones y** 
 
@@ -1161,7 +1161,7 @@ float c,d; }variable;
 
 Para referenciar un elemento de una estructura se realiza de la siguiente forma:
 
-variables\_estructura.nombre\_variable;![ref2]
+variables\_estructura.nombre\_variable;
 
 Así, podíamos referenciar los elementos de las estructuras anteriores de la siguiente forma:
 
@@ -1211,7 +1211,7 @@ int main(void)
 
 {
 
-struct ALFA a,b[10];![ref2]
+struct ALFA a,b[10];
 
 PasoDeElementos(a.val,a.b);    PasoDeLaEstructuraPorValor(a);    PasoDeLaEstructuraPorReferencia(&a);    PasoDeUnArrayDeEstructuras(b);
 
@@ -1255,7 +1255,7 @@ unsigned : 4;
 
 unsigned c : 1; }campo;
 
-En dicho ejemplo, se declara un campo de bit de tamaño 4 al cual no se le da nombre, eso es valido, y su efecto es que esos cuatro bits no podrían ser referenciados.![ref2]
+En dicho ejemplo, se declara un campo de bit de tamaño 4 al cual no se le da nombre, eso es valido, y su efecto es que esos cuatro bits no podrían ser referenciados.
 
 Es posible mezclar en la declaración elementos normales de estructura con elementos de campo de bit. Veamos un ejemplo:
 
@@ -1301,7 +1301,7 @@ unsigned short a; char b[2];
 
 };beta
 
-Entonces *beta.b[0]* contendrá el byte bajo de *beta.a*, y *beta.b[1]* contendrá el byte alto de *beta.a*. Ello permite acceder a la parte alta o baja de dicho *unsigned short* sin necesidad de usar operadores sobre bits.![ref2]
+Entonces *beta.b[0]* contendrá el byte bajo de *beta.a*, y *beta.b[1]* contendrá el byte alto de *beta.a*. Ello permite acceder a la parte alta o baja de dicho *unsigned short* sin necesidad de usar operadores sobre bits.
 
 4. **- Enumeraciones.**
 
@@ -1402,7 +1402,7 @@ Los archivos incluidos mediante *#include*  pueden a su vez poseer otras directi
 
 5. **- Directivas #if, #ifdef, #ifndef, #else, #elif y #endif.**
 
-Las  directivas *#if*, *#ifdef*, *#ifndef*, *#else*, *#elif*  y *#endif*  son  directivas condicionales de compilación. Estas directivas permiten decirle al compilador que partes del programa debe compilar bajo distintas condiciones.![ref2]
+Las  directivas *#if*, *#ifdef*, *#ifndef*, *#else*, *#elif*  y *#endif*  son  directivas condicionales de compilación. Estas directivas permiten decirle al compilador que partes del programa debe compilar bajo distintas condiciones.
 
 La idea general de la directiva *#if* es que si es verdad la expresión que se encuentra después del *#if*, se compilara el código que figura entre el *#if* y el *#endif* se compilara. La directiva *#else* funciona de igual forma que el *else* del lenguaje C. La directiva *#elif* funciona como el escalonado de *if* del lenguaje C. La definición formal es:
 
@@ -1454,7 +1454,7 @@ La directivas *#ifdef* y *#ifndef* se usan también para compilación condiciona
 
 `   `secuencia de sentencias #else
 
-`   `secuencia de sentencias #endif![ref2]
+`   `secuencia de sentencias #endif
 
 E igual para *#ifndef*. Veamos algunos ejemplos:
 
@@ -1492,7 +1492,7 @@ realmente.
 
 La directiva *#pragma*  es una directiva que permite dar instrucciones al compilador sobre como debe realizar la compilación del código fuente. Su sintaxis es:
 
-#pragma nombre![ref2]
+#pragma nombre
 
 **Tema 10 - Entrada y salida.**
 
@@ -1522,7 +1522,7 @@ int putchar(int c);
 
 La función *putchar()*, si sucede de forma correcta, devuelve el carácter escrito. En caso de error devuelve el carácter *EOF*.
 
-Veamos un ejemplo de uso de *getchar()* y *putchar()*:![ref2]
+Veamos un ejemplo de uso de *getchar()* y *putchar()*:
 
 #include <stdio.h>
 
@@ -1574,7 +1574,7 @@ gets(cadena);
 
 return 0;
 
-}![ref2]
+}
 
 La función *scanf()* se usa para leer cualquier tipo de dato predefinido desde el teclado, y convertirlo, de forma automática, al formato interno adecuado. La función se define como:
 
@@ -1611,7 +1611,7 @@ Además, es posible utilizar los modificadores *h* (*short*), *l* (*long*)  y *L
 
 Los caracteres de espacio en blanco en la cadena de control dan lugar a que *scanf()* lea y salte sobre cualquier número (incluido cero) de espacios en blanco. Un espacio en blanco es, además del carácter espacio, un tabulador o un salto de línea.
 
-Un carácter que no sea espacio en blanco da lugar a que *scanf()* lea y elimine el carácter asociado. Por ejemplo, *%d:%d*  da lugar a que *scanf()*  lea primero un *int*, ![ref2]
+Un carácter que no sea espacio en blanco da lugar a que *scanf()* lea y elimine el carácter asociado. Por ejemplo, *%d:%d*  da lugar a que *scanf()*  lea primero un *int*, 
 
 después lea, y descarte, los dos puntos, y luego lea otro *int*. Si el carácter especificado no se encuentra, *scanf()* termina su ejecución.
 
@@ -1631,7 +1631,7 @@ formato es:
 
 int printf(const char \*formato[,argumento,...]);
 
-La cadena apuntada por formato consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Las ordenes de formato están precedidas por el signo *%* y le sigue el código de formato. Estas ordenes de formato son:![ref2]
+La cadena apuntada por formato consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Las ordenes de formato están precedidas por el signo *%* y le sigue el código de formato. Estas ordenes de formato son:
 
 
 
@@ -1693,7 +1693,7 @@ Sobre un archivo es necesario, antes de poder usarlo, realizar una operación, l
 
 La función *fopen()* se encarga de abrir un archivo. Su definición es:
 
-FILE \*fopen(char \*nombre,char \*modo);![ref2]
+FILE \*fopen(char \*nombre,char \*modo);
 
 Donde *nombre* es un string que contiene el nombre del archivo que queremos leer y *modo* es otro string que contiene el modo de apertura deseado. Dichos modos de apertura son:
 
@@ -1738,7 +1738,7 @@ if ((fp=fopen("prueba","w"))==NULL)
 
 `   `puts("\nNo puedo abrir el fichero\n");    exit(1);
 
-}![ref2]
+}
 
 La función *fclose()* cierra un archivo. Su definición es:
 
@@ -1800,7 +1800,7 @@ int fputs(const char \*str,FILE \*fp);
 
 int fscanf(FILE \*fp,const char \*formato[,dirección,...]); int fprintf(FILE \*fp,const char \*formato[,argumento,...]); int fread(void \*memoria,int num,int cont,FILE \*fp);
 
-int fwrite(void \*memoria,int num,int cont,FILE \*fp);![ref2]
+int fwrite(void \*memoria,int num,int cont,FILE \*fp);
 
 La función *getc()*  lee caracteres del archivo asociado a *fp*. Devuelve *EOF* cuando se alcanza el final del archivo.
 
@@ -1828,7 +1828,7 @@ La función *fwrite()*  devuelve el número de bloques (no bytes) realmente
 
 escritos.
 
-Un aspecto a resaltar de las funciones *fread()* y *fwrite()* es el hecho de que no realizan ningún tipo de conversión con los datos leídos o escritos, así , la secuencia retorno de carro/alimentación de línea, no es convertida en el carácter nueva línea en la escritura,  y  viceversa  para  la  lectura.  Es  por  ello,  que  dichas  funciones  son, generalmente, usadas con archivos abiertos en modo binario.![ref2]
+Un aspecto a resaltar de las funciones *fread()* y *fwrite()* es el hecho de que no realizan ningún tipo de conversión con los datos leídos o escritos, así , la secuencia retorno de carro/alimentación de línea, no es convertida en el carácter nueva línea en la escritura,  y  viceversa  para  la  lectura.  Es  por  ello,  que  dichas  funciones  son, generalmente, usadas con archivos abiertos en modo binario.
 
 Veamos un ejemplo de uso de *fread()* y *fwrite()*:
 
@@ -1886,7 +1886,7 @@ La función *fseek()*  se usa para operaciones de entrada y salida de acceso ale
 |Posición actual|SEEK\_CUR|1|
 |Final del archivo|SEEK\_END|2|
 
-*Tabla 10.2.2: Valores del origen en la función fseek().![ref2]*
+*Tabla 10.2.2: Valores del origen en la función fseek().*
 
 La función *fseek()* devuelve un valor de cero si funciona correctamente. Un valor distinto de cero indica un error en la última operación de posicionamiento en el fichero.
 
@@ -1910,7 +1910,7 @@ char cadena[100]; fgets(cadena,100,stdin);
 
 Y escribir dicha cadena, por ejemplo en la salida standard de error, de la forma:
 
-fputs(cadena,stderr);![ref2]
+fputs(cadena,stderr);
 
 **Tema 11 - Asignación dinámica de memoria.**
 
@@ -1948,7 +1948,7 @@ if ((b=(unsigned long int)malloc(sizeof(unsigned long int)))==NULL)
 
 exit(0); /\* Salimos del programa \*/
 
-struct ALFA{![ref2]
+struct ALFA{
 
 unsigned a;
 
@@ -1992,7 +1992,7 @@ struct LISTA{
 
 `   `struct LISTA \*sig; };
 
-Donde *tipo* es cualquier tipo de datos valido (*float*, *int*, *long int*, etc.)![ref2]
+Donde *tipo* es cualquier tipo de datos valido (*float*, *int*, *long int*, etc.)
 
 Las variables necesarias para crear la lista son las siguientes:
 
@@ -2060,7 +2060,7 @@ p=p->sig;
 
 if (p!=NULL)
 
-{![ref2]
+{
 
 q->sig=p->sig; free(p);
 
@@ -2072,7 +2072,7 @@ return cabeza;
 
 }
 
-Siendo la llamada: cabeza=LiberarLista(cabeza,dato);![ref2]
+Siendo la llamada: cabeza=LiberarLista(cabeza,dato);
 
 **Apéndice A - Funciones de biblioteca del** 
 
@@ -2106,7 +2106,7 @@ La  función *feof()*  comprueba  el  indicador  de  posición  del  archivo  pa
 
 ferror
 
-#include <stdio.h> int ferror(FILE \*f);![ref2]
+#include <stdio.h> int ferror(FILE \*f);
 
 La función *ferror()*** comprueba si existen errores en alguna operación realizada sobre el archivo asociado a *f***.** Un valor devuelto de cero indica que no hay errores, un valor distinto de cero indica la existencia de errores. Los indicadores de error asociados a *f*  permanecen activos hasta que se cierra el archivo o se llama a las funciones *rewind()* o *perror()*.
 
@@ -2138,7 +2138,7 @@ fopen
 
 FILE \*fopen(const char \*nombre,const char \*modo);
 
-La función *fopen()*  abre un archivo cuyo nombre viene dado por *nombre*  y devuelve un puntero a una estructura de tipo *FILE* que se le asocia en la apertura. El ![ref2] tipo de operaciones permitidas en el archivo están definidas por el valor de *modo*. Los valores permitidos de *modo* son:
+La función *fopen()*  abre un archivo cuyo nombre viene dado por *nombre*  y devuelve un puntero a una estructura de tipo *FILE* que se le asocia en la apertura. El  tipo de operaciones permitidas en el archivo están definidas por el valor de *modo*. Los valores permitidos de *modo* son:
 
 
 
@@ -2181,7 +2181,7 @@ fputc
 
 int fputc(int c,FILE \*f);
 
-La  función *fputc()*  escribe el carácter especificado por *c*  en el  archivo especificado por *f* a partir de la posición actual del archivo, y entonces incrementa el indicador de posición del archivo. Aunque *c* tradicionalmente se declara de tipo *int*, es convertido por *fputc()* a *unsigned char*, por lo cual en lugar de un *int* se puede usar como argumento un *char* o *unsigned char*. Si se utiliza un *int*, la parte alta del mismo ![ref2]
+La  función *fputc()*  escribe el carácter especificado por *c*  en el  archivo especificado por *f* a partir de la posición actual del archivo, y entonces incrementa el indicador de posición del archivo. Aunque *c* tradicionalmente se declara de tipo *int*, es convertido por *fputc()* a *unsigned char*, por lo cual en lugar de un *int* se puede usar como argumento un *char* o *unsigned char*. Si se utiliza un *int*, la parte alta del mismo 
 
 será ignorada y no se escribirá. Si se ejecuta de forma correcta, *fputc()* devuelve el valor *c*, en caso de error devuelve el valor *EOF*.
 
@@ -2217,7 +2217,7 @@ fseek
 
 #int fseek(FILE \*f,long desp,int origen);
 
-La función *fseek()* coloca el indicador de posición del archivo asociado a la variable *f*** de acuerdo a los valores dados por *origen* y *desp*. Su objetivo es dar soporte a las operaciones de E/S de acceso directo. El valor de *origen* debe ser una de estas constantes, definidas en *stdio.h*:![ref2]
+La función *fseek()* coloca el indicador de posición del archivo asociado a la variable *f*** de acuerdo a los valores dados por *origen* y *desp*. Su objetivo es dar soporte a las operaciones de E/S de acceso directo. El valor de *origen* debe ser una de estas constantes, definidas en *stdio.h*:
 
 
 
@@ -2254,7 +2254,7 @@ getc
 
 La función *getc()*** devuelve del archivo de entrada asociado a la variable *f* el siguiente carácter desde la posición actual e incrementa el indicador de posición del archivo. El carácter se lee como *unsigned char* y se transforma en un *int*. Si se alcanza el final de archivo devuelve el carácter *EOF*. Debido a que *EOF* es un valor valido para  archivos  abiertos en modo  binario,  debe  utilizarse la función *feof()*  para comprobar el final del fichero en dichos archivos.
 
-gets![ref2]
+gets
 
 #include <stdio.h>
 
@@ -2276,7 +2276,7 @@ printf
 
 int printf(const char \*formato,...);
 
-La función *printf()* escribe en *stdout* (salida standard, generalmente la pantalla), los argumentos que componen la lista de argumentos bajo el control de la cadena apuntada por *formato*. La cadena apuntada por *formato*  consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Una orden de formato comienza por el signo *%*, y le sigue el código de formato. Las ordenes de formato son:![ref2]
+La función *printf()* escribe en *stdout* (salida standard, generalmente la pantalla), los argumentos que componen la lista de argumentos bajo el control de la cadena apuntada por *formato*. La cadena apuntada por *formato*  consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Una orden de formato comienza por el signo *%*, y le sigue el código de formato. Las ordenes de formato son:
 
 
 
@@ -2329,7 +2329,7 @@ rewind
 
 #include <stdio.h> void rewind(FILE \*f);
 
-La función *rewind()* mueve el indicador de posición del archivo apuntado por *f* al principio del mismo. La función *rewind()* inicializa también los indicadores de error y de fin de archivo asociados a la variable *f*. Ningún valor es devuelto.![ref2]
+La función *rewind()* mueve el indicador de posición del archivo apuntado por *f* al principio del mismo. La función *rewind()* inicializa también los indicadores de error y de fin de archivo asociados a la variable *f*. Ningún valor es devuelto.
 
 scanf
 
@@ -2368,7 +2368,7 @@ Además, es posible utilizar los modificadores *h* (*short*), *l* (*long*) y *L*
 
 Un espacio en blanco en la cadena de control da lugar a que *scanf()* salte sobre uno o mas espacios de la cadena de entrada, un espacio en blanco puede ser un espacio, un tabulador o un salto de línea. Además, un espacio en blanco da lugar, también, a que *scanf()* lea, pero no guarde cualquier número de espacios en blanco, incluso cero.
 
-Un carácter que no sea espacio en blanco, da lugar a que *scanf()* lea y elimine el carácter asociado. Por ejemplo, *%d:%d*  da lugar a que *scanf()*  lea primero un *int*, después lea, y descarte, los dos puntos, y luego lea otro *int*. Si el carácter especificado no se encuentra, *scanf()* termina su ejecución.![ref2]
+Un carácter que no sea espacio en blanco, da lugar a que *scanf()* lea y elimine el carácter asociado. Por ejemplo, *%d:%d*  da lugar a que *scanf()*  lea primero un *int*, después lea, y descarte, los dos puntos, y luego lea otro *int*. Si el carácter especificado no se encuentra, *scanf()* termina su ejecución.
 
 Todas las variables utilizadas para recibir valores a través de *scanf()* deben ser pasadas por referencia, o sea, por sus direcciones. Esto supone que los argumentos deben ser punteros a las funciones.
 
@@ -2404,7 +2404,7 @@ La función *setvbuf()* permite al programador especificar el buffer, el tamaño
 |\_IOLBF|Igual al anterior, solo que el buffer también se vacía cuando se lee o escribe un retorno de carro.|
 |\_IONBF|Desactiva el buffer.|
 
-*Tabla A.1.5: Valores del modo en la función setvbuf().![ref2]*
+*Tabla A.1.5: Valores del modo en la función setvbuf().*
 
 La función *setvbuf()* devuelve un valor de cero si se ejecuta con éxito. En caso de error, un valor distinto de cero será devuelto.
 
@@ -2440,7 +2440,7 @@ secuencia de entrada. No se debe usar *ungetc()* sobre una marca de *EOF*. El va
 
 La función *isalnum()* devuelve un valor distinto de cero si *ch* es una letra del alfabeto o un dígito. En caso contrario, se devuelve un valor distinto de cero.
 
-isalpha![ref2]
+isalpha
 
 #include <ctype.h> int isalpha(int ch);
 
@@ -2478,7 +2478,7 @@ La función *isprintf()*  devuelve un valor distinto de cero si *ch*  es cualqui
 
 ispunct
 
-#include <ctype.h>![ref2]
+#include <ctype.h>
 
 int ispunct(int ch);
 
@@ -2514,7 +2514,7 @@ toupper
 
 #include <ctype.h> int toupper(int ch);
 
-La función *toupper()* devuelve el equivalente en mayúsculas de *ch*, si *ch* es una letra minúscula, en cualquier otro caso se devuelve *ch* sin modificar.![ref2]
+La función *toupper()* devuelve el equivalente en mayúsculas de *ch*, si *ch* es una letra minúscula, en cualquier otro caso se devuelve *ch* sin modificar.
 
 **A.3 - Funciones de cadenas.** memchr
 
@@ -2562,7 +2562,7 @@ strcat
 
 #include <string.h>
 
-char \*strcat(char \*cad1,const char \*cad2);![ref2]
+char \*strcat(char \*cad1,const char \*cad2);
 
 La función *strcat()* concatena una copia de *cad2* en *cad1*, y añade al final de *cad1* un carácter nulo (*'\0'*). El carácter nulo de terminación, que originalmente tenía *cad1*, es sustituido por el primer carácter de *cad2*. La cadena *cad2* no se modifica en esta operación. La función *strcat()* devuelve *cad1*.
 
@@ -2612,7 +2612,7 @@ strtok
 
 #include <string.h>
 
-char \*strtok(char \*cad1,const char \*cad2);![ref2]
+char \*strtok(char \*cad1,const char \*cad2);
 
 La función *strtok()* devuelve un puntero a la siguiente palabra de la cadena apuntada por *cad1*. Los caracteres que constituyen la cadena apuntada por *cad2* son los delimitadores que identifican la palabra. Devuelve un puntero nulo (*NULL*) cuando no existe ninguna palabra que devolver.
 
@@ -2644,7 +2644,7 @@ atan2
 
 double atan2(double y,double x);
 
-La función *atan2()*  devuelve el arcotangente de *y/x*. Utiliza el signo de sus argumentos para obtener el cuadrante del valor devuelto.![ref2]
+La función *atan2()*  devuelve el arcotangente de *y/x*. Utiliza el signo de sus argumentos para obtener el cuadrante del valor devuelto.
 
 ceil
 
@@ -2682,7 +2682,7 @@ floor
 
 #include <math.h> double floor(double num);
 
-La función *floor()* devuelve el mayor entero, representado como *double*, que no es mayor que *num*. Por ejemplo, dado *1.02*, *floor()* devuelve *1.0*, dado *-1.02*, *floor()* devuelve *-2.0*.![ref2]
+La función *floor()* devuelve el mayor entero, representado como *double*, que no es mayor que *num*. Por ejemplo, dado *1.02*, *floor()* devuelve *1.0*, dado *-1.02*, *floor()* devuelve *-2.0*.
 
 fmod
 
@@ -2726,7 +2726,7 @@ sinh
 
 #include <math.h> double sinh(double arg);
 
-La función *sinh()* devuelve el seno hiperbólico de *arg*. El valor de *arg* debe venir dado en radianes.![ref2]
+La función *sinh()* devuelve el seno hiperbólico de *arg*. El valor de *arg* debe venir dado en radianes.
 
 sqrt
 
@@ -2760,7 +2760,7 @@ free
 
 #include <stdlib.h> void free(void \*ptr);
 
-La función *free()*  libera la memoria apuntada por *ptr*, haciendo que dicha memoria este disponible para futuras asignaciones. Solo se debe llamar a *free()* con un puntero que haya sido previamente asignado utilizando alguna función de asignación dinámica.![ref2]
+La función *free()*  libera la memoria apuntada por *ptr*, haciendo que dicha memoria este disponible para futuras asignaciones. Solo se debe llamar a *free()* con un puntero que haya sido previamente asignado utilizando alguna función de asignación dinámica.
 
 malloc
 
@@ -2794,7 +2794,7 @@ double atof(const char \*cad);
 
 La función *atof()* convierte la cadena apuntada por *cad* en un valor de tipo *double*. La cadena debe contener un número valido en coma flotante. En caso contrario el valor devuelto es indefinido.
 
-El número puede terminar por cualquier carácter que no pueda formar parte de un número válido en coma flotante. Esto incluye espacios en blanco, signos de puntuación distintos del punto, y caracteres que no sean *E* o *e*. Así si se llama a *atof()* con la cadena *"100.00HOLA"*, devolverá el valor *100.00*.![ref2]
+El número puede terminar por cualquier carácter que no pueda formar parte de un número válido en coma flotante. Esto incluye espacios en blanco, signos de puntuación distintos del punto, y caracteres que no sean *E* o *e*. Así si se llama a *atof()* con la cadena *"100.00HOLA"*, devolverá el valor *100.00*.
 
 atoi
 
@@ -2832,7 +2832,7 @@ system
 
 int system(const char \*cad);
 
-La función *system()*  pasa la cadena apuntada por *cad*  como una orden al procesador de ordenes del sistema operativo. Si se llama a *system()* con un puntero nulo (*NULL*), devuelve un valor distinto de cero si está presente un procesador de ![ref2] ordenes, en otro caso, se devuelve un valor distinto de cero. Si *cad* no es un puntero nulo (*NULL*), *system()*  devuelve el valor cero si la orden ha sido correctamente ejecutada, y un valor distinto de cero en caso contrario.![ref2]
+La función *system()*  pasa la cadena apuntada por *cad*  como una orden al procesador de ordenes del sistema operativo. Si se llama a *system()* con un puntero nulo (*NULL*), devuelve un valor distinto de cero si está presente un procesador de  ordenes, en otro caso, se devuelve un valor distinto de cero. Si *cad* no es un puntero nulo (*NULL*), *system()*  devuelve el valor cero si la orden ha sido correctamente ejecutada, y un valor distinto de cero en caso contrario.
 
 El lenguaje de programación C![ref1]
 
@@ -3428,7 +3428,7 @@ printf("PRIMER APELLIDO: ");          strupr(gets(ficha->apellido[0]));
 
 `         `printf("SEGUNDO APELLIDO: ");          strupr(gets(ficha->apellido[1]));
 
-82![ref2]
+82
 El lenguaje de programación C![ref1]
 
 break; }![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.013.png)
@@ -3521,7 +3521,7 @@ return 0;
 
 /\* Programa que lee las palabras de un fichero y las almacena en un arbol binario \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.014.png)
 
-#include <stdio.h>![ref2]
+#include <stdio.h>
 
 
 El lenguaje de programación C![ref1]
@@ -3723,7 +3723,7 @@ Mostrar(p,&cont);
 `   `return 0;
 
 }
-86![ref2]
+86
 
 [ref1]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.001.png
 [ref2]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.002.png
