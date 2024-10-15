@@ -1337,7 +1337,7 @@ char nombre[40];    char apellido[40]; }cliente;
 
 Y entonces podrían crearse nuevas variables de la forma:
 
-entero a; cliente b,\*c;![ref2]
+entero a; cliente b,\*c;
 
 **Tema 9 - El preprocesador.**
 
@@ -1372,7 +1372,7 @@ printf("El valor mínimo es: %d\n",MIN(10,20));
 
 El compilador sustituye el "nombre de macro" y sus argumentos en tiempo de compilación, y ello equivale a haber escrito el código:
 
-printf("El valor mínimo es: %d\n",(10<20) ? 10 : 20);![ref2]
+printf("El valor mínimo es: %d\n",(10<20) ? 10 : 20);
 
 2. **- Directiva #undef.**
 
