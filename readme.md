@@ -2834,7 +2834,7 @@ int system(const char \*cad);
 
 La función *system()*  pasa la cadena apuntada por *cad*  como una orden al procesador de ordenes del sistema operativo. Si se llama a *system()* con un puntero nulo (*NULL*), devuelve un valor distinto de cero si está presente un procesador de  ordenes, en otro caso, se devuelve un valor distinto de cero. Si *cad* no es un puntero nulo (*NULL*), *system()*  devuelve el valor cero si la orden ha sido correctamente ejecutada, y un valor distinto de cero en caso contrario.
 
-El lenguaje de programación C![ref1]
+El lenguaje de programación C
 
 **Apéndice B: Ejemplos de programas en C.**
 
@@ -2890,7 +2890,7 @@ return 0;
 
 /\* Programa que calcula el producto de dos matrices. \*/ #include <stdio.h>![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.007.png)
 
-/\* Definicion del tamaño maximo \*/ #define TAM 10![ref3]
+/\* Definicion del tamaño maximo \*/ #define TAM 10
 
 /\* Definicion de los codigos de error \*/ #define OK 0
 
@@ -2952,7 +2952,7 @@ register unsigned i,j;
 
 float valor;
 
-`   `a->fila=PedirTamano("\nNumero de filas de la matriz: ");![ref3]
+`   `a->fila=PedirTamano("\nNumero de filas de la matriz: ");
 
 `   `a->columna=PedirTamano("\nNumero de columnas de la matriz: \n");
 
@@ -3106,7 +3106,7 @@ float \*p;
 
 register unsigned i;
 
-if ((fp=fopen(nombre,"rt"))==NULL)![ref3]
+if ((fp=fopen(nombre,"rt"))==NULL)
 
 {
 
@@ -3268,7 +3268,7 @@ char nombre[TAM];
 
 };
 
-/\* Rutina que muestra un menu en pantalla. Parametros: Ninguno. Return: char Opcion elegida. \*/![ref3]
+/\* Rutina que muestra un menu en pantalla. Parametros: Ninguno. Return: char Opcion elegida. \*/
 
 char Menu(void) {
 
@@ -3346,7 +3346,7 @@ Parametros: FILE \*fichero Puntero al fichero de trabajo.             char \*ape
 
 Return: int Codigo de error.\*/
 
-int BuscarApellido(FILE \*fichero,char \*apellido) {![ref3]
+int BuscarApellido(FILE \*fichero,char \*apellido) {
 
 struct FICHA ficha;
 
@@ -3429,7 +3429,7 @@ printf("PRIMER APELLIDO: ");          strupr(gets(ficha->apellido[0]));
 `         `printf("SEGUNDO APELLIDO: ");          strupr(gets(ficha->apellido[1]));
 
 82
-El lenguaje de programación C![ref1]
+El lenguaje de programación C
 
 break; }![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.013.png)
 
@@ -3524,9 +3524,9 @@ return 0;
 #include <stdio.h>
 
 
-El lenguaje de programación C![ref1]
+El lenguaje de programación C
 
-#include <ctype.h> #include <string.h> #include <stdlib.h>![ref3]
+#include <ctype.h> #include <string.h> #include <stdlib.h>
 
 /\* Definicion de la longitud maxima de una palabra \*/ #define TAM 30
 
@@ -3600,7 +3600,7 @@ if ((fichero=fopen(nombre,"rt"))==NULL)
 
 if ((q=(struct ARBOL \*)malloc(sizeof(struct ARBOL)))==NULL) {
 
-`         `printf("\nError reservando memoria.\n");![ref3]
+`         `printf("\nError reservando memoria.\n");
 
 fclose(fichero);
 
