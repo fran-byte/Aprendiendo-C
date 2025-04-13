@@ -3728,3 +3728,72 @@ Mostrar(p,&cont);
 [ref1]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.001.png
 [ref2]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.002.png
 [ref3]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.008.png
+
+
+
+---
+
+## 🔍 **Uso de Valgrind para Depuración de Memoria en C**
+
+Valgrind es una herramienta esencial para detectar **errores de memoria** (leaks, accesos inválidos, etc.) en programas C. Su uso es especialmente crítico en proyectos como los de 42, donde la gestión manual de memoria es frecuente.
+
+### 📌 **Instalación (Linux/macOS)**
+```bash
+# Ubuntu/Debian
+sudo apt install valgrind
+
+# macOS (via Homebrew)
+brew install valgrind
+```
+
+### 🔥 **Comando Básico**
+```bash
+valgrind --leak-check=full ./tu_programa argumentos
+```
+
+### 🛠️ **Flags Recomendados para Máxima Detección**
+| Flag | Descripción |
+|------|-------------|
+| `--leak-check=full` | Detalla el origen de *todos* los memory leaks |
+| `--show-leak-kinds=all` | Muestra leaks definitivos, indirectos y posibles |
+| `--track-origins=yes` | Rastrea orígenes de valores no inicializados |
+| `--trace-children=yes` | Analiza procesos hijos (útil si usas `fork()` o `system()`) |
+| `--error-exitcode=1` | Retorna error si hay problemas (ideal para CI/CD) |
+
+### 🎯 **Ejemplo Práctico**
+Supongamos que tu programa `so_long` tiene un memory leak:
+```bash
+valgrind --leak-check=full --show-leak-kinds=all ./so_long map.ber
+```
+**Salida típica:**
+```
+==12345== 40 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==12345==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==12345==    by 0x109234: crear_mapa (mapa.c:15)
+==12345==    by 0x109567: main (main.c:28)
+```
+- **Interpretación**: 40 bytes perdidos en `mapa.c`, línea 15. ¡Debes liberarlos con `free()`!
+
+### 📝 **Errores Comunes que Detecta**
+| Error | Causa | Solución |
+|-------|-------|----------|
+| **Definitely lost** | Memoria nunca liberada | Añade `free()` donde corresponda |
+| **Invalid read/write** | Acceso a memoria liberada o fuera de límites | Verifica índices y punteros |
+| **Use of uninitialized values** | Variables no inicializadas | Inicializa siempre las variables |
+
+### 🚨 **Supresión de Falsos Positivos (Ej: MiniLibX)**
+Crea un archivo `mlx.supp`:
+```xml
+{
+   <MLX_False_Positives>
+   Memcheck:Leak
+   ...
+   fun:mlx_init
+   ...
+}
+```
+Y úsalo con:
+```bash
+valgrind --suppressions=mlx.supp ./tu_programa
+```
+
