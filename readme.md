@@ -2867,1466 +2867,1342 @@ cabeza = LiberarLista(cabeza, dato);
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-## standard ANSI de C.
 
-Antes de comenzar a describir las funciones de biblioteca del standard ANSI de C, unos pequeños comentarios:
+Antes de comenzar a describir las funciones de biblioteca del estándar ANSI de C, es importante tener en cuenta lo siguiente:
 
-Existen muchas mas funciones de las aquí descritas, pero este pequeño conjunto de funciones es lo suficientemente amplio como para que puedan realizarse todas las operaciones necesarias.
+* Existen **muchas más funciones** que las aquí descritas.
+* Sin embargo, este conjunto representa una base **suficientemente amplia** para realizar todas las operaciones básicas necesarias.
+* Las funciones están **clasificadas según su propósito** (entrada/salida, manipulación de memoria, etc.) para facilitar su consulta y uso.
 
-Las funciones se encuentran clasificadas de acuerdo a la función que realizan (entrada/ salida de datos, etc.), con el fin de facilitar su uso.
+### Estructura de presentación de cada función
 
-Las funciones se presentan de la siguiente forma:
+Cada función se presenta con la siguiente información:
 
-Nombre de la función: *fclose*
+* **Nombre de la función:**
+  *fclose*
 
-Fichero de includes donde se encuentra su prototipo: *#include <stdio.h>* Formato de la función: *int fclose(FILE \*f);*
+* **Fichero de inclusión (`#include`) donde se encuentra su prototipo:**
+  `#include <stdio.h>`
 
-Breve descripción de la función.
+* **Formato de la función (prototipo):**
+  `int fclose(FILE *f);`
 
-## A.1  Funciones de entrada y salida de datos. fclose
+* **Descripción breve de la función:**
+  Cierra un archivo previamente abierto. Libera los recursos asociados y asegura que toda la información pendiente se haya escrito correctamente.
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-#include <stdio.h> int fclose(FILE \*f);
+## A.1 Funciones de entrada y salida de datos
 
-La función *fclose()* cierra el archivo asociado a la variable *f* y vuelca su buffer al disco. Después de un *fclose()*, la variable *f* queda desligada del archivo y cualquier buffer que tuviera asignado se libera. Si *fclose()* se ejecuta de forma correcta, devuelve el valor cero, en cualquier otro caso devuelve un valor distinto de cero.
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-feof
+---
 
-#include <stdio.h> int feof(FILE \*f);
+### `fclose`
 
-La  función *feof()*  comprueba  el  indicador  de  posición  del  archivo  para determinar si se ha alcanzado el final del archivo asociado a *f*. Un valor distinto de cero supone que el indicador de posición del archivo esta en el final del mismo, en caso contrario se devuelve el valor cero.
-
-ferror
-
-#include <stdio.h> int ferror(FILE \*f);
-
-La función *ferror()*** comprueba si existen errores en alguna operación realizada sobre el archivo asociado a *f***.** Un valor devuelto de cero indica que no hay errores, un valor distinto de cero indica la existencia de errores. Los indicadores de error asociados a *f*  permanecen activos hasta que se cierra el archivo o se llama a las funciones *rewind()* o *perror()*.
-
-fflush
-
-#include <stdio.h> int fflush(FILE \*f);
-
-La función *fflush()* vacía el buffer asociado a la variable *f*. Si el archivo ha sido abierto para escritura, *fflush()* vacía el contenido del buffer de salida en el archivo. Si el archivo ha sido abierto para lectura, *fflush()* tan solo vacía el contenido del buffer de entrada. Un valor de cero indica que el buffer se ha vaciado de forma correcta, un valor distinto de cero indica un error. Todos los buffers se vuelcan automáticamente cuando un programa termina de forma correcta, cuando están llenos, o cuando se cierra el archivo (ver *fclose()*).
-
-fgetc
-
-#include <stdio.h> int fgetc(FILE \*f);
-
-La función *fgetc()* devuelve el carácter del archivo de entrada asociado a *f*, e incrementa el indicador de posición del archivo. El carácter se lee como *unsigned char* y se convierte a *int*, por lo cual no existe ningún problema en asignarle el valor devuelto por *fgetc()* a una variable de tipo carácter (*char*).
-
-fgets
-
+```c
 #include <stdio.h>
+int fclose(FILE *f);
+```
 
-char \*fgets(char \*cad,int num,FILE \*f);
+Cierra el archivo asociado a `f` y vuelca su buffer al disco. Devuelve 0 si tuvo éxito, y distinto de cero en caso de error.
 
-La función *fgets()*  lee como máximo hasta *num-1*  caracteres del archivo asociado a *f*** y los sitúa en el array apuntado por *cad*. Los caracteres se leen hasta que se recibe un carácter de salto de linea, un *EOF* (fin de fichero) o hasta que se llega al limite especificado. Después de leídos los caracteres, se pone automáticamente un carácter de nulo inmediatamente después del ultimo carácter leído. Si se termina la lectura por un carácter de salto de linea, dicho carácter se guarda como parte de *cad*. Si 
+---
 
-tiene éxito, *fgets()* devuelve un puntero a la dirección de *cad*. En caso de error devuelve un puntero nulo (*NULL*).
+### `feof`
 
-fopen
-
+```c
 #include <stdio.h>
+int feof(FILE *f);
+```
 
-FILE \*fopen(const char \*nombre,const char \*modo);
+Comprueba si se alcanzó el final del archivo. Devuelve un valor distinto de cero si es así, 0 en caso contrario.
 
-La función *fopen()*  abre un archivo cuyo nombre viene dado por *nombre*  y devuelve un puntero a una estructura de tipo *FILE* que se le asocia en la apertura. El  tipo de operaciones permitidas en el archivo están definidas por el valor de *modo*. Los valores permitidos de *modo* son:
+---
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+### `ferror`
 
-|**Modo**|**Descripción**|
-| - | - |
-|r|Abrir un archivo para lectura.|
-|w|Crear un archivo para escritura.|
-|a|Abrir un archivo para añadir.|
-|rb|Abrir un archivo binario para lectura.|
-|wb|Crear un archivo binario para escritura.|
-|ab|Abrir un archivo binario para añadir.|
-|rt|Abrir un archivo de texto para lectura.|
-|wt|Crear un archivo de texto para escritura.|
-|at|Abrir un archivo de texto para añadir.|
-|r+|Abrir una archivo para lectura/escritura.|
-|w+|Crear un archivo para lectura/escritura.|
-|a+|Abrir un archivo para leer/añadir.|
-|r+b|Abrir un archivo binario para lectura/escritura.|
-|w+b|Crear un archivo binario para lectura/escritura.|
-|a+b|Abrir un archivo binario para leer/añadir.|
-|r+t|Abrir un archivo de texto para lectura/escritura.|
-|w+t|Crear un archivo de texto para lectura/escritura.|
-|a+t|Abrir un archivo de texto para leer/añadir.|
-
-*Tabla A.1.1: Modos de apertura de un fichero con la función fopen().*
-
-Si *fopen()* tiene éxito en abrir el archivo, devuelve un puntero de tipo *FILE*, en caso contrario devuelve un puntero nulo (*NULL*).
-
-fprintf
-
+```c
 #include <stdio.h>
+int ferror(FILE *f);
+```
 
-int fprintf(FILE \*f,const char \*formato,...);
+Detecta errores en operaciones sobre el archivo. Devuelve 0 si no hay errores, valor distinto de cero si existen errores.
 
-La función *fprintf()*  escribe en el archivo asociado a *f*  los valores de los argumentos que componen su lista de argumentos según se especifica en la cadena *formato*. Devuelve un número que indica el número de caracteres escritos. Si se produce un error se devuelve un valor negativo. Para una explicación sobre sus argumentos consúltese la función *printf()*.
+---
 
-fputc
+### `fflush`
 
+```c
 #include <stdio.h>
+int fflush(FILE *f);
+```
 
-int fputc(int c,FILE \*f);
+Vuelca el contenido del buffer al archivo (si es de salida) o lo vacía (si es de entrada). Devuelve 0 si tuvo éxito.
 
-La  función *fputc()*  escribe el carácter especificado por *c*  en el  archivo especificado por *f* a partir de la posición actual del archivo, y entonces incrementa el indicador de posición del archivo. Aunque *c* tradicionalmente se declara de tipo *int*, es convertido por *fputc()* a *unsigned char*, por lo cual en lugar de un *int* se puede usar como argumento un *char* o *unsigned char*. Si se utiliza un *int*, la parte alta del mismo 
+---
 
-será ignorada y no se escribirá. Si se ejecuta de forma correcta, *fputc()* devuelve el valor *c*, en caso de error devuelve el valor *EOF*.
+### `fgetc`
 
-fputs
-
+```c
 #include <stdio.h>
+int fgetc(FILE *f);
+```
 
-int fputs(const char \*cad,FILE \*f);
+Lee un carácter del archivo y lo devuelve como `int`.
 
-La función *fputs()* escribe el contenido de la cadena de caracteres apuntada por *cad* en el archivo especificado por *f*. El carácter nulo de terminación de la cadena no es escrito. En caso de error *fputs()* devuelve el valor *EOF*.
+---
 
-fread
+### `fgets`
 
+```c
 #include <stdio.h>
+char *fgets(char *cad, int num, FILE *f);
+```
 
-int fread(void \*buf,size\_t tam,sise\_t cuenta, FILE \*f);
+Lee hasta `num-1` caracteres o hasta nueva línea/EOF. Devuelve `cad` si tuvo éxito, o `NULL` si hay error.
 
-La función *fread()* lee *cuenta* numero de elementos, cada uno de ellos de *tam* bytes de longitud, del archivo asociado a la variable *f*, y los sitúa en el array apuntado por *buf*. El indicador de posición del archivo se incrementa en el número de bytes leídos. La función *fread()* devuelve el número de elementos realmente leídos. Si se leen menos elementos de los pedidos en la llamada se produce un error. La función *fread()* 
+---
 
-funciona de forma correcta en archivos abiertos en modo binario; en archivos abiertos en modo texto, pueden producirse ciertos cambios de caracteres (salto de carro seguido de salto de linea se convierte en salto de linea, etc.).
+### `fopen`
 
-fscanf
-
+```c
 #include <stdio.h>
+FILE *fopen(const char *nombre, const char *modo);
+```
 
-int fscanf(FILE \*f,const char \*formato,...);
+Abre un archivo y devuelve un puntero a `FILE`. Si falla, devuelve `NULL`.
 
-La función *fscanf()* lee del archivo asociado a la variable *f*** de igual forma que la función *scanf()* lo realiza del teclado. Devuelve el numero de argumentos a los que realmente se asigna valores. Este número no incluye los campos ignorados. Si se produce un error antes de realizar la primera asignación se devuelve el valor *EOF*. Para mas información consultar la función *scanf()*.
+#### Modos de apertura:
 
-fseek
+| Modo | Descripción                     |
+| ---- | ------------------------------- |
+| r    | Lectura                         |
+| w    | Escritura (crea nuevo)          |
+| a    | Añadir                          |
+| rb   | Binario - lectura               |
+| wb   | Binario - escritura             |
+| ab   | Binario - añadir                |
+| r+   | Lectura/escritura               |
+| w+   | Crear y leer/escribir           |
+| a+   | Leer/añadir                     |
+| r+b  | Binario lectura/escritura       |
+| w+b  | Crear binario lectura/escritura |
+| a+b  | Leer/añadir binario             |
+| rt   | Texto lectura                   |
+| wt   | Texto escritura                 |
+| at   | Texto añadir                    |
 
+---
+
+### `fprintf`
+
+```c
 #include <stdio.h>
+int fprintf(FILE *f, const char *formato, ...);
+```
 
-#int fseek(FILE \*f,long desp,int origen);
+Escribe en el archivo `f` según el formato especificado. Devuelve número de caracteres escritos, o negativo en error.
 
-La función *fseek()* coloca el indicador de posición del archivo asociado a la variable *f*** de acuerdo a los valores dados por *origen* y *desp*. Su objetivo es dar soporte a las operaciones de E/S de acceso directo. El valor de *origen* debe ser una de estas constantes, definidas en *stdio.h*:
+---
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+### `fputc`
 
-|**Origen**|**Nombre de la constante**|**Valor**|
-| - | - | - |
-|Comienzo del archivo|SEEK\_SET|0|
-|Posición actual|SEEK\_CUR|1|
-|Final del archivo|SEEK\_END|2|
-| - | - | - |
-
-*Tabla A.1.2: Valores del origen en la función fseek().*
-
-La función *fseek()* devuelve un valor de cero si sucede correctamente, en caso contrario el valor devuelto es distinto de cero.
-
-Puede utilizarse *fseek()* para mover el indicador de posición en el archivo a cualquier lugar del mismo, incluso mas alla del final del mismo, pero es un error intentar situarse antes del comienzo del archivo.
-
-ftell
-
-#include <stdio.h> long ftell(FILE \*f);
-
-La función *ftell()* devuelve el valor actual del indicador de posición del archivo asociado a la variable *f*. Para archivos binarios, el valor devuelto es el número de bytes desde el principio del archivo. Para archivos de texto solo debe usarse como argumento para la función *fseek()*, ya que, debido a que secuencias de caracteres como retorno de carro y salto de línea pueden sustituirse por un salto de línea, el tamaño aparente del archivo puede variar. Si falla la función *ftell()* devuelve el valor *-1L*.
-
-fwrite
-
+```c
 #include <stdio.h>
+int fputc(int c, FILE *f);
+```
 
-int fwrite(const void \*buf,size\_t tam,size\_t cuenta,FILE \*f);
+Escribe un carácter en el archivo. Devuelve `c` o `EOF` si falla.
 
-La función *fwrite()* escribe *cuenta* numero de elementos, cada uno de ellos de *tam* bytes de longitud, del array apuntado por *buf* al archivo asociado a la variable *f***.** El indicador de posición del archivo se incrementa en el número de bytes escritos. La función *fwrite()* devuelve el número de elementos realmente escritos. Si se escriben menos elementos de los pedidos en la llamada se produce un error. La función *fwrite()* funciona de forma correcta en archivos abiertos en modo binario; en archivos abiertos en modo texto, pueden producirse ciertos cambios de caracteres (salto de carro seguido de salto de linea se convierte en salto de linea, etc.).
+---
 
-getc
+### `fputs`
 
-#include <stdio.h> int getc(FILE \*f);
-
-La función *getc()*** devuelve del archivo de entrada asociado a la variable *f* el siguiente carácter desde la posición actual e incrementa el indicador de posición del archivo. El carácter se lee como *unsigned char* y se transforma en un *int*. Si se alcanza el final de archivo devuelve el carácter *EOF*. Debido a que *EOF* es un valor valido para  archivos  abiertos en modo  binario,  debe  utilizarse la función *feof()*  para comprobar el final del fichero en dichos archivos.
-
-gets
-
+```c
 #include <stdio.h>
+int fputs(const char *cad, FILE *f);
+```
 
-char \*gets(char \*cad);
+Escribe la cadena `cad` en el archivo. No escribe el carácter nulo final.
 
-La función *gets()* lee caracteres desde *stdin* (entrada standard, normalmente el teclado), y los sitúa en el array de caracteres apuntado por *cad*. Se leen caracteres hasta que se recibe un carácter de salto de línea o una marca de *EOF*. El carácter de terminación se transforma, automáticamente, en el carácter nulo para terminar la cadena. Si se ejecuta correctamente, *gets()* devuelve un puntero a *cad*. En caso de error se devuelve un puntero nulo (*NULL*). No existe límite al número de caracteres que leerá *gets()*, por lo cual le corresponde al programador asegurarse de que no se sobrepasa el tamaño del array apuntado por *cad*.
+---
 
-perror
+### `fread`
 
+```c
 #include <stdio.h>
+int fread(void *buf, size_t tam, size_t cuenta, FILE *f);
+```
 
-int perror(const char \*cad);
+Lee `cuenta` elementos de `tam` bytes y los almacena en `buf`. Devuelve el número de elementos realmente leídos.
 
-La función *perror()* convierte el valor de la variable global *errno* en una cadena de caracteres y escribe esta cadena en *stderr* (salida standard de error). Si el valor de *cad* no es nulo (*NULL*), se escribe primero la cadena apuntada por *cad*, seguida de dos puntos y el mensaje de error asociado.
+---
 
-printf
+### `fscanf`
 
+```c
 #include <stdio.h>
+int fscanf(FILE *f, const char *formato, ...);
+```
 
-int printf(const char \*formato,...);
+Lee desde el archivo como `scanf()` lo hace desde teclado.
 
-La función *printf()* escribe en *stdout* (salida standard, generalmente la pantalla), los argumentos que componen la lista de argumentos bajo el control de la cadena apuntada por *formato*. La cadena apuntada por *formato*  consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Una orden de formato comienza por el signo *%*, y le sigue el código de formato. Las ordenes de formato son:
+---
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+### `fseek`
 
-|**Especificador**|**Descripción**|
-| - | - |
-|%c|Carácter.|
-|%d|Enteros decimales con signo.|
-|%i|Enteros decimales con signo.|
-|%e|Punto flotante en notación científica (e minúscula).|
-|%E|Punto flotante en notación científica (E mayúscula).|
-|%f|Punto flotante.|
-|%g|Usar el más corto de %e y %f.|
-|%G|Usar el más corto de %E y %f.|
-|%o|Octal sin signo.|
-|%s|Cadena de caracteres.|
-|%u|Enteros decimales sin signo.|
-|%x|Hexadecimales sin signo (letras minúsculas).|
-
-
-
-|%X|Hexadecimales sin signo (letras mayúsculas).|
-| - | - |
-|%p|Mostrar un puntero.|
-|%n|El argumento asociado es un puntero a un entero, el cual recibirá el número de caracteres escritos.|
-|%%|Imprimir el signo %.|
-
-*Tabla A.1.3: Especificadores de formato de la función printf().*
-
-Existen ademas los modificadores *h*  (*short*), *l*  (*long*) y *L*. El modificador *h* (*short*) se puede aplicar a los tipos *d*, *i*, *o*, *u*., *x* y *X*, y le dice que el tipo de datos es *short int* o *unsigned short int* según el caso. El modificador *l* (*long*), se puede aplicar a los casos anteriores, significando que el tipo de datos es *long int* o *unsigned long int*, pero, además, se puede aplicar a los tipos *e*, *E*, *f* y *g*, indicando que el tipo de datos es *double*. El modificador *L* se puede aplicar a los tipos *e*, *E*, *f* y *g*, y dice que el tipo de datos es *long double*.
-
-La función *printf()* devuelve el número de caracteres realmente escritos. Un valor negativo indica que se ha producido un error. 
-
-putc
-
+```c
 #include <stdio.h>
+int fseek(FILE *f, long desp, int origen);
+```
 
-int putc(int c,FILE \*f);
+Mueve el cursor del archivo. `origen` puede ser:
 
-La función *putc()* escribe el carácter contenido en el byte menos significativo de **c**  en el archivo apuntado por *f*. Dado que los argumentos de tipo *char*  son transformados en argumentos de tipo *int*  en el momento de la llamada, se pueden 
+| Origen               | Constante  | Valor |
+| -------------------- | ---------- | ----- |
+| Comienzo del archivo | `SEEK_SET` | 0     |
+| Posición actual      | `SEEK_CUR` | 1     |
+| Final del archivo    | `SEEK_END` | 2     |
 
-utilizar variables de tipo *char*  para el argumento *c*  de *putc()*. La función *putc()* devuelve el carácter escrito. En caso de error devuelve *EOF*, y, dado que *EOF* es un valor valido en archivos abiertos en modo binario, se recomienda en dicho tipo de archivos el uso de la función *ferror()* para la comprobación de errores.
+---
 
-puts
+### `ftell`
 
-#include <stdio.h> int puts(char \*cad);
-
-La función *puts()* escribe la cadena apuntada por *cad* en el dispositivo de salida standard. El carácter nulo de terminación de cadena se transforma en un carácter de salto de línea. Si tiene éxito, se devuelve un valor no negativo. En caso de error se devuelve el valor *EOF*.
-
-rewind
-
-#include <stdio.h> void rewind(FILE \*f);
-
-La función *rewind()* mueve el indicador de posición del archivo apuntado por *f* al principio del mismo. La función *rewind()* inicializa también los indicadores de error y de fin de archivo asociados a la variable *f*. Ningún valor es devuelto.
-
-scanf
-
+```c
 #include <stdio.h>
+long ftell(FILE *f);
+```
 
-int scanf(const char \*formato,...);
+Devuelve la posición actual del cursor en el archivo. Devuelve `-1L` en caso de error.
 
-La función *scanf()*  es una rutina de propósito general que lee de *stdin* (dispositivo standard de entrada, normalmente el teclado). Puede leer los tipos de datos que haya y transformarlos en el formato interno adecuado. Es la inversa de la función *printf()*. La cadena de control especificada por *formato*  consiste en tres clases de caracteres:
+---
 
-- Especificadores de formato.
-- Caracteres de espacio en blanco.
-- Caracteres que no sean espacios en blanco.
+### `fwrite`
 
-Los especificadores de formato de entrada están precedidos por el signo *%*, y dicen a *scanf()* que tipo de datos van a ser leídos a continuación. Los especificadores de formato validos son:
-
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-|**Especificador**|**Descripción.**|
-| - | - |
-|%c|Leer un único carácter.|
-|%d|Leer un entero decimal.|
-|%i|Leer un entero decimal.|
-|%e|Leer un número en punto flotante.|
-|%f|Leer un número en punto flotante.|
-|%g|Leer un número en punto flotante.|
-|%o|Leer un número octal.|
-|%s|Leer una cadena de caracteres.|
-|%x|Leer un número hexadecimal.|
-|%p|Leer un puntero.|
-|%n|Recibe un valor igual al número de carácter leídos.|
-|%u|Leer un entero sin signo.|
-
-*Tabla A.1.4: Especificadores de formato de la función scanf().*
-
-Además, es posible utilizar los modificadores *h* (*short*), *l* (*long*) y *L* de igual forma que en la función *printf()*.
-
-Un espacio en blanco en la cadena de control da lugar a que *scanf()* salte sobre uno o mas espacios de la cadena de entrada, un espacio en blanco puede ser un espacio, un tabulador o un salto de línea. Además, un espacio en blanco da lugar, también, a que *scanf()* lea, pero no guarde cualquier número de espacios en blanco, incluso cero.
-
-Un carácter que no sea espacio en blanco, da lugar a que *scanf()* lea y elimine el carácter asociado. Por ejemplo, *%d:%d*  da lugar a que *scanf()*  lea primero un *int*, después lea, y descarte, los dos puntos, y luego lea otro *int*. Si el carácter especificado no se encuentra, *scanf()* termina su ejecución.
-
-Todas las variables utilizadas para recibir valores a través de *scanf()* deben ser pasadas por referencia, o sea, por sus direcciones. Esto supone que los argumentos deben ser punteros a las funciones.
-
-La presencia del signo *\** después del signo *%* y antes del código del formato, produce que *scanf()* lea, pero no asigne el valor leído a ninguna variable, por ejemplo:
-
-*scanf("%d%\*c%d",&x,&y);*
-
-Provoca, si la entrada es *10/20*, que se le asigne el valor *10* a la variable *x*, se lea y descarte el signo */*, y después se asigne el valor *20* a la variable *y*.
-
-La función *scanf()*  devuelve un número igual al de campos que han sido asignados correctamente, este número no incluye los campos que fueron leídos, pero no asignados, utilizando el modificador *\** para eliminar la asignación.
-
-setbuf
-
+```c
 #include <stdio.h>
+int fwrite(const void *buf, size_t tam, size_t cuenta, FILE *f);
+```
 
-void setbuf(FILE \*f, char \*buf);
+Escribe `cuenta` elementos de `tam` bytes desde `buf` en el archivo.
 
-La función *setbuf()* se utiliza para determinar el buffer del archivo asociado a la variable *f* que se utilizara, o bien, si se llama con *buf* a nulo (*NULL*), para desactivar el buffer. Si un buffer va a ser definido por el programador, su tamaño debe ser *BUFSIZ*, siendo *BUFSIZ* una constante definida en el archivo *stdio.h*. La función *setbuf()* no devuelve ningún valor.
+---
 
-setvbuf
+### `getc`
 
+```c
 #include <stdio.h>
+int getc(FILE *f);
+```
 
-int setvbuf(FILE \*f,char \*buf,int modo,.size\_t tam);
+Lee el siguiente carácter del archivo. Devuelve `EOF` al final del archivo.
 
-La función *setvbuf()* permite al programador especificar el buffer, el tamaño y el modo para el archivo asociado a la variable *f*. El array de caracteres apuntado por *buf* se utiliza como buffer de *f* para las operaciones de entrada y salida. Si *buf* es nulo (*NULL*), *setvbuf()* creara su propio buffer, de tamaño *tam*, mediante una llamada a la función *malloc()*. El tamaño del buffer se fija mediante el valor de *tam*, que debe ser siempre mayor de cero. La variable *modo* determina el uso del buffer. Los valores legales de *modo*, definidos en *stdio.h*, son:
+---
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+### `gets` (obsoleta/no recomendada)
 
-|**Modo**|**Descripción**|
-| - | - |
-|\_IOFBF|Modo normal, el buffer se vacía solo cuando se llena (en escritura), o bien, cuando ya se ha leído todo su  contenido (en lectura).|
-|\_IOLBF|Igual al anterior, solo que el buffer también se vacía cuando se lee o escribe un retorno de carro.|
-|\_IONBF|Desactiva el buffer.|
-
-*Tabla A.1.5: Valores del modo en la función setvbuf().*
-
-La función *setvbuf()* devuelve un valor de cero si se ejecuta con éxito. En caso de error, un valor distinto de cero será devuelto.
-
-sprintf
-
+```c
 #include <stdio.h>
+char *gets(char *cad);
+```
 
-int sprintf(char \*buf,const char \*formato,...);
+Lee una línea desde `stdin` sin límite de longitud. Puede causar desbordamientos de buffer.
 
-La función *sprintf()*  es idéntica a la función *printf()*, excepto que la salida generada se sitúa en el array apuntado por *buf*. El valor devuelto por la función es igual al número de caracteres realmente situados en el array. Para una mayor explicación refiérase a la función *printf()*.
+---
 
-sscanf
+### `perror`
 
+```c
 #include <stdio.h>
+int perror(const char *cad);
+```
 
-int sscanf(const char \*buf,const char \*formato,...);
+Muestra el mensaje de error asociado al valor de `errno`, precedido por `cad`.
 
-La función *sscanf()* es idéntica a la función *scanf()*, excepto que los datos son leídos del array apuntado por *buf*. El valor devuelto por la función es igual al número de campos que hubieran sido realmente asignados. Este número no incluye los campos que fueron saltados al utilizar el modificador de ordenes de formato *\**. Para más detalles vea la función *scanf()*.
+---
 
-ungetc
+### `printf`
 
+```c
 #include <stdio.h>
+int printf(const char *formato, ...);
+```
 
-int ungetc(int c,FILE \*f);
+Imprime datos en `stdout` (pantalla). Devuelve número de caracteres escritos, o valor negativo en error.
 
-La función *ungetc()*  devuelve el carácter especificado por el byte menos significativo de *c*  al archivo especificado por *f*. Este carácter será devuelto en la siguiente operación de lectura sobre el archivo. Una llamada a *fflush()* o a *fseek()* deshace una operación *ungetc()*  y deshecha el carácter previamente devuelto a la 
+#### Especificadores de formato:
 
-secuencia de entrada. No se debe usar *ungetc()* sobre una marca de *EOF*. El valor devuelto por la función es igual a *c*, si la función ha tenido éxito, e igual a *EOF*, si ha fallado.
+| Código | Significado                  |
+| ------ | ---------------------------- |
+| %c     | Carácter                     |
+| %d/%i  | Entero con signo             |
+| %e/%E  | Notación científica          |
+| %f     | Punto flotante               |
+| %g/%G  | Más corto entre `%e` y `%f`  |
+| %o     | Octal sin signo              |
+| %s     | Cadena de caracteres         |
+| %u     | Entero sin signo             |
+| %x/%X  | Hexadecimal sin signo        |
+| %p     | Puntero                      |
+| %n     | Escribe número de caracteres |
+| %%     | Imprime el símbolo `%`       |
 
-## A.2 -Funciones de caracteres. isalnum
+Modificadores: `h` (short), `l` (long), `L` (long double)
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+---
 
-#include <ctype.h> int isalnum(int ch);
+### `putc`
 
-La función *isalnum()* devuelve un valor distinto de cero si *ch* es una letra del alfabeto o un dígito. En caso contrario, se devuelve un valor distinto de cero.
+```c
+#include <stdio.h>
+int putc(int c, FILE *f);
+```
 
-isalpha
+Escribe un carácter en el archivo. Devuelve el carácter escrito o `EOF`.
 
-#include <ctype.h> int isalpha(int ch);
+---
 
-La función *isalpha()* devuelve un valor distinto de cero si *ch* es una letra del alfabeto, en cualquier otro caso devuelve cero.
+### `puts`
 
-iscntrl
+```c
+#include <stdio.h>
+int puts(char *cad);
+```
 
-#include <ctype.h> int iscntrl(int ch);
+Escribe la cadena `cad` en `stdout`, seguido de un salto de línea.
 
-La función *iscntrl()* devuelve un valor distinto de cero si *ch* se encuentra entre *0* y *0x1F* o si *ch* es igual a *0x7F* (tecla DEL), en cualquier otro caso devuelve cero.
+---
 
-isdigit
+### `rewind`
 
-#include <ctype.h> int isdigit(int ch);
+```c
+#include <stdio.h>
+void rewind(FILE *f);
+```
 
-La función *isdigit()* devuelve un valor distinto de cero si *ch* es un dígito (*0..9*), en cualquier otro caso devuelve el valor cero.
+Reposiciona el archivo al inicio y limpia indicadores de error y EOF.
 
-isgraph
+---
 
-#include <ctype.h> int isgraph(int ch);
+### `scanf`
 
-La función *isgraph()*  devuelve un valor distinto de cero si *ch*  es cualquier carácter imprimible distinto del espacio, en cualquier otro caso devuelve cero.
+```c
+#include <stdio.h>
+int scanf(const char *formato, ...);
+```
 
-islower
+Lee desde `stdin` según el formato especificado. Similar a `printf()`, pero para entrada.
 
-#include <ctype.h> int islower(int ch);
+#### Especificadores de formato:
 
-La función *islower()* devuelve un valor distinto de cero si *ch* es una carácter minúscula, en cualquier otro caso devuelve cero.
+| Código   | Descripción                 |
+| -------- | --------------------------- |
+| %c       | Carácter                    |
+| %d/%i    | Entero decimal              |
+| %e/%f/%g | Punto flotante              |
+| %o       | Octal                       |
+| %x       | Hexadecimal                 |
+| %s       | Cadena de caracteres        |
+| %u       | Entero sin signo            |
+| %p       | Puntero                     |
+| %n       | Número de caracteres leídos |
 
-isprint
 
-#include <ctype.h> int isprint(int ch);
 
-La función *isprintf()*  devuelve un valor distinto de cero si *ch*  es cualquier carácter imprimible, incluyendo el espacio, en cualquier otro caso devuelve cero.
+## A.2 - Funciones de caracteres (`<ctype.h>`)
 
-ispunct
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
+### `isalnum`
+
+```c
 #include <ctype.h>
+int isalnum(int ch);
+```
 
+Devuelve un valor distinto de cero si `ch` es una letra del alfabeto o un dígito. En caso contrario, devuelve cero.
+
+---
+
+### `isalpha`
+
+```c
+#include <ctype.h>
+int isalpha(int ch);
+```
+
+Devuelve un valor distinto de cero si `ch` es una letra del alfabeto. En cualquier otro caso, devuelve cero.
+
+---
+
+### `iscntrl`
+
+```c
+#include <ctype.h>
+int iscntrl(int ch);
+```
+
+Devuelve un valor distinto de cero si `ch` está entre `0` y `0x1F` o si es igual a `0x7F` (tecla DEL). En cualquier otro caso, devuelve cero.
+
+---
+
+### `isdigit`
+
+```c
+#include <ctype.h>
+int isdigit(int ch);
+```
+
+Devuelve un valor distinto de cero si `ch` es un dígito (`0..9`). En cualquier otro caso, devuelve cero.
+
+---
+
+### `isgraph`
+
+```c
+#include <ctype.h>
+int isgraph(int ch);
+```
+
+Devuelve un valor distinto de cero si `ch` es un carácter imprimible distinto del espacio. En caso contrario, devuelve cero.
+
+---
+
+### `islower`
+
+```c
+#include <ctype.h>
+int islower(int ch);
+```
+
+Devuelve un valor distinto de cero si `ch` es una letra minúscula. En cualquier otro caso, devuelve cero.
+
+---
+
+### `isprint`
+
+```c
+#include <ctype.h>
+int isprint(int ch);
+```
+
+Devuelve un valor distinto de cero si `ch` es un carácter imprimible, incluyendo el espacio. En cualquier otro caso, devuelve cero.
+
+---
+
+### `ispunct`
+
+```c
+#include <ctype.h>
 int ispunct(int ch);
+```
 
-La función *ispunct()* devuelve un valor distinto de cero si *ch* es un carácter de puntuación, excluyendo el espacio, en cualquier otro caso devuelve el valor cero.
+Devuelve un valor distinto de cero si `ch` es un carácter de puntuación (excluye el espacio). En cualquier otro caso, devuelve cero.
 
-isspace
+---
 
-#include <ctype.h> int isspace(int ch);
+### `isspace`
 
-La función *isspace()* devuelve un valor distinto de cero si *ch* es un espacio, tabulador, o carácter de salto de línea, en cualquier otro caso devuelve el valor cero.
-
-isupper
-
-#include <ctype.h> int isupper(int ch);
-
-La función *isupper()*  devuelve un valor distinto de cero si *ch*  es una letra mayúscula, en cualquier otro caso devuelve cero.
-
-isxdigit
-
+```c
 #include <ctype.h>
+int isspace(int ch);
+```
 
+Devuelve un valor distinto de cero si `ch` es un espacio, tabulador o carácter de salto de línea. En cualquier otro caso, devuelve cero.
+
+---
+
+### `isupper`
+
+```c
+#include <ctype.h>
+int isupper(int ch);
+```
+
+Devuelve un valor distinto de cero si `ch` es una letra mayúscula. En cualquier otro caso, devuelve cero.
+
+---
+
+### `isxdigit`
+
+```c
+#include <ctype.h>
 int isxdigit(int ch);
+```
 
-La función *isxdigit()*  devuelve un valor distinto de cero si *ch*  es un dígito hexadecimal, en cualquier otro caso devuelve cero. Un dígito hexadecimal está en uno de estos rangos: *0* hasta *9*, *A* hasta *F* y *a* hasta *f*.
+Devuelve un valor distinto de cero si `ch` es un dígito hexadecimal (`0..9`, `A..F`, `a..f`). En cualquier otro caso, devuelve cero.
 
-tolower
+---
 
-#include <ctype.h> int tolower(int ch);
+### `tolower`
 
-La función *tolower()* devuelve el equivalente en minúscula de *ch*, si *ch* es una letra mayúscula, en cualquier otro caso se devuelve *ch* sin modificar.
+```c
+#include <ctype.h>
+int tolower(int ch);
+```
 
-toupper
+Convierte `ch` a minúscula si es una letra mayúscula. Si no, devuelve `ch` sin modificar.
 
-#include <ctype.h> int toupper(int ch);
+---
 
-La función *toupper()* devuelve el equivalente en mayúsculas de *ch*, si *ch* es una letra minúscula, en cualquier otro caso se devuelve *ch* sin modificar.
+### `toupper`
 
-## A.3 - Funciones de cadenas. memchr
+```c
+#include <ctype.h>
+int toupper(int ch);
+```
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+Convierte `ch` a mayúscula si es una letra minúscula. Si no, devuelve `ch` sin modificar.
 
+---
+
+## A.3 - Funciones de cadenas (`<string.h>`)
+
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
+### `memchr`
+
+```c
 #include <string.h>
+void *memchr(const void *buffer, int ch, size_t cuenta);
+```
 
-void \*memchr(const void \*buffer,int ch,size\_t cuenta);
+Busca la primera ocurrencia de `ch` en los primeros `cuenta` bytes de `buffer`. Devuelve un puntero a la ocurrencia o `NULL` si no se encuentra.
 
-La función *memchr()*  busca en *buffer*  la primera ocurrencia de *ch*  en los primeros *cuenta* caracteres. La función devuelve un puntero a la primera ocurrencia del carácter *ch* en *buffer*. Si no encuentra ch, devuelve un puntero nulo (*NULL*).
+---
 
-memcmp
+### `memcmp`
 
+```c
 #include <string.h>
+int memcmp(const void *buf1, const void *buf2, size_t cuenta);
+```
 
-int memcmp(const void \*buf1,const void \*buf2,size\_t cuenta);
+Compara los primeros `cuenta` bytes de `buf1` y `buf2`. Devuelve:
 
-La función *memcmp()* compara los primeros cuenta caracteres de los arrays apuntados por *buf1* y *buf2*. La comparación se hace lexicográficamente. La función devuelve un entero que es interpretado según se indica a continuación:
+| Valor devuelto | Descripción                |
+| -------------- | -------------------------- |
+| `< 0`          | `buf1` es menor que `buf2` |
+| `0`            | `buf1` es igual a `buf2`   |
+| `> 0`          | `buf1` es mayor que `buf2` |
 
+*Tabla A.3.1: Interpretación del valor devuelto por `memcmp()`*
 
+---
 
-|**Valor devuelto**|**Descripción**|
-| - | - |
-|Menor que cero|buf1 es menor que buf2|
-|Igual a cero|buf1 es igual a buf2|
-|Mayor que cero|buf1 es mayor que buf2|
+### `memcpy`
 
-*Tabla A.3.1: Interpretación de los valores devueltos por la función memcmp().*
-
-memcpy
-
+```c
 #include <string.h>
+void *memcpy(void *hacia, const void *desde, size_t cuenta);
+```
 
-void \*memcpy(void \*hacia,const void \*desde,size\_t cuenta);
+Copia `cuenta` bytes desde `desde` hacia `hacia`. Si se solapan, el comportamiento es indefinido. Devuelve `hacia`.
 
-La función *memcpy()* copia *cuenta* caracteres del array apuntado por *desde* en el array apuntado por *hacia*. Si los arrays se superponen, el comportamiento de *memcpy()* queda indefinido. La función devuelve un puntero a *hacia*.
+---
 
-memset
+### `memset`
 
+```c
 #include <string.h>
+void *memset(void *buf, int ch, size_t cuenta);
+```
 
-void \*memset(void \*buf,int ch,size\_t cuenta);
+Copia el byte menos significativo de `ch` en los primeros `cuenta` bytes de `buf`. Devuelve `buf`.
 
-La función *memset()* copia el byte menos significativo de *ch* en los primero *cuenta* caracteres del array apuntado por *buf*. Devuelve *buf*. Su uso más común es inicializar una región de memoria con algún valor conocido.
+---
 
-strcat
+### `strcat`
 
+```c
 #include <string.h>
+char *strcat(char *cad1, const char *cad2);
+```
 
-char \*strcat(char \*cad1,const char \*cad2);
+Concatena `cad2` al final de `cad1`. Devuelve `cad1`.
 
-La función *strcat()* concatena una copia de *cad2* en *cad1*, y añade al final de *cad1* un carácter nulo (*'\0'*). El carácter nulo de terminación, que originalmente tenía *cad1*, es sustituido por el primer carácter de *cad2*. La cadena *cad2* no se modifica en esta operación. La función *strcat()* devuelve *cad1*.
+---
 
-strchr
+### `strchr`
 
+```c
 #include <string.h>
+char *strchr(char *cad, int ch);
+```
 
-char \*strchr(char \*cad,int ch);
+Devuelve un puntero a la primera ocurrencia de `ch` en `cad`, o `NULL` si no se encuentra.
 
-La función *strchr()* devuelve un puntero a la primera ocurrencia del byte menos significativo de *ch* en la cadena apuntada por *cad*. Si no sucede, devuelve un puntero nulo (*NULL*).
+---
 
-strcmp
+### `strcmp`
 
+```c
 #include <string.h>
+int strcmp(const char *cad1, const char *cad2);
+```
 
-int strcmp(const char \*cad1,const char \*cad2);
+Compara lexicográficamente `cad1` y `cad2`. Devuelve:
 
-La función *strcmp()* compara lexicográficamente dos cadenas que finalizan con el carácter nulo, y devuelve un entero que se interpreta de la siguiente forma:
+| Valor devuelto | Descripción      |
+| -------------- | ---------------- |
+| `< 0`          | `cad1` < `cad2`  |
+| `0`            | `cad1` == `cad2` |
+| `> 0`          | `cad1` > `cad2`  |
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+*Tabla A.3.2: Interpretación del valor devuelto por `strcmp()`*
 
-|**Valor devuelto**|**Descripción**|
-| - | - |
-|Menor que cero|cad1 es menor que cad2|
-|Igual a cero|cad1 es igual a cad2|
-|Mayor que cero|cad1  es  mayor  que cad2|
+---
 
-*Tabla A.3.2: Interpretación de los valores devueltos por la función strcmp().*
+### `strcpy`
 
-strcpy
-
+```c
 #include <string.h>
+char *strcpy(char *cad1, const char *cad2);
+```
 
-char \*strcpy(char \*cad1,const char \*cad2);
+Copia `cad2` en `cad1`. Devuelve `cad1`.
 
-La función *strcpy()* se utiliza para copiar el contenido de *cad2* en *cad1*. El elemento *cad2* debe ser un puntero a una cadena que finalice con un carácter nulo. La función devuelve un puntero a *cad1*.
+---
 
-strlen
+### `strlen`
 
+```c
 #include <string.h>
+unsigned int strlen(char *cad);
+```
 
-unsigned int strlen(char \*cad);
+Devuelve el número de caracteres de `cad`, sin contar el carácter nulo de fin.
 
-La función *strlen()* devuelve el número de caracteres de la cadena apuntada por *cad* que finaliza con un carácter nulo. El carácter nulo no se contabiliza.
+---
 
-strtok
+### `strtok`
 
+```c
 #include <string.h>
+char *strtok(char *cad1, const char *cad2);
+```
 
-char \*strtok(char \*cad1,const char \*cad2);
+Devuelve un puntero a la siguiente palabra de `cad1`, utilizando los caracteres de `cad2` como delimitadores. La primera llamada usa `cad1`, las siguientes `NULL`. Modifica `cad1`.
 
-La función *strtok()* devuelve un puntero a la siguiente palabra de la cadena apuntada por *cad1*. Los caracteres que constituyen la cadena apuntada por *cad2* son los delimitadores que identifican la palabra. Devuelve un puntero nulo (*NULL*) cuando no existe ninguna palabra que devolver.
 
-La primera vez que se llama a *strtok()* se utiliza realmente *cad1* en la llamada. Las llamadas posteriores utilizan un puntero nulo (*NULL*) como primer argumento.
 
-La función *strtok()* modifica la cadena apuntada por *cad1*, pues, cada vez que se encuentra una palabra, se pone un carácter nulo donde esta el delimitador. De esta forma *strtok()* puede continuar avanzando por la cadena.
+## A.4 - Funciones matemáticas
 
-## A.4 - Funciones matemáticas. acos
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-#include <math.h> double acos(double arg);
-
-La función *acos()* devuelve el arcocoseno de *arg*. El argumento de *acos()* debe estar en el rango de *-1* a *1*, en cualquier otro caso se produce un error de dominio.
-
-asin
-
-#include <math.h> double asin(double arg);
-
-La función *asin()* devuelve el arcoseno de *arg*. El argumento de *asin()* debe estar en el rango de *-1* a *1*, en cualquier otro caso se produce un error de dominio.
-
-atan
-
-#include <math.h> double atan(double arg);
-
-La función *atan()* devuelve el arcotangente de *arg*.
-
-atan2
-
+```c
 #include <math.h>
+double acos(double arg);
+```
 
-double atan2(double y,double x);
+Devuelve el arcocoseno de `arg`. El argumento debe estar en el rango de -1 a 1. En caso contrario, se produce un error de dominio.
 
-La función *atan2()*  devuelve el arcotangente de *y/x*. Utiliza el signo de sus argumentos para obtener el cuadrante del valor devuelto.
+---
 
-ceil
+```c
+double asin(double arg);
+```
 
-#include <math.h> double ceil(double num);
+Devuelve el arcoseno de `arg`, con las mismas restricciones que `acos()`.
 
-La función *ceil()*  devuelve el menor entero mayor o igual que *num*  y lo representa como *double*. Por ejemplo, dado *1.02*, *ceil()* devuelve *2.0*, dado *-1.02*, *ceil()* devuelve *-1.0*.
+---
 
-cos
+```c
+double atan(double arg);
+```
 
-#include <math.h> double cos(double arg);
+Devuelve el arcotangente de `arg`.
 
-La función *cos()* devuelve el coseno de *arg*. El valor de *arg* debe venir dado en 
+---
 
-radianes.
+```c
+double atan2(double y, double x);
+```
 
-cosh
+Devuelve el arcotangente de `y/x`, considerando los signos de los argumentos para determinar el cuadrante.
 
-#include <math.h> double cosh(double arg);
+---
 
-La función *cosh()* devuelve el coseno hiperbólico de *arg*. El valor de *arg* debe venir dado en radianes.
+```c
+double ceil(double num);
+```
 
-exp
+Devuelve el menor entero mayor o igual a `num`. Ej.: `ceil(1.02)` → `2.0`, `ceil(-1.02)` → `-1.0`.
 
-#include <math.h> double exp(double arg);
+---
 
-La función *exp()* devuelve el número *e* elevado a la potencia de *arg*.
+```c
+double cos(double arg);
+```
 
-fabs
+Devuelve el coseno de `arg` (en radianes).
 
-#include <math.h> double fabs(double num);
+---
 
-La función *fabs()* devuelve el valor absoluto de *num*.
+```c
+double cosh(double arg);
+```
 
-floor
+Devuelve el coseno hiperbólico de `arg`.
 
-#include <math.h> double floor(double num);
+---
 
-La función *floor()* devuelve el mayor entero, representado como *double*, que no es mayor que *num*. Por ejemplo, dado *1.02*, *floor()* devuelve *1.0*, dado *-1.02*, *floor()* devuelve *-2.0*.
+```c
+double exp(double arg);
+```
 
-fmod
+Devuelve `e` elevado a `arg`.
 
-#include <math.h>
+---
 
-double fmod(double x,double y);
+```c
+double fabs(double num);
+```
 
-La función *fmod()* devuelve el resto de la división entera *x/y*.
+Devuelve el valor absoluto de `num`.
 
-log
+---
 
-#include <math.h> double log(double num);
+```c
+double floor(double num);
+```
 
-La función *log()* devuelve el logaritmo neperiano de *num*. Se produce un error de dominio si *num* es negativo, y un error de rango si el argumento es cero.
+Devuelve el mayor entero menor o igual que `num`. Ej.: `floor(1.02)` → `1.0`, `floor(-1.02)` → `-2.0`.
 
-log10
+---
 
-#include <math.h>
+```c
+double fmod(double x, double y);
+```
 
+Devuelve el resto de la división `x/y`.
+
+---
+
+```c
+double log(double num);
+```
+
+Devuelve el logaritmo neperiano de `num`. Error de dominio si `num` es negativo. Error de rango si es cero.
+
+---
+
+```c
 double log10(double num);
+```
 
-La función *log10()* devuelve el logaritmo en base *10* de *num*. Se produce un error de dominio si *num* es negativo, y un error de rango si el argumento es cero.
+Devuelve el logaritmo en base 10 de `num`.
 
-pow
+---
 
-#include <math.h>
+```c
+double pow(double base, double exp);
+```
 
-double pow(double base,double exp);
+Devuelve `base` elevado a `exp`. Puede generar errores si `base` es 0 y `exp <= 0`, o si `base < 0` y `exp` no es entero.
 
-La función *pow()* devuelve *base* elevada a *exp*. Se produce un error de dominio si *base*  es cero y *exp*  es menor o igual a cero. También puede ocurrir si *base*  es negativo y *exp* no es entero. Un desbordamiento produce un error de rango.
+---
 
-sin
+```c
+double sin(double arg);
+```
 
-#include <math.h> double sin(double arg);
+Devuelve el seno de `arg` (en radianes).
 
-La función *sin()* devuelve el seno de *arg*. El valor de *arg* debe venir dado en 
+---
 
-radianes.
+```c
+double sinh(double arg);
+```
 
-sinh
+Devuelve el seno hiperbólico de `arg`.
 
-#include <math.h> double sinh(double arg);
+---
 
-La función *sinh()* devuelve el seno hiperbólico de *arg*. El valor de *arg* debe venir dado en radianes.
+```c
+double sqrt(double num);
+```
 
-sqrt
+Devuelve la raíz cuadrada de `num`. Error de dominio si `num` es negativo.
 
-#include <math.h> double sqrt(double num);
+---
 
-La función *sqrt()* devuelve la raíz cuadrada de *num*. Si se llama con un número negativo, se produce un error de dominio.
+```c
+double tan(double arg);
+```
 
-tan
+Devuelve la tangente de `arg` (en radianes).
 
-#include <math.h> double tan(double arg);
+---
 
-La función *tan()* devuelve la tangente de *arg*. El valor de *arg* debe venir dado en 
+```c
+double tanh(double arg);
+```
 
-radianes.
+Devuelve la tangente hiperbólica de `arg`.
 
-tanh
+---
 
-#include <math.h> double tanh(double arg);
+## A.5 - Asignación dinámica de memoria
 
-La función *tanh()* devuelve la tangente hiperbólica de *arg*. El valor de *arg* debe venir dado en radianes.
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-## A.5 Asignación dinámica de memoria. calloc
-
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
+```c
 #include <stdlib.h>
+void *calloc(size_t num, size_t tam);
+```
 
-void \*calloc(size\_t num,size\_t tam);
+Asigna memoria para un array de `num` elementos de tamaño `tam`, inicializados a cero. Devuelve un puntero al inicio de la memoria asignada o `NULL` si falla.
 
-La función *calloc()* asigna memoria para un array de *num* objetos, cada uno de los cuales tiene tamaño *tam*. La memoria asignada es inicializada con el valor cero. La función *calloc()* devuelve un puntero al primer byte de la región asignada. Si no existe memoria libre suficiente para satisfacer la petición, se devuelve un puntero nulo (*NULL*).
+---
 
-free
+```c
+void free(void *ptr);
+```
 
-#include <stdlib.h> void free(void \*ptr);
+Libera la memoria apuntada por `ptr`, previamente reservada con `malloc()`, `calloc()` o `realloc()`.
 
-La función *free()*  libera la memoria apuntada por *ptr*, haciendo que dicha memoria este disponible para futuras asignaciones. Solo se debe llamar a *free()* con un puntero que haya sido previamente asignado utilizando alguna función de asignación dinámica.
+---
 
-malloc
+```c
+void *malloc(size_t tam);
+```
 
+Asigna `tam` bytes de memoria sin inicializar. Devuelve un puntero al bloque asignado o `NULL` si no hay memoria suficiente.
+
+---
+
+```c
+void *realloc(void *ptr, size_t tam);
+```
+
+Redimensiona el bloque de memoria apuntado por `ptr` a `tam` bytes. Si es necesario, mueve el bloque a otra dirección y copia su contenido.
+
+* Si `ptr` es `NULL`, se comporta como `malloc(tam)`.
+* Si `tam` es cero, libera la memoria.
+* Devuelve `NULL` si no hay suficiente memoria; el bloque original permanece intacto.
+
+
+
+
+## A.6 - Funciones varias
+
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
+---
+
+```c
 #include <stdlib.h>
+int abs(int num);
+```
 
-void \*malloc(size\_t tam);
+Devuelve el valor absoluto del entero `num`.
 
-La función *malloc()*  devuelve un puntero al primer byte de una región de memoria de tamaño *tam* que se encuentra libre. Si no existe memoria suficiente para satisfacer la petición, se devuelve un puntero nulo (*NULL*).
+---
 
-realloc
+```c
+double atof(const char *cad);
+```
 
-#include <stdlib.h>
+Convierte la cadena apuntada por `cad` a un número `double`. La cadena debe representar un número en coma flotante válido. Si no lo es, el resultado es indefinido.
 
-void \*realloc(void \*ptr,size\_t tam);
+> Ejemplo: `atof("100.00HOLA")` → `100.00`.
 
-La función *realloc()* cambia el tamaño de la memoria apuntada por *ptr* al que esta especificado por *tam*. El valor de *tam* puede ser mayor o menor que el original. Devuelve un puntero al nuevo bloque de memoria, ya que puede ser necesario que *realloc()* traslade el bloque de posición al incrementar su tamaño. Si esto sucede, el contenido del antiguo bloque se copia en el nuevo bloque, por lo cual, la información no se pierde.
+---
 
-Si *ptr* es un puntero nulo (*NULL*), *realloc()* simplemente asigna *tam* bytes de memoria y devuelve un puntero a dicha memoria. Si *tam* es cero, la memoria asignada se libera. Si no existe memoria suficiente para satisfacer la petición, *realloc()* devuelve un puntero nulo (*NULL*), y el bloque de memoria original se deja sin cambiar.
+```c
+int atoi(const char *cad);
+```
 
-## A.6 Funciones varias. abs
+Convierte la cadena apuntada por `cad` a un número entero (`int`). Si la cadena no representa un número válido, el resultado es indefinido (la mayoría de implementaciones devuelven `0`).
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+> Ejemplo: `atoi("123.23")` → `123`.
 
-#include <stdlib.h> int abs(int num);
+---
 
-La función *abs()* devuelve el valor absoluto del entero dado por *num*.
+```c
+long int atol(const char *cad);
+```
 
-atof
+Convierte la cadena apuntada por `cad` a un número `long int`. Funciona como `atoi()`.
 
-#include <stdlib.h>
+---
 
-double atof(const char \*cad);
+```c
+void exit(int estado);
+```
 
-La función *atof()* convierte la cadena apuntada por *cad* en un valor de tipo *double*. La cadena debe contener un número valido en coma flotante. En caso contrario el valor devuelto es indefinido.
+Finaliza inmediatamente el programa.
 
-El número puede terminar por cualquier carácter que no pueda formar parte de un número válido en coma flotante. Esto incluye espacios en blanco, signos de puntuación distintos del punto, y caracteres que no sean *E* o *e*. Así si se llama a *atof()* con la cadena *"100.00HOLA"*, devolverá el valor *100.00*.
+* Si `estado` es `0`, indica una terminación normal.
+* Un valor distinto puede señalar un error.
 
-atoi
+---
 
-#include <stdlib.h>
+```c
+long labs(long num);
+```
 
-int atoi(const char \*cad);
+Devuelve el valor absoluto de `num`.
 
-La función *atoi()* convierte la cadena apuntada por *cad* en un valor de tipo *int*. La cadena debe contener un número entero valido. Si no es este el caso, el valor devuelto es  indefinido,  aunque, la  mayoría  de implementaciones de la función devuelven el valor cero.
+---
 
-El número puede acabar con cualquier carácter que no pueda formar parte de un número entero. Esto incluye espacios en blanco, signos de puntuación, y cualquier carácter que no sea la *E* o la *e*. Esto supone que si se llama a *atoi()* con la cadena *"123.23"*, devolverá el valor *123*.
+```c
+int system(const char *cad);
+```
 
-atol
+Ejecuta la cadena `cad` como un comando del sistema operativo.
 
-#include <stdlib.h>
+* Si `cad` es `NULL`, devuelve distinto de cero si existe un intérprete de comandos.
+* Si `cad` no es `NULL`, devuelve `0` si el comando fue exitoso; en otro caso, un valor distinto de cero.
 
-long int atol(const char \*cad);
+---
 
-La función *atol()* convierte la cadena apuntada por *cad* en un valor de tipo *long int*. Para más información consultar la función *atoi()*.
+## Apéndice B: Ejemplos de programas en C
 
-exit
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-#include <stdlib.h> void exit(int estado);
+Este apéndice incluye algunos programas de ejemplo en lenguaje C. Son compatibles con compiladores para MS-DOS y UNIX sin modificaciones.
 
-La función *exit()***  da lugar inmediatamente a la terminación normal de un programa. El valor de *estado*  se pasa al proceso que llamo a este programa, normalmente el sistema operativo, si el entorno lo soporta. Por convenio, si el valor de *estado* es cero, se supone que se ha producido una terminación normal del programa. Un valor distinto de cero puede utilizarse para indicar un error definido por la implementación.
+---
 
-labs
+### B.1 `palindro.c`
 
-#include <stdlib.h> long labs(long num);
+**Descripción:** Programa que determina si una palabra es palíndroma (se lee igual de izquierda a derecha que de derecha a izquierda).
 
-La función *labs()* devuelve el valor absoluto de *num*.
-
-system
-
-#include <stdlib.h>
-
-int system(const char \*cad);
-
-La función *system()*  pasa la cadena apuntada por *cad*  como una orden al procesador de ordenes del sistema operativo. Si se llama a *system()* con un puntero nulo (*NULL*), devuelve un valor distinto de cero si está presente un procesador de  ordenes, en otro caso, se devuelve un valor distinto de cero. Si *cad* no es un puntero nulo (*NULL*), *system()*  devuelve el valor cero si la orden ha sido correctamente ejecutada, y un valor distinto de cero en caso contrario.
-
-El lenguaje de programación C
-
-## Apéndice B: Ejemplos de programas en C.
-
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-En este apéndice se incluyen algunos programas de ejemplo escritos en lenguaje C. Los programas han sido realizados de forma que puedan ser compilados en la mayoría de compiladores existentes para los sistemas operativos MS-DOS y UNIX sin que exista la necesidad de realizar ningún tipo de cambio en los mismos.
-
-## B.1 palindro.c.
-
-/\* Programa que calcula si una palabra es palindroma, esto es, se lee igual de derecha a izquierda que de izquierda a derecha. \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.006.png)
-
-#include <stdio.h> #include <string.h>
+```c
+#include <stdio.h>
+#include <string.h>
 
 #define TAM 100
 
-/\* Rutina que calcula si una palabra es palindroma. Parametros: char \*cadena Puntero al string con la palabra. Return: int 0 no palindroma, <>0 palindroma. \*/
-
-int Palindroma(char \*cadena) {
-
-`   `register int i,j;
-
-`   `i=0;
-
-`   `j=strlen(cadena)-1;
-
-`   `while (i<j && cadena[i]==cadena[j])
-
-{
-
-i++;
-
-j--;
-
+// Rutina que calcula si una palabra es palíndroma.
+// Parámetros:
+//   char *cadena: puntero al string con la palabra.
+// Retorno:
+//   int: 0 si no es palíndroma, distinto de 0 si lo es.
+int Palindroma(char *cadena) {
+    register int i, j;
+    i = 0;
+    j = strlen(cadena) - 1;
+    while (i < j && cadena[i] == cadena[j]) {
+        i++;
+        j--;
+    }
+    return (i >= j);
 }
 
-return (i>=j);
+int main(void) {
+    char cadena[TAM];
 
+    printf("\nIntroduce la palabra:\n");
+    gets(cadena);
+
+    printf("La palabra: %s %s palíndroma.\n",
+           cadena,
+           (Palindroma(cadena)) ? "es" : "no es");
+
+    return 0;
 }
+```
 
-int main(void)
+⚠️ **Nota:** El uso de `gets()` no es seguro y está obsoleto. Se recomienda usar `fgets()`.
 
-{
+---
 
-`   `char cadena[TAM];
 
-`   `printf("\nIntroduce la palabra\n");    gets(cadena);
+## B.2 `matriz.c`
 
-`   `printf("La palabra: %s %s palindroma.\n",cadena,       (Palindroma(cadena)) ? "es" : "no es");
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-return 0;
+**Descripción:** Programa que calcula el producto de dos matrices.
 
-}
+```c
+#include <stdio.h>
 
-## B.2 matriz.c.
+#define TAM 10  // Tamaño máximo de las matrices
+#define OK 0    // Código de éxito
+#define ERROR 1 // Código de error
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-/\* Programa que calcula el producto de dos matrices. \*/ #include <stdio.h>![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.007.png)
-
-/\* Definicion del tamaño maximo \*/ #define TAM 10
-
-/\* Definicion de los codigos de error \*/ #define OK 0
-
-#define ERROR 1
-
-/\* Definicion de la estructura de datos \*/ struct MATRIZ
-
-{
-
-unsigned fila,columna;
-
-float matriz[TAM][TAM];
-
+// Estructura para representar una matriz
+struct MATRIZ {
+    unsigned fila, columna;
+    float matriz[TAM][TAM];
 };
 
-/\* Rutina que muestra un menu y pide una opcion del menu. Parametros: Ninguno. Return: char Opcion del menu elegida. \*/
-
+// Función que muestra el menú y solicita una opción
 char Menu(void) {
-
-`   `register char d;
-
-`   `printf("\nElige la opcion deseada:\n");    printf("\t0 -- Salir del programa.\n");    printf("\t1 -- Cambiar la matriz A.\n");    printf("\t2 -- Cambiar la matriz B.\n");    printf("\t3 -- Calcular A\*B\n");
-
-`   `printf("\t4 -- Calcular B\*A\n");
-
-while ((d=getchar())<'0' || d>'4');
-
-return d;
-
+    register char d;
+    printf("\nElige la opción deseada:\n");
+    printf("\t0 -- Salir del programa.\n");
+    printf("\t1 -- Cambiar la matriz A.\n");
+    printf("\t2 -- Cambiar la matriz B.\n");
+    printf("\t3 -- Calcular A*B\n");
+    printf("\t4 -- Calcular B*A\n");
+    while ((d = getchar()) < '0' || d > '4');
+    return d;
 }
 
-/\* Rutina que pide el numero de filas o de columnas de una matriz. Parametros: char \*cadena Puntero al string a mostrar.
-
-Return: unsigned Numero de filas o de columnas. \*/
-
-unsigned PedirTamano(const char \*cadena) {
-
-unsigned valor;
-
-do
-
-{
-
-printf("%s",cadena);       scanf("%u",&valor);
-
-`   `}
-
-`   `while (valor==0 || valor>TAM);    return valor;
-
+// Función que pide el número de filas o columnas de una matriz
+unsigned PedirTamano(const char *cadena) {
+    unsigned valor;
+    do {
+        printf("%s", cadena);
+        scanf("%u", &valor);
+    } while (valor == 0 || valor > TAM);
+    return valor;
 }
 
-/\* Rutina que cambia una matriz.
+// Función que cambia los valores de una matriz
+void PedirMatriz(struct MATRIZ *a) {
+    register unsigned i, j;
+    float valor;
+    a->fila = PedirTamano("\nNúmero de filas de la matriz: ");
+    a->columna = PedirTamano("\nNúmero de columnas de la matriz: \n");
 
-Parametros: struct MATRIZ \*a Puntero a la matriz que vamos a cambiar. Return: Ninguno. \*/
-
-void PedirMatriz(struct MATRIZ \*a) {
-
-register unsigned i,j;
-
-float valor;
-
-`   `a->fila=PedirTamano("\nNumero de filas de la matriz: ");
-
-`   `a->columna=PedirTamano("\nNumero de columnas de la matriz: \n");
-
-for(i=0;i<a->fila;i++)
-
-for(j=0;j<a->columna;j++)
-
-`      `{
-
-`         `printf("M[%u][%u]: ",i,j);
-
-`         `scanf("%f",&valor);
-
-`         `a->matriz[i][j]=valor;
-
-`      `}
-
+    for (i = 0; i < a->fila; i++)
+        for (j = 0; j < a->columna; j++) {
+            printf("M[%u][%u]: ", i, j);
+            scanf("%f", &valor);
+            a->matriz[i][j] = valor;
+        }
 }
 
-/\* Rutina que multiplica dos matrices. Las matrices se pasan por puntero pues ello es mas rapido, aunque no se modifican en toda la funcion.
+// Función que multiplica dos matrices
+int Multiplicar(const struct MATRIZ *a, const struct MATRIZ *b, struct MATRIZ *res) {
+    register unsigned i, j, k;
 
-Parametros: struct MATRIZ \*a Puntero a la estructura con la primera matriz a multiplicar.
+    if (a->columna != b->fila) return ERROR;
 
-`            `struct MATRIZ \*b Puntero a la estructura con la segunda matriz a multiplicar.
+    res->fila = a->fila;
+    res->columna = b->columna;
 
-`            `struct MATRIZ \*res Puntero a la estructura que contendra el resultado.
-
-Return: int Codigo de error. \*/
-
-int Multiplicar(const struct MATRIZ \*a,const struct MATRIZ \*b,struct MATRIZ \*res)
-
-{
-
-register unsigned i,j,k;
-
-if (a->columna!=b->fila)
-
-`      `return ERROR;
-
-`   `res->fila=a->fila;
-
-`   `res->columna=b->columna;
-
-for(i=0;i<a->fila;i++)
-
-for(j=0;j<b->columna;j++)
-
-{
-
-res->matriz[i][j]=0;
-
-for(k=0;k<a->fila;k++) res->matriz[i][j]+=a->matriz[i][k]\*b->matriz[k][j];
-
+    for (i = 0; i < a->fila; i++)
+        for (j = 0; j < b->columna; j++) {
+            res->matriz[i][j] = 0;
+            for (k = 0; k < a->columna; k++) {
+                res->matriz[i][j] += a->matriz[i][k] * b->matriz[k][j];
+            }
+        }
+    return OK;
 }
 
-return OK;
-
+// Función que muestra el resultado de la operación de multiplicación
+void Mostrar(const struct MATRIZ *res) {
+    register unsigned i, j;
+    for (i = 0; i < res->fila; i++) {
+        for (j = 0; j < res->columna; j++) {
+            printf("Res[%u][%u]= %f\n", i, j, res->matriz[i][j]);
+        }
+        printf("\nPulsa Enter para continuar.\n");
+        getchar();
+    }
 }
 
-/\* Rutina que muestra en pantalla el resultado de la operacion. Parametros: struct MATRIZ \*res Puntero a la estructura con el resultado.
+int main(void) {
+    struct MATRIZ a, b, res;
+    char d;
 
-Return: Ninguno. \*/
+    // Inicialización de matrices
+    a.fila = a.columna = b.fila = b.columna = 1;
+    a.matriz[0][0] = b.matriz[0][0] = 1.0;
 
-void Mostrar(const struct MATRIZ \*res) {
+    do {
+        switch (d = Menu()) {
+            case '0': break;
+            case '1': PedirMatriz(&a); break;
+            case '2': PedirMatriz(&b); break;
+            case '3':
+                if (Multiplicar(&a, &b, &res) == ERROR)
+                    printf("\nNo es posible multiplicar A*B\n");
+                else
+                    Mostrar(&res);
+                break;
+            case '4':
+                if (Multiplicar(&b, &a, &res) == ERROR)
+                    printf("\nNo es posible multiplicar B*A\n");
+                else
+                    Mostrar(&res);
+                break;
+        }
+    } while (d != '0');
+    return 0;
+}
+```
 
-register unsigned i,j;
+---
 
-for(i=0;i<res->fila;i++)
+## B.3 `ordenar.c`
 
-{
+[![ÍNDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-`      `for(j=0;j<res->columna;j++)
+**Descripción:** Programa que ordena un archivo de cualquier tamaño usando el algoritmo **QuickSort**. El archivo contiene un número **unsigned** como primer elemento, seguido de los elementos a ordenar.
 
-`         `printf("Res[%u][%u]= %f\n",i,j,res->matriz[i][j]);       printf("\nPulsa Enter para continuar.\n");       getchar();
+```c
+#include <stdio.h>
+#include <stdlib.h>
 
-`   `}
+// Función que lee un archivo de datos y devuelve un puntero al array de la memoria reservada
+float *LeerFichero(const char *nombre, unsigned *num) {
+    FILE *fp;
+    float *p;
+    register unsigned i;
 
+    if ((fp = fopen(nombre, "rt")) == NULL) {
+        printf("\nError, no puedo abrir el fichero: %s\n", nombre);
+        return NULL;
+    }
+
+    fscanf(fp, "%u\n", num);
+
+    if ((p = (float *)calloc(*num, sizeof(float))) == NULL) {
+        printf("\nError, memoria insuficiente.\n");
+        fclose(fp);
+        return NULL;
+    }
+
+    for (i = 0; i < *num; i++)
+        fscanf(fp, "%f\n", &p[i]);
+
+    fclose(fp);
+    return p;
 }
 
-int main(void)![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.009.png)
+// Función que guarda los datos ordenados en un archivo
+void GuardarFichero(const char *nombre, const unsigned num, const float *p) {
+    FILE *fp;
+    register unsigned i;
 
-{
+    if ((fp = fopen(nombre, "wt")) == NULL) {
+        printf("\nError, no puedo crear el fichero: %s\n", nombre);
+        return;
+    }
 
-`   `struct MATRIZ a,b,res;    char d;
+    fprintf(fp, "%u\n", num);
+    for (i = 0; i < num; i++)
+        fprintf(fp, "%f\n", p[i]);
 
-`   `a.fila=a.columna=b.fila=b.columna=1;    a.matriz[0][0]=b.matriz[0][0]=1.0;
-
-do
-
-switch(d=Menu())
-
-{
-
-case '0':break;
-
-case '1':PedirMatriz(&a);
-
-break;
-
-case '2':PedirMatriz(&b);
-
-break;
-
-case '3':
-
-if (Multiplicar(&a,&b,&res)==ERROR)
-
-`               `printf("\nNo es posible multiplicar A\*B\n");
-
-else
-
-Mostrar(&res);
-
-break;
-
-case '4':
-
-`            `if (Multiplicar(&b,&a,&res)==ERROR)
-
-`               `printf("\nNo es posible multiplicar B\*A\n");
-
-else
-
-Mostrar(&res);
-
-break;
-
+    fclose(fp);
 }
 
-while (d!='0'); return 0;
+// Función que ordena un array usando el algoritmo QuickSort
+void QuickSort(float *p, unsigned izq, unsigned der) {
+    register unsigned i = izq, j = der;
+    float val, inter;
 
+    val = p[(i + j) / 2];
+
+    do {
+        while (p[i] < val) i++;
+        while (p[j] > val) j--;
+
+        if (i <= j) {
+            inter = p[i];
+            p[i] = p[j];
+            p[j] = inter;
+            i++;
+            j--;
+        }
+    } while (i <= j);
+
+    if (izq < j) QuickSort(p, izq, j);
+    if (i < der) QuickSort(p, i, der);
 }
 
-## B.3 ordenar.c.
+// Función principal
+int main(int argc, char *argv[]) {
+    float *p;
+    unsigned num;
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+    if (argc != 3) {
+        printf("\nModo de uso: %s <fichero1> <fichero2>\n", argv[0]);
+        return 1;
+    }
 
-/\* Programa que ordena un fichero de cualquier tamaño mediante el algoritmo QuickSort. El fichero contiene como primer elemento un unsigned con el numero de elementos del fichero, y a continuacion figuran todos los elementos a ordenar \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.010.png)
+    if ((p = LeerFichero(argv[1], &num)) == NULL)
+        return 1;
 
-#include <stdio.h> #include <stdlib.h>
+    QuickSort(p, 0, num - 1);
+    GuardarFichero(argv[2], num, p);
 
-/\* Rutina que lee el fichero de datos y devuelve un puntero al array de la memoria reservada.
-
-Parametros: char \*nombre Nombre del fichero a leer.
-
-`            `unsigned \*num Puntero al unsigned que contendra el numero de elementos del array. Return: float \* Puntero al array de float, NULL si sucede un error. \*/
-
-float \*LeerFichero(const char \*nombre, unsigned \*num) {
-
-FILE \*fp;
-
-float \*p;
-
-register unsigned i;
-
-if ((fp=fopen(nombre,"rt"))==NULL)
-
-{
-
-`      `printf("\nError, no puedo abrir el fichero: %s\n",nombre);
-
-return NULL;
-
+    free(p);
+    return 0;
 }
+```
 
-fscanf(fp,"%u\n",num);
-
-if ((p=(float \*)calloc(\*num,sizeof(float)))==NULL)
-
-{
-
-`      `printf("\nError, memoria insuficiente.\n");
-
-fclose(fp);
-
-return NULL;
-
-}
-
-for(i=0;i<\*num;i++)
-
-fscanf(fp,"%f\n",&p[i]);
-
-fclose(fp);
-
-return p;
-
-}
-
-/\* Rutina que escribe el fichero de datos ordenado.
-
-Parametros: char \*nombre Nombre del fichero donde guardar los datos.             unsigned num Numero de elementos del array.
-
-`            `float \*p Puntero al array ordenado.
-
-Return: Ninguno. \*/
-
-void GuardarFichero(const char \*nombre,const unsigned num,const float \*p)
-
-{
-
-FILE \*fp;
-
-register unsigned i;
-
-if ((fp=fopen(nombre,"wt"))==NULL)
-
-{
-
-`      `printf("\nError, no puedo crear el fichero: %s\n",nombre);
-
-return;
-
-}
-
-fprintf(fp,"%u\n",num);
-
-for(i=0;i<num;i++)
-
-fprintf(fp,"%f\n",p[i]);
-
-fclose(fp);
-
-}
-
-/\* Rutina que ordena un array segun el algoritmo Quick-Sort. Parametros:   float \*p Puntero al array a ordenar.
-
-`              `unsigned izq Elemento de la izquierda a ordenar.               unsigned der Elemento de la derecha a ordenar. Return:   Ninguno. \*/
-
-void QuickSort(float \*p,unsigned izq,unsigned der) {
-
-register unsigned i=izq,j=der;
-
-float val,inter;
-
-val=p[(i+j)/2];
-
-do
-
-{
-
-while (p[i]<val) i++; while (p[j]>val) j--; if (i<=j)
-
-{![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.011.png)
-
-inter=p[i]; p[i]=p[j]; p[j]=inter;
-
-i++;
-
-j--;
-
-}
-
-}
-
-while (i<=j);
-
-if (izq<j) QuickSort(p,izq,j); if (i<der) QuickSort(p,i,der); return;
-
-}
-
-int main(int argc,char \*argv[]) {
-
-float \*p;
-
-unsigned num;
-
-if (argc!=3)
-
-`   `{
-
-`      `printf("\nModo de uso: %s <fichero1> <fichero2>\n",argv[0]);
-
-return(1);
-
-}
-
-if ((p=LeerFichero(argv[1],&num))==NULL)
-
-return 1;
-
-QuickSort(p,0,num-1);
-
-GuardarFichero(argv[2],num,p);
-
-free(p);
-
-return 0;
-
-}
-
+```c
 ## B.4 fichero.c.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-/\* Programa que maneja una pequeña base de datos directamente sobre el fichero \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.012.png)
+/* Programa que maneja una pequeña base de datos directamente sobre el fichero */
 
-#include <stdio.h> #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
-/\* Definicion de las constantes del programa \*/ #define TAM 30
+/* Definicion de las constantes del programa */
+#define TAM 30
+#define TAM_BUFFER 10
 
-#define TAM\_BUFFER 10
-
-/\* Definicion de los codigos de error \*/ #define OK 0
-
+/* Definicion de los codigos de error */
+#define OK 0
 #define ERROR 1
 
-/\* Definicion de las estructuras de datos del programa \*/ struct FICHA
-
-{
-
-unsigned long dni;
-
-char nombre[TAM];
-
-`   `char apellido[2][TAM];
-
+/* Definicion de las estructuras de datos del programa */
+struct FICHA {
+    unsigned long dni;
+    char nombre[TAM];
+    char apellido[2][TAM];
 };
 
-/\* Rutina que muestra un menu en pantalla. Parametros: Ninguno. Return: char Opcion elegida. \*/
-
+/* Rutina que muestra un menu en pantalla.
+Parametros: Ninguno.
+Return: char Opcion elegida. */
 char Menu(void) {
-
-`   `register char d;
-
-`   `printf("\nElige una opcion:\n");
-
-`   `printf("\t0 -- Salir del programa.\n");
-
-`   `printf("\t1 -- Insertar un nuevo elemento.\n");
-
-`   `printf("\t2 -- Buscar un elemento por su dni.\n");
-
-`   `printf("\t3 -- Buscar un elemento por su apellido.\n");
-
-while ((d=getchar())<'0' || d>'3');
-
-return d;
-
+    register char d;
+    printf("\nElige una opcion:\n");
+    printf("\t0 -- Salir del programa.\n");
+    printf("\t1 -- Insertar un nuevo elemento.\n");
+    printf("\t2 -- Buscar un elemento por su dni.\n");
+    printf("\t3 -- Buscar un elemento por su apellido.\n");
+    while ((d = getchar()) < '0' || d > '3');
+    return d;
 }
 
-/\* Rutina que muestra un elemento en pantalla.
-
-Parametros: struct FICHA \*ficha Puntero a la estructura con los datos a mostrar.
-
-Return: Ninguno. \*/
-
-void Mostrar(const struct FICHA \*ficha)
-
-{
-
-`   `printf("\n\nDNI: %lu\n",ficha->dni);
-
-`   `printf("NOMBRE: %s\n",ficha->nombre);
-
-`   `printf("PRIMER APELLIDO: %s\n",ficha->apellido[0]);    printf("SEGUNDO APELLIDO: %s\n",ficha->apellido[1]);    printf("\nPulsa Enter para continuar\n");    getchar();
-
+/* Rutina que muestra un elemento en pantalla.
+Parametros: struct FICHA *ficha Puntero a la estructura con los datos a mostrar.
+Return: Ninguno. */
+void Mostrar(const struct FICHA *ficha) {
+    printf("\n\nDNI: %lu\n", ficha->dni);
+    printf("NOMBRE: %s\n", ficha->nombre);
+    printf("PRIMER APELLIDO: %s\n", ficha->apellido[0]);
+    printf("SEGUNDO APELLIDO: %s\n", ficha->apellido[1]);
+    printf("\nPulsa Enter para continuar\n");
+    getchar();
 }
 
-/\* Rutina que busca un elemento dado su dni.
-
-Parametros: FILE \*fichero Puntero al fichero de trabajo.
-
-`            `unsigned long dni Numero de dni a buscar.
-
-`            `char opcion Opcion de ejecucion, 1 mostrar, 0 no mostrar. Return: int Codigo de error. \*/
-
-int BuscarDni(FILE \*fichero,const unsigned long dni,const char opcion) {
-
-struct FICHA ficha;
-
-fseek(fichero,0L,SEEK\_SET);
-
-while (fread(&ficha,sizeof(struct FICHA),1,fichero)==1)
-
-if (dni==ficha.dni)
-
-{
-
-if (opcion)
-
-Mostrar(&ficha);
-
-Return OK;
-
+/* Rutina que busca un elemento dado su dni.
+Parametros: FILE *fichero Puntero al fichero de trabajo.
+           unsigned long dni Numero de dni a buscar.
+           char opcion Opcion de ejecucion, 1 mostrar, 0 no mostrar.
+Return: int Codigo de error. */
+int BuscarDni(FILE *fichero, const unsigned long dni, const char opcion) {
+    struct FICHA ficha;
+    fseek(fichero, 0L, SEEK_SET);
+    while (fread(&ficha, sizeof(struct FICHA), 1, fichero) == 1)
+        if (dni == ficha.dni) {
+            if (opcion) Mostrar(&ficha);
+            return OK;
+        }
+    return ERROR;
 }
 
-`   `return ERROR;
-
+/* Rutina que busca por apellidos.
+Parametros: FILE *fichero Puntero al fichero de trabajo.
+           char *apellido Apellido a buscar.
+Return: int Codigo de error. */
+int BuscarApellido(FILE *fichero, char *apellido) {
+    struct FICHA ficha;
+    char encontrado = 0;
+    fseek(fichero, 0L, SEEK_SET);
+    while (fread(&ficha, sizeof(struct FICHA), 1, fichero) == 1)
+        if (!strcmp(apellido, ficha.apellido[0]) || !strcmp(apellido, ficha.apellido[1])) {
+            Mostrar(&ficha);
+            encontrado = 1;
+        }
+    return (encontrado) ? OK : ERROR;
 }
 
-/\* Rutina que busca por apellidos.
-
-Parametros: FILE \*fichero Puntero al fichero de trabajo.             char \*apellido Apellido a buscar.
-
-Return: int Codigo de error.\*/
-
-int BuscarApellido(FILE \*fichero,char \*apellido) {
-
-struct FICHA ficha;
-
-char encontrado=0;
-
-fseek(fichero,0L,SEEK\_SET);
-
-while (fread(&ficha,sizeof(struct FICHA),1,fichero)==1) if (!strcmp(apellido,ficha.apellido[0]) ||
-
-`         `!strcmp(apellido,ficha.apellido[1]))
-
-`      `{
-
-`         `Mostrar(&ficha);
-
-`         `encontrado=1;
-
-`      `}
-
-`   `return (encontrado) ? OK : ERROR;
-
+/* Rutina que inserta un nuevo elemento en el fichero.
+Parametros: FILE *fichero Puntero al fichero de trabajo.
+           struct FICHA *ficha Puntero a la ficha a insertar.
+Return: int Codigo de error. */
+int Insertar(FILE *fichero, const struct FICHA *ficha) {
+    if (BuscarDni(fichero, ficha->dni, 0) != ERROR)
+        return ERROR;
+    fseek(fichero, 0L, SEEK_END);
+    fwrite(ficha, sizeof(struct FICHA), 1, fichero);
+    return OK;
 }
 
-/\* Rutina que inserta un nuevo elemento en el fichero. Parametros: FILE \*fichero Puntero al fichero de trabajo.
-
-`            `struct FICHA \*ficha Puntero a la ficha a insertar. Return: int Codigo de error. \*/
-
-int Insertar(FILE \*fichero,const struct FICHA \*ficha) {
-
-`   `if (BuscarDni(fichero,ficha->dni,0)!=ERROR)
-
-`      `return ERROR;
-
-`   `fseek(fichero,0L,SEEK\_END);
-
-fwrite(ficha,sizeof(struct FICHA),1,fichero);
-
-return OK;
-
+/* Rutina que pide los datos de una ficha.
+Parametros: struct FICHA *ficha Puntero a la ficha que contendra los datos.
+           char opcion Opcion de ejecucion (0..2).
+Return: struct FICHA * Puntero a la ficha que contiene los datos. */
+struct FICHA *PedirDatos(struct FICHA *ficha, const char opcion) {
+    switch(opcion) {
+        case 0:
+            printf("\nDNI: ");
+            scanf("%lu", &ficha->dni);
+            fflush(stdin);
+            break;
+        case 1:
+            fflush(stdin);
+            printf("APELLIDO: ");
+            strupr(gets(ficha->apellido[1]));
+            break;
+        case 2:
+            printf("\nDNI: ");
+            scanf("%lu", &ficha->dni);
+            fflush(stdin);
+            printf("NOMBRE: ");
+            strupr(gets(ficha->nombre));
+            printf("PRIMER APELLIDO: ");
+            strupr(gets(ficha->apellido[0]));
+            printf("SEGUNDO APELLIDO: ");
+            strupr(gets(ficha->apellido[1]));
+            break;
+    }
+    return ficha;
 }
 
-/\* Rutina que pide los datos de una ficha.
+int main(int argc, char *argv[]) {
+    FILE *fichero;
+    struct FICHA ficha;
+    register char d;
 
-Parametros: struct FICHA \*ficha Puntero a la ficha que contendra los datos.
+    if (argc != 2) {
+        printf("\nModo de uso: %s <fichero>\n", argv[0]);
+        return 1;
+    }
 
-`            `char opcion Opcion de ejecucion (0..2).
+    if ((fichero = fopen(argv[1], "a+b")) == NULL) {
+        printf("\nError creando el fichero: %s\n", argv[1]);
+        return 1;
+    }
 
-Return: struct FICHA \* Puntero a la ficha que contiene los datos. \*/
+    if (setvbuf(fichero, NULL, _IOFBF, TAM_BUFFER * sizeof(struct FICHA)) != 0) {
+        printf("\nError creando el buffer para %d elementos.\n", TAM_BUFFER);
+        fclose(fichero);
+        return 1;
+    }
 
-struct FICHA \*PedirDatos(struct FICHA \*ficha, const char opcion)
+    do {
+        switch(d = Menu()) {
+            case '0': break;
+            case '1':
+                if (Insertar(fichero, PedirDatos(&ficha, 2)) == ERROR)
+                    printf("\nNumero de dni duplicado.\n");
+                break;
+            case '2':
+                PedirDatos(&ficha, 0);
+                if (BuscarDni(fichero, ficha.dni, 1) == ERROR)
+                    printf("\nDni no existente.\n");
+                break;
+            case '3':
+                PedirDatos(&ficha, 1);
+                if (BuscarApellido(fichero, ficha.apellido[1]) == ERROR)
+                    printf("\nApellido inexistente.\n");
+                break;
+        }
+    } while (d != '0');
 
-{
-
-switch(opcion)
-
-{
-
-case 0: printf("\nDNI: ");
-
-scanf("%lu",&ficha->dni); fflush(stdin);
-
-break;
-
-case 1: fflush(stdin);
-
-printf("APELLIDO: ");          strupr(gets(ficha->apellido[1]));
-
-break;
-
-case 2: printf("\nDNI: ");
-
-scanf("%lu",&ficha->dni); fflush(stdin);
-
-printf("NOMBRE: ");
-
-strupr(gets(ficha->nombre));
-
-printf("PRIMER APELLIDO: ");          strupr(gets(ficha->apellido[0]));
-
-`         `printf("SEGUNDO APELLIDO: ");          strupr(gets(ficha->apellido[1]));
-
-82
-El lenguaje de programación C
-
-break; }![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.013.png)
-
-return ficha;
-
+    fclose(fichero);
+    return 0;
 }
+```
 
-int main(int argc,char \*argv[]) {
 
-FILE \*fichero;
-
-struct FICHA ficha;
-
-register char d;
-
-if (argc!=2)
-
-{
-
-printf("\nModo de uso: %s <fichero>\n",argv[0]);
-
-return 1;
-
-}
-
-if ((fichero=fopen(argv[1],"a+b"))==NULL)
-
-{
-
-`      `printf("\nError creando el fichero: %s\n",argv[1]);
-
-return 1;
-
-}
-
-if (setvbuf(fichero,NULL,\_IOFBF,
-
-TAM\_BUFFER\*sizeof(struct FICHA))!=0)
-
-{
-
-`      `printf("\nError creando el buffer para %d elementos.\n",
-
-TAM\_BUFFER);
-
-fclose(fichero);
-
-return 1;
-
-}
-
-do
-
-switch(d=Menu())
-
-{
-
-case '0':break;
-
-case '1':if (Insertar(fichero,PedirDatos(&ficha,2))==ERROR)                      printf("\nNumero de dni duplicado.\n");             break;
-
-`         `case '2':PedirDatos(&ficha,0);
-
-`            `if (BuscarDni(fichero,ficha.dni,1)==ERROR)
-
-`               `printf("\nDni no existente.\n");
-
-`            `break;
-
-`         `case '3':PedirDatos(&ficha,1);
-
-`            `if (BuscarApellido(fichero,ficha.apellido[1])==ERROR)
-
-`               `printf("\nApellido inexistente.\n");
-
-break;
-
-}
-
-while (d!='0');
-
-fclose(fichero);
-
-return 0;
-
-}
 
 ## B.5 - arbol.c.
 
