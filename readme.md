@@ -5,100 +5,240 @@
 
 ### 🔑 **Palabras clave y fundamentos**
 
-| Tema                                                                                                                                                  | Subtemas |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| [0. Palabras reservadas en C](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c) | -        |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c" style="text-decoration: none;">0. Palabras reservadas en C</a></td>
+    <td>-</td>
+  </tr>
+</table>
 
 ---
 
 ### 🧠 **Variables y Tipos de Datos**
 
-| Tema                                                                                          | Subtemas                                                                                                                                                                                                                                                                                     |
-| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [1. Identificadores, Tipos de Datos, Variables](#1--identificadores-tipos-de-datos-variables) | [1.1. Tipos de Datos](#11---tipos-de-datos) <br> [1.2. Declaración de Variables y Alcance](#12--declaraci%C3%B3n-de-variables-y-alcance) <br> [1.3. Especificadores de Almacenamiento](#13--especificadores-de-almacenamiento-de-los-tipos-de-datos) <br> [1.4. Constantes](#14--constantes) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#1--identificadores-tipos-de-datos-variables" style="text-decoration: none;">1. Identificadores, Tipos de Datos, Variables</a></td>
+    <td>
+      <a href="#11---tipos-de-datos" style="text-decoration: none;">1.1. Tipos de Datos</a><br>
+      <a href="#12--declaración-de-variables-y-alcance" style="text-decoration: none;">1.2. Declaración de Variables y Alcance</a><br>
+      <a href="#13--especificadores-de-almacenamiento-de-los-tipos-de-datos" style="text-decoration: none;">1.3. Especificadores de Almacenamiento</a><br>
+      <a href="#14--constantes" style="text-decoration: none;">1.4. Constantes</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### ➕ **Operadores**
 
-| Tema                                                                                                                                                                                 | Subtemas                                                                                                                                                                                                                                                                                                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [2. Operadores](#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-) | [2.1. Operadores Aritméticos](#21--operadores-aritm%C3%A9ticos) <br> [2.2. Operadores Relacionales y Lógicos](#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos) <br> [2.3. Operador Asignación](#23--operador-asignaci%C3%B3n) <br> [2.4. Operador sizeof](#24--operador-sizeof) <br> [2.5. Operadores sobre Bits](#25--operadores-sobre-bits) <br> [2.6. Operador Ternario](#26--el-operador-) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-" style="text-decoration: none;">2. Operadores</a></td>
+    <td>
+      <a href="#21--operadores-aritm%C3%A9ticos" style="text-decoration: none;">2.1. Operadores Aritméticos</a><br>
+      <a href="#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos" style="text-decoration: none;">2.2. Operadores Relacionales y Lógicos</a><br>
+      <a href="#23--operador-asignaci%C3%B3n" style="text-decoration: none;">2.3. Operador Asignación</a><br>
+      <a href="#24--operador-sizeof" style="text-decoration: none;">2.4. Operador sizeof</a><br>
+      <a href="#25--operadores-sobre-bits" style="text-decoration: none;">2.5. Operadores sobre Bits</a><br>
+      <a href="#26--el-operador-" style="text-decoration: none;">2.6. Operador Ternario</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 🔁 **Conversión de Tipos**
 
-| Tema                                                                      | Subtemas                                                                                                                                                         |
-| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [3. Conversión de Tipos de Datos](#3---conversi%C3%B3n-de-tipos-de-datos) | [3.1. Conversión Automática](#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos) <br> [3.2. Conversión Forzada](#32--conversi%C3%B3n-forzada-de-tipos-datos) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#3---conversi%C3%B3n-de-tipos-de-datos" style="text-decoration: none;">3. Conversión de Tipos de Datos</a></td>
+    <td>
+      <a href="#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos" style="text-decoration: none;">3.1. Conversión Automática</a><br>
+      <a href="#32--conversi%C3%B3n-forzada-de-tipos-datos" style="text-decoration: none;">3.2. Conversión Forzada</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 🧩 **Control de Flujo**
 
-| Tema                                                                      | Subtemas                                                                                                                                                                                                                                                                                                  |
-| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [4. Sentencias de Control y Bucles](#4---sentencias-de-control-y-bucless) | [4.1. Sentencia if](#41--sentencia-de-control-if) <br> [4.2. Sentencia switch](#52-sentencia-switch) <br> [4.3. Bucle for](#53-bucle-for) <br> [4.4. Bucle while](#54-bucle-while) <br> [4.5. Bucle do/while](#55-bucle-dowhile) <br> [4.6. Sentencias break y continue](#56-sentencias-break-y-continue) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#4---sentencias-de-control-y-bucless" style="text-decoration: none;">4. Sentencias de Control y Bucles</a></td>
+    <td>
+      <a href="#41--sentencia-de-control-if" style="text-decoration: none;">4.1. Sentencia if</a><br>
+      <a href="#52-sentencia-switch" style="text-decoration: none;">4.2. Sentencia switch</a><br>
+      <a href="#53-bucle-for" style="text-decoration: none;">4.3. Bucle for</a><br>
+      <a href="#54-bucle-while" style="text-decoration: none;">4.4. Bucle while</a><br>
+      <a href="#55-bucle-dowhile" style="text-decoration: none;">4.5. Bucle do/while</a><br>
+      <a href="#56-sentencias-break-y-continue" style="text-decoration: none;">4.6. Sentencias break y continue</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 🧵 **Arrays, Cadenas y Punteros**
 
-| Tema                                                          | Subtemas                                                                         |
-| ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| [5. Arrays, Cadenas y Punteros](#6-arrays-cadenas-y-punteros) | [5.1. Arrays y Cadenas](#61-arrays-y-cadenas) <br> [5.2. Punteros](#62-punteros) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#6-arrays-cadenas-y-punteros" style="text-decoration: none;">5. Arrays, Cadenas y Punteros</a></td>
+    <td>
+      <a href="#61-arrays-y-cadenas" style="text-decoration: none;">5.1. Arrays y Cadenas</a><br>
+      <a href="#62-punteros" style="text-decoration: none;">5.2. Punteros</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 🛠️ **Funciones**
 
-| Tema                         | Subtemas                                                                                                                                                                                                                                                                                                                                                                                              |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [6. Funciones](#7-funciones) | [6.1. Sentencia return](#71-sentencia-return) <br> [6.2. Argumentos de Funciones](#72-argumentos-de-funciones) <br> [6.3. Arrays como Argumentos](#73-arrays-como-argumentos) <br> [6.4. Argumentos de main()](#74-argumentos-de-main) <br> [6.5. Recursividad](#75-recursividad) <br> [6.6. Punteros a Funciones](#76-punteros-a-funciones) <br> [6.7. static en Funciones](#77-static-en-funciones) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#7-funciones" style="text-decoration: none;">6. Funciones</a></td>
+    <td>
+      <a href="#71-sentencia-return" style="text-decoration: none;">6.1. Sentencia return</a><br>
+      <a href="#72-argumentos-de-funciones" style="text-decoration: none;">6.2. Argumentos de Funciones</a><br>
+      <a href="#73-arrays-como-argumentos" style="text-decoration: none;">6.3. Arrays como Argumentos</a><br>
+      <a href="#74-argumentos-de-main" style="text-decoration: none;">6.4. Argumentos de main()</a><br>
+      <a href="#75-recursividad" style="text-decoration: none;">6.5. Recursividad</a><br>
+      <a href="#76-punteros-a-funciones" style="text-decoration: none;">6.6. Punteros a Funciones</a><br>
+      <a href="#77-static-en-funciones" style="text-decoration: none;">6.7. static en Funciones</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 🧱 **Estructuras y Tipos Compuestos**
 
-| Tema                                                                                                           | Subtemas                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [7. Estructuras, Campos de Bit, Uniones y Enumeraciones](#8-estructuras-campos-de-bit-uniones-y-enumeraciones) | [7.1. Estructuras](#81-estructuras) <br> [7.2. Campos de Bit](#82-campos-de-bit) <br> [7.3. Uniones](#83-uniones) <br> [7.4. Enumeraciones](#84-enumeraciones) <br> [7.5. typedef](#85-typedef) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#8-estructuras-campos-de-bit-uniones-y-enumeraciones" style="text-decoration: none;">7. Estructuras, Campos de Bit, Uniones y Enumeraciones</a></td>
+    <td>
+      <a href="#81-estructuras" style="text-decoration: none;">7.1. Estructuras</a><br>
+      <a href="#82-campos-de-bit" style="text-decoration: none;">7.2. Campos de Bit</a><br>
+      <a href="#83-uniones" style="text-decoration: none;">7.3. Uniones</a><br>
+      <a href="#84-enumeraciones" style="text-decoration: none;">7.4. Enumeraciones</a><br>
+      <a href="#85-typedef" style="text-decoration: none;">7.5. typedef</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### ⚙️ **Preprocesador**
 
-| Tema                                       | Subtemas                                                                                                                                                                                                                                                                                                                                                                        |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [8. El Preprocesador](#9-el-preprocesador) | [8.1. Directiva #define](#91-directiva-define) <br> [8.2. Directiva #undef](#92-directiva-undef) <br> [8.3. Directiva #error](#93-directiva-error) <br> [8.4. Directiva #include](#94-directiva-include) <br> [8.5. Directivas Condicionales](#95-directivas-condicionales) <br> [8.6. Directiva #line](#96-directiva-line) <br> [8.7. Directiva #pragma](#97-directiva-pragma) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#9-el-preprocesador" style="text-decoration: none;">8. El Preprocesador</a></td>
+    <td>
+      <a href="#91-directiva-define" style="text-decoration: none;">8.1. Directiva #define</a><br>
+      <a href="#92-directiva-undef" style="text-decoration: none;">8.2. Directiva #undef</a><br>
+      <a href="#93-directiva-error" style="text-decoration: none;">8.3. Directiva #error</a><br>
+      <a href="#94-directiva-include" style="text-decoration: none;">8.4. Directiva #include</a><br>
+      <a href="#95-directivas-condicionales" style="text-decoration: none;">8.5. Directivas Condicionales</a><br>
+      <a href="#96-directiva-line" style="text-decoration: none;">8.6. Directiva #line</a><br>
+      <a href="#97-directiva-pragma" style="text-decoration: none;">8.7. Directiva #pragma</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 📥 **Entrada y Salida**
 
-| Tema                                        | Subtemas                                                                                                                                         |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [9. Entrada y Salida](#10-entrada-y-salida) | [9.1. Entrada/Salida desde Consola](#101-entradasalida-desde-consola) <br> [9.2. Entrada/Salida desde Fichero](#102-entradasalida-desde-fichero) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#10-entrada-y-salida" style="text-decoration: none;">9. Entrada y Salida</a></td>
+    <td>
+      <a href="#101-entradasalida-desde-consola" style="text-decoration: none;">9.1. Entrada/Salida desde Consola</a><br>
+      <a href="#102-entradasalida-desde-fichero" style="text-decoration: none;">9.2. Entrada/Salida desde Fichero</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 📦 **Memoria Dinámica**
 
-| Tema                                                                     | Subtemas                                                                                                                                                        |
-| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [10. Asignación Dinámica de Memoria](#11-asignación-dinámica-de-memoria) | [10.1. Reserva Dinámica](#111-reserva-dinámica) <br> [10.2. Liberación Dinámica](#112-liberación-dinámica) <br> [10.3. Ejemplo Práctico](#113-ejemplo-práctico) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#11-asignación-dinámica-de-memoria" style="text-decoration: none;">10. Asignación Dinámica de Memoria</a></td>
+    <td>
+      <a href="#111-reserva-dinámica" style="text-decoration: none;">10.1. Reserva Dinámica</a><br>
+      <a href="#112-liberación-dinámica" style="text-decoration: none;">10.2. Liberación Dinámica</a><br>
+      <a href="#113-ejemplo-práctico" style="text-decoration: none;">10.3. Ejemplo Práctico</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 📌 **Apéndices**
 
-| Tema                           | Subtemas                                                                                                                                   |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| [11. Apéndices](#12-apéndices) | [11.1. Funciones de Biblioteca ANSI C](#121-funciones-de-biblioteca-ansi-c) <br> [11.2. Ejemplos de Programas](#122-ejemplos-de-programas) |
+<table style="border: none; width: 100%;">
+  <tr>
+    <td><strong>Tema</strong></td>
+    <td><strong>Subtemas</strong></td>
+  </tr>
+  <tr>
+    <td><a href="#12-apéndices" style="text-decoration: none;">11. Apéndices</a></td>
+    <td>
+      <a href="#121-funciones-de-biblioteca-ansi-c" style="text-decoration: none;">11.1. Funciones de Biblioteca ANSI C</a><br>
+      <a href="#122-ejemplos-de-programas" style="text-decoration: none;">11.2. Ejemplos de Programas</a>
+    </td>
+  </tr>
+</table>
 
 ---
-
 
 ### **Lista de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
 
