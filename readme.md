@@ -213,11 +213,11 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#11-asignación-dinámica-de-memoria" style="text-decoration: none;">10. Asignación Dinámica de Memoria</a></td>
+    <td><a href="#tema-10---asignación-dinámica-de-memoria" style="text-decoration: none;">10. Asignación Dinámica de Memoria</a></td>
     <td>
-      <a href="#111-reserva-dinámica" style="text-decoration: none;">10.1. Reserva Dinámica</a><br>
-      <a href="#112-liberación-dinámica" style="text-decoration: none;">10.2. Liberación Dinámica</a><br>
-      <a href="#113-ejemplo-práctico" style="text-decoration: none;">10.3. Ejemplo Práctico</a>
+      <a href="#101-reserva-dinámica-de-memoria" style="text-decoration: none;">10.1. Reserva Dinámica</a><br>
+      <a href="#102-liberación-dinámica-de-memoria" style="text-decoration: none;">10.2. Liberación Dinámica</a><br>
+      <a href="#103-ejemplo-práctico" style="text-decoration: none;">10.3. Ejemplo Práctico</a>
     </td>
   </tr>
 </table>
