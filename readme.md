@@ -654,13 +654,15 @@ Esta expresión asigna a la variable `c` el valor de `a * b` y devuelve su valor
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
+
 El operador **sizeof** es un operador en tiempo de compilación. Devuelve el tamaño de una variable o tipo de dato durante la compilación, no durante la ejecución del programa. Veamos algunos ejemplos:
 
-**sizeof(int)** devuelve el valor 2 en los sistemas operativos de 16 bits y 4 en los de 
+```c
+sizeof(int) //  devuelve el valor 2 en los sistemas operativos de 16 bits y 4 en los de 32 bits.
+````
 
-32 bits.
+Si tenemos `char a[20]`, `sizeof(a)` devuelve el valor 20, y si tenemos `float a[6]`, `sizeof(a)` devuelve el valor 24 (4 \* 6).
 
-Si tenemos **char a[20]**, **sizeof(a)** devuelve el valor 20, y si tenemos **float a[6]**, *sizeof(a)*** devuelve el valor 24 (4\*6).
 
 ## 2.5.- Operadores sobre bits.
 
