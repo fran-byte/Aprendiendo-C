@@ -802,10 +802,12 @@ El lenguaje C posee un concepto muy amplio de lo que es verdadero. Para C, cualq
 El concepto de sentencia en C es igual que el de otros muchos lenguajes. Por sentencia se entiende en C cualquier instrucción simple o bien, cualquier conjunto de instrucciones simples que se encuentren encerradas entre los caracteres { y }, que marcan respectivamente el comienzo y el final de una sentencia.
 
 La forma general de la sentencia *if* es:
-
-if (condición    sentencia; else
-
+```
+if (condición)
+    sentencia; 
+else
 `   `sentencia;
+```
 
 Siendo el *else* opcional. Si la *condición* es verdadera se ejecuta la *sentencia* asociada al *if*, en caso de que sea falsa la *condición* se ejecuta la *sentencia* asociada al *else*** (si existe** el *else*). Veamos algunos ejemplos de sentencias *if*:
 
