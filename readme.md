@@ -131,9 +131,9 @@
     <td><a href="#tema-6---funciones" style="text-decoration: none;">6. Funciones</a></td>
     <td>
       <a href="#61-la-sentencia-return" style="text-decoration: none;">6.1. Sentencia return</a><br>
-      <a href="#62-argumentos-de-funciones-llamadas-por-valor-y-referencia" style="text-decoration: none;">6.2. Argumentos de Funciones</a><br>
+      <a href="#62-argumentos-de-funciones-llamada-por-valor-y-referencia" style="text-decoration: none;">6.2. Argumentos de Funciones</a><br>
       <a href="#63-arrays-como-argumentos-de-funciones" style="text-decoration: none;">6.3. Arrays como Argumentos</a><br>
-      <a href="#64-argumentos-de-la-funcion-main" style="text-decoration: none;">6.4. Argumentos de main()</a><br>
+      <a href="#64-argumentos-de-la-función-main" style="text-decoration: none;">6.4. Argumentos de main()</a><br>
       <a href="#65-recursividad" style="text-decoration: none;">6.5. Recursividad</a><br>
       <a href="#66punteros-a-funciones" style="text-decoration: none;">6.6. Punteros a Funciones</a><br>
       <a href="#67-el-modificador-de-almacenamiento-static-aplicado-a-funciones" style="text-decoration: none;">6.7. static en Funciones</a>
