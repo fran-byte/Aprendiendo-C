@@ -1,14 +1,12 @@
 # <img src="images/C_Logo.png"/> Material didáctico 
 
-https://github.com/fran-byte/Learn-C/blob/main/readme.md#1--identificadores-tipos-de-datos-variables
-https://github.com/fran-byte/Learn-C/blob/main/readme.md#11---tipos-de-datos
 
 ## 📚 **Índice**  
 0. [Palabras reservadas en C](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c)  
 1. [Identificadores, Tipos de Datos, Variables](#1--identificadores-tipos-de-datos-variables) 
    - 1.1. [Tipos de Datos](#11---tipos-de-datos)  
-   - 1.2. [Declaración de Variables y Alcance](#2.2-declaración-de-variables-y-alcance)  
-   - 1.3. [Especificadores de Almacenamiento](#2.3-especificadores-de-almacenamiento)  
+   - 1.2. [Declaración de Variables y Alcance](#12--declaraci%C3%B3n-de-variables-y-alcance  
+   - 1.3. [Especificadores de Almacenamiento](#13-especificadores-de-almacenamiento)  
    - 1.4. [Constantes](#2.4-constantes)  
 2. [Operadores](#3-operadores)  
    - 2.1. [Operadores Aritméticos](#31-operadores-aritméticos)  
