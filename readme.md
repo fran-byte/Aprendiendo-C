@@ -1029,105 +1029,127 @@ Este ciclo imprime combinaciones de los valores de `i` y `j`. En cada iteración
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La sintaxis del bucle *while* es:
+La sintaxis del bucle `while` es:
 
-while (condición) sentencia;
+```c
+while (condición) 
+    sentencia;
+````
 
-Donde la *sentencia* puede no existir (sentencia vacía), pero siempre debe existir la *condición*. El bucle *while*  se ejecuta mientras la condición sea verdad. Veamos algunos ejemplos de bucles *while*:
+Donde la sentencia puede no existir (sentencia vacía), pero siempre debe existir la condición. El bucle `while` se ejecuta mientras la condición sea verdad. Veamos algunos ejemplos de bucles `while`:
 
-int i=1,suma=0; while (i<=100)
-
-{
-
-suma=suma+i; i++;
-
+```c
+int i = 1, suma = 0; 
+while (i <= 100) {
+    suma = suma + i;
+    i++;
 }
+```
 
-while (getc(stdin)!=‘\x1B’); /\* Bucle que espera hasta que se \*/                              /\* pulse la tecla Esc \*/
+Este bucle suma los números del 1 al 100 y almacena el resultado en `suma`.
 
-while (1) /\* Recordar que en C lo que no es cero es verdad \*/ {
+```c
+while (getc(stdin) != '\x1B'); /* Bucle que espera hasta que se */
+                                /* pulse la tecla Esc */
+```
 
-d=getc(stdin);
+Este bucle se ejecuta esperando que se presione la tecla `Esc` (representada por el valor `'\x1B'` en código ASCII).
 
-printf(“%c”,d);
-
-if (d==‘\x1B’)
-
-break;
-
+```c
+while (1) /* Recordar que en C lo que no es cero es verdad */ {
+    d = getc(stdin);
+    printf("%c", d);
+    if (d == '\x1B')
+        break;
 }
+```
+
+Este es un bucle infinito que lee caracteres desde la entrada estándar (teclado) y los imprime en la pantalla. Si se presiona la tecla `Esc`, el bucle se interrumpe con la instrucción `break`.
+
+
+
 
 ## 4.5. Bucle do/while.
 
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Al contrario que los bucles *for* y *while* que comprueban la condición en lo alto de la misma, el bucle *do/while* comprueba la condición en la parte baja del mismo, lo cual provoca que el bucle se ejecute como mínimo una vez. La sintaxis del bucle *do/while* es:
 
+Al contrario que los bucles `for` y `while` que comprueban la condición en lo alto de la misma, el bucle `do/while` comprueba la condición en la parte baja del mismo, lo cual provoca que el bucle se ejecute como mínimo una vez. La sintaxis del bucle `do/while` es:
+
+```c
 do
-
-`   `sentencia;
-
+    sentencia;
 while (condición);
+````
 
-El bucle *do/while* se ejecuta mientras la *condición* sea verdad. Veamos algunos ejemplos de bucle *do/while*:
+El bucle `do/while` se ejecuta mientras la `condición` sea verdad. Veamos algunos ejemplos de bucle `do/while`:
 
+```c
 int num;
 
-do
+do {
+    scanf("%d", &num);
+} while (num > 100);
+```
 
-scanf(“%d”,&num); while (num>100);
+En este ejemplo, el programa solicita al usuario que ingrese un número. Si el número es mayor que 100, seguirá solicitando la entrada, asegurando que la condición se verifique al final de cada iteración.
 
-int i,j;
+```c
+int i, j;
 
-do
+do {
+    scanf("%d", &i);
+    scanf("%d", &j);
+} while (i < j);
+```
 
-{
+Este ejemplo solicita dos números, `i` y `j`, y continuará solicitando la entrada mientras `i` sea menor que `j`. Al igual que en el caso anterior, la condición se evalúa después de la ejecución de las sentencias dentro del `do`.
 
-scanf(“%d”,&i);
 
-scanf(“%d”,&j); }
 
-while (i<j);
 
 ## 4.6 Sentencias de control break y continue .
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Las sentencias de control *break* y *continue* permiten modificar y controlar la ejecución de los bucles anteriormente descritos.
 
-La sentencia *break* provoca la salida del bucle en el cual se encuentra y la ejecución de la sentencia que se encuentra a continuación del bucle.
+Las sentencias de control `break` y `continue` permiten modificar y controlar la ejecución de los bucles anteriormente descritos.
 
-La sentencia *continue* provoca que el programa vaya directamente a comprobar la condición del bucle en los bucles *while* y *do/while*, o bien, que ejecute el incremento y después compruebe la condición en el caso del bucle *for*.
+La sentencia `break` provoca la salida del bucle en el cual se encuentra y la ejecución de la sentencia que se encuentra a continuación del bucle.
 
-Veamos algunos ejemplos de uso de *break* y de *continue*:
+La sentencia `continue` provoca que el programa vaya directamente a comprobar la condición del bucle en los bucles `while` y `do/while`, o bien, que ejecute el incremento y después compruebe la condición en el caso del bucle `for`.
 
+Veamos algunos ejemplos de uso de `break` y de `continue`:
+
+```c
 int x;
 
-for(x=0;x<10;x++)
-
-{
-
-for(;;)
-
-if (getc(stdin)==‘\x1B’)
-
-break;
-
-`   `printf(“Salí del bucle infinito, el valor de x es: %d\n”,x); }
-
-int x;
-
-for(x=1;x<=100;x++) /\* Esta rutina imprime en pantalla los \*/
-
-{                   /\*números pares \*/
-
-if (x%2)
-
-continue;
-printf(“%d\n”,x);
-
+for (x = 0; x < 10; x++) {
+    for (;;) {
+        if (getc(stdin) == '\x1B')
+            break;  // Sale del bucle infinito cuando se presiona la tecla Esc
+    }
+    printf("Salí del bucle infinito, el valor de x es: %d\n", x);
 }
+````
+
+En este ejemplo, el bucle interior es infinito, pero si se presiona la tecla `Esc`, el `break` provoca que salga de ese bucle, y luego el programa continúa con el siguiente valor de `x`.
+
+```c
+int x;
+
+for (x = 1; x <= 100; x++) {  /* Esta rutina imprime en pantalla los */
+                               /* números pares */
+    if (x % 2)  // Si el número es impar, se salta a la siguiente iteración
+        continue;
+    printf("%d\n", x);  // Imprime el número si es par
+}
+```
+
+Aquí, si el número `x` es impar (es decir, si `x % 2` es distinto de 0), el `continue` provoca que se salte la ejecución de la instrucción `printf` y pase a la siguiente iteración del bucle.
+
+
 
 ## Tema 6 - Arrays, cadenas y punteros.
 
