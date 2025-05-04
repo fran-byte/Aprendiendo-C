@@ -20,10 +20,6 @@
 
 <table style="border: none; width: 100%;">
   <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
-  <tr>
     <td><a href="#1--identificadores-tipos-de-datos-variables" style="text-decoration: none;">1. Identificadores, Tipos de Datos, Variables</a></td>
     <td>
       <a href="#11---tipos-de-datos" style="text-decoration: none;">1.1. Tipos de Datos</a><br>
@@ -39,10 +35,6 @@
 ### ➕ **Operadores**
 
 <table style="border: none; width: 100%;">
-  <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
   <tr>
     <td><a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-" style="text-decoration: none;">2. Operadores</a></td>
     <td>
@@ -62,10 +54,6 @@
 
 <table style="border: none; width: 100%;">
   <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
-  <tr>
     <td><a href="#3---conversi%C3%B3n-de-tipos-de-datos" style="text-decoration: none;">3. Conversión de Tipos de Datos</a></td>
     <td>
       <a href="#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos" style="text-decoration: none;">3.1. Conversión Automática</a><br>
@@ -79,10 +67,6 @@
 ### 🧩 **Control de Flujo**
 
 <table style="border: none; width: 100%;">
-  <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
   <tr>
     <td><a href="#4---sentencias-de-control-y-bucles" style="text-decoration: none;">4. Sentencias de Control y Bucles</a></td>
     <td>
@@ -102,10 +86,6 @@
 
 <table style="border: none; width: 100%;">
   <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
-  <tr>
     <td><a href="#tema-5---arrays-cadenas-y-punteros" style="text-decoration: none;">5. Arrays, Cadenas y Punteros</a></td>
     <td>
       <a href="#51-arrays-y-cadenas" style="text-decoration: none;">5.1. Arrays y Cadenas</a><br>
@@ -119,10 +99,6 @@
 ### 🛠️ **Funciones**
 
 <table style="border: none; width: 100%;">
-  <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
   <tr>
     <td><a href="#tema-6---funciones" style="text-decoration: none;">6. Funciones</a></td>
     <td>
@@ -143,10 +119,6 @@
 
 <table style="border: none; width: 100%;">
   <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
-  <tr>
     <td><a href="#tema-7---estructuras-campos-de-bit-uniones-y" style="text-decoration: none;">7. Estructuras, Campos de Bit, Uniones y Enumeraciones</a></td>
     <td>
       <a href="#71-estructuras" style="text-decoration: none;">7.1. Estructuras</a><br>
@@ -163,10 +135,6 @@
 ### ⚙️ **Preprocesador**
 
 <table style="border: none; width: 100%;">
-  <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
   <tr>
     <td><a href="#tema-8---el-preprocesador" style="text-decoration: none;">8. El Preprocesador</a></td>
     <td>
@@ -187,10 +155,6 @@
 
 <table style="border: none; width: 100%;">
   <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
-  <tr>
     <td><a href="#tema-9---entrada-y-salida" style="text-decoration: none;">9. Entrada y Salida</a></td>
     <td>
       <a href="#91-entrada-y-salida-desde-consola" style="text-decoration: none;">9.1. Entrada/Salida desde Consola</a><br>
@@ -204,10 +168,6 @@
 ### 🧠 **Memoria Dinámica**
 
 <table style="border: none; width: 100%;">
-  <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
   <tr>
     <td><a href="#tema-10---asignación-dinámica-de-memoria" style="text-decoration: none;">10. Asignación Dinámica de Memoria</a></td>
     <td>
@@ -223,10 +183,6 @@
 ### 📌 **Apéndices**https://github.com/fran-byte/Learn-C/blob/main/readme.md#a6---funciones-varias
 
 <table style="border: none; width: 100%;">
-  <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
   <tr>
     <td><a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del" style="text-decoration: none;">A. Apéndices</a></td>
     <td>
