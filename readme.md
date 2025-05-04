@@ -1,5 +1,5 @@
 # <img src="images/C_Logo.png"/> Material didáctico 
-https://github.com/fran-byte/Learn-C/blob/main/readme.md#13--especificadores-de-almacenamiento-de-los-tipos-de-datos
+
 
 ## 📚 **Índice**  
 0. [Palabras reservadas en C](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c)  
