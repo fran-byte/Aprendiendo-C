@@ -8,7 +8,7 @@
    - 1.2. [Declaración de Variables y Alcance](#12--declaraci%C3%B3n-de-variables-y-alcance)
    - 1.3. [Especificadores de Almacenamiento](#13--especificadores-de-almacenamiento-de-los-tipos-de-datos)  
    - 1.4. [Constantes](#14--constantes)  
-2. [Operadores](##2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-)
+2. [Operadores](#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-)
    - 2.1. [Operadores Aritméticos](#31-operadores-aritméticos)  
    - 2.2. [Operadores Relacionales y Lógicos](#32-operadores-relacionales-y-lógicos)  
    - 2.3. [Operador Asignación](#33-operador-asignación)  
