@@ -5,14 +5,60 @@ Este repositorio pretende ser una introdución a C.
 
 
 
-## Palabras reservadas
+### **Lista Completa de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
 
+---
 
-| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
-| - | - | - | - | - | - | - |
-|auto|break|case|char|const|continue|default|
-|do|double|else|enum|extern|float|for|
-|goto|if|int|long|register|return|short|
+#### **1. Palabras Reservadas Básicas (32 en total)**
+Estas son las palabras clave definidas por el estándar C que **no pueden usarse como identificadores** (nombres de variables, funciones, etc.):
+
+| Categoría          | Palabras Reservadas                                                                 |
+|--------------------|------------------------------------------------------------------------------------|
+| **Tipos de datos** | `char`, `short`, `int`, `long`, `float`, `double`, `void`, `_Bool` (C99), `_Complex` (C99), `_Imaginary` (C99) |
+| **Modificadores**  | `signed`, `unsigned`, `const`, `volatile`, `restrict` (C99)                        |
+| **Estructuras**    | `struct`, `union`, `enum`                                                          |
+| **Control**        | `if`, `else`, `switch`, `case`, `default`, `for`, `do`, `while`, `break`, `continue`, `goto` |
+| **Funciones**      | `return`                                                                           |
+| **Memoria**        | `auto`, `register`, `static`, `extern`                                             |
+| **Operadores**     | `sizeof`, `typedef`                                                                |
+| **Otros**          | `inline` (C99), `_Alignas` (C11), `_Alignof` (C11), `_Atomic` (C11), `_Generic` (C11), `_Noreturn` (C11), `_Static_assert` (C11), `_Thread_local` (C11) |
+
+---
+
+#### **2. Extensiones Específicas del Compilador**
+Algunos compiladores añaden palabras reservadas propias (no estándar). Ejemplos comunes:
+
+- **GCC/G++**:  
+  `__asm__`, `__attribute__`, `__inline__`, `__volatile__`, `__restrict__`, `__extension__`.  
+- **Microsoft Visual C**:  
+  `__cdecl`, `__declspec`, `__int64`, `__fastcall`, `__inline`.  
+
+---
+
+#### **3. Macros Predefinidas (No son palabras reservadas, pero son especiales)**
+Estas pueden redefinirse, pero es peligroso:  
+`NULL`, `true`, `false` (C99), `__FILE__`, `__LINE__`, `__DATE__`, `__TIME__`, `__func__` (C99).
+
+---
+
+#### **4. Diferencias entre Estándares**
+- **C89/C90**: 32 palabras reservadas.  
+- **C99**: Añade `_Bool`, `_Complex`, `_Imaginary`, `inline`, `restrict`.  
+- **C11**: Añade `_Alignas`, `_Alignof`, `_Atomic`, `_Generic`, `_Noreturn`, `_Static_assert`, `_Thread_local`.  
+
+---
+
+### **Ejemplo de Uso Incorrecto**
+```c
+int float = 10;  // ¡Error! "float" es palabra reservada.
+```
+
+### **Ejemplo de Uso Correcto**
+```c
+int numero = 10;  // Correcto ("numero" no es palabra reservada).
+```
+
+---
 
 
 ## 1.- IDENTIFICADORES, TIPOS DE DATOS, VARIABLES...
