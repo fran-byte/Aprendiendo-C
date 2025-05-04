@@ -91,11 +91,11 @@
     <td><a href="#4---sentencias-de-control-y-bucles" style="text-decoration: none;">4. Sentencias de Control y Bucles</a></td>
     <td>
       <a href="#41-sentencia-de-control-if" style="text-decoration: none;">4.1. Sentencia if</a><br>
-      <a href="#42-sentencia-de-control-de-switch" style="text-decoration: none;">4.2. Sentencia switch</a><br>
+      <a href="#42-sentencia-de-control-switch" style="text-decoration: none;">4.2. Sentencia switch</a><br>
       <a href="#43-bucle-for" style="text-decoration: none;">4.3. Bucle for</a><br>
-      <a href="#44-bucle-while" style="text-decoration: none;">4.4. Bucle while</a><br>
+      <a href="#44--bucle-while" style="text-decoration: none;">4.4. Bucle while</a><br>
       <a href="#45-bucle-dowhile" style="text-decoration: none;">4.5. Bucle do/while</a><br>
-      <a href="#46-sentencias-break-y-continue" style="text-decoration: none;">4.6. Sentencias break y continue</a>
+      <a href="#46-sentencias-de-control-break-y-continue-" style="text-decoration: none;">4.6. Sentencias break y continue</a>
     </td>
   </tr>
 </table>
