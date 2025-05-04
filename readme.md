@@ -1849,121 +1849,157 @@ void PasoDeLaEstructuraPorReferencia(struct ALFA *a) {
 
 ## 7.2. Campos de bit.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Un campo de bit es un método predefinido por C para poder acceder a un bit de un byte. Aunque dicho acceso siempre es posible mediante operaciones el uso de los operadores sobre bits, explicados con anterioridad, el uso de campos de bit puede añadir claridad al programa.
+Un **campo de bit** es un método predefinido por C para poder acceder a un bit de un byte. Aunque dicho acceso siempre es posible mediante operaciones con los operadores sobre bits, explicados con anterioridad, el uso de campos de bit puede añadir claridad al programa.
 
-El método de declaración de un campo de bit se basa en la estructura, pues un campo de bit no es mas que un tipo especial de estructura. El formato de declaración de un campo de bit es:
+El método de declaración de un **campo de bit** se basa en la estructura, pues un campo de bit no es más que un tipo especial de estructura. El formato de declaración de un campo de bit es:
 
-struct nombre\_campo\_bit{
+```c
+struct nombre_campo_bit {
+    tipo nombre1 : longitud;
+    tipo nombre2 : longitud;
+    ...
+    tipo nombreN : longitud;
+} variables_campo_bit;
+```
 
-`   `tipo nombre1 : longitud;
+El **tipo** de un campo de bit debe declararse como `unsigned int` o `signed int`. Veamos un ejemplo de declaración de un campo de bit:
 
-`   `tipo nombre2 : longitud;    ...
+```c
+struct ALFA {
+    unsigned a : 1;
+    signed b : 2;
+    unsigned : 4;   // Campo de bit sin nombre
+    unsigned c : 1;
+} campo;
+```
 
-`   `tipo nombreN : longitud; }variables\_campo\_bit;
-
-El *tipo* de un campo de bit debe declararse como *unsigned int* o *signed int*. Veamos un ejemplo de declaración de un campo de bit:
-
-struct ALFA{
-
-unsigned a : 1;
-
-signed b : 2;
-
-unsigned : 4;
-
-unsigned c : 1; }campo;
-
-En dicho ejemplo, se declara un campo de bit de tamaño 4 al cual no se le da nombre, eso es valido, y su efecto es que esos cuatro bits no podrían ser referenciados.
+En dicho ejemplo, se declara un campo de bit de tamaño 4 al cual no se le da nombre. Eso es válido, y su efecto es que esos cuatro bits no podrían ser referenciados.
 
 Es posible mezclar en la declaración elementos normales de estructura con elementos de campo de bit. Veamos un ejemplo:
 
-struct EMP{
-
-`   `char nombre[20],apellido[2][20];    float sueldo;
-
-`   `unsigned vacaciones:1;
-
-`   `unsigned enfermo:1;
-
+```c
+struct EMP {
+    char nombre[20], apellido[2][20];
+    float sueldo;
+    unsigned vacaciones : 1;
+    unsigned enfermo : 1;
 };
+```
+
+
 
 ## 7.3. Uniones.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-En C una unión es una posición de memoria que se usa por varias variables similares, que pueden ser de tipos diferentes. La definición de unión es:
 
-union nombre\_union{ tipo nombre1;
+En C, una **unión** es una posición de memoria que se usa por varias variables similares, que pueden ser de tipos diferentes. La definición de una unión es:
 
-`   `tipo nombre2; ...
+```c
+union nombre_union {
+    tipo nombre1;
+    tipo nombre2;
+    ...
+    tipo nombreN;
+} var_union;
+```
 
-`   `tipo nombreN; }var\_union;
+Como puede observarse, su declaración es parecida a la de una estructura. Sin embargo, en una unión, todos los tipos de datos comparten la misma dirección de memoria. Así, si declaramos:
 
-Como puede observarse su declaración, etc., es parecida a la declaración de una estructura. Sin embargo, en una unión, todos los tipos de datos comparten la misma dirección de memoria. Así, si declaramos:
-
-union ALFA{
-
-int a;
-
-char b; }alfa;
+```c
+union ALFA {
+    int a;
+    char b;
+} alfa;
+```
 
 Tendremos:
 
-<------alfa.a------>
-
+```
+<------alfa.a------>  
 Byte0    Byte1 <-alfa.b->
+```
 
-Por lo tanto, *b* tendrá en común con *a* el byte más bajo. Un ejemplo mas útil de una unión es el siguiente:
+Por lo tanto, `b` tendrá en común con `a` el byte más bajo. Un ejemplo más útil de una unión es el siguiente:
 
-union BETA{
+```c
+union BETA {
+    unsigned short a;
+    char b[2];
+} beta;
+```
 
-unsigned short a; char b[2];
+Entonces, `beta.b[0]` contendrá el byte bajo de `beta.a`, y `beta.b[1]` contendrá el byte alto de `beta.a`. Ello permite acceder a la parte alta o baja de dicho `unsigned short` sin necesidad de usar operadores sobre bits.
 
-};beta
 
-Entonces *beta.b[0]* contendrá el byte bajo de *beta.a*, y *beta.b[1]* contendrá el byte alto de *beta.a*. Ello permite acceder a la parte alta o baja de dicho *unsigned short* sin necesidad de usar operadores sobre bits.
 
 ## 7.4.Enumeraciones.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Una enumeración es un conjunto de constantes enteras con nombre y especifica todos los valores legales que pueden tener unas variables. Las enumeraciones se declaran de la siguiente forma:
 
-enum nombre\_enum{lista\_de\_enumeración} lista\_de\_variables;
 
-Donde, al igual que en las estructuras, puede no aparecer *nombre\_enum*  o *lista\_de\_variables*. Veamos un ejemplo de enumeración:
+Una **enumeración** es un conjunto de constantes enteras con nombre que especifica todos los valores legales que pueden tener unas variables. Las enumeraciones se declaran de la siguiente forma:
 
-enum MONEDAS{ peseta, duro, diez, cinco, cincuenta, cien, doscientas, quinientas} monedas\_espana;
+```c
+enum nombre_enum {
+    lista_de_enumeración
+} lista_de_variables;
+```
 
-Las enumeraciones asignan una constante entera a cada uno de los símbolos de la enumeración, empezando por el valor *0*. Esto puede modificarse colocando en la declaración el valor que deseamos tengan los elementos a partir de uno dado. Esto se realiza de la siguiente forma:
+Donde, al igual que en las estructuras, puede no aparecer `nombre_enum` o `lista_de_variables`. Veamos un ejemplo de enumeración:
 
-enum CURSO{ primero, segundo, tercero, cuarto\_t=100, quinto\_t, cuarto\_e=200, quinto\_e};
+```c
+enum MONEDAS {
+    peseta, duro, diez, cinco, cincuenta, cien, doscientas, quinientas
+} monedas_espana;
+```
 
-En este caso, las constantes *primero*, *segundo* y *tercero* tienen los valores *0*,*1* y *2*, las constantes cuarto\_t y quinto\_t los valores *100* y 101, y las constantes *cuarto\_e* y *quinto\_e* los valores *200* y *201* respectivamente.
+Las enumeraciones asignan una constante entera a cada uno de los símbolos de la enumeración, empezando por el valor `0`. Esto puede modificarse colocando en la declaración el valor que deseamos tengan los elementos a partir de uno dado. Esto se realiza de la siguiente forma:
+
+```c
+enum CURSO {
+    primero, segundo, tercero, cuarto_t = 100, quinto_t, cuarto_e = 200, quinto_e
+};
+```
+
+En este caso, las constantes `primero`, `segundo` y `tercero` tienen los valores `0`, `1` y `2`, las constantes `cuarto_t` y `quinto_t` los valores `100` y `101`, y las constantes `cuarto_e` y `quinto_e` los valores `200` y `201`, respectivamente.
+
+
 
 ## 7.5.La palabra reservada typedef.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-El lenguaje C permite mediante el uso de la palabra reservada *typedef* definir nuevos nombres para los tipos de datos existentes, esto no debe confundirse con la creación de un nuevo tipo de datos. La palabra clave *typedef* permite solo asignarle un nuevo nombre a un tipo de datos ya existente. La sintaxis general de uso de *typedef* es:
 
+El lenguaje C permite, mediante el uso de la palabra reservada `typedef`, definir nuevos nombres para los tipos de datos existentes. Esto no debe confundirse con la creación de un nuevo tipo de datos. La palabra clave `typedef` permite solo asignarle un nuevo nombre a un tipo de datos ya existente. La sintaxis general de uso de `typedef` es:
+
+```c
 typedef tipo nombre;
+```
 
-Donde *tipo* es cualquier tipo de datos permitido, y *nombre* es el nuevo nombre que se desea tenga ese tipo. Veamos algunos ejemplos:
+Donde `tipo` es cualquier tipo de datos permitido, y `nombre` es el nuevo nombre que se desea que tenga ese tipo. Veamos algunos ejemplos:
 
+```c
 typedef int entero;
 
-typedef struct{
-
-unsigned codigo;
-
-char nombre[40];    char apellido[40]; }cliente;
+typedef struct {
+    unsigned codigo;
+    char nombre[40];
+    char apellido[40];
+} cliente;
+```
 
 Y entonces podrían crearse nuevas variables de la forma:
 
-entero a; cliente b,\*c;
+```c
+entero a;
+cliente b, *c;
+```
+
+
 
 ## Tema 8 - El preprocesador.
 
