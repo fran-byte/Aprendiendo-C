@@ -232,10 +232,10 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#12-apéndices" style="text-decoration: none;">11. Apéndices</a></td>
+    <td><a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del" style="text-decoration: none;">11. Apéndices</a></td>
     <td>
-      <a href="#121-funciones-de-biblioteca-ansi-c" style="text-decoration: none;">11.1. Funciones de Biblioteca ANSI C</a><br>
-      <a href="#122-ejemplos-de-programas" style="text-decoration: none;">11.2. Ejemplos de Programas</a>
+      <a href="#a1-funciones-de-entrada-y-salida-de-datos" style="text-decoration: none;">11.1. Funciones de Biblioteca ANSI C</a><br>
+      <a href="#a2---funciones-de-caracteres-ctypeh" style="text-decoration: none;">11.2. Ejemplos de Programas</a>
     </td>
   </tr>
 </table>
