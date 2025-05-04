@@ -86,9 +86,9 @@
   <tr>
     <td><strong>Tema</strong></td>
     <td><strong>Subtemas</strong></td>
-  </tr>
+  </tr>[https://github.com/fran-byte/Learn-C/blob/main/readme.md](https://github.com/fran-byte/Learn-C/blob/main/readme.md)
   <tr>
-    <td><a href="#4---sentencias-de-control-y-bucless" style="text-decoration: none;">4. Sentencias de Control y Bucles</a></td>
+    <td><a href="#4---sentencias-de-control-y-bucles" style="text-decoration: none;">4. Sentencias de Control y Bucles</a></td>
     <td>
       <a href="#41--sentencia-de-control-if" style="text-decoration: none;">4.1. Sentencia if</a><br>
       <a href="#52-sentencia-switch" style="text-decoration: none;">4.2. Sentencia switch</a><br>
@@ -789,9 +789,9 @@ c=(float)a/b;
 
 Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonces, aplicando las reglas de conversión automática de tipos, se realiza la división en coma flotante. Este proceso da lugar a que el resultado de la operación sea *1.5*, y dicho valor sea el asignado a la variable *c*.!
 
-## 4 - Sentencias de control y bucles.
+## 4 - Sentencias de control y bucles.https://github.com/fran-byte/Learn-C/blob/main/readme.md#4---sentencias-de-control-y-bucles
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#4---sentencias-de-control-y-bucles)
+  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 ## 4.1.- Sentencia de control if.
 
