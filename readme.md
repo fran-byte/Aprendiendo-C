@@ -390,13 +390,13 @@ Esta expresión asigna a la variable *c* el valor de *a\*b* y devuelve su valor 
 
 ## 2.4.- Operador sizeof.
 
-El operador *sizeof* es un operador en tiempo de compilación. El operador *sizeof* devuelve el tamaño de una variable o tipo de dato durante la compilación, no durante la ejecución del programa. Veamos algunos ejemplos:
+El operador **sizeof** es un operador en tiempo de compilación. Devuelve el tamaño de una variable o tipo de dato durante la compilación, no durante la ejecución del programa. Veamos algunos ejemplos:
 
-*sizeof(int)* devuelve el valor 2 en los sistemas operativos de 16 bits y 4 en los de 
+**sizeof(int)** devuelve el valor 2 en los sistemas operativos de 16 bits y 4 en los de 
 
 32 bits.
 
-Si tenemos *char a[20]*, *sizeof(a)* devuelve el valor 20, y si tenemos *float a[6]*, *sizeof(a)*** devuelve el valor 24 (4\*6).
+Si tenemos **char a[20]**, **sizeof(a)** devuelve el valor 20, y si tenemos **float a[6]**, *sizeof(a)*** devuelve el valor 24 (4\*6).
 
 ## 2.5.- Operadores sobre bits.
 
@@ -433,27 +433,34 @@ Donde los números que acompañan a los operadores << y** >> indican cuantas pos
 - El operador ~ tiene la misma prioridad que los operadores ++ y .**--**.
 - Los operadores <<  y >>  tienen la prioridad situada entre los operadores aritméticos y los operadores relaciónales y lógicos.
 - Los operadores &, ^ y |  tienen la prioridad situada entre los operadores relaciónales y los operadores lógicos (&& y ||).
+- 
 ## 2.6.- El operador ?.
 
-El operador ? se usa para reemplazar las sentencias *if/else* (que veremos con posterioridad) de formato general:
+El operador *?* se usa para reemplazar las sentencias *if/else* (que veremos con posterioridad) de formato general:
 
+```
 if (condición)    expresión; else
 
 `   `expresión;
+```
 
 Donde expresión debe ser una expresión sencilla y no otra sentencia de C. El operador ? es un operador ternario cuyo formato general es:!
 
-Exp1 ? Exp2 : Exp3;
+Exp1 *?* Exp2 *:* Exp3;
 
-Donde *Exp1*, *Exp2* y *Exp3* son expresiones. El operador ? evalúa la expresión *Exp1*, si es cierta se evalúa *Exp2*  y si es falsa se evalúa *Exp3*. Veamos algunos ejemplos:
+Donde **Exp1**, **Exp2** y **Exp3** son expresiones. El operador *?* evalúa la expresión **Exp1**, si es cierta se evalúa **Exp2**  y si es falsa se evalúa **Exp3**. Veamos algunos ejemplos:
 
+```
 int x,y;
 
 y=(x>10) ? 100 : 200;
+```
 
 Asignara el valor 100 a *y* si *x* es mayor de 10, y el valor 200 en caso contrario. int t;
 
+```
 (t) ? f1(t)+f2() : printf(“t vale cero”);
+```
 
 Ejecutara las funciones *f1()* y *f2()* si *t* es distinto de cero, y la función *printf* si *t* 
 
