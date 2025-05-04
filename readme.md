@@ -698,35 +698,40 @@ Donde los números que acompañan a los operadores << y** >> indican cuantas pos
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-El operador *?* se usa para reemplazar las sentencias *if/else* (que veremos con posterioridad) de formato general:
 
-```
+El operador `? :` se usa para reemplazar las sentencias `if/else` (que veremos con posterioridad) de formato general:
+
+```c
 if (condición)    expresión;
 else
       expresión;
+````
+
+Donde `expresión` debe ser una expresión sencilla y no otra sentencia de C. El operador `?` es un operador ternario cuyo formato general es:
+
+```c
+Exp1 ? Exp2 : Exp3;
 ```
 
-Donde expresión debe ser una expresión sencilla y no otra sentencia de C. El operador ? es un operador ternario cuyo formato general es:!
+Donde **Exp1**, **Exp2** y **Exp3** son expresiones. El operador `?` evalúa la expresión **Exp1**, si es cierta se evalúa **Exp2** y si es falsa se evalúa **Exp3**. Veamos algunos ejemplos:
 
-Exp1 *?* Exp2 *:* Exp3;
+```c
+int x, y;
 
-Donde **Exp1**, **Exp2** y **Exp3** son expresiones. El operador *?* evalúa la expresión **Exp1**, si es cierta se evalúa **Exp2**  y si es falsa se evalúa **Exp3**. Veamos algunos ejemplos:
-
-```
-int x,y;
-
-y=(x>10) ? 100 : 200;
+y = (x > 10) ? 100 : 200;
 ```
 
-Asignara el valor 100 a *y* si *x* es mayor de 10, y el valor 200 en caso contrario. int t;
+Asignará el valor 100 a `y` si `x` es mayor de 10, y el valor 200 en caso contrario.
 
+```c
+int t;
+
+(t) ? f1(t) + f2() : printf("t vale cero");
 ```
-(t) ? f1(t)+f2() : printf(“t vale cero”);
-```
 
-Ejecutara las funciones *f1()* y *f2()* si *t* es distinto de cero, y la función *printf* si *t* 
+Ejecutará las funciones `f1()` y `f2()` si `t` es distinto de cero, y la función `printf` si `t` vale cero.
 
-vale cero.
+
 
 ## 3 - Conversión de tipos de datos.
 
