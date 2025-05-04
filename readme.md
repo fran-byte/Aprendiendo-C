@@ -859,6 +859,7 @@ Donde *variable* debe ser de tipo *char* o *int*, y donde *const1*, *const2*, **
 
 se empieza a ejecutar las sentencias hasta encontrar una sentencia *break*. En caso de que no se encuentre ningún valor que coincida, se ejecuta el *default*** (si existe)**.** Veamos algunos ejemplos:
 
+´´´
 int valor;
 switch(valor)
 {
@@ -877,8 +878,11 @@ case ‘\x1B’: cont++;
 break;
 default: cont=-1;
 }
+´´´
+
 Las sentencias *switch* pueden aparecer unas dentro de otras, igual que sucedía con las sentencias *if*. Veámoslo con un ejemplo:
 
+´´´
 char d,e;
 switch(d)
 {
@@ -895,6 +899,7 @@ case ‘B’: switch(e)
 {
 case ‘0’: d=‘2’; default: e=‘+’;
 `             `} }
+```
 
 3. **- Bucle for.**
 
@@ -908,6 +913,7 @@ En primer lugar, conviene destacar el hecho de la gran flexibilidad del bucle *f
 
 Veamos algunos ejemplos de bucles *for*:
 
+```
 int i,suma=0; for(i=1;i<=100;i++)
 
 suma=suma+i;
@@ -937,6 +943,8 @@ d=getc(stdin); printf(“%c”,d); if (d==‘\x1B’)
 break;
 
 }
+```
+
 
 Como se observa en este último ejemplo, el bucle *for*  no posee ninguna expresión. Para salir de el se usa la sentencia *break*, dicha sentencia (ya vista junto con la sentencia de control *switch*) se explicara mas detalladamente con posterioridad.
 
