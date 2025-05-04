@@ -241,6 +241,7 @@
 ---
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20m%20i%20c%20e%20-c988f9)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ 
 ### **Lista de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
 
 ---
