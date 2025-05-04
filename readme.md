@@ -1167,7 +1167,9 @@ char cadena[]=“Esto es una cadena”;
 
 ## 6.2. Punteros.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+    
 
 Los punteros son una de las poderosas herramientas que ofrece el lenguaje C a los programadores, sin embargo, son también una de las más peligrosas, el uso de punteros sin inicializar, etc., es una fuente frecuente de errores en los programas de C, y además, suele producir fallos muy difíciles de localizar y depurar.
 
