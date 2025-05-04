@@ -195,10 +195,10 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#10-entrada-y-salida" style="text-decoration: none;">9. Entrada y Salida</a></td>
+    <td><a href="#tema9---entrada-y-salida" style="text-decoration: none;">9. Entrada y Salida</a></td>
     <td>
-      <a href="#101-entradasalida-desde-consola" style="text-decoration: none;">9.1. Entrada/Salida desde Consola</a><br>
-      <a href="#102-entradasalida-desde-fichero" style="text-decoration: none;">9.2. Entrada/Salida desde Fichero</a>
+      <a href="#91-entrada_y_salida-desde-consola" style="text-decoration: none;">9.1. Entrada/Salida desde Consola</a><br>
+      <a href="#92-entrada_y_salida-desde-fichero" style="text-decoration: none;">9.2. Entrada/Salida desde Fichero</a>
     </td>
   </tr>
 </table>
