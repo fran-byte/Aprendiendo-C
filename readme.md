@@ -2464,230 +2464,236 @@ int main(void) {
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Antes de explicar la entrada y salida desde fichero, conviene explicar el tipo de dato *FILE \**. Dicho tipo de dato es el "puntero de fichero", y es, realmente, una estructura que contiene la información sobre el nombre del fichero abierto, su modo de apertura (lectura, escritura, etc.), estado, etc. Dicho "puntero de fichero", por tanto, especifica el fichero que se esta usando y es, la forma que poseen las funciones de entrada y salida desde fichero de conocer sobre que archivo actúan.
 
-Sobre un archivo es necesario, antes de poder usarlo, realizar una operación, la apertura del mismo; una vez terminado su uso, es necesaria otra operación, cerrar el archivo. De esto se encargan dos funciones de C. Dichas funciones son *fopen()*  y *fclose()*. Veámoslas con detalle:
+### Entrada y salida desde ficheros en C
 
-La función *fopen()* se encarga de abrir un archivo. Su definición es:
+Antes de explicar la entrada y salida desde fichero, conviene entender el tipo de dato `FILE *`. Este tipo representa un **puntero de fichero**, que en realidad es una estructura que contiene información como:
 
-FILE \*fopen(char \*nombre,char \*modo);
+* Nombre del fichero abierto
+* Modo de apertura (lectura, escritura, etc.)
+* Estado del archivo, entre otros
 
-Donde *nombre* es un string que contiene el nombre del archivo que queremos leer y *modo* es otro string que contiene el modo de apertura deseado. Dichos modos de apertura son:
+Este puntero especifica el archivo que se está usando, permitiendo a las funciones de entrada/salida saber sobre qué archivo actuar.
 
+---
 
+### Apertura y cierre de archivos
 
-|**Modo**|**Descripción**|
-| - | - |
-|r|Abrir un archivo para lectura.|
-|w|Crear un archivo para escritura.|
-|a|Abrir un archivo para añadir.|
-|rb|Abrir un archivo binario para lectura.|
-|wb|Crear un archivo binario para escritura.|
-|ab|Abrir un archivo binario para añadir.|
-|rt|Abrir un archivo de texto para lectura.|
-|wt|Crear un archivo de texto para escritura.|
-|at|Abrir un archivo de texto para añadir.|
-|r+|Abrir una archivo para lectura/escritura.|
-|w+|Crear un archivo para lectura/escritura.|
-|a+|Abrir un archivo para leer/añadir.|
-|r+b|Abrir un archivo binario para lectura/escritura.|
-|w+b|Crear un archivo binario para lectura/escritura.|
-|a+b|Abrir un archivo binario para leer/añadir.|
-|r+t|Abrir un archivo de texto para lectura/escritura.|
-|w+t|Crear un archivo de texto para lectura/escritura.|
-|a+t|Abrir un archivo de texto para leer/añadir.|
+Antes de usar un archivo, es **necesario abrirlo**, y tras su uso, **cerrarlo**. Esto se hace mediante las funciones `fopen()` y `fclose()`:
 
-*Tabla 9.2.1: Modos de apertura de un fichero con la función fopen().*
+#### `FILE *fopen(char *nombre, char *modo);`
 
-En todos los casos de añadir, si el archivo especificado no existe, se procede a 
+* `nombre`: nombre del archivo
+* `modo`: modo de apertura
 
-crearlo.
+#### Modos de apertura:
 
-Si no se especifica en *modo* si la apertura se realiza para un archivo binario o texto, dependerá de la configuración del sistema que la apertura sea en binario o en texto, siendo en la mayoría de los casos en modo texto. La diferencia fundamental entre modo texto y modo binario es que en modo texto, secuencias de lectura tales como retorno de carro/alimentación de línea se traducen en un único carácter nueva línea, mientras que en modo texto eso no sucede; el efecto contrario sucede en escritura.
+| **Modo** | **Descripción**                               |
+| -------- | --------------------------------------------- |
+| r        | Abrir archivo para lectura                    |
+| w        | Crear archivo para escritura                  |
+| a        | Abrir archivo para añadir                     |
+| rb       | Abrir archivo binario para lectura            |
+| wb       | Crear archivo binario para escritura          |
+| ab       | Abrir archivo binario para añadir             |
+| rt       | Abrir archivo de texto para lectura           |
+| wt       | Crear archivo de texto para escritura         |
+| at       | Abrir archivo de texto para añadir            |
+| r+       | Abrir archivo para lectura/escritura          |
+| w+       | Crear archivo para lectura/escritura          |
+| a+       | Abrir archivo para leer/añadir                |
+| r+b      | Abrir archivo binario para lectura/escritura  |
+| w+b      | Crear archivo binario para lectura/escritura  |
+| a+b      | Abrir archivo binario para leer/añadir        |
+| r+t      | Abrir archivo de texto para lectura/escritura |
+| w+t      | Crear archivo de texto para lectura/escritura |
+| a+t      | Abrir archivo de texto para leer/añadir       |
 
-La función *fopen()*  devuelve un puntero de tipo *FILE*  a la estructura que representa el archivo abierto. En caso de que no pueda abrir o crear el archivo especificado, se devuelve un puntero *NULL*, por lo cual, siempre que se abra un archivo, deberá comprobarse que el valor devuelto no es *NULL*, y entonces, el código deberá ser:
+> **Nota**: Si no se especifica binario o texto, dependerá del sistema. Generalmente se abre en modo texto.
 
-FILE \*fp;
+#### Diferencias entre modo texto y binario:
 
-if ((fp=fopen("prueba","w"))==NULL)
+* En modo **texto**, las secuencias como `\r\n` se convierten a `\n` al leer.
+* En modo **binario**, no hay conversiones. Se mantiene la información original.
 
-{
+#### Comprobación de apertura:
 
-`   `puts("\nNo puedo abrir el fichero\n");    exit(1);
-
+```c
+FILE *fp;
+if ((fp = fopen("prueba", "w")) == NULL) {
+    puts("\nNo puedo abrir el fichero\n");
+    exit(1);
 }
+```
 
-La función *fclose()* cierra un archivo. Su definición es:
+---
 
-int fclose(FILE \*fp);
+#### `int fclose(FILE *fp);`
 
-Donde *fp* es el puntero al fichero abierto mediante la función *fopen()*.
+Cierra el archivo, liberando:
 
-La función *fclose()* cierra el archivo, lo cual da lugar a que el buffer de archivo existente en memoria se libere, escribiéndose en el fichero si es necesario, además, libera el bloque de control de archivo, lo cual lo hace disponible para otro archivo (el sistema operativo limita el número de ficheros abiertos simultáneamente).
+* El **buffer** (guardando datos si es necesario)
 
-Un valor devuelto de cero indica que el archivo fue cerrado con éxito. Cualquier valor distinto de cero indica un error.
+* El **control de archivo**, permitiendo abrir otros archivos
 
-Veamos un ejemplo de uso de *fopen()* y *fclose()*:
+* Devuelve `0` si se cerró correctamente.
 
+* Devuelve otro valor en caso de error.
+
+---
+
+### Ejemplo de `fopen()` y `fclose()`:
+
+```c
 #include <stdio.h>
 
-int main(int argc,char \*argv[]) {
+int main(int argc, char *argv[]) {
+    FILE *fp;
 
-FILE \*fp;
+    if (argc != 2) {
+        puts("Nombre del fichero no pasado");
+        return 0;
+    }
 
-if (argc!=2)
+    if ((fp = fopen(argv[1], "r")) == NULL) {
+        printf("Error abriendo el fichero: %s\n", argv[1]);
+        return 0;
+    }
 
-{
+    if (fclose(fp)) {
+        puts("Error cerrando el fichero");
+        return 1;
+    }
 
-`      `puts("Nombre del fichero no pasado");
-
-return 0;
-
+    return 0;
 }
+```
 
-if ((fp=fopen(argv[1],"r"))==NULL)
+---
 
-{
+### Principales funciones de lectura/escritura:
 
-`      `printf("Error abriendo el fichero: %s\n",argv[1]);
+```c
+int getc(FILE *fp);
+int putc(int ch, FILE *fp);
+char *fgets(char *str, int n, FILE *fp);
+int fputs(const char *str, FILE *fp);
+int fscanf(FILE *fp, const char *formato [, dirección, ...]);
+int fprintf(FILE *fp, const char *formato [, argumento, ...]);
+int fread(void *memoria, int num, int cont, FILE *fp);
+int fwrite(void *memoria, int num, int cont, FILE *fp);
+```
 
-return 0;
+#### Descripciones:
 
+* **`getc()`**: Lee un carácter. Devuelve `EOF` al final del archivo.
+* **`putc()`**: Escribe un carácter. Devuelve `EOF` en caso de error.
+* **`fgets()`**: Lee hasta `n-1` caracteres o hasta salto de línea. Conserva el `\n`.
+* **`fputs()`**: Escribe una cadena, sin añadir salto de línea.
+* **`fscanf()` / `fprintf()`**: Lectura/escritura con formato, como `scanf()` y `printf()`.
+
+---
+
+### `fread()` y `fwrite()` (bloques de datos)
+
+```c
+int fread(void *memoria, int num, int cont, FILE *fp);
+int fwrite(void *memoria, int num, int cont, FILE *fp);
+```
+
+* `memoria`: puntero a buffer de lectura/escritura
+* `num`: tamaño de cada bloque
+* `cont`: número de bloques
+* `fp`: archivo asociado
+
+> Devuelven el número de **bloques** leídos/escritos, no bytes.
+
+> No realizan conversiones de texto → se usan para archivos binarios.
+
+#### Ejemplo de uso:
+
+```c
+#include <stdio.h>
+#define TAM 1000
+
+int main(int argc, char *argv[]) {
+    FILE *f_inp, *f_out;
+    char buffer[TAM];
+    int num;
+
+    if (argc != 3) return 0;
+
+    if ((f_inp = fopen(argv[1], "rb")) == NULL) return 0;
+    if ((f_out = fopen(argv[2], "wb")) == NULL) exit(1);
+
+    while ((num = fread(buffer, sizeof(char), TAM, f_inp)) != 0)
+        fwrite(buffer, sizeof(char), num, f_out);
+
+    if (fclose(f_inp) || fclose(f_out))
+        exit(1);
+
+    return 0;
 }
+```
 
-if (fclose(fp))
+---
 
-{
+### Funciones adicionales
 
-`      `puts("Error cerrando el fichero");       return 1;
+#### `int ferror(FILE *fp);`
 
-`   `}
+* Devuelve 0 si no hay error, distinto de 0 si lo hubo.
 
-`   `return 0; }
+#### `void rewind(FILE *fp);`
 
-Una vez abierto un archivo, y hasta que se proceda a cerrarlo es posible leer, escribir, etc., en el, según se indique en el modo de apertura. Las principales funciones de lectura y escritura sobre un archivo son:
+* Posiciona el puntero de archivo al **inicio**.
 
-int getc(FILE \*fp);
+#### `int fseek(FILE *fp, long num, int origen);`
 
-int putc(int ch,FILE \*fp);
+* Mueve el puntero de archivo.
+* `num`: desplazamiento
+* `origen`: posición base
 
-char \*fgets(char \*str,int n,FILE \*fp);
+| **Origen**           | **Constante** | **Valor** |
+| -------------------- | ------------- | --------- |
+| Comienzo del archivo | SEEK\_SET     | 0         |
+| Posición actual      | SEEK\_CUR     | 1         |
+| Final del archivo    | SEEK\_END     | 2         |
 
-int fputs(const char \*str,FILE \*fp);
+> **Nota**: Solo funciona correctamente en archivos **binarios**, no en modo texto.
 
-int fscanf(FILE \*fp,const char \*formato[,dirección,...]); int fprintf(FILE \*fp,const char \*formato[,argumento,...]); int fread(void \*memoria,int num,int cont,FILE \*fp);
+#### Ejemplo de `fseek()`:
 
-int fwrite(void \*memoria,int num,int cont,FILE \*fp);
-
-La función *getc()*  lee caracteres del archivo asociado a *fp*. Devuelve *EOF* cuando se alcanza el final del archivo.
-
-La función *putc()* escribe el carácter *ch* en el archivo asociado a *fp*. Devuelve el carácter escrito si funciona de forma correcta, y *EOF* en caso de error.
-
-La función *fgets()*  funciona de igual forma que la función *gets()*, solo que, además de leer del fichero asociado a *fp*, el parámetro *n* indica el número máximo de caracteres que se pueden leer. Existe, además, una sutil diferencia, la función *fgets()* no elimina el retorno de carro (si se lee) de la cadena de entrada, sino que lo conserva en la misma,. añadiendo a continuación de dicho retorno de carro, y de forma automática, el carácter de fin de cadena (*'\0'*).
-
-La función *fputs()* funciona igual que la función *puts()*, solo que, además de escribir en el fichero asociado a *fp*, no añade al final del string un retorno de carro, tal y como hacia la función *puts()*.
-
-Las funciones *fscanf()* y *fprintf()* funcionan de forma similar a sus equivalentes sobre la consola *scanf()* y *printf()*, solo que leen o escriben del archivo asociado a *fp*.
-
-Las función *fread()* permite leer un bloque de datos. Su declaración es: int fread(void \*memoria,int num,int cont,FILE \*fp);
-
-Donde *memoria* es un puntero a la zona de memoria donde se almacenaran los datos leídos, *num* es el tamaño (en bytes) de cada uno de los bloques a leer, *cont* es el número de bloques (cada uno de *num* bytes de tamaño) a leer, y *fp* es el puntero al fichero desde donde se lee.
-
-La función *fread()* devuelve el número de bloques (no bytes) realmente leídos.
-
-La función *fwrite()* es la función dual a *fread()*. La función *fwrite()* permite escribir un bloque de datos. Su declaración es:
-
-int fwrite(void \*memoria,int num,int cont,FILE \*fp);
-
-Donde *memoria* es un puntero a la zona de memoria donde se encuentran los datos a escribir, *num* es el tamaño (en bytes) de cada uno de los bloques a escribir, *cont* es el número de bloques (cada uno de *num* bytes de tamaño) a escribir, y *fp* es el puntero al fichero desde donde se escribe.
-
-La función *fwrite()*  devuelve el número de bloques (no bytes) realmente 
-
-escritos.
-
-Un aspecto a resaltar de las funciones *fread()* y *fwrite()* es el hecho de que no realizan ningún tipo de conversión con los datos leídos o escritos, así , la secuencia retorno de carro/alimentación de línea, no es convertida en el carácter nueva línea en la escritura,  y  viceversa  para  la  lectura.  Es  por  ello,  que  dichas  funciones  son, generalmente, usadas con archivos abiertos en modo binario.
-
-Veamos un ejemplo de uso de *fread()* y *fwrite()*:
-
-#include <stdio.h> #define TAM 1000
-
-int main(int argc,char \*argv[]) {
-
-FILE \*f\_inp,\*f\_out;
-
-char buffer[TAM];
-
-int num;
-
-if (argc!=3)
-
-return 0;
-
-if ((f\_inp=fopen(argv[1],"rb"))==NULL)
-
-return 0;
-
-if ((f\_out=fopen(argv[2],"wb"))==NULL)
-
-exit(1);
-
-while ((num=fread(buffer,sizeof(char),TAM,f\_inp))!=0)
-
-fwrite(buffer,sizeof(char),num,f\_out);
-
-if (fclose(f\_inp) || fclose(f\_out)
-
-exit(1);
-
-`   `return 0; }
-
-Además de las funciones de entrada y salida de datos desde archivo, descritas con anterioridad, existen tres funciones que no son de entrada y salida de datos y que conviene explicar. Dichas funciones son:
-
-int ferror(FILE \*fp);
-
-void rewind(FILE \*fp);
-
-int fseek(FILE \*fp,long num,int origen);
-
-La función *ferror()* devuelve si durante la última operación realizada sobre el archivo asociado a *fp* se produjo o no un error. Devuelve el valor cero si no se produjo error, y un valor distinto de cero si se produjo error.
-
-La función *rewind()*  posiciona el indicador de posición del archivo *fp*  al principio del mismo.
-
-La función *fseek()*  se usa para operaciones de entrada y salida de acceso aleatorio. La función *fseek()* desplaza el indicador de posición del archivo *fp* un tamaño *num* desde la posición especificada por *origen*. Los valores validos para *origen* son:
-
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-|**Origen**|**Nombre de la constante**|**Valor**|
-| - | - | - |
-|Comienzo del archivo|SEEK\_SET|0|
-|Posición actual|SEEK\_CUR|1|
-|Final del archivo|SEEK\_END|2|
-
-*Tabla 9.2.2: Valores del origen en la función fseek().*
-
-La función *fseek()* devuelve un valor de cero si funciona correctamente. Un valor distinto de cero indica un error en la última operación de posicionamiento en el fichero.
-
-La función *fseek()* solo funciona correctamente en archivos abiertos en modo binario, pues, dadas las conversiones que se realizan en ciertas transacciones de caracteres en los archivos abiertos en modo texto, se producirían errores en el posicionamiento en el fichero al usar dicha función. Veamos un ejemplo de uso de *fseek()*:
-
+```c
 #include <stdio.h>
 
-int LeeCaracter(FILE \*fp,long pos,int origen) {
-
-if (fseek(fp,pos,origen))
-
-return(EOF);
-
-return(getc(fp));
-
+int LeeCaracter(FILE *fp, long pos, int origen) {
+    if (fseek(fp, pos, origen))
+        return EOF;
+    return getc(fp);
 }
+```
 
-Antes de terminar este tema, es necesario comentar la existencia de tres ficheros que son abiertos de forma automática al comenzar la ejecución del programa, y cerrados, también de forma automática, al terminar la misma. Estos archivos son la entrada standard (*stdin*), la salida standard (*stdout*) y la salida standard de error (*stderr*). Normalmente estas ficheros están asociados a la consola, pero pueden redireccionarse a cualquier otro dispositivo. Además, dado que son exactamente igual que ficheros, pueden usarse sus nombres en los mismos lugares que se usan las variables de tipo *FILE \**, por lo cual, cualquier función de fichero puede usarse con la consola usando estos archivos standard abiertos al comenzar el programa. Es por ello, que podemos leer, por ejemplo, una cadena desde el teclado de la siguiente forma:
+---
 
-char cadena[100]; fgets(cadena,100,stdin);
+### Archivos estándar
 
-Y escribir dicha cadena, por ejemplo en la salida standard de error, de la forma:
+Se abren automáticamente al iniciar el programa:
 
-fputs(cadena,stderr);
+* **`stdin`** → entrada estándar (teclado)
+* **`stdout`** → salida estándar (pantalla)
+* **`stderr`** → salida de error estándar
+
+Son de tipo `FILE *`, por lo que se pueden usar con funciones de fichero.
+
+#### Ejemplo:
+
+```c
+char cadena[100];
+fgets(cadena, 100, stdin);    // Leer desde teclado
+fputs(cadena, stderr);        // Escribir en salida de error
+```
+
 
 ## Tema 10 - Asignación dinámica de memoria.
 
