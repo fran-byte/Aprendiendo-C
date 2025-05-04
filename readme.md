@@ -2018,354 +2018,447 @@ El preprocesador, definido por el standard ANSI de C, contiene las siguientes di
 
 *Tabla 9.1: Directivas del preprocesador en C.*
 
-## 8.1. Directiva #define.
+
+## 8.1. Directiva `#define`.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La directiva define se usa para definir un identificador y una cadena que el compilador sustituirá por el identificador cada vez que se encuentre en el archivo fuente. El standard ANSI llama al identificador "nombre de macro" y al proceso de sustitución "sustitución de macro". Por ejemplo:
+La directiva `#define` se usa para definir un identificador y una cadena que el compilador sustituirá por el identificador cada vez que se encuentre en el archivo fuente. El estándar ANSI llama al identificador "nombre de macro" y al proceso de sustitución "sustitución de macro". Por ejemplo:
 
-#define TRUE 1 #define FALSE 0
+```c
+#define TRUE 1
+#define FALSE 0
+```
 
-El compilador, cada vez que vea el identificador *TRUE*, lo sustituirá por el valor *1*, e igual con *FALSE*. El uso mas común de la directiva *#define* es la definición de valores constantes en el programa, tamaños de arrays, etc.
+El compilador, cada vez que vea el identificador `TRUE`, lo sustituirá por el valor `1`, e igual con `FALSE`.
+El uso más común de la directiva `#define` es la definición de valores constantes en el programa, tamaños de arrays, etc.
 
-Una característica que posee la directiva *#define* es que el "nombre de macro" puede contener argumentos. Cada vez que el compilador encuentra el "nombre de macro", los argumentos reales encontrados en el programa reemplazan los argumentos asociados con el nombre de macro. Veamos un ejemplo:
+Una característica que posee la directiva `#define` es que el "nombre de macro" puede contener argumentos.
+Cada vez que el compilador encuentra el "nombre de macro", los argumentos reales encontrados en el programa reemplazan los argumentos asociados con el nombre de macro.
+Veamos un ejemplo:
 
+```c
 #define MIN(a,b) (a<b) ? a : b
+```
 
 Si tenemos ahora en el programa:
 
-printf("El valor mínimo es: %d\n",MIN(10,20));
+```c
+printf("El valor mínimo es: %d\n", MIN(10,20));
+```
 
 El compilador sustituye el "nombre de macro" y sus argumentos en tiempo de compilación, y ello equivale a haber escrito el código:
 
-printf("El valor mínimo es: %d\n",(10<20) ? 10 : 20);
+```c
+printf("El valor mínimo es: %d\n", (10<20) ? 10 : 20);
+```
 
-## 8.2. Directiva #undef.
+---
+
+## 8.2. Directiva `#undef`.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La directiva *#undef* permite quitar una definición de "nombre de macro" que se realizo con anterioridad. Veamos un ejemplo:
+La directiva `#undef` permite quitar una definición de "nombre de macro" que se realizó con anterioridad.
+Veamos un ejemplo:
 
-#define TAM 10 .......
-
+```c
+#define TAM 10
+...
 #undef TAM
+```
 
-A partir de *#undef TAM*, el "nombre de macro" *TAM*  deja de existir, ello permite localizar los "nombre de macro" donde sea necesario.
+A partir de `#undef TAM`, el "nombre de macro" `TAM` deja de existir.
+Esto permite localizar los "nombres de macro" donde sea necesario.
 
-## 8.3. Directiva #error.
+---
+
+## 8.3. Directiva `#error`.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La directiva *#error* fuerza a parar la compilación del programa, a la vez que muestra un mensaje de error. El mensaje de error no aparecerá entre comillas dobles. Veamos un ejemplo:
+La directiva `#error` fuerza a parar la compilación del programa, a la vez que muestra un mensaje de error.
+El mensaje de error no aparecerá entre comillas dobles.
+Veamos un ejemplo:
 
+```c
 #error Detenida compilación
+```
 
-Su principal uso viene asociado a detener la compilación en ciertas condiciones en asociación con las directivas *#if*, etc., explicadas con posterioridad.
+Su principal uso viene asociado a detener la compilación en ciertas condiciones en asociación con las directivas `#if`, etc., explicadas con posterioridad.
 
-## 8.4. Directiva #include.
+---
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-La directiva *#include* fuerza al compilador a incluir otro archivo fuente en el archivo que tiene la directiva *#include*, y a compilarlo. El nombre del archivo fuente a incluir se colocara entre comillas dobles o entre paréntesis de ángulo. Por ejemplo:
-
-#include <stdio.h> #include "stdio.h"
-
-Los archivos incluidos mediante *#include*  pueden a su vez poseer otras directivas *#include*. La diferencia existente entre encerrar el archivo entre paréntesis de ángulo o entre comillas dobles, es que, en el primer caso, se busca el archivo en los directorios de la linea de ordenes de compilación, y, después en los directorios standard de C, pero nunca en el directorio de trabajo; y en el segundo caso el primer sitio donde se busca el archivo a incluir es en el directorio actual de trabajo, pasándose, caso de no haber sido encontrado, a buscar en los mismos sitios que el caso anterior.
-
-## 8.5.Directivas #if, #ifdef, #ifndef, #else, #elif y #endif.
+## 8.4. Directiva `#include`.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Las  directivas *#if*, *#ifdef*, *#ifndef*, *#else*, *#elif*  y *#endif*  son  directivas condicionales de compilación. Estas directivas permiten decirle al compilador que partes del programa debe compilar bajo distintas condiciones.
+La directiva `#include` fuerza al compilador a incluir otro archivo fuente en el archivo que tiene la directiva `#include`, y a compilarlo.
+El nombre del archivo fuente a incluir se colocará entre comillas dobles o entre paréntesis de ángulo.
+Por ejemplo:
 
-La idea general de la directiva *#if* es que si es verdad la expresión que se encuentra después del *#if*, se compilara el código que figura entre el *#if* y el *#endif* se compilara. La directiva *#else* funciona de igual forma que el *else* del lenguaje C. La directiva *#elif* funciona como el escalonado de *if* del lenguaje C. La definición formal es:
+```c
+#include <stdio.h>
+#include "stdio.h"
+```
 
+Los archivos incluidos mediante `#include` pueden a su vez poseer otras directivas `#include`.
+
+La diferencia existente entre encerrar el archivo entre paréntesis de ángulo o entre comillas dobles es que:
+
+* En el primer caso (`<archivo>`), se busca el archivo en los directorios de la línea de órdenes de compilación y después en los directorios estándar de C, **pero nunca** en el directorio de trabajo.
+* En el segundo caso (`"archivo"`), el primer sitio donde se busca el archivo a incluir es en el **directorio actual de trabajo**, pasándose, en caso de no haber sido encontrado, a buscar en los mismos sitios que en el caso anterior.
+
+
+## 8.5. Directivas `#if`, `#ifdef`, `#ifndef`, `#else`, `#elif`, `#endif`.
+
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
+Las directivas `#if`, `#ifdef`, `#ifndef`, `#else`, `#elif` y `#endif` son directivas condicionales de compilación. Estas directivas permiten decirle al compilador qué partes del programa debe compilar bajo distintas condiciones.
+
+La idea general de la directiva `#if` es que si es verdadera la expresión que se encuentra después del `#if`, se compilará el código que figura entre el `#if` y el `#endif`.
+La directiva `#else` funciona de igual forma que el `else` del lenguaje C.
+La directiva `#elif` funciona como un escalonado de `if`.
+La definición formal es:
+
+```c
 #if expresión1
-
-`   `secuencia de sentencias #elif expresión2
-
-`   `secuencia de sentencias ......
-
+    secuencia de sentencias
+#elif expresión2
+    secuencia de sentencias
+...
 #else
-
-`   `secuencia de sentencias #endif
+    secuencia de sentencias
+#endif
+```
 
 Veamos algunos ejemplos:
 
+```c
 #define MEM 200
 
-#if MEM>100
+#if MEM > 100
+    printf("MEM es mayor de 100");
+#endif
+```
 
-printf("MEM es mayor de 100"); #endif
-
+```c
 #define VALOR 0
 
-#if VALOR==0
+#if VALOR == 0
+    c = a * b / (VALOR + 1);
+#else
+    c = a * b / VALOR;
+#endif
+```
 
-`   `c=a\*b/(VALOR+1); #else
+Compilará el código para el caso de `VALOR == 0`.
 
-`   `c=a\*b/VALOR; #endif
-
-Compilara el código para el caso de *VALOR==0*.
-
+```c
 #define VALOR 15
 
-#if VALOR<0
-
-`   `b=b/(-VALOR); #elif VALOR==0
-
-`   `b=b/(VALOR+1); #else
-
-b=b/VALOR;
-
+#if VALOR < 0
+    b = b / (-VALOR);
+#elif VALOR == 0
+    b = b / (VALOR + 1);
+#else
+    b = b / VALOR;
 #endif
+```
 
-Compilara el código para el último caso.
+Compilará el código para el último caso.
 
-La directivas *#ifdef* y *#ifndef* se usan también para compilación condicional, solo que no evalúan expresión alguna, solo comprueba si esta definido (*#ifdef*) o si no esta definido (*#ifndef*) algún nombre de macro. Su sintaxis general es:
+Las directivas `#ifdef` y `#ifndef` se usan también para compilación condicional, solo que no evalúan expresión alguna, únicamente comprueban si está definido (`#ifdef`) o si no está definido (`#ifndef`) algún nombre de macro.
+Su sintaxis general es:
 
-#ifdef nombre de macro
+```c
+#ifdef nombre_de_macro
+    secuencia de sentencias
+#else
+    secuencia de sentencias
+#endif
+```
 
-`   `secuencia de sentencias #else
+E igual para `#ifndef`. Veamos algunos ejemplos:
 
-`   `secuencia de sentencias #endif
-
-E igual para *#ifndef*. Veamos algunos ejemplos:
-
+```c
 #define VAL 10
 
 #ifdef VAL
+    printf("VAL definido");
+#else
+    printf("VAL no definido");
+#endif
+```
 
-printf("VAL definido"); #else
-
-`   `printf("VAL no definido"); #endif
-
+```c
 #ifndef NOVAL
+    printf("NOVAL no definido");
+#endif
+```
 
-`   `printf("NOVAL no definido"); #endif
+Compilará el código para el caso de `VAL` definido y, además, compilará el código de `NOVAL`, al no estar definida dicha macro.
+Como se observa, no se comprueba el valor de `VAL` o de `NOVAL`, solo se comprueba si están definidos o no.
 
-Compilara el código para el caso de *VAL*  definido y, además, compilara el código de *NOVAL*, al no estar definida dicha macro. Como se observa no se comprueba el valor de *VAL*, o el de *NOVAL*, solo se comprueba si están definidos o no.
+---
 
-## 8.6. Directiva #line.
+## 8.6. Directiva `#line`.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La directiva *#line*  permite cambiar la cuenta de lineas del compilador y el nombre del archivo. Su sintaxis es:
+La directiva `#line` permite cambiar la cuenta de líneas del compilador y el nombre del archivo.
+Su sintaxis es:
 
+```c
 #line número ["nombre de archivo"]
+```
 
 Veamos un ejemplo:
 
-#line 100 /\* Inicializa el contador de lineas a 100 \*/       /\* 10 lineas \*/
-
+```c
+#line 100 /* Inicializa el contador de líneas a 100 */
+/* 10 líneas */
 #error Detenida compilación
+```
 
-Indicara el mensaje de error en la linea *110* del programa, y no en la que suceda 
+Indicará el mensaje de error en la línea *110* del programa, y no en la que suceda realmente.
 
-realmente.
+---
 
-## 8.7. Directiva #pragma.
+## 8.7. Directiva `#pragma`.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La directiva *#pragma*  es una directiva que permite dar instrucciones al compilador sobre como debe realizar la compilación del código fuente. Su sintaxis es:
+La directiva `#pragma` es una directiva que permite dar instrucciones al compilador sobre cómo debe realizar la compilación del código fuente.
+Su sintaxis es:
 
+```c
 #pragma nombre
+```
+
 
 ## Tema 9 - Entrada y salida.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Antes de empezar a explicar la entrada y salida en C, es necesario realizar dos pequeños comentarios:
 
-En primer lugar, para el correcto funcionamiento de la entrada y salida en C, y dado que las funciones de E/S, estructuras de datos usadas por esas funciones, etc., se encuentran declaradas en el archivo de cabecera *<stdio.h>*, es necesario incluir dicho archivo, mediante la directiva del preprocesador *#include*, para que la E/S funcione 
+En primer lugar, para el correcto funcionamiento de la entrada y salida en C, y dado que las funciones de E/S, estructuras de datos usadas por esas funciones, etc., se encuentran declaradas en el archivo de cabecera `<stdio.h>`, es necesario incluir dicho archivo mediante la directiva del preprocesador `#include`, para que la E/S funcione correctamente. En caso contrario, puede funcionar de forma incorrecta, e incluso, puede llegar a dar errores de compilación.
 
-correctamente, pues en caso contrario, puede funcionar de forma incorrecta, e incluso, puede llegar a dar errores de compilación.
+En segundo lugar, aparte de la E/S por consola y la E/S de fichero mediante búfer intermedio, que serán explicadas en este tema, existe una E/S de fichero sin búfer intermedio, proveniente de la primitiva implementación de C en máquinas UNIX, y que el estándar ANSI de C no ha estandarizado, por lo cual no es recomendable su uso. Por este motivo, y dada su similitud en la mayoría de apartados con el sistema de E/S de fichero mediante búfer intermedio, no será explicada en el presente tema.
 
-En segundo lugar, aparte de la E/S por consola y la E/S de fichero mediante buffer intermedio, que serán explicadas en este tema, existe una E/S de fichero sin buffer intermedio, proveniente de la primitiva implementación de C en máquinas UNIX., y que el standard ANSI de C no ha estandarizado, por lo cual, no es recomendable su uso. Por este motivo, y dada su similitud en la mayoría de apartados con el sistema de E/S de fichero mediante buffer intermedio, no será explicado en el presente tema.
+---
 
 ## 9.1. Entrada y salida desde consola.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La entrada y salida desde consola se refiere a las operaciones que se producen en el teclado y la pantalla del ordenador. Dichos dispositivos son automáticamente abiertos y cerrados al comenzar y terminar el programa, por lo cual, no deben ser abiertos ni cerrados por el propio programa. Existen, básicamente, seis funciones de entrada y salida desde consola, tres de entrada y tres de salida. Veámoslas:
+La entrada y salida desde consola se refiere a las operaciones que se producen en el teclado y la pantalla del ordenador. Dichos dispositivos son automáticamente abiertos y cerrados al comenzar y terminar el programa, por lo cual no deben ser abiertos ni cerrados por el propio programa.
 
-La función *getchar()*, lee un carácter desde el teclado. Dicha función se define 
+Existen, básicamente, seis funciones de entrada y salida desde consola: tres de entrada y tres de salida. Veámoslas:
 
-como:
+---
 
+### `getchar()`
+
+La función `getchar()` lee un carácter desde el teclado. Su definición es:
+
+```c
 int getchar(void);
+```
 
-Dicha función lee caracteres, de uno en uno, desde el teclado, esperando, para leer los caracteres, la pulsación de un retorno de carro. Es por ello que es posible escribir varios caracteres antes de que se ninguno de ellos sea leído. La función *getchar()* hace eco en pantalla del carácter leído. En caso de error devuelve *EOF*.
+Esta función lee caracteres, de uno en uno, desde el teclado, esperando la pulsación de un retorno de carro. Es posible escribir varios caracteres antes de que se lea alguno. Hace eco en pantalla del carácter leído. En caso de error, devuelve `EOF`.
 
-La función *putchar()* escribe un carácter a la pantalla del ordenador. Dicha función se define como:
+---
 
+### `putchar()`
+
+La función `putchar()` escribe un carácter en pantalla. Su definición es:
+
+```c
 int putchar(int c);
+```
 
-La función *putchar()*, si sucede de forma correcta, devuelve el carácter escrito. En caso de error devuelve el carácter *EOF*.
+Devuelve el carácter escrito si la operación fue correcta. En caso de error, devuelve `EOF`.
 
-Veamos un ejemplo de uso de *getchar()* y *putchar()*:
+**Ejemplo de uso de `getchar()` y `putchar()`:**
 
+```c
 #include <stdio.h>
 
 int main(void) {
+    char ch;
+    do {
+        ch = getchar();
+        putchar(ch);
+    } while (ch != 'e' && ch != 'E');
 
-char ch;
-
-do
-
-{
-
-ch=getchar(); putchar(ch);
-
+    return 0;
 }
+```
 
-while (ch!='e' && ch!='E');
+Este programa lee todas las teclas pulsadas hasta encontrar una `'e'` o una `'E'`.
 
-return 0;
+---
 
+### `gets()`
+
+La función `gets()` lee una cadena desde el teclado. Su definición es:
+
+```c
+char *gets(char *s);
+```
+
+Lee hasta que se pulsa retorno de carro. El retorno de carro es reemplazado automáticamente por el carácter de fin de cadena (`'\0'`). Devuelve un puntero a `s` si tiene éxito, o `NULL` en caso de error.
+
+---
+
+### `puts()`
+
+La función `puts()` escribe una cadena en pantalla. Su definición es:
+
+```c
+int puts(const char *s);
+```
+
+Escribe la cadena seguida de un retorno de carro. Devuelve un entero no negativo en caso de éxito, o `EOF` si ocurre un error.
+
+**Ejemplo de uso de `gets()` y `puts()`:**
+
+```c
+#include <stdio.h>
+#define TAM 100
+
+int main(void) {
+    char cadena[TAM];
+
+    puts("Introduce una cadena:");
+    gets(cadena);
+
+    return 0;
 }
+```
 
-Este programa lee todas las teclas pulsadas en el teclado, y las coloca en pantalla, hasta leer una *'e'* o una *'E'*. Obsérvese que solo lee las teclas después de pulsar un retorno de carro.
+---
 
-La función *gets()* lee un string desde el teclado. La función se define como:
+### `scanf()`
 
-char \*gets(char \*s);
+La función `scanf()` se usa para leer datos desde el teclado y convertirlos automáticamente al formato adecuado. Su definición es:
 
-La función *gets()* lee un string desde el teclado hasta que se pulsa un retorno de carro. El string es almacenado en la variable *s*, y el retorno de carro leído desde el teclado es, automáticamente, reemplazado por un carácter de final de string (*'\0'*). Devuelve un puntero a la variable *s* si sucede de forma correcta, y *NULL* en caso contrario. La función *gets()*  permite corregir errores de teclado usando la tecla de retroceso antes de pulsar el retorno de carro.
+```c
+int scanf(const char *formato[, dirección, ...]);
+```
 
-La función *puts()* escribe un string en pantalla. La función se define como:
+La cadena de formato puede incluir:
 
-int puts(const char \*s);
+* **Especificadores de formato** (precedidos por `%`),
+* **Espacios en blanco**,
+* **Otros caracteres literales**.
 
-La función *puts()* escribe en pantalla el string almacenado en *s*, y añade al final un retorno de carro. Devuelve un entero no negativo si sucede de forma correcta, y *EOF* en caso de error.
+**Especificadores válidos:**
 
-Veamos un ejemplo de uso de *gets()* y *puts()*:
-
-#include <stdio.h> #define TAM 100
-
-int main(void)
-
-{
-
-`   `char cadena[TAM];
-
-`   `puts("Introduce una cadena:");
-
-gets(cadena);
-
-return 0;
-
-}
-
-La función *scanf()* se usa para leer cualquier tipo de dato predefinido desde el teclado, y convertirlo, de forma automática, al formato interno adecuado. La función se define como:
-
-int scanf(const char \*formato[,dirección,...]);
-
-El string *formato*  es la cadena de control que indica los datos a leer. Dicha cadena de control consta de tres clases de caracteres:
-
-- Especificadores de formato.
-- Caracteres de espacio en blanco.
-- Caracteres que no sean espacios en blanco.
-
-Los especificadores de formato están precedidos por el signo *%*, y dicen a la función que tipo de datos van a ser leídos a continuación. Los especificadores de formato validos son:
-
-
-
-|**Especificado r**|**Descripción.**|
-| :-: | - |
-|%c|Leer un único carácter.|
-|%d|Leer un entero decimal.|
-|%i|Leer un entero decimal.|
-|%e|Leer un número en punto flotante.|
-|%f|Leer un número en punto flotante.|
-|%g|Leer un número en punto flotante.|
-|%o|Leer un número octal.|
-|%s|Leer una cadena de caracteres.|
-|%x|Leer un número hexadecimal.|
-|%p|Leer un puntero.|
-|%n|Recibe un valor igual al número de carácter leídos.|
-|%u|Leer un entero sin signo.|
+| Especificador | Descripción                           |
+| :-----------: | ------------------------------------- |
+|      `%c`     | Leer un único carácter                |
+|      `%d`     | Leer un entero decimal                |
+|      `%i`     | Leer un entero decimal                |
+|      `%e`     | Leer número en punto flotante         |
+|      `%f`     | Leer número en punto flotante         |
+|      `%g`     | Leer número en punto flotante         |
+|      `%o`     | Leer número octal                     |
+|      `%s`     | Leer cadena de caracteres             |
+|      `%x`     | Leer número hexadecimal               |
+|      `%p`     | Leer un puntero                       |
+|      `%n`     | Recibe el número de caracteres leídos |
+|      `%u`     | Leer entero sin signo                 |
 
 *Tabla 9.1.1: Especificadores de formato de la función scanf().*
 
-Además, es posible utilizar los modificadores *h* (*short*), *l* (*long*)  y *L*. El modificador *h* se puede aplicar a los tipo *d*, *i*, *o*, *u* y *x*, e indica que el tipo de dato es *short int* o *unsigned short int* según el caso. El modificador *l* se puede aplicar a los casos anteriores, indicando que el tipo de dato es *long int* o *unsigned long int*, pero, además, se puede aplicar a los tipos *e*, *f* y *g*, indicando, en tal caso, que el tipo de dato es *double*. Por último, el modificador *L* se puede aplicar a los tipos *e*, *f* y *g*, e indica que el tipo de dato es *long double*.
+**Modificadores:**
 
-Los caracteres de espacio en blanco en la cadena de control dan lugar a que *scanf()* lea y salte sobre cualquier número (incluido cero) de espacios en blanco. Un espacio en blanco es, además del carácter espacio, un tabulador o un salto de línea.
+* `h`: *short int* o *unsigned short int*
+* `l`: *long int* o *unsigned long int*, y también *double* para `%f`, `%e`, `%g`
+* `L`: *long double* para `%f`, `%e`, `%g`
 
-Un carácter que no sea espacio en blanco da lugar a que *scanf()* lea y elimine el carácter asociado. Por ejemplo, *%d:%d*  da lugar a que *scanf()*  lea primero un *int*, 
+**Nota:** Los argumentos deben pasarse por referencia (dirección de memoria).
 
-después lea, y descarte, los dos puntos, y luego lea otro *int*. Si el carácter especificado no se encuentra, *scanf()* termina su ejecución.
+**Uso del modificador `*`:**
 
-Todas las variables utilizadas para recibir valores (si son necesarias), deben ser pasadas por "referencia", o sea, por sus direcciones. Esto supone que los argumentos deben ser punteros a las variables.
+```c
+int x, y;
+scanf("%d%*c%d", &x, &y);
+```
 
-La presencia del signo \* después del signo % y antes del código del formato produce que *scanf()* lea, pero no asigne el valor leído a ninguna variable. Por ejemplo:
+Si la entrada es `10/20`, `x = 10`, se descarta `/`, y `y = 20`.
 
-int x,y; scanf("%d%\*c%d",&x,&y);
+`scanf()` devuelve el número de campos asignados correctamente. Devuelve `EOF` en caso de error.
 
-Provoca que, si la entrada es *10/20*, se le asigne el valor *10* a la variable *x*, se lea, y se descarte el signo */*, y después se asigne el valor *20* a la variable *y*.
+---
 
-La función *scanf()*  devuelve un número igual al de campos que han sido asignados correctamente, este número no incluye los campos que fueron leídos, pero no asignados, utilizando el modificador \* para eliminar la asignación. En caso de error devuelve *EOF*.
+### `printf()`
 
-La función *printf()* se usa para escribir cualquier tipo de dato a la pantalla. Su 
+La función `printf()` se usa para escribir cualquier tipo de dato en pantalla. Su definición es:
 
-formato es:
+```c
+int printf(const char *formato[, argumento, ...]);
+```
 
-int printf(const char \*formato[,argumento,...]);
+La cadena de formato contiene:
 
-La cadena apuntada por formato consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Las ordenes de formato están precedidas por el signo *%* y le sigue el código de formato. Estas ordenes de formato son:
+* Texto literal,
+* Especificadores de formato, iniciados por `%`.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+**Especificadores válidos:**
 
-|**Especificado r**|**Descripción**|
-| :-: | - |
-|%c|Carácter.|
-|%d|Enteros decimales con signo.|
-|%i|Enteros decimales con signo.|
-|%e|Punto flotante en notación científica (e minúscula).|
-|%E|Punto flotante en notación científica (E mayúscula).|
-|%f|Punto flotante.|
-|%g|Usar el más corto de %e y %f.|
-|%G|Usar el más corto de %E y %f.|
-|%o|Octal sin signo.|
-|%s|Cadena de caracteres.|
-|%u|Enteros decimales sin signo.|
-|%x|Hexadecimales sin signo (letras minúsculas).|
-|%X|Hexadecimales sin signo (letras mayúsculas).|
-|%p|Mostrar un puntero.|
-|%n|El argumento asociado es un puntero a un entero, el cual recibirá el número de caracteres escritos.|
-| - | :- |
-|%%|Imprimir el signo %.|
+| Especificador | Descripción                                                 |
+| :-----------: | ----------------------------------------------------------- |
+|      `%c`     | Carácter                                                    |
+|      `%d`     | Entero con signo                                            |
+|      `%i`     | Entero con signo                                            |
+|      `%e`     | Punto flotante (notación científica, 'e')                   |
+|      `%E`     | Punto flotante (notación científica, 'E')                   |
+|      `%f`     | Punto flotante                                              |
+|      `%g`     | Más corto entre `%e` y `%f`                                 |
+|      `%G`     | Más corto entre `%E` y `%f`                                 |
+|      `%o`     | Octal sin signo                                             |
+|      `%s`     | Cadena de caracteres                                        |
+|      `%u`     | Entero sin signo                                            |
+|      `%x`     | Hexadecimal sin signo (minúsculas)                          |
+|      `%X`     | Hexadecimal sin signo (mayúsculas)                          |
+|      `%p`     | Dirección de puntero                                        |
+|      `%n`     | Puntero a entero que recibe cantidad de caracteres impresos |
+|      `%%`     | Imprime el símbolo `%`                                      |
 
 *Tabla 9.1.2: Especificadores de formato de la función printf().*
 
-Además, e igual que con la función *scanf()*, existen los modificadores *h*, *l* y *L*. Para su uso consultar la función *scanf()*.
+Igual que con `scanf()`, se pueden usar los modificadores `h`, `l`, y `L`.
 
-La función *printf()* devuelve el número de carácteres escritos. En caso de error devuelve el valor *EOF*.
+`printf()` devuelve el número de caracteres escritos o `EOF` en caso de error.
 
-Veamos un ejemplo de uso de las funciones *scanf()* y *printf()*:
+**Ejemplo de uso de `scanf()` y `printf()`:**
 
+```c
 #include <stdio.h>
 
 int main(void) {
+    int a, b;
 
-int a,b;
+    printf("\nIntroduce el valor de a: ");
+    scanf("%d", &a);
+    
+    printf("\nIntroduce el valor de b: ");
+    scanf("%d", &b);
 
-printf("\nIntroduce el valor de a: "); scanf("%d",&a); printf("\nIntroduce el valor de b: "); scanf("%d",&b);
+    if (b != 0)
+        printf("\nEl valor de %d dividido %d es: %f\n", a, b, (float)a / b);
+    else
+        printf("\nError, b vale 0\n");
 
-if (b!=0)
-
-`      `printf("\nEl valor de %d dividido %d es: %f\n",
-
-a,b,(float)a/b);
-
-else
-
-printf("\nError, b vale 0\n");
-
-return 0;
-
+    return 0;
 }
+```
+
+
 
 ## 9.2. Entrada y salida desde fichero.
 
