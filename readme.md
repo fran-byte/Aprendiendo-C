@@ -110,10 +110,10 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#6-arrays-cadenas-y-punteros" style="text-decoration: none;">5. Arrays, Cadenas y Punteros</a></td>
+    <td><a href="#5--arrays-cadenas-y-punteros" style="text-decoration: none;">5. Arrays, Cadenas y Punteros</a></td>
     <td>
-      <a href="#61-arrays-y-cadenas" style="text-decoration: none;">5.1. Arrays y Cadenas</a><br>
-      <a href="#62-punteros" style="text-decoration: none;">5.2. Punteros</a>
+      <a href="#51-arrays-y-cadenas" style="text-decoration: none;">5.1. Arrays y Cadenas</a><br>
+      <a href="#52-punteros" style="text-decoration: none;">5.2. Punteros</a>
     </td>
   </tr>
 </table>
