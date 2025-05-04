@@ -180,7 +180,7 @@
 
 ---
 
-### 📌 **Apéndices**https://github.com/fran-byte/Learn-C/blob/main/readme.md#a6---funciones-varias
+### 📌 **Apéndices**
 
 <table style="border: none; width: 100%;">
   <tr>
