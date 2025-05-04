@@ -1,10 +1,6 @@
 # <img src="images/C_Logo.png"/> Material didáctico 
 
 
-Este repositorio pretende ser una introdución a C.
-
-
-
 ### **Lista Completa de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
 
 ---
