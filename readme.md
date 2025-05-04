@@ -1428,214 +1428,282 @@ Las funciones son similares a las de cualquier otro lenguaje, pero, tal como men
 
 ## 6.1. La sentencia return.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Antes de empezar la explicación de las funciones, conviene explicar la sentencia *return*. La sentencia *return* permite, en primer lugar, salir de la función desde cualquier punto de la misma, y en segundo lugar, devolver un valor del tipo de la función, si ello es necesario (no se devuelve ningún valor si la función es de tipo *void*). Veamos un ejemplo:
+ 
+Antes de empezar la explicación de las funciones, conviene explicar la sentencia `return`. La sentencia `return` permite, en primer lugar, salir de la función desde cualquier punto de la misma, y en segundo lugar, devolver un valor del tipo de la función, si ello es necesario (no se devuelve ningún valor si la función es de tipo `void`).
 
-int Comparacion(int a,int b)
+### Ejemplo con `return`
 
-{
+Veamos un ejemplo de una función con varios puntos de retorno:
 
-`   `if (a>b) return 1;  /\* a es mayor que b \*/    if (a<b) return -1; /\* a es menor que b \*/    return 0;           /\* a y b son iguales \*/ }
-
-Como se observa en el ejemplo, una función puede contener más de una sentencia *return*. Ello permite, la posibilidad de poder salir de la función desde distintos puntos de la misma. Un aspecto que conviene resaltar es el hecho de que una función también termina su ejecución si llega al final de la misma sin encontrar ninguna sentencia *return*. Ello es posible en toda función de tipo *void*. Veamos un ejemplo:
-
-void A(int \*a) {
-
-`   `\*a=5;
-
+```c
+int Comparacion(int a, int b) {
+    if (a > b) return 1;    /* a es mayor que b */
+    if (a < b) return -1;   /* a es menor que b */
+    return 0;                /* a y b son iguales */
 }
+````
 
-Esa función es equivalente a otra que tuviera como última línea una sentencia *return*, y funcionaría de igual forma.
+Como se observa en el ejemplo, una función puede contener más de una sentencia `return`. Esto permite la posibilidad de poder salir de la función desde distintos puntos de la misma. Un aspecto que conviene resaltar es el hecho de que una función también termina su ejecución si llega al final de la misma sin encontrar ninguna sentencia `return`. Esto es posible en toda función de tipo `void`.
+
+### Ejemplo de función `void` sin `return`
+
+Veamos un ejemplo de una función `void` sin un `return` explícito:
+
+```c
+void A(int *a) {
+    *a = 5;
+}
+```
+
+Esta función es equivalente a otra que tuviera como última línea una sentencia `return`, y funcionaría de igual forma:
+
+```c
+void A(int *a) {
+    *a = 5;
+    return;
+}
+```
+
+En el caso de las funciones de tipo `void`, no es necesario devolver un valor, y el uso de `return` al final de la función es opcional, ya que la función termina automáticamente al llegar al final de su cuerpo.
+
+---
+
+Las funciones son una de las características más importantes del lenguaje C, ya que permiten dividir el programa en partes más pequeñas y manejables. Además, al usar `return`, el flujo de control se puede modificar de forma más precisa, y los valores de retorno facilitan la comunicación entre las funciones y el programa principal.
+
+
+
 
 ## 6.2. Argumentos de las funciones, llamada por valor y por ![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.005.png)"referencia".
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Una vez conocido el uso de la función *return*, podemos introducirnos en la explicación de las funciones. En primer lugar, si una función usa argumentos, es  necesario declarar variables que acepten los argumentos de la función. Veamos un ejemplo:
+Una vez conocido el uso de la función `return`, podemos introducirnos en la explicación de las funciones. En primer lugar, si una función usa argumentos, es necesario declarar variables que acepten los argumentos de la función. Veamos un ejemplo:
 
-int EstaEn(char \*cad,char c) /\* Devuelve 1 si el carácter c \*/ {                            /\* esta en el string cad \*/
+### Ejemplo de función con parámetros
 
-while (\*cad!=‘\0’)
-
-{
-
-if (\*cad==c)
-
-return 1;
-
-cad++;
-
+```c
+int EstaEn(char *cad, char c) {  /* Devuelve 1 si el carácter c está en el string cad */
+    while (*cad != '\0') {
+        if (*cad == c)
+            return 1;
+        cad++;
+    }
+    return 0;
 }
+````
 
-return 0;
+Esta función, que busca un carácter en una cadena, podría ser llamada desde otra función de la siguiente forma:
 
-}
-
-Esta función, podría ser llamada desde otra función de la siguiente forma:
-
-char cadena[]=“Esta es una cadena de prueba”; if (EstaEn(cadena,’a’))
-
-`   `printf(“Esta”);
-
+```c
+char cadena[] = "Esta es una cadena de prueba";
+if (EstaEn(cadena, 'a'))
+    printf("Esta");
 else
+    printf("No esta");
+```
 
-`   `printf(“No esta”);
+### Paso de parámetros en C
 
-A diferencia de otros lenguaje, el lenguaje C, solo permite pasar parámetros a las funciones por valor. Si se desea que los cambios efectuados en una función sobre una variable afecten fuera del alcance de la función, es posible simular un paso por 
+A diferencia de otros lenguajes, el lenguaje C solo permite pasar parámetros a las funciones **por valor**. Esto significa que cuando una variable se pasa como argumento a una función, se pasa una copia de su valor. Si se desea que los cambios efectuados en una función sobre una variable afecten fuera del alcance de la función, es posible simular un **paso por referencia** mediante el uso de **punteros**.
 
-referencia mediante el uso de punteros. En efecto, si a una función le pasamos como argumento la dirección de una variable, cualquier modificación que se realice en esa dirección, afectara, lógicamente, al valor que tiene la variable original, y con ello, conseguiremos el mismo efecto que un paso por referencia. Veámoslo con un ejemplo:
+Si a una función le pasamos como argumento la **dirección de una variable**, cualquier modificación que se realice en esa dirección afectará al valor de la variable original. De esta manera, conseguimos el mismo efecto que un paso por referencia.
 
+### Ejemplo con punteros (simulando paso por referencia)
+
+```c
 #include <stdio.h>
 
-void Alfa(int \*val,float pos) {
-
-\*val=5;
-
-pos=7.7;
-
-return;
-
+void Alfa(int *val, float pos) {
+    *val = 5;  // Modifica el valor de la variable apuntada por val
+    pos = 7.7; // Modifica la copia local de pos, no la original
+    return;
 }
 
-void Beta(int val,float \*pos) {
-
-val=10;
-
-\*pos=14.7;
-
+void Beta(int val, float *pos) {
+    val = 10;  // Modifica la copia local de val, no la original
+    *pos = 14.7;  // Modifica el valor de la variable apuntada por pos
 }
 
-int main(void)
+int main(void) {
+    int a = 6;
+    float b = 9.87;
 
-{
+    printf("Al principio valen a=%d b=%f\n", a, b);
+    
+    Alfa(&a, b);  // Pasa la dirección de a, pero b por valor
 
-int a=6;
+    printf("Después de Alfa valen a=%d b=%f\n", a, b);
+    
+    Beta(a, &b);  // Pasa a por valor, pero la dirección de b
 
-float b=9.87;
+    printf("Después de Beta valen a=%d b=%f\n", a, b);
+}
+```
 
-printf(“Al principio valen a=%d b=%f\n”,a,b);    Alfa(&a,b);
+### Resultado del programa:
 
-`   `printf(“Después de Alfa valen a=%d b=%f\n”,a,b);    Beta(a,&b);
+```
+Al principio valen a=6 b=9.87
+Después de Alfa valen a=5 b=9.87
+Después de Beta valen a=5 b=14.7
+```
 
-`   `printf(“Después de Beta valen a=%d b=%f\n”,a,b); }
+### Explicación:
 
-Este programa mostrara en pantalla:
+* En la función `Alfa`, se pasa la dirección de la variable `a` (usando `&a`), lo que permite que cualquier cambio hecho en `*val` modifique directamente el valor de `a`. En cambio, la variable `b` se pasa por valor, por lo que la modificación de `pos` no afecta el valor de `b` fuera de la función.
 
-Al principio valen a=6 b=9.87 Después de Alfa  valen a=5 b=9.87 Después de Beta valen a=5 b=14.7
+* En la función `Beta`, se pasa la variable `a` por valor, por lo que no se modifica fuera de la función. Sin embargo, la variable `b` se pasa por referencia (mediante el puntero `&b`), por lo que cualquier cambio en `*pos` afectará directamente a `b` fuera de la función.
 
-Ello es, pues a *Alfa* se le pasa la variable *a* por "referencia" (se le pasa *&a*, o sea, un puntero a la variable *a*), y la variable *b* por valor, mientras que en *Beta* sucede al revés.
+---
+
+Este mecanismo de paso de parámetros es fundamental en C, especialmente cuando necesitamos modificar el estado de variables en funciones o trabajar con estructuras complejas sin copiar grandes cantidades de datos. Con los punteros, C permite un control muy preciso sobre la memoria y el flujo de datos.
+
+
 
 ## 6.3. Arrays como argumentos de funciones.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Un aspecto a tener muy en cuenta es que C no permite el paso de un array por valor a una función, un array es siempre pasado por "referencia", pues en la llamada, lo que se pasa es la dirección del primer elemento del array (recuérdese que el nombre de un array es un puntero al primer elemento). Por valor tan solo es posible pasar por valor elementos individuales del array, pero no el array completo. Veámoslo en un ejemplo:
+Un aspecto a tener muy en cuenta es que C no permite el paso de un array por valor a una función. Un array es siempre pasado por "referencia", pues en la llamada, lo que se pasa es la dirección del primer elemento del array (recuérdese que el nombre de un array es un puntero al primer elemento). Por valor, tan solo es posible pasar por valor elementos individuales del array, pero no el array completo.
 
+### Ejemplo de paso de un array por referencia
+
+```c
 #include <stdio.h>
 
-void PasoValorReferencia(int \*array,int valor) {
-
-array[5]=-8.6;
-
-valor=4;
-
+void PasoValorReferencia(int *array, int valor) {
+    array[5] = -8.6;  // Modifica el valor del elemento en la posición 5
+    valor = 4;         // Modifica la copia local de valor, no la original
 }
 
-int main(void)
+int main(void) {
+    int array[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};  // Inicializa un array
+    PasoValorReferencia(array, array[3]);  // Pasa el array por referencia
 
-{
-
-`   `int array[10]={0,0,0,0,0,0,0,0,0,0};    PasoValorReferencia(array,array[3]);
-
-`   `printf(“Array[5] vale: %d y array[3] vale:%d\n”,array[5],array[3]);    return 0;
-
+    // Imprime los valores modificados en el array
+    printf("Array[5] vale: %d y array[3] vale: %d\n", array[5], array[3]);  
+    return 0;
 }
+````
 
-Colocara en pantalla en el mensaje:
+**Resultado en pantalla:**
 
-Array[5] vale: 8.6 y array[3] vale: 0
+```
+Array[5] vale: -8 y array[3] vale: 0
+```
 
-## 6.4. Argumentos de la función main.
+En este ejemplo, vemos que el cambio realizado en `array[5]` se refleja correctamente en el array, porque el array se pasa por referencia. Sin embargo, el valor de `array[3]` no se modifica porque `valor` se pasa por valor y cualquier cambio sobre él no afecta la variable original.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+---
 
-La  función *main()*,  como  toda  función  de  C,  acepta  argumentos.  Los argumentos que acepta la función *main()* son un entero (*int argc*), un array de punteros a strings (*char \*argv[]*), y otro array de punteros a strings (*char \*env[]*). Aunque los nombres de dichos argumentos no tienen porque ser *argc*, *argv*, y *env*, en toda la literatura de C se usan dichos nombres, y aquí los respetaremos. El significado de los parámetros *argc*, *argv* y *env* es el siguiente:
+## 6.4. Argumentos de la función `main`
 
-- El parámetro *argc* contiene el número de argumentos en la línea de ordenes de la llamada al programa.
-- El parámetro *argv* contiene un puntero a cada uno de los argumentos (strings) de la línea de ordenes de la llamada al programa.
-- El parámetro *env* contiene un puntero a cada una de las variables de ambiente (strings) del sistema operativo.
+La función `main()`, como toda función de C, acepta argumentos. Los argumentos que acepta la función `main()` son un entero (`int argc`), un array de punteros a strings (`char *argv[]`), y otro array de punteros a strings (`char *env[]`). Aunque los nombres de estos argumentos no tienen por qué ser `argc`, `argv`, y `env`, en toda la literatura de C se usan esos nombres y, por lo tanto, los respetaremos en este caso.
 
-  Veamos un ejemplo de programa que use argumentos en la línea de ordenes:
+Los significados de los parámetros `argc`, `argv` y `env` son los siguientes:
 
+* El parámetro `argc` contiene el número de argumentos en la línea de órdenes de la llamada al programa.
+* El parámetro `argv` contiene un puntero a cada uno de los argumentos (strings) de la línea de órdenes de la llamada al programa.
+* El parámetro `env` contiene un puntero a cada una de las variables de ambiente (strings) del sistema operativo.
+
+### Ejemplo de programa que usa argumentos de la línea de órdenes
+
+```c
 #include <stdio.h>
 
-int main(int argc,char \*argv[],char \*env[]) {
+int main(int argc, char *argv[], char *env[]) {
+    int i;
 
-int i;
+    printf("El valor de argc es: %d\n", argc);
 
-printf(“El valor de argc es: %d\n”,argc); for(i=0;i<argc;i++)
+    for (i = 0; i < argc; i++)
+        printf("El argumento %d es: %s\n", i, argv[i]);
 
-printf(“El argumento %d es: %s\n”,i,argv[i]); for(i=0;env[i]!=NULL;i++)
+    for (i = 0; env[i] != NULL; i++)
+        printf("La variable de ambiente %d es: %s\n", i, env[i]);
 
-printf("La variable de ambiente %d es: %s\n",i,env[i]);    return 0;
-
+    return 0;
 }
+```
 
-Supongamos que el programa lo hemos llamado *prueba.exe*, entonces, llamando al programa con la siguiente línea:
+### Ejecución del programa:
 
-prueba.exe   Este\_es\_el\_argumento\_1   Este\_es\_el\_argumento\_2
+Supongamos que el programa lo hemos llamado `prueba.exe`, y lo llamamos con la siguiente línea:
 
-Escribirá en pantalla:
+```
+prueba.exe Este_es_el_argumento_1 Este_es_el_argumento_2
+```
 
+**Salida esperada:**
+
+```
 El valor de argc es: 3
-
 El argumento 0 es: prueba.exe
-
-El argumento 1 es: Este\_es\_el\_argumento\_1
-
-El argumento 2 es: Este\_es\_el\_argumento\_2
-
-La variable de ambiente 0 es: COMSPEC=C:\DOS\COMMAND.COM La variable de ambiente 1 es: TEMP=C:\WINDOWS\TEMP
-
+El argumento 1 es: Este_es_el_argumento_1
+El argumento 2 es: Este_es_el_argumento_2
+La variable de ambiente 0 es: COMSPEC=C:\DOS\COMMAND.COM
+La variable de ambiente 1 es: TEMP=C:\WINDOWS\TEMP
 La variable de ambiente 2 es: PROMPT=$P$G
+```
 
-Como se puede observar, existen 3 argumentos, numerados de 0 a 2, siendo el argumento 0, siempre, el nombre del programa, y siendo el resto de argumentos los argumentos del programa. El número y valor de las variables de ambiente depende, tanto  de  que  sistema  operativo  se  trate  (MS-DOS,  UNIX,  etc.),  como  de  la configuración, etc., del procesador de comandos de dicho sistema operativo.
+Como se observa, existen 3 argumentos, numerados de 0 a 2. El argumento 0 es siempre el nombre del programa, y el resto de los argumentos son los que se pasan en la línea de órdenes. El número y valor de las variables de ambiente depende del sistema operativo (MS-DOS, UNIX, etc.) y de la configuración del procesador de comandos del sistema operativo.
+
+Este ejemplo muestra cómo se pueden gestionar y acceder tanto a los argumentos pasados en la línea de órdenes como a las variables de ambiente del sistema operativo, lo cual es útil para programas que necesitan interactuar de manera dinámica con su entorno.
+
+
+
 
 ## 6.5. Recursividad.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Una función de C puede llamarse a si misma. Este proceso recibe el nombre de recursividad. Los ejemplos de recursividad abundan, siendo uno de los mas habituales la función factorial:
 
+
+Una función de C puede llamarse a sí misma. Este proceso recibe el nombre de **recursividad**. Los ejemplos de recursividad son abundantes, siendo uno de los más habituales la función factorial:
+
+```c
 unsigned Factorial(unsigned num) {
-
-if (num==0) return 1;
-
-return num\*Factorial(num-1);
-
+    if (num == 0) return 1;
+    return num * Factorial(num - 1);
 }
+```
 
 La recursividad es una poderosa herramienta de programación, sin embargo, presenta dos problemas:
 
-- La velocidad de ejecución de un algoritmo programado de forma recursiva es mucho mas lento que el programado de forma iterativa.
-- La recursividad, si es excesiva, puede ocasionar el desbordamiento de la pila, y con ello, el fallo en la ejecución del programa.
+1. La velocidad de ejecución de un algoritmo programado de forma recursiva es mucho más lento que el programado de forma iterativa.
+2. La recursividad, si es excesiva, puede ocasionar el desbordamiento de la pila, y con ello, el fallo en la ejecución del programa.
 
-Sin embargo, el uso de la recursividad es frecuente en campos como la inteligencia artificial, etc., y en la implementación de ciertos algoritmos tales como el algoritmo de ordenación "QuickSort", muy difícil de implementar de forma iterativa, pero relativamente sencillo de forma recursiva.
+Sin embargo, el uso de la recursividad es frecuente en campos como la inteligencia artificial, etc., y en la implementación de ciertos algoritmos tales como el algoritmo de ordenación *QuickSort*, muy difícil de implementar de forma iterativa, pero relativamente sencillo de forma recursiva.
+
+---
+
 
 ## 6.6.Punteros a funciones.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-Al igual que cualquier otro tipo de dato, una función ocupa una dirección de memoria, y por tanto, puede ser apuntada por un puntero. La declaración de un puntero a una función es:
 
-tipo de dato (\*nombre de la variable)(prototipo);
+Al igual que cualquier otro tipo de dato, una **función** ocupa una dirección de memoria, y por tanto, puede ser apuntada por un **puntero**. La declaración de un **puntero a una función** es:
+
+```c
+tipo de dato (*nombre de la variable)(prototipo);
+```
 
 Veamos algunos ejemplos:
 
-int (\*a)(int,float); void (\*b)(void);
+```c
+int (*a)(int, float);
+void (*b)(void);
+```
 
-Generalmente, los punteros a funciones se usan en la programación de bajo nivel,  tal  como  modificación  de  interrupciones,  creación  de  controladores  de dispositivos, etc.
+Generalmente, los punteros a funciones se usan en la programación de bajo nivel, tales como:
+
+* Modificación de interrupciones.
+* Creación de controladores de dispositivos, etc.
+
+
 
 ## 6.7. El modificador de almacenamiento static aplicado a funciones.
 
