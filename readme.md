@@ -1564,7 +1564,7 @@ Este mecanismo de paso de parámetros es fundamental en C, especialmente cuando 
 
 ## 6.3. Arrays como argumentos de funciones.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Un aspecto a tener muy en cuenta es que C no permite el paso de un array por valor a una función. Un array es siempre pasado por "referencia", pues en la llamada, lo que se pasa es la dirección del primer elemento del array (recuérdese que el nombre de un array es un puntero al primer elemento). Por valor, tan solo es posible pasar por valor elementos individuales del array, pero no el array completo.
 
@@ -1657,9 +1657,7 @@ Este ejemplo muestra cómo se pueden gestionar y acceder tanto a los argumentos 
 
 ## 6.5. Recursividad.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Una función de C puede llamarse a sí misma. Este proceso recibe el nombre de **recursividad**. Los ejemplos de recursividad son abundantes, siendo uno de los más habituales la función factorial:
 
@@ -1682,8 +1680,7 @@ Sin embargo, el uso de la recursividad es frecuente en campos como la inteligenc
 
 ## 6.6.Punteros a funciones.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Al igual que cualquier otro tipo de dato, una **función** ocupa una dirección de memoria, y por tanto, puede ser apuntada por un **puntero**. La declaración de un **puntero a una función** es:
 
@@ -1707,7 +1704,7 @@ Generalmente, los punteros a funciones se usan en la programación de bajo nivel
 
 ## 6.7. El modificador de almacenamiento static aplicado a funciones.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Al igual que en el caso de las variables globales, es posible aplicar delante de una función el modificador de almacenamiento *static*. Dicho modificador hace que la función sobre la que se aplica sea local al módulo donde se encuentra, y no pueda ser conocida por los restantes módulos del programa, de igual forma a como sucedía con las variables globales. Esta modificación del alcance de una función permite realizar un mejor encapsulado del código y simplificar la programación en proyectos de gran envergadura.
 
@@ -1719,121 +1716,136 @@ Al igual que en el caso de las variables globales, es posible aplicar delante de
 
 ## 7.1. Estructuras.
 
-Una estructura es un conjunto de variables que se referencian bajo el mismo nombre. La sintaxis de la declaración de una estructura en lenguaje C es:
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-struct nombre\_estructura{
 
-tipo nombre\_variable;    tipo nombre\_variable;    ...
 
-`   `tipo nombre\_variable; }variables\_estructura;
 
-Es posible no poner el nombre de la estructura (*nombre\_estructura*), o bien, no crear en el momento de declarar la estructura ninguna variable de la estructura (*variables\_estructura*), pero no es posible eliminar la aparición de ambos elementos. Veamos algunos ejemplos de declaración de estructuras:
 
-struct LISTA{
+Una **estructura** es un conjunto de variables que se referencian bajo el mismo nombre. La sintaxis de la declaración de una estructura en lenguaje C es:
 
-int tam;
+```c
+struct nombre_estructura {
+    tipo nombre_variable;    
+    tipo nombre_variable;    
+    ...
+    tipo nombre_variable; 
+} variables_estructura;
+```
 
-char cadena[50]; }var\_lista;
+Es posible no poner el nombre de la estructura (`nombre_estructura`), o bien, no crear en el momento de declarar la estructura ninguna variable de la estructura (`variables_estructura`), pero no es posible eliminar la aparición de ambos elementos. Veamos algunos ejemplos de declaración de estructuras:
 
-struct DATO{
+```c
+struct LISTA {
+    int tam;
+    char cadena[50];
+} var_lista;
 
-int tam;
-
-float vector[3];
-
-struct DATO \*siguiente;
-
-}; struct {
-
-float a,b;
-
-unsigned long i,j;
-
-char cadena[5]; }memo[10];
-
-struct ALFA{
-
-int a;
-
-float b;
-
+struct DATO {
+    int tam;
+    float vector[3];
+    struct DATO *siguiente;
 };
 
-struct BETA{
+struct {
+    float a, b;
+    unsigned long i, j;
+    char cadena[5];
+} memo[10];
 
-struct ALFA alfa;
+struct ALFA {
+    int a;
+    float b;
+};
 
-float c,d; }variable;
+struct BETA {
+    struct ALFA alfa;
+    float c, d;
+} variable;
+```
 
 Para referenciar un elemento de una estructura se realiza de la siguiente forma:
 
-variables\_estructura.nombre\_variable;
+```c
+variables_estructura.nombre_variable;
+```
 
 Así, podíamos referenciar los elementos de las estructuras anteriores de la siguiente forma:
 
-var\_lista.tam; var\_list.cadena; var\_list.cadena[7]; memo[2].a; memo[6].cadena[3]; variable.alfa.a; variable.c;
+```c
+var_lista.tam;
+var_lista.cadena;
+var_lista.cadena[7];
+memo[2].a;
+memo[6].cadena[3];
+variable.alfa.a;
+variable.c;
+```
 
-Un aspecto que es necesario aclarar es el paso de estructuras como parámetros a las funciones. A una función es posible pasarle un elemento de los que componen la estructura, una estructura entera, e incluso, un array de estructuras. En caso de pasarle un elemento de la estructura, el paso se hace siguiendo las reglas del tipo del cual sea ese elemento; en el caso de una estructura entera, C la pasa, a no ser que se le indique lo contrario, por valor, y en el caso de un array de estructuras, como todo array, lo pasara por "referencia". Conviene aclarar en este momento que si la estructura posee en su interior un array de elementos, la estructura puede ser pasada por valor a una función, pero el array será pasado siempre por referencia. En concreto a la función se le pasara por valor un puntero al primer elemento del array. Veamos todo esto en un ejemplo:
+### Paso de estructuras como parámetros a funciones
 
-struct ALFA{ int a;
+Un aspecto que es necesario aclarar es el **paso de estructuras** como parámetros a las funciones. A una función es posible pasarle:
 
-char b[20];
+* Un elemento de los que componen la estructura.
+* Una estructura entera.
+* Un array de estructuras.
 
+En caso de pasarle un **elemento de la estructura**, el paso se hace siguiendo las reglas del tipo del cual sea ese elemento. En el caso de una **estructura entera**, C la pasa, a no ser que se le indique lo contrario, por valor. Y en el caso de un **array de estructuras**, como todo array, lo pasará por "referencia".
+
+Conviene aclarar en este momento que si la estructura posee en su interior un **array de elementos**, la estructura puede ser pasada por valor a una función, pero el array será pasado siempre por referencia. En concreto, a la función se le pasará por valor un puntero al primer elemento del array.
+
+Veamos todo esto en un ejemplo:
+
+```c
+struct ALFA {
+    int a;
+    char b[20];
 };
 
-void PasoDeElementos(int val,char \*cadena) {
-
-`   `val=15;
-
-`   `cadena[7]=‘a’;
-
+void PasoDeElementos(int val, char *cadena) {
+    val = 15;
+    cadena[7] = 'a';
 }
 
 void PasoDeLaEstructuraPorValor(struct ALFA a) {
-
-`   `a.val=14;
-
-`   `a.cadena[6]=‘b’;
-
+    a.val = 14;
+    a.cadena[6] = 'b';
 }
 
-void PasoDeLaEstructuraPorReferencia(struct ALFA \*a) {
-
-`   `\*(a.val)=13;
-
-`   `\*(a.cadena)[5]=‘c’;
-
+void PasoDeLaEstructuraPorReferencia(struct ALFA *a) {
+    *(a->val) = 13;
+    *(a->cadena)[5] = 'c';
 }
 
-void PasoDeUnArrayDeEstructuras(struct ALFA \*a) {
-
-`   `a[4].val=12;
-
-`   `a[5].cadena[4]=‘d’;
-
+void PasoDeUnArrayDeEstructuras(struct ALFA *a) {
+    a[4].val = 12;
+    a[5].cadena[4] = 'd';
 }
 
-int main(void)
+int main(void) {
+    struct ALFA a, b[10];
+    PasoDeElementos(a.val, a.b);
+    PasoDeLaEstructuraPorValor(a);
+    PasoDeLaEstructuraPorReferencia(&a);
+    PasoDeUnArrayDeEstructuras(b);
 
-{
-
-struct ALFA a,b[10];
-
-PasoDeElementos(a.val,a.b);    PasoDeLaEstructuraPorValor(a);    PasoDeLaEstructuraPorReferencia(&a);    PasoDeUnArrayDeEstructuras(b);
-
-`   `return 0;
-
+    return 0;
 }
+```
 
-En el paso de una estructura por referencia, se ha usado una construcción *\*(variable\_estructura.nombre\_variable)*, esta construcción asigna el valor que se desea a esa variable de la estructura, pues *variable\_estructura.nombre\_variable* es un puntero a la variable. El uso de los paréntesis es necesario, pues el operador . tiene menor prioridad que el operador \*. Es por ello que C introduce un nuevo operador, el operador ->. Este operador es equivalente al otro, pero más cómodo y fácil de escribir y de usar. Entonces, podríamos haber escrito la función de paso de una estructura por referencia de la forma siguiente:
+En el paso de una estructura por **referencia**, se ha usado una construcción `*(variable_estructura.nombre_variable)`. Esta construcción asigna el valor que se desea a esa variable de la estructura, pues `variable_estructura.nombre_variable` es un puntero a la variable. El uso de los paréntesis es necesario, pues el operador `.` tiene menor prioridad que el operador `*`.
 
-void PasoDeLaEstructuraPorReferencia(struct ALFA \*a) {
+Es por ello que C introduce un nuevo operador, el operador `->`. Este operador es equivalente al otro, pero más cómodo y fácil de escribir y de usar. Entonces, podríamos haber escrito la función de paso de una estructura por referencia de la forma siguiente:
 
-`   `a->val=13;
-
-`   `a->cadena[5]=‘c’;
-
+```c
+void PasoDeLaEstructuraPorReferencia(struct ALFA *a) {
+    a->val = 13;
+    a->cadena[5] = 'c';
 }
+```
+
+
+
 
 ## 7.2. Campos de bit.
 
