@@ -857,14 +857,15 @@ La forma general de la sentencia *switch* es:
 
 switch(variable) {
 case const1: sentencia; break; case const2:
-sentencia;       break;    ...
-`   `default:       sentencia; }
+sentencia;       break;    
+default:       sentencia; }
 
 Donde *variable* debe ser de tipo *char* o *int*, y donde *const1*, *const2*, **...**, indican constantes de C del tipo de datos de la *variable*. Dichas constantes no pueden repetirse dentro del *switch*. El *default* es opcional y puede no aparecer, así como los *break* de los *case*. La sentencia *switch* se ejecuta comparando el valor de la variable con el valor de cada una de las constantes, realizando la comparación desde arriba hacia abajo. En caso de que se encuentre una constante cuyo valor coincida con el valor de la variable, 
 
 se empieza a ejecutar las sentencias hasta encontrar una sentencia *break*. En caso de que no se encuentre ningún valor que coincida, se ejecuta el *default*** (si existe)**.** Veamos algunos ejemplos:
 
-´´´
+```
+
 int valor;
 switch(valor)
 {
@@ -879,16 +880,17 @@ int cont=0;
 switch(d)
 {
   case ‘\r’: cont++; /\* Si d es un retorno de carro, se \*/
-`                      `/\* ejecuta este cont++ y el siguiente\*/                       /\* al no aparecer un break \*/
+                     /\* ejecuta este cont++ y el siguiente\*/                       /\* al no aparecer un break \*/
   case ‘\x1B’: cont++;
     break;
   default: cont=-1;
 }
-´´´
+
+```
 
 Las sentencias *switch* pueden aparecer unas dentro de otras, igual que sucedía con las sentencias *if*. Veámoslo con un ejemplo:
 
-´´´
+```
 
 char d, e;
 
