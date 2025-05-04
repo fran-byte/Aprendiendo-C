@@ -789,7 +789,7 @@ c=(float)a/b;
 
 Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonces, aplicando las reglas de conversión automática de tipos, se realiza la división en coma flotante. Este proceso da lugar a que el resultado de la operación sea *1.5*, y dicho valor sea el asignado a la variable *c*.!
 
-## 4 - Sentencias de control y bucles.https://github.com/fran-byte/Learn-C/blob/main/readme.md#4---sentencias-de-control-y-bucles
+## 4 - Sentencias de control y bucles.
 
 
 
