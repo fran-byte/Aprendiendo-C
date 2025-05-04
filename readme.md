@@ -849,7 +849,7 @@ else
   printf(“2”);
 ```
 
-2. **- Sentencia de control switch.**
+## 4.2. - Sentencia de control switch.
 
   [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -918,7 +918,7 @@ switch (d) {
 
 ```
 
-3. **- Bucle for.**
+## 4.3. Bucle for.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -966,7 +966,7 @@ break;
 
 Como se observa en este último ejemplo, el bucle *for*  no posee ninguna expresión. Para salir de el se usa la sentencia *break*, dicha sentencia (ya vista junto con la sentencia de control *switch*) se explicara mas detalladamente con posterioridad.
 
-4. **- Bucle while.**
+## 4.4.  Bucle while.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -998,7 +998,7 @@ break;
 
 }
 
-5. **- Bucle do/while.**
+## 4.5. Bucle do/while.**
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1030,7 +1030,7 @@ scanf(“%d”,&j); }
 
 while (i<j);
 
-**5.6 - Sentencias de control break y continue .**
+## 4.6 - Sentencias de control break y continue .
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
