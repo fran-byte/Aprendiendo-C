@@ -1,4 +1,6 @@
-# <img src="images/C_Logo.png"/> Programando en C - Material didáctico 
+# <img src="images/C_Logo.png"/>Material didáctico
+
+#  - Programando en C -
 
 
 ---
