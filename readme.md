@@ -734,38 +734,51 @@ vale cero.
 
 ## 3.1.- Conversión automática de tipos de datos.
 
+
 El lenguaje C permite que en una misma expresión aparezcan diferentes tipos de datos, encargándose el compilador de realizar las operaciones de forma correcta. El compilador del lenguaje C, cuando en una misma expresión aparecen dos o más tipos de datos, convierte todos los operandos al tipo del operando más grande existente de acuerdo con las dos reglas siguientes:
 
-- Todos los *char* y *short int* se convierten a *int*. Todos los *float* a *double*.
-- Para todo par de operandos, lo siguiente ocurre en secuencia:
-- Si uno de los operandos es un *long double*, el otro se convierte en *long double*.
-- Si uno de los operandos es *double*, el otro se convierte a *double*.
-- Si uno de los operandos es *long*, el otro se convierte a *long*.
-- Si uno de los operandos es *unsigned*, el otro se convierte a *unsigned*.
+- Todos los `char` y `short int` se convierten a `int`.
+- Todos los `float` a `double`.
+
+Para todo par de operandos, lo siguiente ocurre en secuencia:
+
+1. Si uno de los operandos es un `long double`, el otro se convierte en `long double`.
+2. Si uno de los operandos es `double`, el otro se convierte a `double`.
+3. Si uno de los operandos es `long`, el otro se convierte a `long`.
+4. Si uno de los operandos es `unsigned`, el otro se convierte a `unsigned`.
 
 Después de que el compilador aplique estas reglas de conversión, cada par de operandos será del mismo tipo, y el resultado será del tipo de los operandos. Veamos un ejemplo:
 
+```c
 char ch; int i; float f; double d;
 
-(  ch  /  i  )  +  (  f  \*  d  )  -  (  f  +  i  );   char   int        float double      float  int
+( ch / i ) + ( f * d ) - ( f + i );
+````
 
-Debido a que en la operación existen diferentes tipos se aplica la primera 
+`char int float double float int`
 
-conversión:
+Debido a que en la operación existen diferentes tipos se aplica la primera conversión:
 
-ch de char pasa a int.
+* `ch` de `char` pasa a `int`.
+* `f` de `float` pasa a `double`.
 
-f de float pasa a double.
+```c
+( ch / i ) + ( f * d ) - ( f + i );
+```
 
-(  ch  /  i  )  +  (  f  \*  d  )  -  (  f  +  i  );   int    int       double double     double  int
+`int int double double double int`
 
-Al ser los dos operandos de igual tipo, realizamos la primera operación, *(ch / i)*, y el resultado es de tipo *int*. De igual forma, para la segunda operación, *(f \* d)*, y el resultado es de tipo *double*.
+Al ser los dos operandos de igual tipo, realizamos la primera operación, `(ch / i)`, y el resultado es de tipo `int`. De igual forma, para la segunda operación, `(f * d)`, el resultado es de tipo `double`.
 
-Para la tercera operación, y dado que las variables no son del mismo tipo, se aplica la segunda regla, convirtiéndose el *int* en *double*, realizándose la suma *(f + i)* como dos datos de tipo *double*, y siendo por tanto el resultado un *double*.
+Para la tercera operación, y dado que las variables no son del mismo tipo, se aplica la segunda regla, convirtiéndose el `int` en `double`, realizándose la suma `(f + i)` como dos datos de tipo `double`, y siendo por tanto el resultado un `double`.
 
-Ahora procedemos a realizar la suma de los dos primeros resultados *(ch / i) + (f \* d)*, como uno de ellos es de tipo *int***,** y el otro de tipo *double*, el *int* se convierte en *double* por la segunda regla, y el resultado es un *double*.
+Ahora procedemos a realizar la suma de los dos primeros resultados `(ch / i) + (f * d)`, como uno de ellos es de tipo `int`, y el otro de tipo `double`, el `int` se convierte en `double` por la segunda regla, y el resultado es un `double`.
 
-Y por último, realizamos la resta final, siendo los dos operandos de tipo *double* y el resultado final, por tanto, de tipo *double*.
+Y por último, realizamos la resta final, siendo los dos operandos de tipo `double` y el resultado final, por tanto, de tipo `double`.
+
+
+
+
 
 ## 3.2.- Conversión forzada de tipos datos.
 
