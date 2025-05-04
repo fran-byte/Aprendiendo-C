@@ -1263,128 +1263,170 @@ char cadena[] = "Esto es una cadena";
 
 
 
-## 6.2. Punteros.
+## 5.2. Punteros.
 
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-    
 
-Los punteros son una de las poderosas herramientas que ofrece el lenguaje C a los programadores, sin embargo, son también una de las más peligrosas, el uso de punteros sin inicializar, etc., es una fuente frecuente de errores en los programas de C, y además, suele producir fallos muy difíciles de localizar y depurar.
 
-Un  puntero  es  una  variable  que  contiene  una  dirección  de  memoria. Normalmente esa dirección es una posición de memoria de otra variable, por lo cual se suele decir que el puntero “apunta” a la otra variable.
+Los punteros son una de las poderosas herramientas que ofrece el lenguaje C a los programadores, sin embargo, son también una de las más peligrosas. El uso de punteros sin inicializar, etc., es una fuente frecuente de errores en los programas de C, y además, suele producir fallos muy difíciles de localizar y depurar.
+
+Un puntero es una variable que contiene una dirección de memoria. Normalmente, esa dirección es una posición de memoria de otra variable, por lo cual se suele decir que el puntero “apunta” a la otra variable.
+
+### Declaración de Punteros
 
 La sintaxis de la declaración de una variable puntero es:
 
-tipo \*nombre;
+```c
+tipo *nombre;
+````
 
-El tipo base de la declaración sirve para conocer el tipo de datos al que pertenece la variable a la cual apunta la variable de tipo puntero. Esto es fundamental para poder leer el valor que almacena la zona de memoria apuntada por la variable puntero y para poder realizar ciertas operaciones aritméticas sobre los mismos.
+El tipo base de la declaración sirve para conocer el tipo de datos al que pertenece la variable a la cual apunta el puntero. Esto es fundamental para poder leer el valor que almacena la zona de memoria apuntada por la variable puntero y para poder realizar ciertas operaciones aritméticas sobre los mismos.
 
 Algunos ejemplos de declaración de variables puntero son:
 
-int \*a;
+```c
+int *a;
+char *p;
+float *f;
+```
 
-char \*p;
+### Operadores de Punteros
 
-float \*f;
+Existen dos operadores especiales para los punteros, el operador `*&` y el operador `*`.
 
-Existen dos operadores especiales de los punteros, el operador *\** y el operador 
+1. **El operador `&`**: Es un operador unario que devuelve la dirección de una variable de memoria. Así, si declaramos:
 
-*&*.
+   ```c
+   int *a, b;
+   ```
 
-El operador *&*** es un monario que devuelve la dirección de una variable de memoria. Así, si declaramos:
+   Y hacemos:
 
-int \*a,b;
+   ```c
+   a = &b;
+   ```
 
-Y hacemos:
+   La variable puntero `a` contendrá la dirección de memoria de la variable `b`.
 
-a=&b;
+2. **El operador `*`**: Es un operador unario que devuelve el valor de la variable situada en la dirección que sigue. Veámoslo con un ejemplo:
 
-La variable puntero *a* contendrá la dirección de memoria de la variable *b*.
+   ```c
+   int *a, b, c;
+   b = 15;
+   a = &b;
+   c = *a;
+   ```
 
-El operador *\** es un operador monario que devuelve el valor de la variable situada en la dirección que sigue. Veámoslo con un ejemplo:
+   Entonces la variable `c` contendrá el valor `15`, pues `*a` devuelve el valor de la dirección que sigue (la cual "apunta" el puntero `a`), y previamente hemos hecho que `a` contenga la dirección de memoria de `b`.
 
-int \*a,b,c;
+### Operaciones con Punteros
 
-Si hacemos:
+1. **Asignación de punteros**: Es posible asignar el valor de una variable puntero a otra variable puntero. Por ejemplo:
 
-b=15; a=&b; c=\*a;
+   ```c
+   int *a, *b, c;
+   a = &c;
+   b = a;
+   ```
 
-Entonces la variable *c*** contendrá el valor *15*, pues *\*a* devuelve el valor de la dirección que sigue (a la que “apunta” la variable puntero), y con anterioridad hemos hecho que *a* contenga la dirección de memoria de la variable *b*** usando para ello el operador *&*.
+   Entonces, `b` contiene el valor de `a`, y por lo tanto, `b` también "apunta" a la variable `c`.
 
-Con las variables de tipo puntero es posible realizar algunas operaciones:
+2. **Aritmética de punteros**: Se pueden realizar operaciones sobre las variables de tipo puntero usando los operadores `+`, `-`, `++`, `--`. Estos operadores incrementan o decrementan la posición de memoria a la que "apunta" el puntero. El incremento o decremento se realiza de acuerdo al tipo base de la variable puntero, por lo que el tipo del puntero es muy importante. Ejemplo:
 
-- Asignación de punteros. Es posible asignar el valor de una variable de tipo puntero a otra variable de tipo puntero. Por ejemplo:
+   | **Operación** | ++                   | --                  | +9   | -5   |
+   | ------------- | -------------------- | ------------------- | ---- | ---- |
+   | **Variable**  | **Dirección actual** | **Nueva dirección** |      |      |
+   | int \*a;      | 3000                 | 3002                | 2998 | 3018 |
+   | float \*b;    | 3000                 | 3004                | 2996 | 3036 |
 
-int \*a,\*b,c; a=&c; b=a;
+   Por lo tanto, si tenemos:
 
-Entonces *b*** contiene el valor de *a*, y por ello, *b* también “apunta” a la variable *c*.
+   ```c
+   tipo *a;
+   a = a + num;
+   ```
 
-- Aritmética de punteros. Sobre las variables de tipo puntero es posible utilizar los operadores +, -, ++ y --. Estos operadores incrementan o decrementan la posición de memoria a la que “apunta” la variable puntero. El incremento o decremento se realiza de acuerdo al tipo base de la variable de tipo puntero, de ahí la importancia del tipo del que se declara la variable puntero. Veamos esto con la siguiente tabla:
+   La posición a la que apunta `a` se incrementa en `num * sizeof(tipo)`. Para la resta se decrementa de igual forma.
 
+3. **Comparaciones de punteros**: También es posible realizar comparaciones entre punteros. Por ejemplo:
 
+   ```c
+   int *a, *b;
+   if (a < b)
+       printf("a apunta a una dirección más baja que b");
+   ```
 
-|**Operación**|++|--|+9|-5||||||||
-| - | - | - | - | - | :- | :- | :- | :- | :- | :- | :- |
-|**Variable**|**Dirección actual**|**Nueva dirección**||||||||||
-|int \*a;|3000||3002|2998|3018|2990||||||
-|float \*b|3000||3004|2996|3036|2980||||||
-
-*Tabla 6.2.1: Ejemplos de aritmética de punteros en C.* Por lo tanto, si tenemos:
-
-tipo \*a;
-
-Y hacemos: a=a+num;
-
-La posición a la que apunta *a* se incrementa en *num\*sizeof(tipo)*. Para la resta se decrementa de igual forma en *num\*sizeof(tipo)*. Los operadores ++  y --  son equivalentes a realizar *num=1*, y con ello quedan obviamente explicados.
-
-- Comparaciones de punteros. Sobre las variables de tipo puntero es posible realizar operaciones de comparación entre ellas. Veamos un ejemplo:
-
-int \*a,\*b; if (a<b)
-
-printf(“a apunta a una dirección más baja que b”);
+### Relación entre Punteros y Arrays
 
 Existe una estrecha relación entre los punteros y los arrays. Consideremos el siguiente fragmento de código:
 
-char str[80],\*p; p=str;
+```c
+char str[80], *p;
+p = str;
+```
 
-Este fragmento de código pone en la variable puntero p la dirección del primer elemento del array *str*. Entonces, es posible acceder al valor de la quinta posición del array mediante *str[4]*** y** *\*(p+4)* (recuérdese que los índices de los arrays empiezan en 0). Esta estrecha relación entre los arrays y los punteros queda más evidente si se tiene  en cuenta que el nombre del array sin índice es la dirección de comienzo del array, y, si además,  se  tiene  en  cuenta  que  un  puntero  puede  indexarse  como  un  array unidimensional, por lo cual, en el ejemplo anterior, podríamos referenciar ese elemento como *p[4]*.
+Este fragmento de código pone en la variable puntero `p` la dirección del primer elemento del array `str`. Entonces, es posible acceder al valor de la quinta posición del array mediante `str[4]` y `*(p + 4)` (recuérdese que los índices de los arrays comienzan en 0). Esta relación entre arrays y punteros es muy evidente, ya que el nombre del array sin índice es la dirección de comienzo del array, y un puntero puede indexarse como un array unidimensional. Por lo cual, en el ejemplo anterior, podríamos referenciar ese elemento como `p[4]`.
 
 Es posible obtener la dirección de un elemento cualquiera del array de la siguiente forma:
 
-int str[80],\*p; p=&str[4];
+```c
+int str[80], *p;
+p = &str[4];
+```
 
-Entonces, el puntero *p* contiene la dirección del quinto elemento del array *str*.
+Entonces, el puntero `p` contiene la dirección del quinto elemento del array `str`.
 
-Hasta ahora hemos declarado variables puntero aisladas. Es posible, como con cualquier otro tipo de datos, definir un array de variables puntero. La declaración para un array de punteros *int* de tamaño *10* es:
+### Arrays de Punteros
 
-int \*a[10];
+Hasta ahora hemos declarado variables puntero aisladas. Es posible, como con cualquier otro tipo de datos, definir un array de variables puntero. La declaración para un array de punteros `int` de tamaño `10` es:
 
-Para asignar una dirección de una variable entera, llamada *var*, al tercer elemento del array de punteros, se escribe:
+```c
+int *a[10];
+```
 
-x[2]=&var;
+Para asignar una dirección de una variable entera, llamada `var`, al tercer elemento del array de punteros, se escribe:
 
-Y para encontrar el valor de *var*: \*x[2];
+```c
+a[2] = &var;
+```
 
-Dado, además, que un puntero es también una variable, es posible definir un puntero a un puntero. Supongamos que tenemos lo siguiente:
+Y para encontrar el valor de `var`:
 
-int a,\*b,\*\*c; b=&a; c=&b;
+```c
+* a[2];
+```
 
-Y entonces, *\*\*c* tiene el valor de la variable *a*, pues *c* es un puntero a una variable que ya es de tipo puntero.
+### Punteros a Punteros
 
-Este concepto de puntero a puntero podría extenderse a puntero a puntero a puntero, etc., pero no nos ocuparemos de ello. Además, existe el concepto de puntero a una función, al cual nos referiremos en el tema dedicado a las funciones.
+Dado que un puntero es también una variable, es posible definir un puntero a un puntero. Supongamos que tenemos lo siguiente:
 
-## Tema 7 - Funciones.
-El formato general de una función de C es:
+```c
+int a, *b, **c;
+b = &a;
+c = &b;
+```
 
+Y entonces, `**c` tiene el valor de la variable `a`, pues `c` es un puntero a una variable que ya es de tipo puntero.
+
+Este concepto de puntero a puntero podría extenderse a punteros a punteros a punteros, etc., pero no nos ocuparemos de ello. Además, existe el concepto de puntero a una función, al cual nos referiremos en el tema dedicado a las funciones.
+
+---
+
+## Tema 6 - Funciones
+
+El formato general de una función en C es:
+
+```c
 tipo nombre(lista de parámetros) {
-
-`   `cuerpo de la función
-
+    cuerpo de la función
 }
+```
 
-Las funciones son simulares a las de cualquier otro lenguaje, pero, tal y como citamos en la introducción, al no ser un lenguaje estructurado por bloques, no es posible declarar funciones dentro de otras funciones.
+Las funciones son similares a las de cualquier otro lenguaje, pero, tal como mencionamos en la introducción, al no ser un lenguaje estructurado por bloques, no es posible declarar funciones dentro de otras funciones.
+   
 
-## 7.1. La sentencia return.
+## 6.1. La sentencia return.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1406,7 +1448,7 @@ void A(int \*a) {
 
 Esa función es equivalente a otra que tuviera como última línea una sentencia *return*, y funcionaría de igual forma.
 
-## 7.2. Argumentos de las funciones, llamada por valor y por ![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.005.png)"referencia".
+## 6.2. Argumentos de las funciones, llamada por valor y por ![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.005.png)"referencia".
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1484,7 +1526,7 @@ Al principio valen a=6 b=9.87 Después de Alfa  valen a=5 b=9.87 Después de Bet
 
 Ello es, pues a *Alfa* se le pasa la variable *a* por "referencia" (se le pasa *&a*, o sea, un puntero a la variable *a*), y la variable *b* por valor, mientras que en *Beta* sucede al revés.
 
-## 7.3. Arrays como argumentos de funciones.
+## 6.3. Arrays como argumentos de funciones.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1514,7 +1556,7 @@ Colocara en pantalla en el mensaje:
 
 Array[5] vale: 8.6 y array[3] vale: 0
 
-## 7.4. Argumentos de la función main.
+## 6.4. Argumentos de la función main.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1560,7 +1602,7 @@ La variable de ambiente 2 es: PROMPT=$P$G
 
 Como se puede observar, existen 3 argumentos, numerados de 0 a 2, siendo el argumento 0, siempre, el nombre del programa, y siendo el resto de argumentos los argumentos del programa. El número y valor de las variables de ambiente depende, tanto  de  que  sistema  operativo  se  trate  (MS-DOS,  UNIX,  etc.),  como  de  la configuración, etc., del procesador de comandos de dicho sistema operativo.
 
-## 7.5. Recursividad.
+## 6.5. Recursividad.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1581,7 +1623,7 @@ La recursividad es una poderosa herramienta de programación, sin embargo, prese
 
 Sin embargo, el uso de la recursividad es frecuente en campos como la inteligencia artificial, etc., y en la implementación de ciertos algoritmos tales como el algoritmo de ordenación "QuickSort", muy difícil de implementar de forma iterativa, pero relativamente sencillo de forma recursiva.
 
-## 7.6.Punteros a funciones.
+## 6.6.Punteros a funciones.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1595,19 +1637,19 @@ int (\*a)(int,float); void (\*b)(void);
 
 Generalmente, los punteros a funciones se usan en la programación de bajo nivel,  tal  como  modificación  de  interrupciones,  creación  de  controladores  de dispositivos, etc.
 
-## 7.7. El modificador de almacenamiento static aplicado a funciones.
+## 6.7. El modificador de almacenamiento static aplicado a funciones.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Al igual que en el caso de las variables globales, es posible aplicar delante de una función el modificador de almacenamiento *static*. Dicho modificador hace que la función sobre la que se aplica sea local al módulo donde se encuentra, y no pueda ser conocida por los restantes módulos del programa, de igual forma a como sucedía con las variables globales. Esta modificación del alcance de una función permite realizar un mejor encapsulado del código y simplificar la programación en proyectos de gran envergadura.
 
-## Tema 8 - Estructuras, campos de bit, uniones y
+## Tema 7 - Estructuras, campos de bit, uniones y
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 **enumeraciones.**
 
-## 8.1. Estructuras.
+## 7.1. Estructuras.
 
 Una estructura es un conjunto de variables que se referencian bajo el mismo nombre. La sintaxis de la declaración de una estructura en lenguaje C es:
 
@@ -1725,7 +1767,7 @@ void PasoDeLaEstructuraPorReferencia(struct ALFA \*a) {
 
 }
 
-## 8.2. Campos de bit.
+## 7.2. Campos de bit.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1767,7 +1809,7 @@ struct EMP{
 
 };
 
-## 8.3. Uniones.
+## 7.3. Uniones.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1803,7 +1845,7 @@ unsigned short a; char b[2];
 
 Entonces *beta.b[0]* contendrá el byte bajo de *beta.a*, y *beta.b[1]* contendrá el byte alto de *beta.a*. Ello permite acceder a la parte alta o baja de dicho *unsigned short* sin necesidad de usar operadores sobre bits.
 
-## 8.4.Enumeraciones.
+## 7.4.Enumeraciones.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1821,7 +1863,7 @@ enum CURSO{ primero, segundo, tercero, cuarto\_t=100, quinto\_t, cuarto\_e=200, 
 
 En este caso, las constantes *primero*, *segundo* y *tercero* tienen los valores *0*,*1* y *2*, las constantes cuarto\_t y quinto\_t los valores *100* y 101, y las constantes *cuarto\_e* y *quinto\_e* los valores *200* y *201* respectivamente.
 
-## 8.5.La palabra reservada typedef.
+## 7.5.La palabra reservada typedef.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1843,7 +1885,7 @@ Y entonces podrían crearse nuevas variables de la forma:
 
 entero a; cliente b,\*c;
 
-## Tema 9 - El preprocesador.
+## Tema 8 - El preprocesador.
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1860,7 +1902,7 @@ El preprocesador, definido por el standard ANSI de C, contiene las siguientes di
 
 *Tabla 9.1: Directivas del preprocesador en C.*
 
-## 9.1. Directiva #define.
+## 8.1. Directiva #define.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1882,7 +1924,7 @@ El compilador sustituye el "nombre de macro" y sus argumentos en tiempo de compi
 
 printf("El valor mínimo es: %d\n",(10<20) ? 10 : 20);
 
-## 9.2. Directiva #undef.
+## 8.2. Directiva #undef.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1894,7 +1936,7 @@ La directiva *#undef* permite quitar una definición de "nombre de macro" que se
 
 A partir de *#undef TAM*, el "nombre de macro" *TAM*  deja de existir, ello permite localizar los "nombre de macro" donde sea necesario.
 
-## 9.3. Directiva #error.
+## 8.3. Directiva #error.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1904,7 +1946,7 @@ La directiva *#error* fuerza a parar la compilación del programa, a la vez que 
 
 Su principal uso viene asociado a detener la compilación en ciertas condiciones en asociación con las directivas *#if*, etc., explicadas con posterioridad.
 
-## 9.4. Directiva #include.
+## 8.4. Directiva #include.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1914,7 +1956,7 @@ La directiva *#include* fuerza al compilador a incluir otro archivo fuente en el
 
 Los archivos incluidos mediante *#include*  pueden a su vez poseer otras directivas *#include*. La diferencia existente entre encerrar el archivo entre paréntesis de ángulo o entre comillas dobles, es que, en el primer caso, se busca el archivo en los directorios de la linea de ordenes de compilación, y, después en los directorios standard de C, pero nunca en el directorio de trabajo; y en el segundo caso el primer sitio donde se busca el archivo a incluir es en el directorio actual de trabajo, pasándose, caso de no haber sido encontrado, a buscar en los mismos sitios que el caso anterior.
 
-## 9.5.Directivas #if, #ifdef, #ifndef, #else, #elif y #endif.
+## 8.5.Directivas #if, #ifdef, #ifndef, #else, #elif y #endif.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -1988,7 +2030,7 @@ printf("VAL definido"); #else
 
 Compilara el código para el caso de *VAL*  definido y, además, compilara el código de *NOVAL*, al no estar definida dicha macro. Como se observa no se comprueba el valor de *VAL*, o el de *NOVAL*, solo se comprueba si están definidos o no.
 
-## 9.6. Directiva #line.
+## 8.6. Directiva #line.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -2006,7 +2048,7 @@ Indicara el mensaje de error en la linea *110* del programa, y no en la que suce
 
 realmente.
 
-## 9.7. Directiva #pragma.
+## 8.7. Directiva #pragma.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -2014,7 +2056,7 @@ La directiva *#pragma*  es una directiva que permite dar instrucciones al compil
 
 #pragma nombre
 
-## Tema 10 - Entrada y salida.
+## Tema 9 - Entrada y salida.
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Antes de empezar a explicar la entrada y salida en C, es necesario realizar dos pequeños comentarios:
@@ -2025,7 +2067,7 @@ correctamente, pues en caso contrario, puede funcionar de forma incorrecta, e in
 
 En segundo lugar, aparte de la E/S por consola y la E/S de fichero mediante buffer intermedio, que serán explicadas en este tema, existe una E/S de fichero sin buffer intermedio, proveniente de la primitiva implementación de C en máquinas UNIX., y que el standard ANSI de C no ha estandarizado, por lo cual, no es recomendable su uso. Por este motivo, y dada su similitud en la mayoría de apartados con el sistema de E/S de fichero mediante buffer intermedio, no será explicado en el presente tema.
 
-## 10.1. Entrada y salida desde consola.
+## 9.1. Entrada y salida desde consola.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -2128,7 +2170,7 @@ Los especificadores de formato están precedidos por el signo *%*, y dicen a la 
 |%n|Recibe un valor igual al número de carácter leídos.|
 |%u|Leer un entero sin signo.|
 
-*Tabla 10.1.1: Especificadores de formato de la función scanf().*
+*Tabla 9.1.1: Especificadores de formato de la función scanf().*
 
 Además, es posible utilizar los modificadores *h* (*short*), *l* (*long*)  y *L*. El modificador *h* se puede aplicar a los tipo *d*, *i*, *o*, *u* y *x*, e indica que el tipo de dato es *short int* o *unsigned short int* según el caso. El modificador *l* se puede aplicar a los casos anteriores, indicando que el tipo de dato es *long int* o *unsigned long int*, pero, además, se puede aplicar a los tipos *e*, *f* y *g*, indicando, en tal caso, que el tipo de dato es *double*. Por último, el modificador *L* se puede aplicar a los tipos *e*, *f* y *g*, e indica que el tipo de dato es *long double*.
 
@@ -2178,7 +2220,7 @@ La cadena apuntada por formato consta de dos tipos de elementos. El primer tipo 
 | - | :- |
 |%%|Imprimir el signo %.|
 
-*Tabla 10.1.2: Especificadores de formato de la función printf().*
+*Tabla 9.1.2: Especificadores de formato de la función printf().*
 
 Además, e igual que con la función *scanf()*, existen los modificadores *h*, *l* y *L*. Para su uso consultar la función *scanf()*.
 
@@ -2208,7 +2250,7 @@ return 0;
 
 }
 
-## 10.2. Entrada y salida desde fichero.
+## 9.2. Entrada y salida desde fichero.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -2245,7 +2287,7 @@ Donde *nombre* es un string que contiene el nombre del archivo que queremos leer
 |w+t|Crear un archivo de texto para lectura/escritura.|
 |a+t|Abrir un archivo de texto para leer/añadir.|
 
-*Tabla 10.2.1: Modos de apertura de un fichero con la función fopen().*
+*Tabla 9.2.1: Modos de apertura de un fichero con la función fopen().*
 
 En todos los casos de añadir, si el archivo especificado no existe, se procede a 
 
@@ -2411,7 +2453,7 @@ La función *fseek()*  se usa para operaciones de entrada y salida de acceso ale
 |Posición actual|SEEK\_CUR|1|
 |Final del archivo|SEEK\_END|2|
 
-*Tabla 10.2.2: Valores del origen en la función fseek().*
+*Tabla 9.2.2: Valores del origen en la función fseek().*
 
 La función *fseek()* devuelve un valor de cero si funciona correctamente. Un valor distinto de cero indica un error en la última operación de posicionamiento en el fichero.
 
@@ -2437,7 +2479,7 @@ Y escribir dicha cadena, por ejemplo en la salida standard de error, de la forma
 
 fputs(cadena,stderr);
 
-## Tema 11 - Asignación dinámica de memoria.
+## Tema 10 - Asignación dinámica de memoria.
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -2445,7 +2487,7 @@ Antes de empezar con el desarrollo del tema, es necesario aclarar que el mismo n
 
 Las funciones que realizan un manejo activo de la memoria del sistema requieren todas ellas para su correcto funcionamiento la inclusión, mediante la directiva del prepocesador *#include* del archivo de cabecera *<stdlib.h>*.
 
-## 11.1.Reserva dinámica de memoria.
+## 10.1.Reserva dinámica de memoria.
 
 En C, la reserva dinámica de memoria se realiza mediante el uso de funciones, existen varias funciones de reserva de memoria (ver apéndice A), pero aquí solo explicaremos la reserva dinámica de memoria mediante la función *malloc()*. La función *malloc()* tiene la forma:
 
@@ -2489,7 +2531,7 @@ if ((d=(struct ALFA \*)malloc(sizeof(struct ALFA)))==NULL)
 
 exit(0); /Salimos del programa \*/
 
-## 11.2. Liberación dinámica de memoria.
+## 10.2. Liberación dinámica de memoria.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
@@ -2509,7 +2551,7 @@ free(a);
 
 Un aspecto a tener en cuenta es el hecho de que el puntero a liberar no debe apuntar a nulo (*NULL*), pues en tal caso se producirá un fallo en el programa. Es por ello que cobra aún más sentido la necesidad de comprobar al reservar memoria de forma dinámica que la reserva se ha realizado de forma correcta, tal y como se explico en el apartado anterior.
 
-## 11.3. Ejemplo  de  asignación  y  liberación  dinámica  de memoria.
+## 10.3. Ejemplo  de  asignación  y  liberación  dinámica  de memoria.
 
     [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
