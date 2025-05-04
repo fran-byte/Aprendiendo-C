@@ -961,6 +961,7 @@ break;
 ```
 
 
+
 Como se observa en este último ejemplo, el bucle *for*  no posee ninguna expresión. Para salir de el se usa la sentencia *break*, dicha sentencia (ya vista junto con la sentencia de control *switch*) se explicara mas detalladamente con posterioridad.
 
 4. **- Bucle while.**
