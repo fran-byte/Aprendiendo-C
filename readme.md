@@ -832,18 +832,20 @@ Las sentencias de control *if* pueden ir anidadas. Un *if* anidado es una senten
 
 ```
 if (x)
-if (y) printf(“1”);
-else printf(“2”);
+  if (y) printf(“1”);
+  else printf(“2”);
 ```
 
 ¿A que *if* se refiere el *else*?. C soluciona este problema asociando cada *else* al *if* más cercano posible y que todavía no tiene ningún *else* asociado. Es por ello que en este caso el *if* asociado al *else* es el *if(y)*. Si queremos que el *else* este asociado al *if(x)*, deberíamos escribirlo de la siguiente forma:
 
 ```
-if (x) {
-if (y)
-printf(“1”); }
+if (x)
+{
+  if (y)
+  printf(“1”);
+}
 else
-printf(“2”);
+  printf(“2”);
 ```
 
 2. **- Sentencia de control switch.**
@@ -865,42 +867,53 @@ se empieza a ejecutar las sentencias hasta encontrar una sentencia *break*. En c
 int valor;
 switch(valor)
 {
-case 0: cont++;
-break;
-case 5: cont--;
-break;
-`   `default: cont=-10; /\* Se ejecuta si valor no es 0 o 5 \*/ }
+  case 0: cont++;
+    break;
+  case 5: cont--;
+    break;
+  default: cont=-10; /\* Se ejecuta si valor no es 0 o 5 \*/ 
+}
 char d;
 int cont=0;
 switch(d)
 {
-`   `case ‘\r’: cont++; /\* Si d es un retorno de carro, se \*/
+  case ‘\r’: cont++; /\* Si d es un retorno de carro, se \*/
 `                      `/\* ejecuta este cont++ y el siguiente\*/                       /\* al no aparecer un break \*/
-case ‘\x1B’: cont++;
-break;
-default: cont=-1;
+  case ‘\x1B’: cont++;
+    break;
+  default: cont=-1;
 }
 ´´´
 
 Las sentencias *switch* pueden aparecer unas dentro de otras, igual que sucedía con las sentencias *if*. Veámoslo con un ejemplo:
 
 ´´´
-char d,e;
-switch(d)
-{
-case ‘a’:
-case ‘A’: switch(e)
-{
-case ‘1’: d=‘z’;
-e=‘+’;
-break; case ‘2’: d=‘Z’;
-e=‘-’;
+char d, e;
+
+switch (d) {
+	case 'a':
+	case 'A':
+		switch (e) {
+			case '1':
+				d = 'z';
+				e = '+';
+				break;
+			case '2':
+				d = 'Z';
+				e = '-';
+		}
+		break;
+
+	case 'b':
+	case 'B':
+		switch (e) {
+			case '0':
+				d = '2';
+			default:
+				e = '+';
+		}
 }
-break; case ‘b’:
-case ‘B’: switch(e)
-{
-case ‘0’: d=‘2’; default: e=‘+’;
-`             `} }
+
 ```
 
 3. **- Bucle for.**
