@@ -2701,167 +2701,167 @@ fputs(cadena, stderr);        // Escribir en salida de error
 
 Antes de empezar con el desarrollo del tema, es necesario aclarar que el mismo no pretende explicar las estructuras de datos dinámicas, sino tan solo dar unas ligeras nociones básicas sobre la posibilidad de asignar memoria de forma dinámica, esto es, en tiempo de ejecución, y por tanto de crear nuevas variables.
 
-Las funciones que realizan un manejo activo de la memoria del sistema requieren todas ellas para su correcto funcionamiento la inclusión, mediante la directiva del prepocesador *#include* del archivo de cabecera *<stdlib.h>*.
+Las funciones que realizan un manejo activo de la memoria del sistema requieren todas ellas para su correcto funcionamiento la inclusión, mediante la directiva del prepocesador **#include** del archivo de cabecera **<stdlib.h>**.
 
-## 10.1.Reserva dinámica de memoria.
 
-En C, la reserva dinámica de memoria se realiza mediante el uso de funciones, existen varias funciones de reserva de memoria (ver apéndice A), pero aquí solo explicaremos la reserva dinámica de memoria mediante la función *malloc()*. La función *malloc()* tiene la forma:
+## 10.1. Reserva dinámica de memoria
 
-void \*malloc(unsigned num\_bytes);
+En C, la **reserva dinámica de memoria** se realiza mediante funciones específicas. Aunque existen varias (ver Apéndice A), aquí se explicará únicamente el uso de la función `*malloc()*`.
 
-Siendo *num\_bytes*  el número de bytes que se desean reservar. La función *malloc()* devuelve un puntero al tipo de datos *void* (sin tipo). Dicho puntero puede ser asignado a una variable puntero de cualquier tipo base mediante una conversión forzada de tipo de datos (casts). Veamos un ejemplo:
+La declaración de `malloc()` es:
 
-int \*a;
+```c
+void *malloc(unsigned num_bytes);
+```
 
-a=(int \*)malloc(sizeof(int));
+Donde `num_bytes` es el número de bytes que se desean reservar. La función devuelve un puntero de tipo `void *` (sin tipo), que debe convertirse explícitamente al tipo de puntero deseado mediante *casting*. Por ejemplo:
 
-Y ahora podríamos realizar la siguiente asignación:
+```c
+int *a;
+a = (int *)malloc(sizeof(int));
+*a = 3;
+```
 
-\*a=3;
+Si no se puede reservar la memoria (por falta de recursos, por ejemplo), `malloc()` devuelve `NULL`. Por tanto, siempre debe comprobarse su valor antes de utilizarlo. Ejemplos:
 
-La función *malloc()*, y en general, cualquier función de reserva dinámica de memoria, devuelve un puntero nulo (*NULL*) si la reserva de memoria no puede realizarse, generalmente por falta de memoria disponible. Por ello, antes de usar un puntero devuelto por la función *malloc()*  o por cualquier otra función de reserva dinámica de memoria es imprescindible, con el fin de evitar posibles fallos en la ejecución del programa, comprobar que dicho puntero no es nulo (*NULL*). Veamos algunos ejemplos de reserva dinámica de memoria:
+```c
+float *a;
+a = (float *)malloc(sizeof(float));
+if (a == NULL) exit(0); // Salimos del programa
 
-float \*a;
+unsigned long int *b;
+if ((b = (unsigned long int *)malloc(sizeof(unsigned long int))) == NULL)
+    exit(0); // Salimos del programa
 
-a=(float \*)malloc(sizeof(float));
+struct ALFA {
+    unsigned a;
+    float b;
+    int *c;
+} *d;
 
-if (a==NULL) exit(0); /\* Salimos del programa \*/
+if ((d = (struct ALFA *)malloc(sizeof(struct ALFA))) == NULL)
+    exit(0); // Salimos del programa
+```
 
-unsigned long int\*b;
+---
 
-if ((b=(unsigned long int)malloc(sizeof(unsigned long int)))==NULL)
+## 10.2. Liberación dinámica de memoria
 
-exit(0); /\* Salimos del programa \*/
+La memoria reservada dinámicamente se libera automáticamente al finalizar el programa. Sin embargo, puede ser necesario liberarla antes, durante la ejecución. Para ello se usa la función `free()`:
 
-struct ALFA{
+```c
+void free(void *p);
+```
 
-unsigned a;
+Donde `p` es el puntero cuya memoria asociada se desea liberar. Ejemplo:
 
-float b;
+```c
+int *a;
+if ((a = (int *)malloc(sizeof(int))) == NULL)
+    exit(0);
 
-int \*c;
-
-}\*d;
-
-if ((d=(struct ALFA \*)malloc(sizeof(struct ALFA)))==NULL)
-
-exit(0); /Salimos del programa \*/
-
-## 10.2. Liberación dinámica de memoria.
-
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
-
-La memoria dinámica reservada es eliminada siempre al terminar la ejecución del programa por el propio sistema operativo. Sin embargo, durante la ejecución del programa puede ser interesante, e incluso necesario, proceder a liberar parte de la memoria reservada con anterioridad y que ya ha dejado de ser necesario tener reservada. Esto puede realizarse mediante la función *free()*. La función *free()* tiene la forma:
-
-void free(void \*p);
-
-Donde *p* es la variable de tipo puntero cuya zona de memoria asignada de forma dinámica queremos liberar. Veamos un ejemplo de liberación de memoria:
-
-int \*a;
-
-if ((a=(int \*)malloc(sizeof(int)))==NULL)
-
-exit(0); /\* Salimos del programa \*/ ......
+// ...
 
 free(a);
+```
 
-Un aspecto a tener en cuenta es el hecho de que el puntero a liberar no debe apuntar a nulo (*NULL*), pues en tal caso se producirá un fallo en el programa. Es por ello que cobra aún más sentido la necesidad de comprobar al reservar memoria de forma dinámica que la reserva se ha realizado de forma correcta, tal y como se explico en el apartado anterior.
+> ⚠️ El puntero pasado a `free()` **no debe ser NULL**, ya que esto puede causar errores en tiempo de ejecución. Por eso es tan importante comprobar siempre el retorno de `malloc()`.
 
-## 10.3. Ejemplo  de  asignación  y  liberación  dinámica  de memoria.
+---
 
-[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+## 10.3. Ejemplo de asignación y liberación dinámica de memoria
 
-Vamos a ver un sencillo ejemplo práctico de como asignar y liberar memoria. Para ello construiremos las funciones necesarias para crear, manejar y liberar de forma dinámica una lista ligada.
+Vamos a implementar una lista ligada (linked list) de forma dinámica. Primero definimos la estructura:
 
-En primer lugar, definiremos la estructura de datos necesaria para ello. Esta estructura de datos es:
+```c
+struct LISTA {
+    tipo dato;
+    struct LISTA *sig;
+};
+```
 
-struct LISTA{
+Donde `tipo` puede ser cualquier tipo válido en C (`int`, `float`, etc.).
 
-`   `tipo dato;
+Variables necesarias:
 
-`   `struct LISTA \*sig; };
+```c
+struct LISTA *cabeza = NULL, *p;
+tipo dato;
+```
 
-Donde *tipo* es cualquier tipo de datos valido (*float*, *int*, *long int*, etc.)
+### Función para insertar un elemento por la cabeza:
 
-Las variables necesarias para crear la lista son las siguientes:
+```c
+struct LISTA *CrearLista(struct LISTA *cabeza, tipo dato) {
+    struct LISTA *p;
+    if ((p = (struct LISTA *)malloc(sizeof(struct LISTA))) == NULL)
+        exit(0); // Salimos del programa
 
-struct LISTA \*cabeza=NULL,\*p; tipo dato;
-
-El código de la función de creación de la lista, con inserción por la cabeza:
-
-struct LISTA \*CrearLista(struct LISTA \*cabeza,tipo dato) {
-
-`   `struct LISTA \*p;
-
-if ((p=(struct LISTA \*)malloc(sizeof(struct LISTA)))==NULL)
-
-exit(0); /\* Salimos del programa \*/
-
-`   `p->dato=dato;
-
-`   `p->sig=cabeza;
-
-`   `return p;
-
+    p->dato = dato;
+    p->sig = cabeza;
+    return p;
 }
+```
 
-Siendo la llamada para la creación de la forma: cabeza=CrearLista(cabeza,dato);
+Llamada:
 
-La función para obtener un elemento de la lista es:
+```c
+cabeza = CrearLista(cabeza, dato);
+```
 
-struct LISTA \*BuscarLista(struct LISTA \*p,tipo dato) {
+---
 
-while (p!=NULL && p->dato!=dato)
+### Función para buscar un elemento:
 
-p=p->sig;
-
-return p;
-
+```c
+struct LISTA *BuscarLista(struct LISTA *p, tipo dato) {
+    while (p != NULL && p->dato != dato)
+        p = p->sig;
+    return p;
 }
+```
 
-Siendo la llamada de la forma:
+Llamada:
 
-if ((p=BuscarLista(cabeza,dato))!=NULL)    /\* El elemento ha sido encontrado \*/
+```c
+if ((p = BuscarLista(cabeza, dato)) != NULL)
+    // El elemento ha sido encontrado
+```
 
-Y por último, la función para liberar un elemento de la memoria es:
+---
 
-struct LISTA \*LiberarLista(struct LISTA \*cabeza,tipo dato) {
+### Función para liberar un nodo de la lista:
 
-`   `struct LISTA **p,**q;
+```c
+struct LISTA *LiberarLista(struct LISTA *cabeza, tipo dato) {
+    struct LISTA *p = cabeza, *q = NULL;
 
-`   `if (cabeza!=NULL)
+    if (p != NULL) {
+        if (p->dato == dato) {
+            cabeza = p->sig;
+            free(p);
+        } else {
+            while (p != NULL && p->dato != dato) {
+                q = p;
+                p = p->sig;
+            }
 
-`   `{
-
-`      `p=cabeza;
-
-`      `if (cabeza->dato==dato)          cabeza=cabeza->sig;
-
-else
-
-while (p!=NULL && p->dato!=dato) {
-
-q=p;
-
-p=p->sig;
-
+            if (p != NULL) {
+                q->sig = p->sig;
+                free(p);
+            }
+        }
+    }
+    return cabeza;
 }
+```
 
-if (p!=NULL)
+Llamada:
 
-{
+```c
+cabeza = LiberarLista(cabeza, dato);
+```
 
-q->sig=p->sig; free(p);
-
-}
-
-}
-
-return cabeza;
-
-}
-
-Siendo la llamada: cabeza=LiberarLista(cabeza,dato);
 
 ## Apéndice A - Funciones de biblioteca del
 
