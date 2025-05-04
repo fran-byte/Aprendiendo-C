@@ -888,6 +888,7 @@ switch(d)
 Las sentencias *switch* pueden aparecer unas dentro de otras, igual que sucedía con las sentencias *if*. Veámoslo con un ejemplo:
 
 ´´´
+
 char d, e;
 
 switch (d) {
