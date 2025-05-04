@@ -197,8 +197,8 @@
   <tr>
     <td><a href="#tema-9---entrada-y-salida" style="text-decoration: none;">9. Entrada y Salida</a></td>
     <td>
-      <a href="#91-entrada_y_salida-desde-la-consola" style="text-decoration: none;">9.1. Entrada/Salida desde Consola</a><br>
-      <a href="#92-entrada_y_salida-desde-el-fichero" style="text-decoration: none;">9.2. Entrada/Salida desde Fichero</a>
+      <a href="#91-entrada-y-salida-desde-la-consola" style="text-decoration: none;">9.1. Entrada/Salida desde Consola</a><br>
+      <a href="#92-entrada-y-salida-desde-el-fichero" style="text-decoration: none;">9.2. Entrada/Salida desde Fichero</a>
     </td>
   </tr>
 </table>
