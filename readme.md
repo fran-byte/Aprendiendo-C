@@ -232,10 +232,13 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del" style="text-decoration: none;">11. Apéndices</a></td>
+    <td><a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del" style="text-decoration: none;">A. Apéndices</a></td>
     <td>
-      <a href="#a1-funciones-de-entrada-y-salida-de-datos" style="text-decoration: none;">11.1. Funciones de Biblioteca ANSI C</a><br>
-      <a href="#a2---funciones-de-caracteres-ctypeh" style="text-decoration: none;">11.2. Ejemplos de Programas</a>
+      <a href="#a1-funciones-de-entrada-y-salida-de-datos" style="text-decoration: none;">A.1. Funciones de Biblioteca ANSI C</a><br>
+      <a href="#a2---funciones-de-caracteres-ctypeh" style="text-decoration: none;">A.2. Funciones de caracateres</a><br>
+      <a href="#a3---funciones-de-caracteres-stringh" style="text-decoration: none;">A.3. Funciones de cadenas (<string.h>)</a><br>
+      <a href="#a4---funciones-matemáticas" style="text-decoration: none;">A.4. Funciones Matemáticas</a><br>
+      <a href="#a5---asignación-dinámica-de-memoria" style="text-decoration: none;">A.5. Asignación dinámica de memoria</a><br>
     </td>
   </tr>
 </table>
