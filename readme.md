@@ -151,13 +151,13 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#tema-7-estructuras-campos-de-bit-uniones-y" style="text-decoration: none;">7. Estructuras, Campos de Bit, Uniones y Enumeraciones</a></td>
+    <td><a href="#tema--7-estructuras-campos-de-bit-uniones-y" style="text-decoration: none;">7. Estructuras, Campos de Bit, Uniones y Enumeraciones</a></td>
     <td>
       <a href="#71-estructuras" style="text-decoration: none;">7.1. Estructuras</a><br>
       <a href="#72-campos-de-bit" style="text-decoration: none;">7.2. Campos de Bit</a><br>
       <a href="#73-uniones" style="text-decoration: none;">7.3. Uniones</a><br>
-      <a href="#74-enumeraciones" style="text-decoration: none;">7.4. Enumeraciones</a><br>
-      <a href="#75-typedef" style="text-decoration: none;">7.5. typedef</a>
+      <a href="#74enumeraciones" style="text-decoration: none;">7.4. Enumeraciones</a><br>
+      <a href="#75la-palabra-reservada-typedef" style="text-decoration: none;">7.5. typedef</a>
     </td>
   </tr>
 </table>
