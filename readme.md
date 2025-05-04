@@ -4,7 +4,7 @@
 
 
 ## 📚 **Índice**  
-1. [Palabras Reservadas en C](#1-palabras-reservadas-en-c)  
+1. ([#1-palabras-reservadas-en-c](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c))  
 2. [Identificadores, Tipos de Datos, Variables](#2-identificadores-tipos-de-datos-variables)  
    - 2.1. [Tipos de Datos](#21-tipos-de-datos)  
    - 2.2. [Declaración de Variables y Alcance](#22-declaración-de-variables-y-alcance)  
