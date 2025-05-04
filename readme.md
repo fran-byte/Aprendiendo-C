@@ -1151,99 +1151,117 @@ Aquí, si el número `x` es impar (es decir, si `x % 2` es distinto de 0), el `c
 
 
 
-## Tema 6 - Arrays, cadenas y punteros.
+## Tema 5 - Arrays, cadenas y punteros.
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-## 6.1. Arrays y cadenas.
+## 5.1. Arrays y cadenas.
 
 En C, un array unidimensional se declara como:
 
+```c
 tipo nombre[tamaño];
+````
 
 En C, el primer elemento de un array es el que posee el índice 0, por lo tanto, un array de 20 elementos posee sus elementos numerados de 0 a 19. Veamos unos ejemplos de declaración y manejo de algunos arrays:
 
-int x[100],i; for(i=0;i<100;i++)
+```c
+int x[100], i; 
+for(i = 0; i < 100; i++)
+    x[i] = i;
+```
 
-x[i]=i;
+```c
+char letras[256]; 
+int i; 
+for(i = 0; i < 256; i++)
+    letras[i] = i;
+```
 
-char letras[256]; int i; for(i=0;i<256;i++)
-
-letras[i]=i;
-
-int x[10],i,suma;
-
-for(i=0;i<10;i++)
-
-{
-
-`   `printf(“Introducir un número: %d: “,i);
-
-scanf(“%d”,&x[i]);
-
+```c
+int x[10], i, suma;
+for(i = 0; i < 10; i++) {
+    printf("Introducir un número: %d: ", i);
+    scanf("%d", &x[i]);
 }
 
-for(suma=0,i=0;i<10;i++)
+for(suma = 0, i = 0; i < 10; i++)
+    suma = suma + x[i];
 
-suma=suma+x[i];
+printf("La suma es: %d", suma);
+```
 
-printf(“La suma es: “,suma);
+Sin embargo, el lenguaje C no comprueba el tamaño de los arrays, por lo cual, es posible construir una rutina como la siguiente, la cual ocasionará un incorrecto funcionamiento del programa:
 
-Sin embargo, el lenguaje C no comprueba el tamaño de los arrays, por lo cual, es posible construir una rutina como la siguiente, la cual ocasionara un incorrecto funcionamiento del programa:
-
+```c
 float a[10];
-
 int i;
 
-for(i=0;i<100;i++) /\* Este bucle es incorrecto \*/
-
-a[i]=i;
+for(i = 0; i < 100; i++) /* Este bucle es incorrecto */
+    a[i] = i;
+```
 
 Es por ello, que es misión del programador comprobar que no se produzca el desbordamiento de los arrays.
 
-Una  cadena,  también  llamada  string,  es  un  tipo  especial  de  array unidimensional. Una cadena es un array de caracteres (*char*) que termina con un carácter especial (el carácter *‘\0’*). Es por ello, que la declaración de una cadena de caracteres se realiza exactamente igual que la declaración de un array unidimensional de caracteres:
+### Cadenas (Strings)
 
+Una cadena, también llamada `string`, es un tipo especial de array unidimensional. Una cadena es un array de caracteres (`char`) que termina con un carácter especial (el carácter `'\0'`). Es por ello, que la declaración de una cadena de caracteres se realiza exactamente igual que la declaración de un array unidimensional de caracteres:
+
+```c
 char cadena[tamaño];
+```
 
-Como toda cadena debe terminar en el carácter *‘\0’*, es por ello que si se quiere usar una cadena de 20 caracteres, debe declararse de tamaño 21 (20 caracteres + carácter terminador).
+Como toda cadena debe terminar en el carácter `'\0'`, es por ello que si se quiere usar una cadena de 20 caracteres, debe declararse de tamaño 21 (20 caracteres + carácter terminador).
 
-Por lo demás, puede usarse una cadena como si fuera un array unidimensional, pues se puede referenciar uno cualquiera de sus elementos, etc. Para manejar las cadenas, existen un gran número de funciones de biblioteca que proporciona el standard ANSI-C, para más información referirse al apendice A o a cualquier libro de C.
+Por lo demás, puede usarse una cadena como si fuera un array unidimensional, pues se puede referenciar uno cualquiera de sus elementos, etc. Para manejar las cadenas, existen un gran número de funciones de biblioteca que proporciona el estándar ANSI-C, para más información, referirse al apéndice A o a cualquier libro de C.
 
-La declaración de arrays de más de una dimensión se realiza de forma parecida a la de una dimensión, la sintaxis de la declaración de un array multidimensional es:
+### Arrays Multidimensionales
 
+La declaración de arrays de más de una dimensión se realiza de forma parecida a la de una dimensión. La sintaxis de la declaración de un array multidimensional es:
+
+```c
 tipo nombre[tam1][tam2]...[tamN];
+```
 
 Y su indexación, etc., se realiza de forma similar al array unidimensional. Veamos un ejemplo:
 
+```c
 float matriz[2][3];
+int i, j;
 
-int i,j;
+for(i = 0; i < 2; i++) {
+    for(j = 0; j < 3; j++) {
+        printf("M[%d][%d]: ", i, j);
+        scanf("%f", &matriz[i][j]);
+    }
+}
+```
 
-for(i=0;i<2;i++)
+### Inicialización de Arrays
 
-for(j=0;j<3;j++)
+Además, es posible inicializar los arrays en el momento de declararlos. Su sintaxis es:
 
-{
-
-printf(“M[%d][%d]: “,i,j);
-
-scanf(“%f”,&matriz[i][j]); }
-
-Además, es posible inicializar los arrays en el momento de declararlos. Su 
-
-sintaxis es:
-
-tipo nombre[tam1][tam2]...[tamN]={lista\_de\_valores};
+```c
+tipo nombre[tam1][tam2]...[tamN] = {lista_de_valores};
+```
 
 Por lo cual, podemos escribir:
 
-float vector[3]={-3.0,5.7,-7.5};
+```c
+float vector[3] = {-3.0, 5.7, -7.5};
+```
 
 También es posible inicializar arrays sin ponerles el tamaño, el compilador cuenta el número de caracteres de inicialización y reserva el tamaño necesario de forma automática. Por ejemplo:
 
-float vector[]={-3.0,5.7,-7.5};
+```c
+float vector[] = {-3.0, 5.7, -7.5};
+```
 
-char cadena[]=“Esto es una cadena”;
+```c
+char cadena[] = "Esto es una cadena";
+```
+
+
 
 ## 6.2. Punteros.
 
