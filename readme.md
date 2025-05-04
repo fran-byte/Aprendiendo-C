@@ -824,56 +824,60 @@ Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonc
 
 Antes de empezar a explicar las sentencias de control del lenguaje C, conviene explicar los conceptos de verdadero/falso y de sentencia que posee el lenguaje C.
 
-El lenguaje C posee un concepto muy amplio de lo que es verdadero. Para C, cualquier valor que sea distinto de cero es verdadero, siendo por tanto falso solo si el valor cero. Es por ello que una expresión del tipo *if(x)* será verdad siempre que el valor de la variable **x** sea distinto de cero, sea cual sea el tipo de la variable *x*.
+El lenguaje C posee un concepto muy amplio de lo que es verdadero. Para C, cualquier valor que sea distinto de cero es verdadero, siendo por tanto falso solo si el valor es cero. Es por ello que una expresión del tipo `if(x)` será verdad siempre que el valor de la variable `x` sea distinto de cero, sea cual sea el tipo de la variable `x`.
 
-El concepto de sentencia en C es igual que el de otros muchos lenguajes. Por sentencia se entiende en C cualquier instrucción simple o bien, cualquier conjunto de instrucciones simples que se encuentren encerradas entre los caracteres { y }, que marcan respectivamente el comienzo y el final de una sentencia.
+El concepto de sentencia en C es igual que el de otros muchos lenguajes. Por sentencia se entiende en C cualquier instrucción simple o bien, cualquier conjunto de instrucciones simples que se encuentren encerradas entre los caracteres `{` y `}`, que marcan respectivamente el comienzo y el final de una sentencia.
 
-La forma general de la sentencia *if* es:
-```
+La forma general de la sentencia `if` es:
+
+```c
 if (condición)
     sentencia; 
 else
-`   `sentencia;
-```
+    sentencia;
+````
 
-Siendo el *else* opcional. Si la *condición* es verdadera se ejecuta la *sentencia* asociada al *if*, en caso de que sea falsa la *condición* se ejecuta la *sentencia* asociada al *else*** (si existe** el *else*). Veamos algunos ejemplos de sentencias *if*:
+Siendo el `else` opcional. Si la condición es verdadera se ejecuta la sentencia asociada al `if`, en caso de que sea falsa la condición se ejecuta la sentencia asociada al `else` (si existe el `else`). Veamos algunos ejemplos de sentencias `if`:
 
-```
-int a,b;
+```c
+int a, b;
 
-if (a>b)
+if (a > b)
 {
-b--;
-a=a+5; }
-else
-{
-a++;
-b=b-5; }
-if (b-a!=7)
-b=5;
-
-```
-
-
-Las sentencias de control *if* pueden ir anidadas. Un *if* anidado es una sentencia *if*  que es el objeto de otro *if*  o *else*. Esta anidación de *if/else*  puede presentar la problemática de decidir que *else*  va asociado a cada *if*. Considerese el siguiente ejemplo:
-
-```
-if (x)
-  if (y) printf(“1”);
-  else printf(“2”);
-```
-
-¿A que *if* se refiere el *else*?. C soluciona este problema asociando cada *else* al *if* más cercano posible y que todavía no tiene ningún *else* asociado. Es por ello que en este caso el *if* asociado al *else* es el *if(y)*. Si queremos que el *else* este asociado al *if(x)*, deberíamos escribirlo de la siguiente forma:
-
-```
-if (x)
-{
-  if (y)
-  printf(“1”);
+    b--;
+    a = a + 5;
 }
 else
-  printf(“2”);
+{
+    a++;
+    b = b - 5;
+}
+if (b - a != 7)
+    b = 5;
 ```
+
+Las sentencias de control `if` pueden ir anidadas. Un `if` anidado es una sentencia `if` que es el objeto de otro `if` o `else`. Esta anidación de `if/else` puede presentar la problemática de decidir qué `else` va asociado a cada `if`. Considerese el siguiente ejemplo:
+
+```c
+if (x)
+    if (y) 
+        printf("1");
+    else 
+        printf("2");
+```
+
+¿A qué `if` se refiere el `else`? C soluciona este problema asociando cada `else` al `if` más cercano posible y que todavía no tiene ningún `else` asociado. Es por ello que en este caso el `if` asociado al `else` es el `if(y)`. Si queremos que el `else` esté asociado al `if(x)`, deberíamos escribirlo de la siguiente forma:
+
+```c
+if (x)
+{
+    if (y)
+        printf("1");
+}
+else
+    printf("2");
+```
+
 
 ## 4.2. Sentencia de control switch.
 
