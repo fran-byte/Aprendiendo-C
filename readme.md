@@ -178,7 +178,7 @@
       <a href="#82-directiva-undef" style="text-decoration: none;">8.2. Directiva #undef</a><br>
       <a href="#83-directiva-error" style="text-decoration: none;">8.3. Directiva #error</a><br>
       <a href="#84-directiva-include" style="text-decoration: none;">8.4. Directiva #include</a><br>
-      <a href="#85-directivas-condicionales" style="text-decoration: none;">8.5. Directivas Condicionales</a><br>
+      <a href="#85-directivas-if-ifdef-ifndef-else-elif-endif" style="text-decoration: none;">8.5. Directivas Condicionales</a><br>
       <a href="#86-directiva-line" style="text-decoration: none;">8.6. Directiva #line</a><br>
       <a href="#87-directiva-pragma" style="text-decoration: none;">8.7. Directiva #pragma</a>
     </td>
