@@ -614,6 +614,8 @@ var2=var1++; /\* Pone 10 en var2, pues primero asigna su valor \*/              
 
 ## 2.2- Operadores relaciónales y lógicos.
 
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+
 Los operadores relaciónales y lógicos de C:
 
 
