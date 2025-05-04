@@ -883,72 +883,85 @@ else
 
   [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La forma general de la sentencia *switch* es:
 
-switch(variable) {
-case const1: sentencia; break; case const2:
-sentencia;       break;    
-default:       sentencia; }
+La forma general de la sentencia `switch` es:
 
-Donde *variable* debe ser de tipo *char* o *int*, y donde *const1*, *const2*, **...**, indican constantes de C del tipo de datos de la *variable*. Dichas constantes no pueden repetirse dentro del *switch*. El *default* es opcional y puede no aparecer, así como los *break* de los *case*. La sentencia *switch* se ejecuta comparando el valor de la variable con el valor de cada una de las constantes, realizando la comparación desde arriba hacia abajo. En caso de que se encuentre una constante cuyo valor coincida con el valor de la variable, 
+```c
+switch (variable) {
+    case const1: 
+        sentencia; 
+        break;
+    case const2: 
+        sentencia; 
+        break;
+    default: 
+        sentencia; 
+}
+````
 
-se empieza a ejecutar las sentencias hasta encontrar una sentencia *break*. En caso de que no se encuentre ningún valor que coincida, se ejecuta el *default*** (si existe)**.** Veamos algunos ejemplos:
+Donde `variable` debe ser de tipo `char` o `int`, y donde `const1`, `const2`, ..., indican constantes de C del tipo de datos de la variable. Dichas constantes no pueden repetirse dentro del `switch`. El `default` es opcional y puede no aparecer, así como los `break` de los `case`. La sentencia `switch` se ejecuta comparando el valor de la variable con el valor de cada una de las constantes, realizando la comparación desde arriba hacia abajo. En caso de que se encuentre una constante cuyo valor coincida con el valor de la variable, se empieza a ejecutar las sentencias hasta encontrar una sentencia `break`. En caso de que no se encuentre ningún valor que coincida, se ejecuta el `default` (si existe). Veamos algunos ejemplos:
 
-```
-
+```c
 int valor;
 switch(valor)
 {
-  case 0: cont++;
+  case 0: 
+    cont++;
     break;
-  case 5: cont--;
+  case 5: 
+    cont--;
     break;
-  default: cont=-10; /\* Se ejecuta si valor no es 0 o 5 \*/ 
+  default: 
+    cont = -10; /* Se ejecuta si valor no es 0 o 5 */ 
 }
+```
+
+```c
 char d;
-int cont=0;
+int cont = 0;
 switch(d)
 {
-  case ‘\r’: cont++; /\* Si d es un retorno de carro, se \*/
-                     /\* ejecuta este cont++ y el siguiente\*/                       /\* al no aparecer un break \*/
-  case ‘\x1B’: cont++;
+  case '\r': 
+    cont++; /* Si d es un retorno de carro, se ejecuta este cont++ y el siguiente */
+  case '\x1B': 
+    cont++;
     break;
-  default: cont=-1;
+  default: 
+    cont = -1;
 }
-
 ```
 
-Las sentencias *switch* pueden aparecer unas dentro de otras, igual que sucedía con las sentencias *if*. Veámoslo con un ejemplo:
+Las sentencias `switch` pueden aparecer unas dentro de otras, igual que sucedía con las sentencias `if`. Veámoslo con un ejemplo:
 
-```
-
+```c
 char d, e;
 
 switch (d) {
-	case 'a':
-	case 'A':
-		switch (e) {
-			case '1':
-				d = 'z';
-				e = '+';
-				break;
-			case '2':
-				d = 'Z';
-				e = '-';
-		}
-		break;
+    case 'a':
+    case 'A':
+        switch (e) {
+            case '1':
+                d = 'z';
+                e = '+';
+                break;
+            case '2':
+                d = 'Z';
+                e = '-';
+        }
+        break;
 
-	case 'b':
-	case 'B':
-		switch (e) {
-			case '0':
-				d = '2';
-			default:
-				e = '+';
-		}
+    case 'b':
+    case 'B':
+        switch (e) {
+            case '0':
+                d = '2';
+            default:
+                e = '+';
+        }
 }
-
 ```
+
+
 
 ## 4.3. Bucle for.
 
