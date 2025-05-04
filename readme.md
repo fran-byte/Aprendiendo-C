@@ -4030,11 +4030,12 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-```c
+
 ## B.4 fichero.c.
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
+```c
 /* Programa que maneja una pequeña base de datos directamente sobre el fichero */
 
 #include <stdio.h>
@@ -4208,219 +4209,146 @@ int main(int argc, char *argv[]) {
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-/\* Programa que lee las palabras de un fichero y las almacena en un arbol binario \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.014.png)
+```c
+
+/* Programa que lee las palabras de un fichero y las almacena en un arbol binario */
 
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
 
+/* Definicion de la longitud maxima de una palabra */
+#define TAM 30
 
-El lenguaje de programación C
-
-#include <ctype.h> #include <string.h> #include <stdlib.h>
-
-/\* Definicion de la longitud maxima de una palabra \*/ #define TAM 30
-
-/\* Definicion de las estructuras de datos del programa \*/ struct ARBOL
-
-{
-
-char pal[TAM+1];
-
-struct ARBOL \*izq,\*der;
-
+/* Definicion de las estructuras de datos del programa */
+struct ARBOL {
+    char pal[TAM + 1];
+    struct ARBOL *izq, *der;
 };
 
-/\* Rutina que lee una palabra del fichero.
+/* Rutina que lee una palabra del fichero.
+Parametros: 
+    FILE *fichero Puntero al fichero de donde se leen las palabras.
+    char *cadena Array de caracteres donde almacenar las palabras.
+Return: 
+    char * Puntero a la cadena con la palabra leida, NULL si error. */
+char *LeerPalabra(FILE *fichero, char *cadena) {
+    register char d, i = 0;
 
-Parametros: FILE \*fichero Puntero al fichero de donde se leen las palabras.
+    while ((d = fgetc(fichero)) != EOF && !isalpha(d));
 
-`            `char \*cadena Array de caracteres donde almacenar las palabras.
+    if (d == EOF)
+        return NULL;
 
-Return: char \* Puntero a la cadena con la palabra leida, NULL si error. \*/
+    do
+        cadena[i++] = d;
+    while (i < TAM && (isalpha(d = fgetc(fichero)) || isdigit(d) || d == '_'));
 
-char \*LeerPalabra(FILE \*fichero,char \*cadena) {
+    cadena[i] = '\0';
 
-register char d,i=0;
-
-while ((d=fgetc(fichero))!=EOF && !isalpha(d));
-
-if (d==EOF)
-
-return NULL;
-
-do
-
-cadena[i++]=d;
-
-while (i<TAM && (isalpha(d=fgetc(fichero)) || isdigit(d) || 
-
-d=='\_'));
-
-cadena[i]='\0';
-
-`   `return cadena;
-
+    return cadena;
 }
 
-/\* Rutina que crea el arbol binario, leyendo para ello el fichero. Parametros: char \*nombre Nombre del fichero a leer.
+/* Rutina que crea el arbol binario, leyendo para ello el fichero. 
+Parametros: 
+    char *nombre Nombre del fichero a leer.
+Return: 
+    struct ARBOL * Puntero a la raiz del arbol creado, NULL si error. */
+struct ARBOL *LeerFichero(char *nombre) {
+    FILE *fichero;
+    char cadena[TAM + 1], insertado;
+    int val;
+    struct ARBOL *cab = NULL, *p, *q;
 
-Return: struct ARBOL \* Puntero a la raiz del arbol creado, NULL si error. \*/
+    if ((fichero = fopen(nombre, "rt")) == NULL) {
+        printf("\nError, no puedo leer el fichero: %s\n", nombre);
+        return NULL;
+    }
 
-struct ARBOL \*LeerFichero(char \*nombre) {
+    while (LeerPalabra(fichero, cadena) != NULL) {
+        if ((q = (struct ARBOL *)malloc(sizeof(struct ARBOL))) == NULL) {
+            printf("\nError reservando memoria.\n");
+            fclose(fichero);
+            return NULL;
+        }
 
-`   `FILE \*fichero;
+        strcpy(q->pal, cadena);
+        q->izq = q->der = NULL;
 
-`   `char cadena[TAM+1],insertado;
+        if (cab == NULL)
+            cab = q;
+        else {
+            p = cab;
+            insertado = 0;
 
-int val;
+            while (!insertado)
+                if ((val = strcmp(cadena, p->pal)) < 0)
+                    if (p->izq == NULL) {
+                        p->izq = q;
+                        insertado = 1;
+                    } else
+                        p = p->izq;
+                else if (val > 0)
+                    if (p->der == NULL) {
+                        p->der = q;
+                        insertado = 1;
+                    } else
+                        p = p->der;
+                else
+                    insertado = 1;
+        }
+    }
 
-struct ARBOL \*cab=NULL,\*p,\*q;
-
-if ((fichero=fopen(nombre,"rt"))==NULL)
-
-`   `{
-
-`      `printf("\nError, no puedo leer el fichero: %s\n",nombre);       return(NULL);
-
-`   `}
-
-`   `while (LeerPalabra(fichero,cadena)!=NULL)
-
-{
-
-if ((q=(struct ARBOL \*)malloc(sizeof(struct ARBOL)))==NULL) {
-
-`         `printf("\nError reservando memoria.\n");
-
-fclose(fichero);
-
-return NULL;
-
+    fclose(fichero);
+    return cab;
 }
 
-`      `strcpy(q->pal,cadena);
+/* Rutina que muestra por pantalla el arbol ordenado a la vez que libera la memoria.
+Parametros: 
+    struct ARBOL *p Puntero al nodo a mostrar.
+    unsigned *cont Puntero al contador de elementos para permitir parar la visualizacion.
+Return: 
+    Ninguno. */
+void Mostrar(struct ARBOL *p, unsigned *cont) {
+    if (p->izq != NULL)
+        Mostrar(p->izq, cont);
 
-q->izq=q->der=NULL;
+    puts(p->pal);
 
-if (cab==NULL)
+    if (++*cont > 21) {
+        *cont = 1;
+        printf("\nPulsa Enter para continuar.\n");
+        getchar();
+    }
 
-cab=q;
+    if (p->der != NULL)
+        Mostrar(p->der, cont);
 
-else
-
-{
-
-p=cab;
-
-insertado=0;
-
-while (!insertado)
-
-if ((val=strcmp(cadena,p->pal))<0)
-
-if (p->izq==NULL)
-
-{
-
-`                  `p->izq=p; insertado=1;
-
+    free(p);
 }
 
-else
+int main(int argc, char *argv[]) {
+    struct ARBOL *p;
+    unsigned cont = 1;
 
-p=p->izq; else
+    if (argc != 2) {
+        printf("\nModo de uso: %s <fichero>\n", argv[0]);
+        return 1;
+    }
 
-if (val>0)
+    if ((p = LeerFichero(argv[1])) == NULL)
+        return 1;
 
-if (p->der==NULL) {
+    printf("\n\n\n\n\n\n");
+    Mostrar(p, &cont);
 
-p->der=q; insertado=1;
-
+    return 0;
 }
-
-else
-
-p=p->der; else
-
-insertado=1;
-
-}
-
-} fclose(fichero); return cab;
-
-}
-
-/\* Rutina que muestra por pantalla el arbol ordenado a la vez que libera la memoria.
-
-Parametros: struct ARBOL \*p Puntero al nodo a mostrar.
-
-`            `unsigned \*cont Puntero al contador de elementos para permitir parar la visualizacion.
-
-Return: Ninguno.
-
-\*/
-
-void Mostrar(struct ARBOL \*p,unsigned \*cont)
-
-{
-
-if (p->izq!=NULL)
-
-Mostrar(p->izq,cont);
-
-puts(p->pal);
-
-if (++\*cont>21)
-
-{
-
-\*cont=1;
-
-printf("\nPulsa Enter para continuar.\n"); getchar();
-
-}
-
-if (p->der!=NULL)
-
-Mostrar(p->der,cont);![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.015.png)
-
-free(p);
-
-}
-
-int main(int argc,char \*argv[]) {
-
-struct ARBOL \*p; unsigned cont=1;
-
-if (argc!=2)
-
-{
-
-`      `printf("\nModo de uso: %s <fichero>\n",argv[0]);
-
-return 1;
-
-}
-
-if ((p=LeerFichero(argv[1]))==NULL)
-
-return 1;
-
-printf("\n\n\n\n\n\n");
-
-Mostrar(p,&cont);
-
-`   `return 0;
-
-}
-86
-
-[ref1]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.001.png
-[ref2]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.002.png
-[ref3]: Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.008.png
+```
 
 
 
----
 
 ## 🔍 **Uso de Valgrind para Depuración de Memoria en C**
 
