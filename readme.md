@@ -9,10 +9,6 @@
 
 <table style="border: none; width: 100%;">
   <tr>
-    <td><strong>Tema</strong></td>
-    <td><strong>Subtemas</strong></td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c" style="text-decoration: none;">0. Palabras reservadas en C</a></td>
     <td>-</td>
   </tr>
