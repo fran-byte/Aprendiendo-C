@@ -699,9 +699,9 @@ Donde los números que acompañan a los operadores << y** >> indican cuantas pos
 El operador *?* se usa para reemplazar las sentencias *if/else* (que veremos con posterioridad) de formato general:
 
 ```
-if (condición)    expresión; else
-
-`   `expresión;
+if (condición)    expresión;
+else
+      expresión;
 ```
 
 Donde expresión debe ser una expresión sencilla y no otra sentencia de C. El operador ? es un operador ternario cuyo formato general es:!
