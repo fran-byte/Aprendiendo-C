@@ -217,7 +217,7 @@
     <td>
       <a href="#101-reserva-dinámica-de-memoria" style="text-decoration: none;">10.1. Reserva Dinámica</a><br>
       <a href="#102-liberación-dinámica-de-memoria" style="text-decoration: none;">10.2. Liberación Dinámica</a><br>
-      <a href="#103-ejemplo-práctico" style="text-decoration: none;">10.3. Ejemplo Práctico</a>
+      <a href="#103-ejemplo-de-asignación-y-liberación-dinámica-de-memoria" style="text-decoration: none;">10.3. Ejemplo Práctico</a>
     </td>
   </tr>
 </table>
