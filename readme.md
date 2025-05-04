@@ -59,6 +59,61 @@ int numero = 10;  // Correcto ("numero" no es palabra reservada).
 ```
 
 ---
+### **Malas prácticas de Programación**
+
+**Usar nombre de funciones de C como variables**  
+Ejemplo: `malloc` como `calloc` **no son palabras reservadas** en el estándar C. Son **funciones de la biblioteca estándar** (`stdlib.h`), pero técnicamente **pueden reutilizarse como nombres de variables**. Sin embargo, hacerlo es **mala práctica** y puede causar problemas. Aquí los detalles:
+
+---
+
+### **1. Ejemplo de Uso (Compila, pero es arriesgado)**
+```c
+#include <stdio.h>
+
+int main() {
+    int malloc = 42;  // Compila, pero "oscurece" la función malloc().
+    printf("%d\n", malloc);  // Imprime 42.
+    return 0;
+}
+```
+**Funciona**, pero ahora no podrás usar `malloc()` para asignar memoria dinámica en ese ámbito.
+
+---
+
+### **2. Riesgos Clave**
+- **Pérdida de funcionalidad**: Si necesitas usar `malloc()` o `calloc` después, el compilador tratará tu variable como un identificador, no como la función.  
+  ```c
+  int* arr = malloc(10 * sizeof(int));  // ¡Error! "malloc" es una variable, no una función.
+  ```
+- **Código confuso**: Otros programadores (o tú en el futuro) podrían no entender por qué `malloc` no funciona como se espera.
+
+---
+
+### **3. ¿Por qué el compilador lo permite?**
+- **C no tiene namespaces**: Las funciones de la biblioteca estándar no están protegidas contra sobrescritura.  
+- **El linker resuelve símbolos**: Si no incluyes `stdlib.h`, el compilador ni siquiera sabe que `malloc` es una función.
+
+---
+
+### **4. Buenas Prácticas**
+- **Evita reutilizar nombres de funciones estándar**. Usa alternativas claras:  
+  ```c
+  int mi_malloc = 42;  // ¡Mejor!
+  ```
+- **Si accidentalmente lo haces**, renombra tu variable o usa el operador de resolución de ámbito (en C++):  
+  ```cpp
+  int malloc = 42;
+  int* arr = ::malloc(10 * sizeof(int));  // C++: fuerza el uso de la función global.
+  ```
+  *(En C puro no hay solución directa; hay que renombrar la variable).*
+
+---
+
+### **5. Casos donde sí podrías hacerlo**
+- **Macros maliciosas**: Si alguien definió `#define malloc algo_riesgoso`, podrías "protegerte" con una variable local.  
+  *(Pero es mejor usar `#undef malloc` y luego incluir `stdlib.h`).*
+
+---
 
 
 ## 1.- IDENTIFICADORES, TIPOS DE DATOS, VARIABLES...
