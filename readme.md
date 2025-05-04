@@ -411,7 +411,7 @@ El lenguaje C posee operadores que actúan a nivel de bits sobre los datos, esto
 |>>|Desplazamiento derecha|Desplazamiento derecha|
 |&|And|Y|
 |^|Xor|O exclusivo (XOR)|
-|||Or|O|
+|\|\||Or|O|
 
 
 Los operadores &, | y** ^ actúan sobre dos operandos, mientras que ~ ,<< **y *>>*** actúan sobre un solo operando. Veamos su actuación sobre dos valores cualquiera:
