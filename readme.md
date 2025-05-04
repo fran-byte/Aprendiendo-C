@@ -1,14 +1,14 @@
 # <img src="images/C_Logo.png"/> Material didáctico 
-
+https://github.com/fran-byte/Learn-C/blob/main/readme.md#13--especificadores-de-almacenamiento-de-los-tipos-de-datos
 
 ## 📚 **Índice**  
 0. [Palabras reservadas en C](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c)  
 1. [Identificadores, Tipos de Datos, Variables](#1--identificadores-tipos-de-datos-variables) 
    - 1.1. [Tipos de Datos](#11---tipos-de-datos)  
    - 1.2. [Declaración de Variables y Alcance](#12--declaraci%C3%B3n-de-variables-y-alcance)
-   - 1.3. [Especificadores de Almacenamiento](#13--especificadores-de-almacenamiento)  
+   - 1.3. [Especificadores de Almacenamiento](#13--especificadores-de-almacenamiento-de-los-tipos-de-datos)  
    - 1.4. [Constantes](#14--constantes)  
-2. [Operadores](#3-operadores)  
+2. [Operadores](#2--operadores)  
    - 2.1. [Operadores Aritméticos](#31-operadores-aritméticos)  
    - 2.2. [Operadores Relacionales y Lógicos](#32-operadores-relacionales-y-lógicos)  
    - 2.3. [Operador Asignación](#33-operador-asignación)  
