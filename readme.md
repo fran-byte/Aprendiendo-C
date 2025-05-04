@@ -922,7 +922,8 @@ switch (d) {
 
 ## 4.3. Bucle for.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La sintaxis del bucle *for* es:
 
@@ -970,7 +971,8 @@ Como se observa en este último ejemplo, el bucle *for*  no posee ninguna expres
 
 ## 4.4.  Bucle while.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La sintaxis del bucle *while* es:
 
@@ -1002,7 +1004,8 @@ break;
 
 ## 4.5. Bucle do/while.
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Al contrario que los bucles *for* y *while* que comprueban la condición en lo alto de la misma, el bucle *do/while* comprueba la condición en la parte baja del mismo, lo cual provoca que el bucle se ejecute como mínimo una vez. La sintaxis del bucle *do/while* es:
 
