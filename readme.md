@@ -224,7 +224,7 @@
 
 ---
 
-### 📌 **Apéndices**
+### 📌 **Apéndices**https://github.com/fran-byte/Learn-C/blob/main/readme.md#a6---funciones-varias
 
 <table style="border: none; width: 100%;">
   <tr>
@@ -239,6 +239,8 @@
       <a href="#a3---funciones-de-cadenas-stringh" style="text-decoration: none;">A.3. Funciones de cadenas (<string.h>)</a><br>
       <a href="#a4---funciones-matemáticas" style="text-decoration: none;">A.4. Funciones Matemáticas</a><br>
       <a href="#a5---asignación-dinámica-de-memoria" style="text-decoration: none;">A.5. Asignación dinámica de memoria</a><br>
+      <a href="a6---funciones-varias" style="text-decoration: none;">A.6. Funciones varias</a>
+        
     </td>
   </tr>
 </table>
