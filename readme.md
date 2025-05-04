@@ -1,7 +1,7 @@
 # <img src="images/C_Logo.png"/> Material didáctico 
 
 
-### **Lista Completa de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
+### **Lista de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
 
 ---
 
