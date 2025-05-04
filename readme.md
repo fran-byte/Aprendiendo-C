@@ -151,7 +151,7 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#tema--7-estructuras-campos-de-bit-uniones-y" style="text-decoration: none;">7. Estructuras, Campos de Bit, Uniones y Enumeraciones</a></td>
+    <td><a href="#tema-7---estructuras-campos-de-bit-uniones-y" style="text-decoration: none;">7. Estructuras, Campos de Bit, Uniones y Enumeraciones</a></td>
     <td>
       <a href="#71-estructuras" style="text-decoration: none;">7.1. Estructuras</a><br>
       <a href="#72-campos-de-bit" style="text-decoration: none;">7.2. Campos de Bit</a><br>
