@@ -968,49 +968,87 @@ switch (d) {
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-La sintaxis del bucle *for* es:
+````md
+La forma general de la sentencia `switch` es:
 
-for(inicialización,condición,incremento) sentencia;
-
-En primer lugar, conviene destacar el hecho de la gran flexibilidad del bucle *for* de C. En C, el bucle *for* puede no contener *inicialización*, *condición* o *incremento*, o incluso pueden no existir dos e incluso las tres expresiones del bucle. El bucle *for* se ejecuta siempre que la *condición* sea verdadera, es por ello que puede llegar a no ejecutarse.
-
-Veamos algunos ejemplos de bucles *for*:
-
-```
-int i,suma=0; for(i=1;i<=100;i++)
-
-suma=suma+i;
-
-int i,j;
-
-for(i=0,j=100;j>i;i++,j--) {
-
-printf(“%d\n”,j-i); printf(“%d\n”,i-j);
-
+```c
+switch (variable) {
+    case const1: 
+        sentencia; 
+        break;
+    case const2: 
+        sentencia; 
+        break;
+    default: 
+        sentencia; 
 }
+````
 
-float a=3e10;
+Donde `variable` debe ser de tipo `char` o `int`, y donde `const1`, `const2`, ..., indican constantes de C del tipo de datos de la variable. Dichas constantes no pueden repetirse dentro del `switch`. El `default` es opcional y puede no aparecer, así como los `break` de los `case`. La sentencia `switch` se ejecuta comparando el valor de la variable con el valor de cada una de las constantes, realizando la comparación desde arriba hacia abajo. En caso de que se encuentre una constante cuyo valor coincida con el valor de la variable, se empieza a ejecutar las sentencias hasta encontrar una sentencia `break`. En caso de que no se encuentre ningún valor que coincida, se ejecuta el `default` (si existe). Veamos algunos ejemplos:
 
-for(;a>2;a=sqrt(a)) /\* sqrt() calcula la raíz cuadrada \*/
+```c
+int valor;
+switch(valor)
+{
+  case 0: 
+    cont++;
+    break;
+  case 5: 
+    cont--;
+    break;
+  default: 
+    cont = -10; /* Se ejecuta si valor no es 0 o 5 */ 
+}
+```
 
-printf(“%f”,a);
-
+```c
 char d;
-
-for(;getc(stdin)!=’\x1B’;); /\* Bucle que espera hasta que se \*/                             /\* pulsa la tecla Esc \*/
-
-char d; for(;;) {
-
-d=getc(stdin); printf(“%c”,d); if (d==‘\x1B’)
-
-break;
-
+int cont = 0;
+switch(d)
+{
+  case '\r': 
+    cont++; /* Si d es un retorno de carro, se ejecuta este cont++ y el siguiente */
+  case '\x1B': 
+    cont++;
+    break;
+  default: 
+    cont = -1;
 }
 ```
 
+Las sentencias `switch` pueden aparecer unas dentro de otras, igual que sucedía con las sentencias `if`. Veámoslo con un ejemplo:
 
+```c
+char d, e;
 
-Como se observa en este último ejemplo, el bucle *for*  no posee ninguna expresión. Para salir de el se usa la sentencia *break*, dicha sentencia (ya vista junto con la sentencia de control *switch*) se explicara mas detalladamente con posterioridad.
+switch (d) {
+    case 'a':
+    case 'A':
+        switch (e) {
+            case '1':
+                d = 'z';
+                e = '+';
+                break;
+            case '2':
+                d = 'Z';
+                e = '-';
+        }
+        break;
+
+    case 'b':
+    case 'B':
+        switch (e) {
+            case '0':
+                d = '2';
+            default:
+                e = '+';
+        }
+}
+```
+
+```
+```
+
 
 ## 4.4.  Bucle while.
 
