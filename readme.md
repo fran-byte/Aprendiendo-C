@@ -246,7 +246,7 @@
  
 ### **0 Lista de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 ---
 
@@ -360,7 +360,7 @@ int main() {
 
 ## 1.- IDENTIFICADORES, TIPOS DE DATOS, VARIABLES...
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
  
 ```
@@ -450,7 +450,7 @@ volatile const unsigned long int hora;
 
 ## 1.2- Declaración de variables y alcance.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Podemos declarar las variables en cuatro lugares del módulo del programa:
 
@@ -489,7 +489,7 @@ int main(void) /*Función principal del programa\*
 ```
 ## 1.3.- Especificadores de almacenamiento de los tipos de datos.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Los especificadores de almacenamiento deben preceder a la declaración del tipo de dato de la variable. Estos especificadores de almacenamiento son:
 
@@ -528,7 +528,7 @@ static const unsigned long int d;
 
 ## 1.4.- Constantes.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Valores fijos que el programa no puede alterar:
 
@@ -585,7 +585,7 @@ Las constantes de barra invertida pueden usarse en el interior de constantes de 
 
 ## 2. - Operadores aritméticos, relaciónales y lógicos; operador asignación; operador sizeof y operadores avanzados (operadores sobre bits y operador ?)
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 ## 2.1.- Operadores aritméticos.
 
@@ -616,7 +616,7 @@ var2=var1++; /\* Pone 10 en var2, pues primero asigna su valor \*/              
 
 ## 2.2- Operadores relaciónales y lógicos.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Los operadores relaciónales y lógicos de C:
 
@@ -636,7 +636,7 @@ Los operadores relaciónales y lógicos tiene menor prioridad que los operadores
 
 ## 2.3.- Operador asignación.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 El lenguaje C, a diferencia de otros lenguajes tales como Pascal, no diferencia la asignación de cualquier otro operador del lenguaje. Para C, la asignación es un operador, el llamado operador asignación (=), el cual posee la prioridad más baja de todos los operadores. Es por ello que en C podemos escribir expresiones del tipo:
 
@@ -646,7 +646,7 @@ Esta expresión asigna a la variable *c* el valor de *a\*b* y devuelve su valor 
 
 ## 2.4.- Operador sizeof.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 El operador **sizeof** es un operador en tiempo de compilación. Devuelve el tamaño de una variable o tipo de dato durante la compilación, no durante la ejecución del programa. Veamos algunos ejemplos:
 
@@ -658,7 +658,7 @@ Si tenemos **char a[20]**, **sizeof(a)** devuelve el valor 20, y si tenemos **fl
 
 ## 2.5.- Operadores sobre bits.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 El lenguaje C posee operadores que actúan a nivel de bits sobre los datos, estos operadores son:
 
@@ -696,7 +696,7 @@ Donde los números que acompañan a los operadores << y** >> indican cuantas pos
 - 
 ## 2.6.- El operador ?.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 El operador *?* se usa para reemplazar las sentencias *if/else* (que veremos con posterioridad) de formato general:
 
@@ -730,7 +730,7 @@ vale cero.
 
 ## 3 - Conversión de tipos de datos.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 ## 3.1.- Conversión automática de tipos de datos.
 
@@ -769,7 +769,7 @@ Y por último, realizamos la resta final, siendo los dos operandos de tipo *doub
 
 ## 3.2.- Conversión forzada de tipos datos.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 En C, existe, además, de la conversión automática de tipos de datos, la posibilidad de forzar la conversión de un tipo de datos en otro tipo de datos. Esta conversión de un tipo de datos en otro se llama “casts”, y su sintaxis es:
 
@@ -791,7 +791,7 @@ Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonc
 
 ## 4 - Sentencias de control y bucles.
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 ## 4.1.- Sentencia de control if.
 
@@ -846,7 +846,7 @@ printf(“2”);
 
 2. **- Sentencia de control switch.**
 
-  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La forma general de la sentencia *switch* es:
 
@@ -898,7 +898,7 @@ case ‘0’: d=‘2’; default: e=‘+’;
 
 3. **- Bucle for.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La sintaxis del bucle *for* es:
 
@@ -942,7 +942,7 @@ Como se observa en este último ejemplo, el bucle *for*  no posee ninguna expres
 
 4. **- Bucle while.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La sintaxis del bucle *while* es:
 
@@ -974,7 +974,7 @@ break;
 
 5. **- Bucle do/while.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Al contrario que los bucles *for* y *while* que comprueban la condición en lo alto de la misma, el bucle *do/while* comprueba la condición en la parte baja del mismo, lo cual provoca que el bucle se ejecute como mínimo una vez. La sintaxis del bucle *do/while* es:
 
@@ -1006,7 +1006,7 @@ while (i<j);
 
 **5.6 - Sentencias de control break y continue .**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Las sentencias de control *break* y *continue* permiten modificar y controlar la ejecución de los bucles anteriormente descritos.
 
@@ -1045,7 +1045,7 @@ printf(“%d\n”,x);
 
 **Tema 6 - Arrays, cadenas y punteros.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 1. **– Arrays y cadenas.**
 
@@ -1139,7 +1139,7 @@ char cadena[]=“Esto es una cadena”;
 
 2. **– Punteros.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Los punteros son una de las poderosas herramientas que ofrece el lenguaje C a los programadores, sin embargo, son también una de las más peligrosas, el uso de punteros sin inicializar, etc., es una fuente frecuente de errores en los programas de C, y además, suele producir fallos muy difíciles de localizar y depurar.
 
@@ -1257,7 +1257,7 @@ Las funciones son simulares a las de cualquier otro lenguaje, pero, tal y como c
 
 1. **- La sentencia return.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Antes de empezar la explicación de las funciones, conviene explicar la sentencia *return*. La sentencia *return* permite, en primer lugar, salir de la función desde cualquier punto de la misma, y en segundo lugar, devolver un valor del tipo de la función, si ello es necesario (no se devuelve ningún valor si la función es de tipo *void*). Veamos un ejemplo:
 
@@ -1279,7 +1279,7 @@ Esa función es equivalente a otra que tuviera como última línea una sentencia
 
 2. **- Argumentos de las funciones, llamada por valor y por ![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.005.png)"referencia".**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Una vez conocido el uso de la función *return*, podemos introducirnos en la explicación de las funciones. En primer lugar, si una función usa argumentos, es  necesario declarar variables que acepten los argumentos de la función. Veamos un ejemplo:
 
@@ -1357,7 +1357,7 @@ Ello es, pues a *Alfa* se le pasa la variable *a* por "referencia" (se le pasa *
 
 3. **- Arrays como argumentos de funciones.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Un aspecto a tener muy en cuenta es que C no permite el paso de un array por valor a una función, un array es siempre pasado por "referencia", pues en la llamada, lo que se pasa es la dirección del primer elemento del array (recuérdese que el nombre de un array es un puntero al primer elemento). Por valor tan solo es posible pasar por valor elementos individuales del array, pero no el array completo. Veámoslo en un ejemplo:
 
@@ -1387,7 +1387,7 @@ Array[5] vale: 8.6 y array[3] vale: 0
 
 4. **- Argumentos de la función main.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La  función *main()*,  como  toda  función  de  C,  acepta  argumentos.  Los argumentos que acepta la función *main()* son un entero (*int argc*), un array de punteros a strings (*char \*argv[]*), y otro array de punteros a strings (*char \*env[]*). Aunque los nombres de dichos argumentos no tienen porque ser *argc*, *argv*, y *env*, en toda la literatura de C se usan dichos nombres, y aquí los respetaremos. El significado de los parámetros *argc*, *argv* y *env* es el siguiente:
 
@@ -1433,7 +1433,7 @@ Como se puede observar, existen 3 argumentos, numerados de 0 a 2, siendo el argu
 
 5. **- Recursividad.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Una función de C puede llamarse a si misma. Este proceso recibe el nombre de recursividad. Los ejemplos de recursividad abundan, siendo uno de los mas habituales la función factorial:
 
@@ -1454,7 +1454,7 @@ Sin embargo, el uso de la recursividad es frecuente en campos como la inteligenc
 
 6. **- Punteros a funciones.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Al igual que cualquier otro tipo de dato, una función ocupa una dirección de memoria, y por tanto, puede ser apuntada por un puntero. La declaración de un puntero a una función es:
 
@@ -1468,13 +1468,13 @@ Generalmente, los punteros a funciones se usan en la programación de bajo nivel
 
 7. **- El modificador de almacenamiento static aplicado a funciones.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Al igual que en el caso de las variables globales, es posible aplicar delante de una función el modificador de almacenamiento *static*. Dicho modificador hace que la función sobre la que se aplica sea local al módulo donde se encuentra, y no pueda ser conocida por los restantes módulos del programa, de igual forma a como sucedía con las variables globales. Esta modificación del alcance de una función permite realizar un mejor encapsulado del código y simplificar la programación en proyectos de gran envergadura.
 
 **Tema 8 - Estructuras, campos de bit, uniones y** 
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 **enumeraciones.**
 
@@ -1598,7 +1598,7 @@ void PasoDeLaEstructuraPorReferencia(struct ALFA \*a) {
 
 2. **- Campos de bit.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Un campo de bit es un método predefinido por C para poder acceder a un bit de un byte. Aunque dicho acceso siempre es posible mediante operaciones el uso de los operadores sobre bits, explicados con anterioridad, el uso de campos de bit puede añadir claridad al programa.
 
@@ -1640,7 +1640,7 @@ struct EMP{
 
 3. **- Uniones.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 En C una unión es una posición de memoria que se usa por varias variables similares, que pueden ser de tipos diferentes. La definición de unión es:
 
@@ -1676,7 +1676,7 @@ Entonces *beta.b[0]* contendrá el byte bajo de *beta.a*, y *beta.b[1]* contendr
 
 4. **- Enumeraciones.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Una enumeración es un conjunto de constantes enteras con nombre y especifica todos los valores legales que pueden tener unas variables. Las enumeraciones se declaran de la siguiente forma:
 
@@ -1694,7 +1694,7 @@ En este caso, las constantes *primero*, *segundo* y *tercero* tienen los valores
 
 5. **- La palabra reservada typedef.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 El lenguaje C permite mediante el uso de la palabra reservada *typedef* definir nuevos nombres para los tipos de datos existentes, esto no debe confundirse con la creación de un nuevo tipo de datos. La palabra clave *typedef* permite solo asignarle un nuevo nombre a un tipo de datos ya existente. La sintaxis general de uso de *typedef* es:
 
@@ -1716,7 +1716,7 @@ entero a; cliente b,\*c;
 
 **Tema 9 - El preprocesador.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 En un programa escrito en C, es posible incluir diversas instrucciones para el compilador dentro del código fuente del programa. Estas instrucciones dadas al compilador son llamadas directivas del preprocesador y, aunque realmente no son parte del lenguaje C, expanden el ámbito del entorno de programación de C.
 
@@ -1733,7 +1733,7 @@ El preprocesador, definido por el standard ANSI de C, contiene las siguientes di
 
 1. **- Directiva #define.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La directiva define se usa para definir un identificador y una cadena que el compilador sustituirá por el identificador cada vez que se encuentre en el archivo fuente. El standard ANSI llama al identificador "nombre de macro" y al proceso de sustitución "sustitución de macro". Por ejemplo:
 
@@ -1755,7 +1755,7 @@ printf("El valor mínimo es: %d\n",(10<20) ? 10 : 20);
 
 2. **- Directiva #undef.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La directiva *#undef* permite quitar una definición de "nombre de macro" que se realizo con anterioridad. Veamos un ejemplo:
 
@@ -1767,7 +1767,7 @@ A partir de *#undef TAM*, el "nombre de macro" *TAM*  deja de existir, ello perm
 
 3. **- Directiva #error.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La directiva *#error* fuerza a parar la compilación del programa, a la vez que muestra un mensaje de error. El mensaje de error no aparecerá entre comillas dobles. Veamos un ejemplo:
 
@@ -1777,7 +1777,7 @@ Su principal uso viene asociado a detener la compilación en ciertas condiciones
 
 4. **- Directiva #include.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La directiva *#include* fuerza al compilador a incluir otro archivo fuente en el archivo que tiene la directiva *#include*, y a compilarlo. El nombre del archivo fuente a incluir se colocara entre comillas dobles o entre paréntesis de ángulo. Por ejemplo:
 
@@ -1787,7 +1787,7 @@ Los archivos incluidos mediante *#include*  pueden a su vez poseer otras directi
 
 5. **- Directivas #if, #ifdef, #ifndef, #else, #elif y #endif.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Las  directivas *#if*, *#ifdef*, *#ifndef*, *#else*, *#elif*  y *#endif*  son  directivas condicionales de compilación. Estas directivas permiten decirle al compilador que partes del programa debe compilar bajo distintas condiciones.
 
@@ -1861,7 +1861,7 @@ Compilara el código para el caso de *VAL*  definido y, además, compilara el c�
 
 6. **- Directiva #line.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La directiva *#line*  permite cambiar la cuenta de lineas del compilador y el nombre del archivo. Su sintaxis es:
 
@@ -1879,14 +1879,14 @@ realmente.
 
 7. **- Directiva #pragma.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La directiva *#pragma*  es una directiva que permite dar instrucciones al compilador sobre como debe realizar la compilación del código fuente. Su sintaxis es:
 
 #pragma nombre
 
 **Tema 10 - Entrada y salida.**
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Antes de empezar a explicar la entrada y salida en C, es necesario realizar dos pequeños comentarios:
 
@@ -1898,7 +1898,7 @@ En segundo lugar, aparte de la E/S por consola y la E/S de fichero mediante buff
 
 1. **- Entrada y salida desde consola.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La entrada y salida desde consola se refiere a las operaciones que se producen en el teclado y la pantalla del ordenador. Dichos dispositivos son automáticamente abiertos y cerrados al comenzar y terminar el programa, por lo cual, no deben ser abiertos ni cerrados por el propio programa. Existen, básicamente, seis funciones de entrada y salida desde consola, tres de entrada y tres de salida. Veámoslas:
 
@@ -2027,7 +2027,7 @@ int printf(const char \*formato[,argumento,...]);
 
 La cadena apuntada por formato consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Las ordenes de formato están precedidas por el signo *%* y le sigue el código de formato. Estas ordenes de formato son:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Especificado r**|**Descripción**|
 | :-: | - |
@@ -2081,7 +2081,7 @@ return 0;
 
 2. **- Entrada y salida desde fichero.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Antes de explicar la entrada y salida desde fichero, conviene explicar el tipo de dato *FILE \**. Dicho tipo de dato es el "puntero de fichero", y es, realmente, una estructura que contiene la información sobre el nombre del fichero abierto, su modo de apertura (lectura, escritura, etc.), estado, etc. Dicho "puntero de fichero", por tanto, especifica el fichero que se esta usando y es, la forma que poseen las funciones de entrada y salida desde fichero de conocer sobre que archivo actúan.
 
@@ -2274,7 +2274,7 @@ La función *rewind()*  posiciona el indicador de posición del archivo *fp*  al
 
 La función *fseek()*  se usa para operaciones de entrada y salida de acceso aleatorio. La función *fseek()* desplaza el indicador de posición del archivo *fp* un tamaño *num* desde la posición especificada por *origen*. Los valores validos para *origen* son:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Origen**|**Nombre de la constante**|**Valor**|
 | - | - | - |
@@ -2310,7 +2310,7 @@ fputs(cadena,stderr);
 
 **Tema 11 - Asignación dinámica de memoria.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Antes de empezar con el desarrollo del tema, es necesario aclarar que el mismo no pretende explicar las estructuras de datos dinámicas, sino tan solo dar unas ligeras nociones básicas sobre la posibilidad de asignar memoria de forma dinámica, esto es, en tiempo de ejecución, y por tanto de crear nuevas variables.
 
@@ -2362,7 +2362,7 @@ exit(0); /Salimos del programa \*/
 
 2. **- Liberación dinámica de memoria.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La memoria dinámica reservada es eliminada siempre al terminar la ejecución del programa por el propio sistema operativo. Sin embargo, durante la ejecución del programa puede ser interesante, e incluso necesario, proceder a liberar parte de la memoria reservada con anterioridad y que ya ha dejado de ser necesario tener reservada. Esto puede realizarse mediante la función *free()*. La función *free()* tiene la forma:
 
@@ -2382,7 +2382,7 @@ Un aspecto a tener en cuenta es el hecho de que el puntero a liberar no debe apu
 
 3. **-  Ejemplo  de  asignación  y  liberación  dinámica  de memoria.**
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Vamos a ver un sencillo ejemplo práctico de como asignar y liberar memoria. Para ello construiremos las funciones necesarias para crear, manejar y liberar de forma dinámica una lista ligada.
 
@@ -2478,7 +2478,7 @@ Siendo la llamada: cabeza=LiberarLista(cabeza,dato);
 
 **Apéndice A - Funciones de biblioteca del** 
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 **standard ANSI de C.**
 
@@ -2498,7 +2498,7 @@ Breve descripción de la función.
 
 **A.1 - Funciones de entrada y salida de datos.** fclose
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 #include <stdio.h> int fclose(FILE \*f);
 
@@ -2546,7 +2546,7 @@ FILE \*fopen(const char \*nombre,const char \*modo);
 
 La función *fopen()*  abre un archivo cuyo nombre viene dado por *nombre*  y devuelve un puntero a una estructura de tipo *FILE* que se le asocia en la apertura. El  tipo de operaciones permitidas en el archivo están definidas por el valor de *modo*. Los valores permitidos de *modo* son:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Modo**|**Descripción**|
 | - | - |
@@ -2625,7 +2625,7 @@ fseek
 
 La función *fseek()* coloca el indicador de posición del archivo asociado a la variable *f*** de acuerdo a los valores dados por *origen* y *desp*. Su objetivo es dar soporte a las operaciones de E/S de acceso directo. El valor de *origen* debe ser una de estas constantes, definidas en *stdio.h*:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Origen**|**Nombre de la constante**|**Valor**|
 | - | - | - |
@@ -2684,7 +2684,7 @@ int printf(const char \*formato,...);
 
 La función *printf()* escribe en *stdout* (salida standard, generalmente la pantalla), los argumentos que componen la lista de argumentos bajo el control de la cadena apuntada por *formato*. La cadena apuntada por *formato*  consta de dos tipos de elementos. El primer tipo esta constituido por los caracteres que se mostraran en pantalla. El segundo tipo contiene las ordenes de formato que describen la forma en que se muestran los argumentos. Una orden de formato comienza por el signo *%*, y le sigue el código de formato. Las ordenes de formato son:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Especificador**|**Descripción**|
 | - | - |
@@ -2751,7 +2751,7 @@ La función *scanf()*  es una rutina de propósito general que lee de *stdin* (d
 
 Los especificadores de formato de entrada están precedidos por el signo *%*, y dicen a *scanf()* que tipo de datos van a ser leídos a continuación. Los especificadores de formato validos son:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Especificador**|**Descripción.**|
 | - | - |
@@ -2802,7 +2802,7 @@ int setvbuf(FILE \*f,char \*buf,int modo,.size\_t tam);
 
 La función *setvbuf()* permite al programador especificar el buffer, el tamaño y el modo para el archivo asociado a la variable *f*. El array de caracteres apuntado por *buf* se utiliza como buffer de *f* para las operaciones de entrada y salida. Si *buf* es nulo (*NULL*), *setvbuf()* creara su propio buffer, de tamaño *tam*, mediante una llamada a la función *malloc()*. El tamaño del buffer se fija mediante el valor de *tam*, que debe ser siempre mayor de cero. La variable *modo* determina el uso del buffer. Los valores legales de *modo*, definidos en *stdio.h*, son:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Modo**|**Descripción**|
 | - | - |
@@ -2842,7 +2842,7 @@ secuencia de entrada. No se debe usar *ungetc()* sobre una marca de *EOF*. El va
 
 **A.2 -Funciones de caracteres.** isalnum
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 #include <ctype.h> int isalnum(int ch);
 
@@ -2926,7 +2926,7 @@ La función *toupper()* devuelve el equivalente en mayúsculas de *ch*, si *ch* 
 
 **A.3 - Funciones de cadenas.** memchr
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 #include <string.h>
 
@@ -2992,7 +2992,7 @@ int strcmp(const char \*cad1,const char \*cad2);
 
 La función *strcmp()* compara lexicográficamente dos cadenas que finalizan con el carácter nulo, y devuelve un entero que se interpreta de la siguiente forma:
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Valor devuelto**|**Descripción**|
 | - | - |
@@ -3032,7 +3032,7 @@ La función *strtok()* modifica la cadena apuntada por *cad1*, pues, cada vez qu
 
 **A.4 - Funciones matemáticas.** acos
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 #include <math.h> double acos(double arg);
 
@@ -3162,7 +3162,7 @@ La función *tanh()* devuelve la tangente hiperbólica de *arg*. El valor de *ar
 
 **A.5 - Asignación dinámica de memoria.** calloc
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 #include <stdlib.h>
 
@@ -3196,7 +3196,7 @@ Si *ptr* es un puntero nulo (*NULL*), *realloc()* simplemente asigna *tam* bytes
 
 **A.6 - Funciones varias.** abs
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 #include <stdlib.h> int abs(int num);
 
@@ -3254,7 +3254,7 @@ El lenguaje de programación C
 
 **Apéndice B: Ejemplos de programas en C.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 En este apéndice se incluyen algunos programas de ejemplo escritos en lenguaje C. Los programas han sido realizados de forma que puedan ser compilados en la mayoría de compiladores existentes para los sistemas operativos MS-DOS y UNIX sin que exista la necesidad de realizar ningún tipo de cambio en los mismos.
 
@@ -3306,7 +3306,7 @@ return 0;
 
 **B.2 - matriz.c.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 /\* Programa que calcula el producto de dos matrices. \*/ #include <stdio.h>![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.007.png)
 
@@ -3508,7 +3508,7 @@ while (d!='0'); return 0;
 
 **B.3 - ordenar.c.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 /\* Programa que ordena un fichero de cualquier tamaño mediante el algoritmo QuickSort. El fichero contiene como primer elemento un unsigned con el numero de elementos del fichero, y a continuacion figuran todos los elementos a ordenar \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.010.png)
 
@@ -3666,7 +3666,7 @@ return 0;
 
 **B.4 - fichero.c.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 /\* Programa que maneja una pequeña base de datos directamente sobre el fichero \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.012.png)
 
@@ -3943,7 +3943,7 @@ return 0;
 
 **B.5 - arbol.c.**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 /\* Programa que lee las palabras de un fichero y las almacena en un arbol binario \*/![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.014.png)
 
@@ -4161,7 +4161,7 @@ Mostrar(p,&cont);
 
 ## 🔍 **Uso de Valgrind para Depuración de Memoria en C**
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Valgrind es una herramienta esencial para detectar **errores de memoria** (leaks, accesos inválidos, etc.) en programas C. Su uso es especialmente crítico en proyectos como los de 42, donde la gestión manual de memoria es frecuente.
 
@@ -4188,7 +4188,7 @@ valgrind --leak-check=full ./tu_programa argumentos
 | `--trace-children=yes` | Analiza procesos hijos (útil si usas `fork()` o `system()`) |
 | `--error-exitcode=1` | Retorna error si hay problemas (ideal para CI/CD) |
 
- [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-material-did%C3%A1ctico)
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 ### 🎯 **Ejemplo Práctico**
 Supongamos que tu programa `so_long` tiene un memory leak:
