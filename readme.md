@@ -18,7 +18,7 @@
 
 ---
 
-### 🧠 **Variables y Tipos de Datos**
+### 📦 **Variables y Tipos de Datos**
 
 <table style="border: none; width: 100%;">
   <tr>
@@ -203,7 +203,7 @@
 
 ---
 
-### 📦 **Memoria Dinámica**
+### 🧠 **Memoria Dinámica**
 
 <table style="border: none; width: 100%;">
   <tr>
