@@ -1,67 +1,104 @@
 # <img src="images/C_Logo.png"/> Material didáctico 
 
 
-## 📚 **Índice**  
-0. [Palabras reservadas en C](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c)  
-1. [Identificadores, Tipos de Datos, Variables](#1--identificadores-tipos-de-datos-variables) 
-   - 1.1. [Tipos de Datos](#11---tipos-de-datos)  
-   - 1.2. [Declaración de Variables y Alcance](#12--declaraci%C3%B3n-de-variables-y-alcance)
-   - 1.3. [Especificadores de Almacenamiento](#13--especificadores-de-almacenamiento-de-los-tipos-de-datos)  
-   - 1.4. [Constantes](#14--constantes)  
-2. [Operadores](#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-)
-   - 2.1. [Operadores Aritméticos](#21--operadores-aritm%C3%A9ticos)
-   - 2.2. [Operadores Relacionales y Lógicos](#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos) 
-   - 2.3. [Operador Asignación](#23--operador-asignaci%C3%B3n)
-   - 2.4. [Operador sizeof](#24--operador-sizeof)  
-   - 2.5. [Operadores sobre Bits](#25--operadores-sobre-bits)
-   - 2.6. [Operador Ternario](#26--el-operador-)
-3. [Conversión de Tipos de Datos](#3---conversi%C3%B3n-de-tipos-de-datos)
-   - 3.1. [Conversión Automática](#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos)
-   - 3.2. [Conversión Forzada](#32--conversi%C3%B3n-forzada-de-tipos-datos)
-4. [Sentencias de Control y Bucles](#4---sentencias-de-control-y-bucless)
-   - 4.1. [Sentencia if](#41--sentencia-de-control-if)
-   - 4.2. [Sentencia switch](#52-sentencia-switch)  
-   - 4.3. [Bucle for](#53-bucle-for)  
-   - 4.4. [Bucle while](#54-bucle-while)  
-   - 4.5. [Bucle do/while](#55-bucle-dowhile)  
-   - 4.6. [Sentencias break y continue](#56-sentencias-break-y-continue)  
-5. [Arrays, Cadenas y Punteros](#6-arrays-cadenas-y-punteros)  
-   - 5.1. [Arrays y Cadenas](#61-arrays-y-cadenas)  
-   - 5.2. [Punteros](#62-punteros)  
-6. [Funciones](#7-funciones)  
-   - 6.1. [Sentencia return](#71-sentencia-return)  
-   - 6.2. [Argumentos de Funciones](#72-argumentos-de-funciones)  
-   - 6.3. [Arrays como Argumentos](#73-arrays-como-argumentos)  
-   - 6.4. [Argumentos de main()](#74-argumentos-de-main)  
-   - 6.5. [Recursividad](#75-recursividad)  
-   - 6.6. [Punteros a Funciones](#76-punteros-a-funciones)  
-   - 6.7. [static en Funciones](#77-static-en-funciones)  
-7. [Estructuras, Campos de Bit, Uniones y Enumeraciones](#8-estructuras-campos-de-bit-uniones-y-enumeraciones)  
-   - 7.1. [Estructuras](#81-estructuras)  
-   - 7.2. [Campos de Bit](#82-campos-de-bit)  
-   - 7.3. [Uniones](#83-uniones)  
-   - 7.4. [Enumeraciones](#84-enumeraciones)  
-   - 7.5. [typedef](#85-typedef)  
-8. [El Preprocesador](#9-el-preprocesador)  
-   - 8.1. [Directiva #define](#91-directiva-define)  
-   - 8.2. [Directiva #undef](#92-directiva-undef)  
-   - 8.3. [Directiva #error](#93-directiva-error)  
-   - 8.4. [Directiva #include](#94-directiva-include)  
-   - 8.5. [Directivas Condicionales](#95-directivas-condicionales)  
-   - 8.6. [Directiva #line](#96-directiva-line)  
-   - 8.7. [Directiva #pragma](#97-directiva-pragma)  
-9. [Entrada y Salida](#10-entrada-y-salida)  
-    - 9.1. [Entrada/Salida desde Consola](#101-entradasalida-desde-consola)  
-    - 9.2. [Entrada/Salida desde Fichero](#102-entradasalida-desde-fichero)  
-10. [Asignación Dinámica de Memoria](#11-asignación-dinámica-de-memoria)  
-    - 10.1. [Reserva Dinámica](#111-reserva-dinámica)  
-    - 10.2. [Liberación Dinámica](#112-liberación-dinámica)  
-    - 10.3. [Ejemplo Práctico](#113-ejemplo-práctico)  
-11. [Apéndices](#12-apéndices)  
-    - 11.1. [Funciones de Biblioteca ANSI C](#121-funciones-de-biblioteca-ansi-c)  
-    - 11.2. [Ejemplos de Programas](#122-ejemplos-de-programas)  
+---
+
+### 🔑 **Palabras clave y fundamentos**
+
+| Tema                                                                                                                                                  | Subtemas |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| [0. Palabras reservadas en C](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c) | -        |
 
 ---
+
+### 🧠 **Variables y Tipos de Datos**
+
+| Tema                                                                                          | Subtemas                                                                                                                                                                                                                                                                                     |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1. Identificadores, Tipos de Datos, Variables](#1--identificadores-tipos-de-datos-variables) | [1.1. Tipos de Datos](#11---tipos-de-datos) <br> [1.2. Declaración de Variables y Alcance](#12--declaraci%C3%B3n-de-variables-y-alcance) <br> [1.3. Especificadores de Almacenamiento](#13--especificadores-de-almacenamiento-de-los-tipos-de-datos) <br> [1.4. Constantes](#14--constantes) |
+
+---
+
+### ➕ **Operadores**
+
+| Tema                                                                                                                                                                                 | Subtemas                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [2. Operadores](#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-) | [2.1. Operadores Aritméticos](#21--operadores-aritm%C3%A9ticos) <br> [2.2. Operadores Relacionales y Lógicos](#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos) <br> [2.3. Operador Asignación](#23--operador-asignaci%C3%B3n) <br> [2.4. Operador sizeof](#24--operador-sizeof) <br> [2.5. Operadores sobre Bits](#25--operadores-sobre-bits) <br> [2.6. Operador Ternario](#26--el-operador-) |
+
+---
+
+### 🔁 **Conversión de Tipos**
+
+| Tema                                                                      | Subtemas                                                                                                                                                         |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [3. Conversión de Tipos de Datos](#3---conversi%C3%B3n-de-tipos-de-datos) | [3.1. Conversión Automática](#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos) <br> [3.2. Conversión Forzada](#32--conversi%C3%B3n-forzada-de-tipos-datos) |
+
+---
+
+### 🧩 **Control de Flujo**
+
+| Tema                                                                      | Subtemas                                                                                                                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [4. Sentencias de Control y Bucles](#4---sentencias-de-control-y-bucless) | [4.1. Sentencia if](#41--sentencia-de-control-if) <br> [4.2. Sentencia switch](#52-sentencia-switch) <br> [4.3. Bucle for](#53-bucle-for) <br> [4.4. Bucle while](#54-bucle-while) <br> [4.5. Bucle do/while](#55-bucle-dowhile) <br> [4.6. Sentencias break y continue](#56-sentencias-break-y-continue) |
+
+---
+
+### 🧵 **Arrays, Cadenas y Punteros**
+
+| Tema                                                          | Subtemas                                                                         |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [5. Arrays, Cadenas y Punteros](#6-arrays-cadenas-y-punteros) | [5.1. Arrays y Cadenas](#61-arrays-y-cadenas) <br> [5.2. Punteros](#62-punteros) |
+
+---
+
+### 🛠️ **Funciones**
+
+| Tema                         | Subtemas                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [6. Funciones](#7-funciones) | [6.1. Sentencia return](#71-sentencia-return) <br> [6.2. Argumentos de Funciones](#72-argumentos-de-funciones) <br> [6.3. Arrays como Argumentos](#73-arrays-como-argumentos) <br> [6.4. Argumentos de main()](#74-argumentos-de-main) <br> [6.5. Recursividad](#75-recursividad) <br> [6.6. Punteros a Funciones](#76-punteros-a-funciones) <br> [6.7. static en Funciones](#77-static-en-funciones) |
+
+---
+
+### 🧱 **Estructuras y Tipos Compuestos**
+
+| Tema                                                                                                           | Subtemas                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [7. Estructuras, Campos de Bit, Uniones y Enumeraciones](#8-estructuras-campos-de-bit-uniones-y-enumeraciones) | [7.1. Estructuras](#81-estructuras) <br> [7.2. Campos de Bit](#82-campos-de-bit) <br> [7.3. Uniones](#83-uniones) <br> [7.4. Enumeraciones](#84-enumeraciones) <br> [7.5. typedef](#85-typedef) |
+
+---
+
+### ⚙️ **Preprocesador**
+
+| Tema                                       | Subtemas                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [8. El Preprocesador](#9-el-preprocesador) | [8.1. Directiva #define](#91-directiva-define) <br> [8.2. Directiva #undef](#92-directiva-undef) <br> [8.3. Directiva #error](#93-directiva-error) <br> [8.4. Directiva #include](#94-directiva-include) <br> [8.5. Directivas Condicionales](#95-directivas-condicionales) <br> [8.6. Directiva #line](#96-directiva-line) <br> [8.7. Directiva #pragma](#97-directiva-pragma) |
+
+---
+
+### 📥 **Entrada y Salida**
+
+| Tema                                        | Subtemas                                                                                                                                         |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [9. Entrada y Salida](#10-entrada-y-salida) | [9.1. Entrada/Salida desde Consola](#101-entradasalida-desde-consola) <br> [9.2. Entrada/Salida desde Fichero](#102-entradasalida-desde-fichero) |
+
+---
+
+### 📦 **Memoria Dinámica**
+
+| Tema                                                                     | Subtemas                                                                                                                                                        |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [10. Asignación Dinámica de Memoria](#11-asignación-dinámica-de-memoria) | [10.1. Reserva Dinámica](#111-reserva-dinámica) <br> [10.2. Liberación Dinámica](#112-liberación-dinámica) <br> [10.3. Ejemplo Práctico](#113-ejemplo-práctico) |
+
+---
+
+### 📌 **Apéndices**
+
+| Tema                           | Subtemas                                                                                                                                   |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [11. Apéndices](#12-apéndices) | [11.1. Funciones de Biblioteca ANSI C](#121-funciones-de-biblioteca-ansi-c) <br> [11.2. Ejemplos de Programas](#122-ejemplos-de-programas) |
+
+---
+
 
 ### **Lista de Palabras Reservadas en C (Estándar ANSI C / ISO C)**
 
