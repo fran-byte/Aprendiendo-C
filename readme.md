@@ -1477,7 +1477,7 @@ Las funciones son una de las características más importantes del lenguaje C, y
 
 ## 6.2. Argumentos de las funciones, llamada por valor y por ![](Aspose.Words.ae55ca77-bd47-4be1-a802-7483922c91a3.005.png)"referencia".
 
-    [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Una vez conocido el uso de la función `return`, podemos introducirnos en la explicación de las funciones. En primer lugar, si una función usa argumentos, es necesario declarar variables que acepten los argumentos de la función. Veamos un ejemplo:
 
