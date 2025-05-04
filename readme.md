@@ -511,11 +511,15 @@ En C, existe, además, de la conversión automática de tipos de datos, la posib
 
 Su utilidad queda claramente expresada en el ejemplo siguiente:
 
+```
 int a=3,b=2; float c; c=a/b;
+```
 
 La operación asigna a *c* el valor *1.0* en vez de el valor *1.5*, ello se debe a que al ser *a* y *b* variables de tipo entero, se realiza una división entre enteros, y el resultado de *3/2* es *1*. A continuación ese valor *1* se convierte a un valor en coma flotante para realizar la asignación (valor *1.0*), y se asigna a *c*. Si lo que se desea es que la división se realice en punto flotante, debe escribirse la operación de la siguiente forma:
 
+```
 c=(float)a/b;
+```
 
 Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonces, aplicando las reglas de conversión automática de tipos, se realiza la división en coma flotante. Este proceso da lugar a que el resultado de la operación sea *1.5*, y dicho valor sea el asignado a la variable *c*.!
 
@@ -537,58 +541,48 @@ if (condición    sentencia; else
 
 Siendo el *else* opcional. Si la *condición* es verdadera se ejecuta la *sentencia* asociada al *if*, en caso de que sea falsa la *condición* se ejecuta la *sentencia* asociada al *else*** (si existe** el *else*). Veamos algunos ejemplos de sentencias *if*:
 
+```
 int a,b;
 
 if (a>b)
-
 {
-
 b--;
-
 a=a+5; }
-
 else
-
 {
-
 a++;
-
 b=b-5; }
-
 if (b-a!=7)
-
 b=5;
+
+```
+
 
 Las sentencias de control *if* pueden ir anidadas. Un *if* anidado es una sentencia *if*  que es el objeto de otro *if*  o *else*. Esta anidación de *if/else*  puede presentar la problemática de decidir que *else*  va asociado a cada *if*. Considerese el siguiente ejemplo:
 
+```
 if (x)
-
 if (y) printf(“1”);
-
 else printf(“2”);
+```
 
 ¿A que *if* se refiere el *else*?. C soluciona este problema asociando cada *else* al *if* más cercano posible y que todavía no tiene ningún *else* asociado. Es por ello que en este caso el *if* asociado al *else* es el *if(y)*. Si queremos que el *else* este asociado al *if(x)*, deberíamos escribirlo de la siguiente forma:
 
+```
 if (x) {
-
 if (y)
-
 printf(“1”); }
-
 else
-
 printf(“2”);
+```
 
 2. **- Sentencia de control switch.**
 
 La forma general de la sentencia *switch* es:
 
 switch(variable) {
-
 case const1: sentencia; break; case const2:
-
 sentencia;       break;    ...
-
 `   `default:       sentencia; }
 
 Donde *variable* debe ser de tipo *char* o *int*, y donde *const1*, *const2*, **...**, indican constantes de C del tipo de datos de la *variable*. Dichas constantes no pueden repetirse dentro del *switch*. El *default* es opcional y puede no aparecer, así como los *break* de los *case*. La sentencia *switch* se ejecuta comparando el valor de la variable con el valor de cada una de las constantes, realizando la comparación desde arriba hacia abajo. En caso de que se encuentre una constante cuyo valor coincida con el valor de la variable, 
@@ -596,73 +590,40 @@ Donde *variable* debe ser de tipo *char* o *int*, y donde *const1*, *const2*, **
 se empieza a ejecutar las sentencias hasta encontrar una sentencia *break*. En caso de que no se encuentre ningún valor que coincida, se ejecuta el *default*** (si existe)**.** Veamos algunos ejemplos:
 
 int valor;
-
 switch(valor)
-
 {
-
 case 0: cont++;
-
 break;
-
 case 5: cont--;
-
 break;
-
 `   `default: cont=-10; /\* Se ejecuta si valor no es 0 o 5 \*/ }
-
 char d;
-
 int cont=0;
-
 switch(d)
-
 {
-
 `   `case ‘\r’: cont++; /\* Si d es un retorno de carro, se \*/
-
 `                      `/\* ejecuta este cont++ y el siguiente\*/                       /\* al no aparecer un break \*/
-
 case ‘\x1B’: cont++;
-
 break;
-
 default: cont=-1;
-
 }
-
 Las sentencias *switch* pueden aparecer unas dentro de otras, igual que sucedía con las sentencias *if*. Veámoslo con un ejemplo:
 
 char d,e;
-
 switch(d)
-
 {
-
 case ‘a’:
-
 case ‘A’: switch(e)
-
 {
-
 case ‘1’: d=‘z’;
-
 e=‘+’;
-
 break; case ‘2’: d=‘Z’;
-
 e=‘-’;
-
 }
-
 break; case ‘b’:
-
 case ‘B’: switch(e)
-
 {
-
 case ‘0’: d=‘2’; default: e=‘+’;
-
 `             `} }
 
 3. **- Bucle for.**
