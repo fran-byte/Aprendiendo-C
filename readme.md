@@ -153,7 +153,7 @@ unsigned char a;
 long double b;
 short int i;
 ```
-**Dble modificador a un mismo tipo de datos**
+**Doble modificador a un mismo tipo de datos**
 Así, es posible definir una variable de tipo :
 
 ```
