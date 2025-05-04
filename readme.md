@@ -364,19 +364,19 @@ var2=var1++; /\* Pone 10 en var2, pues primero asigna su valor \*/              
 
 ## 2.2- Operadores relaciónales y lógicos.
 
-Los operadores relaciónales y lógicos de C, ordenados de mayor a menor 
-
-prioridad son:
+Los operadores relaciónales y lógicos de C:
 
 
+| **Operador** | **Nombre**          | **Operador** | **Nombre**               | **Operador** | **Nombre**        | **Operador** | **Nombre**               |
+|--------------|---------------------|--------------|--------------------------|--------------|-------------------|--------------|--------------------------|
+| `!`          | NOT lógico          | `>`          | Mayor que                | `<`          | Menor que         | `>=`         | Mayor o igual que        |
+| `==`         | Igual que           | `!=`         | No igual                 | `&&`         | AND lógico        | `\|\|`       | OR lógico                |
+| `&`          | AND bit a bit       | `\|`         | OR bit a bit             | `^`          | XOR bit a bit     | `~`          | NOT bit a bit            |
+| `<<`         | Desplazamiento izquierda | `>>`    | Desplazamiento derecha   | `?:`         | Operador ternario | `=`          | Asignación básica        |
+| `+=`         | Asignación con suma | `-=`         | Asignación con resta      | `*=`         | Asignación con multiplicación | `/=` | Asignación con división |
+| `++`         | Incremento          | `--`         | Decremento               | `->`         | Acceso a miembro de estructura | `.*` | Acceso a miembro por puntero |
+| `&`          | Dirección de        | `*`          | Dereferencia             | `sizeof`     | Tamaño de tipo    | `,`          | Operador coma            |
 
-|**Operador**||**Operador**||**Operador**||**Operador**||
-| - | :- | - | :- | - | :- | - | :- |
-|!|Not|||||||
-|>|Mayor que|>=|Mayor o igual que|<|Menor que|<=|<p>Menor </p><p>o  igual que</p>|
-|==|Igual|!=|No igual|||||
-|&&|And|||||||
-||||Or|||||||
 
 Los operadores relaciónales y lógicos tiene menor prioridad que los operadores aritméticos antes descritos, así , escribir *10>3+9* es equivalente a escribir *10>(3+9)*.
 
