@@ -638,11 +638,17 @@ Los operadores relaciónales y lógicos tiene menor prioridad que los operadores
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-El lenguaje C, a diferencia de otros lenguajes tales como Pascal, no diferencia la asignación de cualquier otro operador del lenguaje. Para C, la asignación es un operador, el llamado operador asignación (=), el cual posee la prioridad más baja de todos los operadores. Es por ello que en C podemos escribir expresiones del tipo:
 
-if ((c=a\*b)<0) /\* if es la comprobación condicional de C, que \*/                /\* se vera con posterioridad \*/
+El lenguaje C, a diferencia de otros lenguajes tales como Pascal, no diferencia la asignación de cualquier otro operador del lenguaje. Para C, la asignación es un operador, el llamado operador asignación (`=`), el cual posee la prioridad más baja de todos los operadores. Es por ello que en C podemos escribir expresiones del tipo:
 
-Esta expresión asigna a la variable *c* el valor de *a\*b* y devuelve su valor para compararlo con el valor constante *0*. Los paréntesis son necesarios pues el operador asignación tiene la prioridad mas baja de todos los operadores.
+```c
+if ((c = a * b) < 0)  /* if es la comprobación condicional de C, que */
+                       /* se verá con posterioridad */
+````
+
+Esta expresión asigna a la variable `c` el valor de `a * b` y devuelve su valor para compararlo con el valor constante 0. Los paréntesis son necesarios, pues el operador asignación tiene la prioridad más baja de todos los operadores.
+
+
 
 ## 2.4.- Operador sizeof.
 
