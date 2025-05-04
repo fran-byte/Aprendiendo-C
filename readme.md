@@ -968,86 +968,60 @@ switch (d) {
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-````md
-La forma general de la sentencia `switch` es:
+La forma general de la sentencia `for` es:
 
 ```c
-switch (variable) {
-    case const1: 
-        sentencia; 
-        break;
-    case const2: 
-        sentencia; 
-        break;
-    default: 
-        sentencia; 
+for (inicialización; condición; actualización) {
+    sentencia;
 }
 ````
 
-Donde `variable` debe ser de tipo `char` o `int`, y donde `const1`, `const2`, ..., indican constantes de C del tipo de datos de la variable. Dichas constantes no pueden repetirse dentro del `switch`. El `default` es opcional y puede no aparecer, así como los `break` de los `case`. La sentencia `switch` se ejecuta comparando el valor de la variable con el valor de cada una de las constantes, realizando la comparación desde arriba hacia abajo. En caso de que se encuentre una constante cuyo valor coincida con el valor de la variable, se empieza a ejecutar las sentencias hasta encontrar una sentencia `break`. En caso de que no se encuentre ningún valor que coincida, se ejecuta el `default` (si existe). Veamos algunos ejemplos:
+Donde:
+
+* `inicialización` es una expresión que se ejecuta una vez al principio del ciclo.
+* `condición` es una expresión que se evalúa antes de cada iteración. Si es verdadera, se ejecuta la sentencia del ciclo; si es falsa, el ciclo termina.
+* `actualización` es una expresión que se ejecuta después de cada iteración, normalmente usada para cambiar el valor de las variables involucradas en la condición.
+
+Veamos un ejemplo:
 
 ```c
-int valor;
-switch(valor)
-{
-  case 0: 
-    cont++;
-    break;
-  case 5: 
-    cont--;
-    break;
-  default: 
-    cont = -10; /* Se ejecuta si valor no es 0 o 5 */ 
+int i;
+
+for (i = 0; i < 10; i++) {
+    printf("%d ", i);  // Imprime los números del 0 al 9
 }
 ```
 
+En este ejemplo, la variable `i` se inicializa en 0. Mientras `i` sea menor que 10, se ejecutará la sentencia dentro del `for` (en este caso, imprimir el valor de `i`). Después de cada iteración, `i` se incrementa en 1, hasta que la condición `i < 10` sea falsa.
+
+El ciclo `for` puede también ser usado sin que se especifiquen todos los componentes. Por ejemplo:
+
 ```c
-char d;
-int cont = 0;
-switch(d)
-{
-  case '\r': 
-    cont++; /* Si d es un retorno de carro, se ejecuta este cont++ y el siguiente */
-  case '\x1B': 
-    cont++;
-    break;
-  default: 
-    cont = -1;
+int j = 0;
+
+for (; j < 5;) {
+    printf("%d ", j);
+    j++;
 }
 ```
 
-Las sentencias `switch` pueden aparecer unas dentro de otras, igual que sucedía con las sentencias `if`. Veámoslo con un ejemplo:
+Aquí se omiten tanto la inicialización como la actualización en la cabecera del ciclo. Solo se mantiene la condición y la actualización ocurre dentro del ciclo.
+
+Además, los ciclos `for` pueden ser anidados (uno dentro de otro). Veamos un ejemplo de un ciclo `for` anidado:
 
 ```c
-char d, e;
+int i, j;
 
-switch (d) {
-    case 'a':
-    case 'A':
-        switch (e) {
-            case '1':
-                d = 'z';
-                e = '+';
-                break;
-            case '2':
-                d = 'Z';
-                e = '-';
-        }
-        break;
-
-    case 'b':
-    case 'B':
-        switch (e) {
-            case '0':
-                d = '2';
-            default:
-                e = '+';
-        }
+for (i = 0; i < 3; i++) {
+    for (j = 0; j < 2; j++) {
+        printf("i = %d, j = %d\n", i, j);
+    }
 }
 ```
 
-```
-```
+Este ciclo imprime combinaciones de los valores de `i` y `j`. En cada iteración del ciclo exterior, el ciclo interior se ejecuta completamente.
+
+
 
 
 ## 4.4.  Bucle while.
