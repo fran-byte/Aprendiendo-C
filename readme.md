@@ -110,7 +110,7 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#5---arrays-cadenas-y-punteros" style="text-decoration: none;">5. Arrays, Cadenas y Punteros</a></td>
+    <td><a href="#tema-5---arrays-cadenas-y-punteros" style="text-decoration: none;">5. Arrays, Cadenas y Punteros</a></td>
     <td>
       <a href="#51-arrays-y-cadenas" style="text-decoration: none;">5.1. Arrays y Cadenas</a><br>
       <a href="#52-punteros" style="text-decoration: none;">5.2. Punteros</a>
@@ -131,7 +131,7 @@
     <td><a href="#tema-6---funciones" style="text-decoration: none;">6. Funciones</a></td>
     <td>
       <a href="#61-la-sentencia-return" style="text-decoration: none;">6.1. Sentencia return</a><br>
-      <a href="#62-argumentos-de-funciones-llamada-por-valor-y-referencia" style="text-decoration: none;">6.2. Argumentos de Funciones</a><br>
+      <a href="#62-argumentos-de-funciones-llamada-por-valor-y-por-referencia" style="text-decoration: none;">6.2. Argumentos de Funciones</a><br>
       <a href="#63-arrays-como-argumentos-de-funciones" style="text-decoration: none;">6.3. Arrays como Argumentos</a><br>
       <a href="#64-argumentos-de-la-función-main" style="text-decoration: none;">6.4. Argumentos de main()</a><br>
       <a href="#65-recursividad" style="text-decoration: none;">6.5. Recursividad</a><br>
