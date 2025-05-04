@@ -4,8 +4,8 @@
 
 
 ## 📚 **Índice**  
-0. [Palabras-reservadas-en-c](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c)  
-1. [[Identificadores, Tipos de Datos, Variables](#2-identificadores-tipos-de-datos-variables) ](https://github.com/fran-byte/Learn-C/blob/main/readme.md#1--identificadores-tipos-de-datos-variables) 
+0. [Palabras reservadas en C](https://github.com/fran-byte/Learn-C/blob/main/readme.md#lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c)  
+1. [[Identificadores, Tipos de Datos, Variables](https://github.com/fran-byte/Learn-C/blob/main/readme.md#1--identificadores-tipos-de-datos-variables) 
    - 2.1. [Tipos de Datos](#21-tipos-de-datos)  
    - 2.2. [Declaración de Variables y Alcance](#22-declaración-de-variables-y-alcance)  
    - 2.3. [Especificadores de Almacenamiento](#23-especificadores-de-almacenamiento)  
