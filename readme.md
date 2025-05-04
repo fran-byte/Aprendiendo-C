@@ -172,15 +172,15 @@
     <td><strong>Subtemas</strong></td>
   </tr>
   <tr>
-    <td><a href="#9-el-preprocesador" style="text-decoration: none;">8. El Preprocesador</a></td>
+    <td><a href="#tema-8---el-preprocesador" style="text-decoration: none;">8. El Preprocesador</a></td>
     <td>
-      <a href="#91-directiva-define" style="text-decoration: none;">8.1. Directiva #define</a><br>
-      <a href="#92-directiva-undef" style="text-decoration: none;">8.2. Directiva #undef</a><br>
-      <a href="#93-directiva-error" style="text-decoration: none;">8.3. Directiva #error</a><br>
-      <a href="#94-directiva-include" style="text-decoration: none;">8.4. Directiva #include</a><br>
-      <a href="#95-directivas-condicionales" style="text-decoration: none;">8.5. Directivas Condicionales</a><br>
-      <a href="#96-directiva-line" style="text-decoration: none;">8.6. Directiva #line</a><br>
-      <a href="#97-directiva-pragma" style="text-decoration: none;">8.7. Directiva #pragma</a>
+      <a href="#81-directiva-define" style="text-decoration: none;">8.1. Directiva #define</a><br>
+      <a href="#82-directiva-undef" style="text-decoration: none;">8.2. Directiva #undef</a><br>
+      <a href="#83-directiva-error" style="text-decoration: none;">8.3. Directiva #error</a><br>
+      <a href="#84-directiva-include" style="text-decoration: none;">8.4. Directiva #include</a><br>
+      <a href="#85-directivas-condicionales" style="text-decoration: none;">8.5. Directivas Condicionales</a><br>
+      <a href="#86-directiva-line" style="text-decoration: none;">8.6. Directiva #line</a><br>
+      <a href="#87-directiva-pragma" style="text-decoration: none;">8.7. Directiva #pragma</a>
     </td>
   </tr>
 </table>
