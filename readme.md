@@ -115,7 +115,7 @@
 
 ### 📌 **Apéndices**
 
-<a href="##ap%C3%A9ndice-a---funciones-de-biblioteca-del-est%C3%A1ndar-ansi-de-c"><img src="https://img.shields.io/badge/A.%20Apéndices-dedede"></a><br>
+<a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del-est%C3%A1ndar-ansi-de-c"><img src="https://img.shields.io/badge/A.%20Apéndices-dedede"></a><br>
 <a href="#a1-funciones-de-entrada-y-salida-de-datos"><img src="https://img.shields.io/badge/A.1.%20Funciones%20de%20Biblioteca%20ANSI%20C-0b9000"></a>
 <a href="#a2---funciones-de-caracteres-ctypeh"><img src="https://img.shields.io/badge/A.2.%20Funciones%20de%20caracteres-0b9000"></a>
 <a href="#a3---funciones-de-cadenas-stringh"><img src="https://img.shields.io/badge/A.3.%20Funciones%20de%20cadenas%20(<string.h>)-0b9000"></a><br>
