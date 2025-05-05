@@ -85,7 +85,43 @@
 
 ### ⚙️ **Preprocesador**
 
-<a href="#tema-8---el-preprocesador"><img src="https://img.shields.io/badge/8.%20El%20Preprocesador-787a77"></a><br>
+<a href="#tema-8---el-preprocesador"><img src="https://img.shields.io/badge/8.%20El%20Preprocesador-787a77"></a>
+<a href="#81-directiva-define"><img src="https://img.shields.io/badge/8.1.%20Directiva%20#define-96bf44"></a>
+<a href="#82-directiva-undef"><img src="https://img.shields.io/badge/8.2.%20Directiva%20#undef-96bf44"></a>
+<a href="#83-directiva-error"><img src="https://img.shields.io/badge/8.3.%20Directiva%20#error-96bf447"></a>
+<a href="#84-directiva-include"><img src="https://img.shields.io/badge/8.4.%20Directiva%20#include-96bf44"></a>
+<a href="#85-directivas-if-ifdef-ifndef-else-elif-endif"><img src="https://img.shields.io/badge/8.5.%20Directivas%20Condicionales-96bf44"></a>
+<a href="#86-directiva-line"><img src="https://img.shields.io/badge/8.6.%20Directiva%20#line-96bf44"></a>
+<a href="#87-directiva-pragma"><img src="https://img.shields.io/badge/8.7.%20Directiva%20#pragma-96bf447"></a>
+
+---
+
+### 📥 **Entrada y Salida**
+
+<a href="#tema-9---entrada-y-salida"><img src="https://img.shields.io/badge/9.%20Entrada%20y%20Salida-787a77"></a>
+<a href="#91-entrada-y-salida-desde-consola"><img src="https://img.shields.io/badge/9.1.%20Entrada/Salida%20desde%20Consola-96bf44"></a>
+<a href="#92-entrada-y-salida-desde-fichero"><img src="https://img.shields.io/badge/9.2.%20Entrada/Salida%20desde%20Fichero-96bf44"></a>
+
+---
+
+### 🧠 **Memoria Dinámica**
+
+<a href="#tema-10---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.%20Asignación%20Dinámica%20de%20Memoria-787a77"></a>
+<a href="#101-reserva-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.1.%20Reserva%20Dinámica-96bf44"></a>
+<a href="#102-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.2.%20Liberación%20Dinámica-96bf44"></a>
+<a href="#103-ejemplo-de-asignación-y-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.3.%20Ejemplo%20Práctico-96bf44"></a>
+
+---
+
+### 📌 **Apéndices**
+
+<a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del"><img src="https://img.shields.io/badge/A.%20Apéndices-787a77"></a>
+<a href="#a1-funciones-de-entrada-y-salida-de-datos"><img src="https://img.shields.io/badge/A.1.%20Funciones%20de%20Biblioteca%20ANSI%20C-96bf44"></a>
+<a href="#a2---funciones-de-caracteres-ctypeh"><img src="https://img.shields.io/badge/A.2.%20Funciones%20de%20caracteres-96bf44"></a>
+<a href="#a3---funciones-de-cadenas-stringh"><img src="https://img.shields.io/badge/A.3.%20Funciones%20de%20cadenas%20(<string.h>)-96bf44"></a>
+<a href="#a4---funciones-matemáticas"><img src="https://img.shields.io/badge/A.4.%20Funciones%20Matemáticas-96bf44"></a>
+<a href="#a5---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/A.5.%20Asignación%20dinámica%20de%20memoria-96bf44"></a>
+<a href="#a6---funciones-varias"><img src="https://img.shields.io/badge/A.6.%20Funciones%20varias-96bf44"></a>
 
 ---
 
