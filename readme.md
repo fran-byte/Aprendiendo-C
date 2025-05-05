@@ -74,7 +74,7 @@
 
 ### 🧱 **Estructuras y Tipos Compuestos**
 
-<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="52%"></a><br>
+<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="54%"></a><br>
 <a href="#71-estructuras"><img src="https://img.shields.io/badge/7.1.%20Estructuras-0b9000"></a>
 <a href="#72-campos-de-bit"><img src="https://img.shields.io/badge/7.2.%20Campos%20de%20Bit-0b9000"></a>
 <a href="#73-uniones"><img src="https://img.shields.io/badge/7.3.%20Uniones-0b9000"></a><br>
