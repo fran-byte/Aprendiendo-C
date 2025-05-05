@@ -86,12 +86,12 @@
 ### ⚙️ **Preprocesador**
 
 <a href="#tema-8---el-preprocesador"><img src="https://img.shields.io/badge/8.%20El%20Preprocesador-787a77"></a><br>
-<a href="#81-directiva-define"><img src="https://img.shields.io/badge/8.1.%20Directiva%20#define-96bf44"></a>
-<a href="#82-directiva-undef"><img src="https://img.shields.io/badge/8.2.%20Directiva%20#undef-96bf44"></a>
-<a href="#83-directiva-error"><img src="https://img.shields.io/badge/8.3.%20Directiva%20#error-96bf447"></a>
-<a href="#84-directiva-include"><img src="https://img.shields.io/badge/8.4.%20Directiva%20#include-96bf44"></a>
+<a href="#81-directiva-define"><img src="https://img.shields.io/badge/8.1.%20Directiva%20define-96bf44"></a>
+<a href="#82-directiva-undef"><img src="https://img.shields.io/badge/8.2.%20Directiva%20undef-96bf44"></a>
+<a href="#83-directiva-error"><img src="https://img.shields.io/badge/8.3.%20Directiva%20error-96bf447"></a>
+<a href="#84-directiva-include"><img src="https://img.shields.io/badge/8.4.%20Directiva%20include-96bf44"></a>
 <a href="#85-directivas-if-ifdef-ifndef-else-elif-endif"><img src="https://img.shields.io/badge/8.5.%20Directivas%20Condicionales-96bf44"></a>
-<a href="#86-directiva-line"><img src="https://img.shields.io/badge/8.6.%20Directiva%20#line-96bf44"></a>
+<a href="#86-directiva-line"><img src="https://img.shields.io/badge/8.6.%20Directiva%20line-96bf44"></a>
 <a href="#87-directiva-pragma"><img src="https://img.shields.io/badge/8.7.%20Directiva%20#pragma-96bf447"></a>
 
 ---
