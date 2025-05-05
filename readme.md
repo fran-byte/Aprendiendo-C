@@ -74,7 +74,7 @@
 
 ### 🧱 **Estructuras y Tipos Compuestos**
 
-<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="59%"></a><br>
+<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="60%"></a><br>
 <a href="#71-estructuras"><img src="https://img.shields.io/badge/7.1.%20Estructuras-0b9000"></a>
 <a href="#72-campos-de-bit"><img src="https://img.shields.io/badge/7.2.%20Campos%20de%20Bit-0b9000"></a>
 <a href="#73-uniones"><img src="https://img.shields.io/badge/7.3.%20Uniones-0b9000"></a><br>
@@ -115,14 +115,14 @@
 
 ### 📌 **Apéndices**
 
-<a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del-est%C3%A1ndar-ansi-de-c"><img src="https://img.shields.io/badge/A.%20Apéndices-dedede" width="25%"></a><br>
+<a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del-est%C3%A1ndar-ansi-de-c"><img src="https://img.shields.io/badge/A.%20Apéndices-dedede" width="20%"></a><br>
 <a href="#a1-funciones-de-entrada-y-salida-de-datos"><img src="https://img.shields.io/badge/A.1.%20Funciones%20de%20Biblioteca%20ANSI%20C-0b9000"></a>
 <a href="#a2---funciones-de-caracteres-ctypeh"><img src="https://img.shields.io/badge/A.2.%20Funciones%20de%20caracteres-0b9000"></a>
 <a href="#a3---funciones-de-cadenas-stringh"><img src="https://img.shields.io/badge/A.3.%20Funciones%20de%20cadenas%20(<string.h>)-0b9000"></a><br>
 <a href="#a4---funciones-matemáticas"><img src="https://img.shields.io/badge/A.4.%20Funciones%20Matemáticas-0b9000"></a>
 <a href="#a5---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/A.5.%20Asignación%20dinámica%20de%20memoria-0b9000"></a>
 <a href="#a6---funciones-varias"><img src="https://img.shields.io/badge/A.6.%20Funciones%20varias-0b9000"></a><br><br>
-<a href="#ap%C3%A9ndice-b-ejemplos-de-programas-en-c"><img src="https://img.shields.io/badge/B.%20Apéndices%20Ejemplos%20de%20programas-dedede" width="50%"></a><br>
+<a href="#ap%C3%A9ndice-b-ejemplos-de-programas-en-c"><img src="https://img.shields.io/badge/B.%20Apéndices%20Ejemplos%20de%20programas-dedede" width="55%"></a><br>
 
 ---
 
