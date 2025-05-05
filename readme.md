@@ -472,6 +472,8 @@ Las constantes de barra invertida pueden usarse en el interior de constantes de 
 
 ## 2.1.- Operadores aritméticos.
 
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
 Los operadores aritméticos existentes en C son, ordenados de mayor a menor precedencia:
 
 
@@ -630,6 +632,7 @@ Ejecutará las funciones `f1()` y `f2()` si `t` es distinto de cero, y la funci�
 
 ## 3.1.- Conversión automática de tipos de datos.
 
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 El lenguaje C permite que en una misma expresión aparezcan diferentes tipos de datos, encargándose el compilador de realizar las operaciones de forma correcta. El compilador del lenguaje C, cuando en una misma expresión aparecen dos o más tipos de datos, convierte todos los operandos al tipo del operando más grande existente de acuerdo con las dos reglas siguientes:
 
@@ -704,6 +707,8 @@ Esta conversión forzada obliga a convertir la variable *a* en *float*, y entonc
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 ## 4.1. Sentencia de control if.
+
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Antes de empezar a explicar las sentencias de control del lenguaje C, conviene explicar los conceptos de verdadero/falso y de sentencia que posee el lenguaje C.
 
@@ -1040,6 +1045,8 @@ Aquí, si el número `x` es impar (es decir, si `x % 2` es distinto de 0), el `c
 
 ## 5.1. Arrays y cadenas.
 
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
 En C, un array unidimensional se declara como:
 
 ```c
@@ -1298,6 +1305,8 @@ Este concepto de puntero a puntero podría extenderse a punteros a punteros a pu
 
 ## Tema 6 - Funciones
 
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
 El formato general de una función en C es:
 
 ```c
@@ -1482,6 +1491,8 @@ En este ejemplo, vemos que el cambio realizado en `array[5]` se refleja correcta
 ---
 
 ## 6.4. Argumentos de la función `main`
+
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 La función `main()`, como toda función de C, acepta argumentos. Los argumentos que acepta la función `main()` son un entero (`int argc`), un array de punteros a strings (`char *argv[]`), y otro array de punteros a strings (`char *env[]`). Aunque los nombres de estos argumentos no tienen por qué ser `argc`, `argv`, y `env`, en toda la literatura de C se usan esos nombres y, por lo tanto, los respetaremos en este caso.
 
