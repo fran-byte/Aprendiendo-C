@@ -21,7 +21,7 @@
 
 ### ➕ **Operadores**
 
-<a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-"><img src="https://img.shields.io/badge/2.%20Operadores-dedede" width="50%"></a><br>
+<a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-"><img src="https://img.shields.io/badge/2.%20Operadores-dedede" width="25%"></a><br>
 <a href="#21--operadores-aritm%C3%A9ticos"><img src="https://img.shields.io/badge/2.1.%20Operadores%20Aritm%C3%A9ticos-0b9000"></a>
 <a href="#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos"><img src="https://img.shields.io/badge/2.2.%20Operadores%20Relacionales%20y%20L%C3%B3gicos-0b9000"></a>
 <a href="#23--operador-asignaci%C3%B3n"><img src="https://img.shields.io/badge/2.3.%20Operador%20Asignaci%C3%B3n-0b9000"></a><br>
@@ -61,7 +61,7 @@
 
 ### 🛠️ **Funciones**
 
-<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="50%"></a><br>
+<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="25%"></a><br>
 <a href="#61-la-sentencia-return"><img src="https://img.shields.io/badge/6.1.%20Sentencia%20return-0b9000"></a>
 <a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia"><img src="https://img.shields.io/badge/6.2.%20Argumentos%20de%20Funciones-0b9000"></a>
 <a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-0b9000"></a><br>
@@ -85,7 +85,7 @@
 
 ### ⚙️ **Preprocesador**
 
-<a href="#tema-8---el-preprocesador"><img src="https://img.shields.io/badge/8.%20El%20Preprocesador-dedede" width="50%"></a><br>
+<a href="#tema-8---el-preprocesador"><img src="https://img.shields.io/badge/8.%20El%20Preprocesador-dedede" width="24%"></a><br>
 <a href="#81-directiva-define"><img src="https://img.shields.io/badge/8.1.%20Directiva%20define-0b9000"></a>
 <a href="#82-directiva-undef"><img src="https://img.shields.io/badge/8.2.%20Directiva%20undef-0b9000"></a>
 <a href="#83-directiva-error"><img src="https://img.shields.io/badge/8.3.%20Directiva%20error-0b9000"></a>
@@ -115,7 +115,7 @@
 
 ### 📌 **Apéndices**
 
-<a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del-est%C3%A1ndar-ansi-de-c"><img src="https://img.shields.io/badge/A.%20Apéndices-dedede" width="50%"></a><br>
+<a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del-est%C3%A1ndar-ansi-de-c"><img src="https://img.shields.io/badge/A.%20Apéndices-dedede" width="25%"></a><br>
 <a href="#a1-funciones-de-entrada-y-salida-de-datos"><img src="https://img.shields.io/badge/A.1.%20Funciones%20de%20Biblioteca%20ANSI%20C-0b9000"></a>
 <a href="#a2---funciones-de-caracteres-ctypeh"><img src="https://img.shields.io/badge/A.2.%20Funciones%20de%20caracteres-0b9000"></a>
 <a href="#a3---funciones-de-cadenas-stringh"><img src="https://img.shields.io/badge/A.3.%20Funciones%20de%20cadenas%20(<string.h>)-0b9000"></a><br>
