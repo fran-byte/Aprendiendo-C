@@ -254,7 +254,7 @@ int a;
 
 ## 1.1. - Tipos de datos
 
-
+ [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 |**Tipo de dato**|**Descripción.**|
 | - | - |
