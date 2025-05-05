@@ -2557,6 +2557,8 @@ Las funciones que realizan un manejo activo de la memoria del sistema requieren 
 
 ## 10.1. Reserva dinámica de memoria
 
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
 En C, la **reserva dinámica de memoria** se realiza mediante funciones específicas. Aunque existen varias (ver Apéndice A), aquí se explicará únicamente el uso de la función `*malloc()*`.
 
 La declaración de `malloc()` es:
