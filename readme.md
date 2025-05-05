@@ -2,9 +2,6 @@
 
 
 
- <a href="#id-link"><img src="https://img.shields.io/badge/Resumen%20Comados%20Unix-787a77"></a>
----
-¡Claro! Aquí tienes el índice con el formato que deseas, utilizando las líneas con imágenes de shields.io para hacerlo más estrecho verticalmente:
 
 ### 🔑 **Palabras clave y fundamentos**
 
