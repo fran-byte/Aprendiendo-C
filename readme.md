@@ -2600,6 +2600,8 @@ if ((d = (struct ALFA *)malloc(sizeof(struct ALFA))) == NULL)
 
 ## 10.2. Liberación dinámica de memoria
 
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
+
 La memoria reservada dinámicamente se libera automáticamente al finalizar el programa. Sin embargo, puede ser necesario liberarla antes, durante la ejecución. Para ello se usa la función `free()`:
 
 ```c
@@ -2623,6 +2625,8 @@ free(a);
 ---
 
 ## 10.3. Ejemplo de asignación y liberación dinámica de memoria
+
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 Vamos a implementar una lista ligada (linked list) de forma dinámica. Primero definimos la estructura:
 
@@ -2985,6 +2989,8 @@ int printf(const char *formato, ...);
 Imprime datos en `stdout` (pantalla). Devuelve número de caracteres escritos, o valor negativo en error.
 
 #### Especificadores de formato:
+
+[![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 | Código | Significado                  |
 | ------ | ---------------------------- |
