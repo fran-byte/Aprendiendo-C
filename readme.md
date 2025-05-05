@@ -1869,7 +1869,7 @@ El preprocesador, definido por el standard ANSI de C, contiene las siguientes di
 |#elif|#endif|#include|#define|
 |#undef|#line|#error|#pragma|
 
-*Tabla 9.1: Directivas del preprocesador en C.*
+*Tabla 8.1: Directivas del preprocesador en C.*
 
 
 ## 8.1. Directiva `#define`.
