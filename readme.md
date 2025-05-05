@@ -1,7 +1,7 @@
 # <img src="images/C_Logo.png"/> Programando en C - Material didáctico
 
 
-<a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c"><img src="https://img.shields.io/badge/0.%20Palabras%20reservadas%20en%20C-dedede"  width="34%"></a> 🔑
+<a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c"><img src="https://img.shields.io/badge/0.%20Palabras%20reservadas%20en%20C-dedede"  width="34%"></a>
 
 <a href="#1--identificadores-tipos-de-datos-variables"><img src="https://img.shields.io/badge/1.%20Identificadores,%20Tipos%20de%20Datos,%20Variables-dedede"  width="50%"></a><br>
 <a href="#11---tipos-de-datos"><img src="https://img.shields.io/badge/1.1.%20Tipos%20de%20Datos-0b9000"></a>
