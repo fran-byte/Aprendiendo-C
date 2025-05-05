@@ -7,7 +7,7 @@
 
 <a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c"><img src="https://img.shields.io/badge/0.%20Palabras%20reservadas%20en%20C-96bf44"></a>
 
----
+
 
 ### 📦 **Variables y Tipos de Datos**
 
@@ -17,7 +17,7 @@
 <a href="#13--especificadores-de-almacenamiento-de-los-tipos-de-datos"><img src="https://img.shields.io/badge/1.3.%20Especificadores%20de%20Almacenamiento-96bf44"></a>
 <a href="#14--constantes"><img src="https://img.shields.io/badge/1.4.%20Constantes-96bf44"></a>
 
----
+
 
 ### ➕ **Operadores**
 
@@ -29,7 +29,7 @@
 <a href="#25--operadores-sobre-bits"><img src="https://img.shields.io/badge/2.5.%20Operadores%20sobre%20Bits-96bf44"></a>
 <a href="#26--el-operador-"><img src="https://img.shields.io/badge/2.6.%20Operador%20Ternario-96bf44"></a>
 
----
+
 
 ### 🔁 **Conversión de Tipos**
 
@@ -37,7 +37,7 @@
 <a href="#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.1.%20Conversión%20Automática-96bf44"></a>
 <a href="#32--conversi%C3%B3n-forzada-de-tipos-datos"><img src="https://img.shields.io/badge/3.2.%20Conversión%20Forzada-96bf44"></a>
 
----
+
 
 ### 🧩 **Control de Flujo**
 
@@ -49,7 +49,7 @@
 <a href="#45-bucle-dowhile"><img src="https://img.shields.io/badge/4.5.%20Bucle%20do/while-96bf44"></a>
 <a href="#46-sentencias-de-control-break-y-continue-"><img src="https://img.shields.io/badge/4.6.%20Sentencias%20break%20y%20continue-96bf44"></a>
 
----
+
 
 ### 🧵 **Arrays, Cadenas y Punteros**
 
@@ -57,7 +57,7 @@
 <a href="#51-arrays-y-cadenas"><img src="https://img.shields.io/badge/5.1.%20Arrays%20y%20Cadenas-96bf44"></a>
 <a href="#52-punteros"><img src="https://img.shields.io/badge/5.2.%20Punteros-96bf44"></a>
 
----
+
 
 ### 🛠️ **Funciones**
 
@@ -70,7 +70,7 @@
 <a href="#66punteros-a-funciones"><img src="https://img.shields.io/badge/6.6.%20Punteros%20a%20Funciones-96bf44"></a>
 <a href="#67-el-modificador-de-almacenamiento-static-aplicado-a-funciones"><img src="https://img.shields.io/badge/6.7.%20static%20en%20Funciones-96bf44"></a>
 
----
+
 
 ### 🧱 **Estructuras y Tipos Compuestos**
 
@@ -81,7 +81,7 @@
 <a href="#74enumeraciones"><img src="https://img.shields.io/badge/7.4.%20Enumeraciones-96bf44"></a>
 <a href="#75la-palabra-reservada-typedef"><img src="https://img.shields.io/badge/7.5.%20typedef-96bf44"></a>
 
----
+
 
 ### ⚙️ **Preprocesador**
 
@@ -94,7 +94,7 @@
 <a href="#86-directiva-line"><img src="https://img.shields.io/badge/8.6.%20Directiva%20line-96bf44"></a>
 <a href="#87-directiva-pragma"><img src="https://img.shields.io/badge/8.7.%20Directiva%20pragma-96bf447"></a>
 
----
+
 
 ### 📥 **Entrada y Salida**
 
@@ -102,7 +102,7 @@
 <a href="#91-entrada-y-salida-desde-consola"><img src="https://img.shields.io/badge/9.1.%20Entrada/Salida%20desde%20Consola-96bf44"></a>
 <a href="#92-entrada-y-salida-desde-fichero"><img src="https://img.shields.io/badge/9.2.%20Entrada/Salida%20desde%20Fichero-96bf44"></a>
 
----
+
 
 ### 🧠 **Memoria Dinámica**
 
@@ -111,7 +111,7 @@
 <a href="#102-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.2.%20Liberación%20Dinámica-96bf44"></a>
 <a href="#103-ejemplo-de-asignación-y-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.3.%20Ejemplo%20Práctico-96bf44"></a>
 
----
+
 
 ### 📌 **Apéndices**
 
