@@ -5,7 +5,7 @@
 
 ### 🔑 **Palabras clave y fundamentos**
 
-<a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c"><img src="https://img.shields.io/badge/0.%20Palabras%20reservadas%20en%20C-dedede"  width="50%"></a>
+<a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c"><img src="https://img.shields.io/badge/0.%20Palabras%20reservadas%20en%20C-dedede"  width="40%"></a>
 
 
 
