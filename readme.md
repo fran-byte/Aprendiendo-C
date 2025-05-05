@@ -64,8 +64,8 @@
 <a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-787a77"></a><br>
 <a href="#61-la-sentencia-return"><img src="https://img.shields.io/badge/6.1.%20Sentencia%20return-96bf44"></a>
 <a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia"><img src="https://img.shields.io/badge/6.2.%20Argumentos%20de%20Funciones-96bf44"></a>
-<a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-96bf44"></a>
-<a href="#64-argumentos-de-la-función-main"><img src="https://img.shields.io/badge/6.4.%20Argumentos%20de%20main()-96bf44"></a><br>
+<a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-96bf44"></a><br>
+<a href="#64-argumentos-de-la-función-main"><img src="https://img.shields.io/badge/6.4.%20Argumentos%20de%20main()-96bf44"></a>
 <a href="#65-recursividad"><img src="https://img.shields.io/badge/6.5.%20Recursividad-96bf44"></a>
 <a href="#66punteros-a-funciones"><img src="https://img.shields.io/badge/6.6.%20Punteros%20a%20Funciones-96bf44"></a>
 <a href="#67-el-modificador-de-almacenamiento-static-aplicado-a-funciones"><img src="https://img.shields.io/badge/6.7.%20static%20en%20Funciones-96bf44"></a>
