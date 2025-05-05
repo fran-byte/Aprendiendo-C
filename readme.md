@@ -36,7 +36,7 @@
 <a href="#51-arrays-y-cadenas"><img src="https://img.shields.io/badge/5.1.%20Arrays%20y%20Cadenas-0b9000"></a>
 <a href="#52-punteros"><img src="https://img.shields.io/badge/5.2.%20Punteros-0b9000"></a>
 
-<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="16%"></a> 🛠️<br>
+<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="16%"></a><br>
 <a href="#61-la-sentencia-return"><img src="https://img.shields.io/badge/6.1.%20Sentencia%20return-0b9000"></a>
 <a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia"><img src="https://img.shields.io/badge/6.2.%20Argumentos%20de%20Funciones-0b9000"></a>
 <a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-0b9000"></a><br>
