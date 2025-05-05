@@ -98,7 +98,7 @@
 
 ### 📥 **Entrada y Salida**
 
-<a href="#tema-9---entrada-y-salida"><img src="https://img.shields.io/badge/9.%20Entrada%20y%20Salida-dedede" width="18%"></a><br>
+<a href="#tema-9---entrada-y-salida"><img src="https://img.shields.io/badge/9.%20Entrada%20y%20Salida-dedede" width="21%"></a><br>
 <a href="#91-entrada-y-salida-desde-consola"><img src="https://img.shields.io/badge/9.1.%20Entrada/Salida%20desde%20Consola-0b9000"></a>
 <a href="#92-entrada-y-salida-desde-fichero"><img src="https://img.shields.io/badge/9.2.%20Entrada/Salida%20desde%20Fichero-0b9000"></a>
 
@@ -106,7 +106,7 @@
 
 ### 🧠 **Memoria Dinámica**
 
-<a href="#tema-10---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.%20Asignación%20Dinámica%20de%20Memoria-dedede" width="50%"></a><br>
+<a href="#tema-10---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.%20Asignación%20Dinámica%20de%20Memoria-dedede" width="40%"></a><br>
 <a href="#101-reserva-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.1.%20Reserva%20Dinámica-0b9000"></a>
 <a href="#102-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.2.%20Liberación%20Dinámica-0b9000"></a>
 <a href="#103-ejemplo-de-asignación-y-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.3.%20Ejemplo%20Práctico-0b9000"></a>
