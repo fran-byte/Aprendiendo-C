@@ -92,7 +92,7 @@
 <a href="#84-directiva-include"><img src="https://img.shields.io/badge/8.4.%20Directiva%20include-96bf44"></a>
 <a href="#85-directivas-if-ifdef-ifndef-else-elif-endif"><img src="https://img.shields.io/badge/8.5.%20Directivas%20Condicionales-96bf44"></a>
 <a href="#86-directiva-line"><img src="https://img.shields.io/badge/8.6.%20Directiva%20line-96bf44"></a>
-<a href="#87-directiva-pragma"><img src="https://img.shields.io/badge/8.7.%20Directiva%20#pragma-96bf447"></a>
+<a href="#87-directiva-pragma"><img src="https://img.shields.io/badge/8.7.%20Directiva%20pragma-96bf447"></a>
 
 ---
 
