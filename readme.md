@@ -31,7 +31,7 @@
 
 
 
-### 🔁 **Conversión de Tipos**
+### ↔️ **Conversión de Tipos**
 
 <a href="#3---conversi%C3%B3n-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.%20Conversión%20de%20Tipos%20de%20Datos-787a77"></a><br>
 <a href="#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.1.%20Conversión%20Automática-96bf44"></a>
