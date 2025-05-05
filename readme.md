@@ -41,7 +41,7 @@
 
 ### 🧩 **Control de Flujo**
 
-<a href="#4---sentencias-de-control-y-bucles"><img src="https://img.shields.io/badge/4.%20Sentencias%20de%20Control%20y%20Bucles-dedede" width="38%"></a><br>
+<a href="#4---sentencias-de-control-y-bucles"><img src="https://img.shields.io/badge/4.%20Sentencias%20de%20Control%20y%20Bucles-dedede" width="39%"></a><br>
 <a href="#41-sentencia-de-control-if"><img src="https://img.shields.io/badge/4.1.%20Sentencia%20if-0b9000"></a>
 <a href="#42-sentencia-de-control-switch"><img src="https://img.shields.io/badge/4.2.%20Sentencia%20switch-0b9000"></a>
 <a href="#43-bucle-for"><img src="https://img.shields.io/badge/4.3.%20Bucle%20for-0b9000"></a><br>
@@ -53,7 +53,7 @@
 
 ### 🧵 **Arrays, Cadenas y Punteros**
 
-<a href="#tema-5---arrays-cadenas-y-punteros"><img src="https://img.shields.io/badge/5.%20Arrays,%20Cadenas%20y%20Punteros-dedede" width="35%"></a><br>
+<a href="#tema-5---arrays-cadenas-y-punteros"><img src="https://img.shields.io/badge/5.%20Arrays,%20Cadenas%20y%20Punteros-dedede" width="36%"></a><br>
 <a href="#51-arrays-y-cadenas"><img src="https://img.shields.io/badge/5.1.%20Arrays%20y%20Cadenas-0b9000"></a>
 <a href="#52-punteros"><img src="https://img.shields.io/badge/5.2.%20Punteros-0b9000"></a>
 
@@ -61,7 +61,7 @@
 
 ### 🛠️ **Funciones**
 
-<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="25%"></a><br>
+<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="18%"></a><br>
 <a href="#61-la-sentencia-return"><img src="https://img.shields.io/badge/6.1.%20Sentencia%20return-0b9000"></a>
 <a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia"><img src="https://img.shields.io/badge/6.2.%20Argumentos%20de%20Funciones-0b9000"></a>
 <a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-0b9000"></a><br>
