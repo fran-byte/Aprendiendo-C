@@ -121,7 +121,8 @@
 <a href="#a3---funciones-de-cadenas-stringh"><img src="https://img.shields.io/badge/A.3.%20Funciones%20de%20cadenas%20(<string.h>)-0b9000"></a><br>
 <a href="#a4---funciones-matemáticas"><img src="https://img.shields.io/badge/A.4.%20Funciones%20Matemáticas-0b9000"></a>
 <a href="#a5---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/A.5.%20Asignación%20dinámica%20de%20memoria-0b9000"></a>
-<a href="#a6---funciones-varias"><img src="https://img.shields.io/badge/A.6.%20Funciones%20varias-0b9000"></a>
+<a href="#a6---funciones-varias"><img src="https://img.shields.io/badge/A.6.%20Funciones%20varias-0b9000"></a><br><br>
+<a href="#ap%C3%A9ndice-b-ejemplos-de-programas-en-c"><img src="https://img.shields.io/badge/B.%20Apéndices-dedede"></a><br>
 
 ---
 
