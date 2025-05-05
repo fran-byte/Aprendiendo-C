@@ -680,7 +680,7 @@ Y por último, realizamos la resta final, siendo los dos operandos de tipo `doub
 
  [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
-En C, existe, además, de la conversión automática de tipos de datos, la posibilidad de forzar la conversión de un tipo de datos en otro tipo de datos. Esta conversión de un tipo de datos en otro se llama “casts”, y su sintaxis es:
+En C, existe, además, de la conversión automática de tipos de datos, la posibilidad de forzar la conversión de un tipo de datos en otro tipo de datos. Esta conversión de un tipo de datos en otro se llama **“casts”** Nosotros decimos comunmente **"casteos"**, y su sintaxis es:
 
 (tipo)expresión
 
