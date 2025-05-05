@@ -21,7 +21,7 @@
 
 ### ➕ **Operadores**
 
-<a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-"><img src="https://img.shields.io/badge/2.%20Operadores-dedede" width="25%"></a><br>
+<a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-"><img src="https://img.shields.io/badge/2.%20Operadores-dedede" width="18%"></a><br>
 <a href="#21--operadores-aritm%C3%A9ticos"><img src="https://img.shields.io/badge/2.1.%20Operadores%20Aritm%C3%A9ticos-0b9000"></a>
 <a href="#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos"><img src="https://img.shields.io/badge/2.2.%20Operadores%20Relacionales%20y%20L%C3%B3gicos-0b9000"></a>
 <a href="#23--operador-asignaci%C3%B3n"><img src="https://img.shields.io/badge/2.3.%20Operador%20Asignaci%C3%B3n-0b9000"></a><br>
