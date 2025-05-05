@@ -33,7 +33,7 @@
 
 ### ↔️ **Conversión de Tipos**
 
-<a href="#3---conversi%C3%B3n-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.%20Conversión%20de%20Tipos%20de%20Datos-dedede" width="42%"></a><br>
+<a href="#3---conversi%C3%B3n-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.%20Conversión%20de%20Tipos%20de%20Datos-dedede" width="40%"></a><br>
 <a href="#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.1.%20Conversión%20Automática-0b9000"></a>
 <a href="#32--conversi%C3%B3n-forzada-de-tipos-datos"><img src="https://img.shields.io/badge/3.2.%20Conversión%20Forzada-0b9000"></a>
 
@@ -41,7 +41,7 @@
 
 ### 🧩 **Control de Flujo**
 
-<a href="#4---sentencias-de-control-y-bucles"><img src="https://img.shields.io/badge/4.%20Sentencias%20de%20Control%20y%20Bucles-dedede" width="42%"></a><br>
+<a href="#4---sentencias-de-control-y-bucles"><img src="https://img.shields.io/badge/4.%20Sentencias%20de%20Control%20y%20Bucles-dedede" width="40%"></a><br>
 <a href="#41-sentencia-de-control-if"><img src="https://img.shields.io/badge/4.1.%20Sentencia%20if-0b9000"></a>
 <a href="#42-sentencia-de-control-switch"><img src="https://img.shields.io/badge/4.2.%20Sentencia%20switch-0b9000"></a>
 <a href="#43-bucle-for"><img src="https://img.shields.io/badge/4.3.%20Bucle%20for-0b9000"></a><br>
@@ -53,7 +53,7 @@
 
 ### 🧵 **Arrays, Cadenas y Punteros**
 
-<a href="#tema-5---arrays-cadenas-y-punteros"><img src="https://img.shields.io/badge/5.%20Arrays,%20Cadenas%20y%20Punteros-dedede" width="45%"></a><br>
+<a href="#tema-5---arrays-cadenas-y-punteros"><img src="https://img.shields.io/badge/5.%20Arrays,%20Cadenas%20y%20Punteros-dedede" width="41%"></a><br>
 <a href="#51-arrays-y-cadenas"><img src="https://img.shields.io/badge/5.1.%20Arrays%20y%20Cadenas-0b9000"></a>
 <a href="#52-punteros"><img src="https://img.shields.io/badge/5.2.%20Punteros-0b9000"></a>
 
