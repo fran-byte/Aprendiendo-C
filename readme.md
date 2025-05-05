@@ -11,7 +11,7 @@
 
 ### 📦 **Variables y Tipos de Datos**
 
-<a href="#1--identificadores-tipos-de-datos-variables"><img src="https://img.shields.io/badge/1.%20Identificadores,%20Tipos%20de%20Datos,%20Variables-dedede"></a><br>
+<a href="#1--identificadores-tipos-de-datos-variables"><img src="https://img.shields.io/badge/1.%20Identificadores,%20Tipos%20de%20Datos,%20Variables-dedede"  width="110%"></a><br>
 <a href="#11---tipos-de-datos"><img src="https://img.shields.io/badge/1.1.%20Tipos%20de%20Datos-0b9000"></a>
 <a href="#12--declaración-de-variables-y-alcance"><img src="https://img.shields.io/badge/1.2.%20Declaración%20de%20Variables%20y%20Alcance-0b9000"></a><br>
 <a href="#13--especificadores-de-almacenamiento-de-los-tipos-de-datos"><img src="https://img.shields.io/badge/1.3.%20Especificadores%20de%20Almacenamiento-0b9000"></a>
