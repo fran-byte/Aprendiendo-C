@@ -13,7 +13,7 @@
 
 <a href="#1--identificadores-tipos-de-datos-variables"><img src="https://img.shields.io/badge/1.%20Identificadores,%20Tipos%20de%20Datos,%20Variables-787a77"></a><br>
 <a href="#11---tipos-de-datos"><img src="https://img.shields.io/badge/1.1.%20Tipos%20de%20Datos-96bf44"></a>
-<a href="#12--declaración-de-variables-y-alcance"><img src="https://img.shields.io/badge/1.2.%20Declaración%20de%20Variables%20y%20Alcance-96bf44"></a>
+<a href="#12--declaración-de-variables-y-alcance"><img src="https://img.shields.io/badge/1.2.%20Declaración%20de%20Variables%20y%20Alcance-96bf44"></a><br>
 <a href="#13--especificadores-de-almacenamiento-de-los-tipos-de-datos"><img src="https://img.shields.io/badge/1.3.%20Especificadores%20de%20Almacenamiento-96bf44"></a>
 <a href="#14--constantes"><img src="https://img.shields.io/badge/1.4.%20Constantes-96bf44"></a>
 
@@ -24,7 +24,7 @@
 <a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-"><img src="https://img.shields.io/badge/2.%20Operadores-787a77"></a><br>
 <a href="#21--operadores-aritm%C3%A9ticos"><img src="https://img.shields.io/badge/2.1.%20Operadores%20Aritm%C3%A9ticos-96bf44"></a>
 <a href="#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos"><img src="https://img.shields.io/badge/2.2.%20Operadores%20Relacionales%20y%20L%C3%B3gicos-96bf44"></a>
-<a href="#23--operador-asignaci%C3%B3n"><img src="https://img.shields.io/badge/2.3.%20Operador%20Asignaci%C3%B3n-96bf44"></a>
+<a href="#23--operador-asignaci%C3%B3n"><img src="https://img.shields.io/badge/2.3.%20Operador%20Asignaci%C3%B3n-96bf44"></a><br>
 <a href="#24--operador-sizeof"><img src="https://img.shields.io/badge/2.4.%20Operador%20sizeof-96bf44"></a>
 <a href="#25--operadores-sobre-bits"><img src="https://img.shields.io/badge/2.5.%20Operadores%20sobre%20Bits-96bf44"></a>
 <a href="#26--el-operador-"><img src="https://img.shields.io/badge/2.6.%20Operador%20Ternario-96bf44"></a>
@@ -44,7 +44,7 @@
 <a href="#4---sentencias-de-control-y-bucles"><img src="https://img.shields.io/badge/4.%20Sentencias%20de%20Control%20y%20Bucles-787a77"></a><br>
 <a href="#41-sentencia-de-control-if"><img src="https://img.shields.io/badge/4.1.%20Sentencia%20if-96bf44"></a>
 <a href="#42-sentencia-de-control-switch"><img src="https://img.shields.io/badge/4.2.%20Sentencia%20switch-96bf44"></a>
-<a href="#43-bucle-for"><img src="https://img.shields.io/badge/4.3.%20Bucle%20for-96bf44"></a>
+<a href="#43-bucle-for"><img src="https://img.shields.io/badge/4.3.%20Bucle%20for-96bf44"></a><br>
 <a href="#44--bucle-while"><img src="https://img.shields.io/badge/4.4.%20Bucle%20while-96bf44"></a>
 <a href="#45-bucle-dowhile"><img src="https://img.shields.io/badge/4.5.%20Bucle%20do/while-96bf44"></a>
 <a href="#46-sentencias-de-control-break-y-continue-"><img src="https://img.shields.io/badge/4.6.%20Sentencias%20break%20y%20continue-96bf44"></a>
@@ -65,7 +65,7 @@
 <a href="#61-la-sentencia-return"><img src="https://img.shields.io/badge/6.1.%20Sentencia%20return-96bf44"></a>
 <a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia"><img src="https://img.shields.io/badge/6.2.%20Argumentos%20de%20Funciones-96bf44"></a>
 <a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-96bf44"></a>
-<a href="#64-argumentos-de-la-función-main"><img src="https://img.shields.io/badge/6.4.%20Argumentos%20de%20main()-96bf44"></a>
+<a href="#64-argumentos-de-la-función-main"><img src="https://img.shields.io/badge/6.4.%20Argumentos%20de%20main()-96bf44"></a><br>
 <a href="#65-recursividad"><img src="https://img.shields.io/badge/6.5.%20Recursividad-96bf44"></a>
 <a href="#66punteros-a-funciones"><img src="https://img.shields.io/badge/6.6.%20Punteros%20a%20Funciones-96bf44"></a>
 <a href="#67-el-modificador-de-almacenamiento-static-aplicado-a-funciones"><img src="https://img.shields.io/badge/6.7.%20static%20en%20Funciones-96bf44"></a>
@@ -77,7 +77,7 @@
 <a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-787a77"></a><br>
 <a href="#71-estructuras"><img src="https://img.shields.io/badge/7.1.%20Estructuras-96bf44"></a>
 <a href="#72-campos-de-bit"><img src="https://img.shields.io/badge/7.2.%20Campos%20de%20Bit-96bf44"></a>
-<a href="#73-uniones"><img src="https://img.shields.io/badge/7.3.%20Uniones-96bf44"></a>
+<a href="#73-uniones"><img src="https://img.shields.io/badge/7.3.%20Uniones-96bf44"></a><br>
 <a href="#74enumeraciones"><img src="https://img.shields.io/badge/7.4.%20Enumeraciones-96bf44"></a>
 <a href="#75la-palabra-reservada-typedef"><img src="https://img.shields.io/badge/7.5.%20typedef-96bf44"></a>
 
@@ -89,7 +89,7 @@
 <a href="#81-directiva-define"><img src="https://img.shields.io/badge/8.1.%20Directiva%20define-96bf44"></a>
 <a href="#82-directiva-undef"><img src="https://img.shields.io/badge/8.2.%20Directiva%20undef-96bf44"></a>
 <a href="#83-directiva-error"><img src="https://img.shields.io/badge/8.3.%20Directiva%20error-96bf447"></a>
-<a href="#84-directiva-include"><img src="https://img.shields.io/badge/8.4.%20Directiva%20include-96bf44"></a>
+<a href="#84-directiva-include"><img src="https://img.shields.io/badge/8.4.%20Directiva%20include-96bf44"></a><br>
 <a href="#85-directivas-if-ifdef-ifndef-else-elif-endif"><img src="https://img.shields.io/badge/8.5.%20Directivas%20Condicionales-96bf44"></a>
 <a href="#86-directiva-line"><img src="https://img.shields.io/badge/8.6.%20Directiva%20line-96bf44"></a>
 <a href="#87-directiva-pragma"><img src="https://img.shields.io/badge/8.7.%20Directiva%20pragma-96bf447"></a>
@@ -118,7 +118,7 @@
 <a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del"><img src="https://img.shields.io/badge/A.%20Apéndices-787a77"></a><br>
 <a href="#a1-funciones-de-entrada-y-salida-de-datos"><img src="https://img.shields.io/badge/A.1.%20Funciones%20de%20Biblioteca%20ANSI%20C-96bf44"></a>
 <a href="#a2---funciones-de-caracteres-ctypeh"><img src="https://img.shields.io/badge/A.2.%20Funciones%20de%20caracteres-96bf44"></a>
-<a href="#a3---funciones-de-cadenas-stringh"><img src="https://img.shields.io/badge/A.3.%20Funciones%20de%20cadenas%20(<string.h>)-96bf44"></a>
+<a href="#a3---funciones-de-cadenas-stringh"><img src="https://img.shields.io/badge/A.3.%20Funciones%20de%20cadenas%20(<string.h>)-96bf44"></a><br>
 <a href="#a4---funciones-matemáticas"><img src="https://img.shields.io/badge/A.4.%20Funciones%20Matemáticas-96bf44"></a>
 <a href="#a5---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/A.5.%20Asignación%20dinámica%20de%20memoria-96bf44"></a>
 <a href="#a6---funciones-varias"><img src="https://img.shields.io/badge/A.6.%20Funciones%20varias-96bf44"></a>
