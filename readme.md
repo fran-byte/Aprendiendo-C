@@ -2,200 +2,93 @@
 
 
 
-
+ <a href="#id-link"><img src="https://img.shields.io/badge/Resumen%20Comados%20Unix-787a77"></a>
 ---
+¡Claro! Aquí tienes el índice con el formato que deseas, utilizando las líneas con imágenes de shields.io para hacerlo más estrecho verticalmente:
 
 ### 🔑 **Palabras clave y fundamentos**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c" style="text-decoration: none;">0. Palabras reservadas en C</a></td>
-    <td>-</td>
-  </tr>
-</table>
+<a href="https://github.com/fran-byte/Learn-C/blob/main/readme.md#0-lista-de-palabras-reservadas-en-c-est%C3%A1ndar-ansi-c--iso-c"><img src="https://img.shields.io/badge/0.%20Palabras%20reservadas%20en%20C-787a77"></a>
 
 ---
 
 ### 📦 **Variables y Tipos de Datos**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#1--identificadores-tipos-de-datos-variables" style="text-decoration: none;">1. Identificadores, Tipos de Datos, Variables</a></td>
-    <td>
-      <a href="#11---tipos-de-datos" style="text-decoration: none;">1.1. Tipos de Datos</a><br>
-      <a href="#12--declaración-de-variables-y-alcance" style="text-decoration: none;">1.2. Declaración de Variables y Alcance</a><br>
-      <a href="#13--especificadores-de-almacenamiento-de-los-tipos-de-datos" style="text-decoration: none;">1.3. Especificadores de Almacenamiento</a><br>
-      <a href="#14--constantes" style="text-decoration: none;">1.4. Constantes</a>
-    </td>
-  </tr>
-</table>
+<a href="#1--identificadores-tipos-de-datos-variables"><img src="https://img.shields.io/badge/1.%20Identificadores,%20Tipos%20de%20Datos,%20Variables-787a77"></a>
+<a href="#11---tipos-de-datos"><img src="https://img.shields.io/badge/1.1.%20Tipos%20de%20Datos-787a77"></a>
+<a href="#12--declaración-de-variables-y-alcance"><img src="https://img.shields.io/badge/1.2.%20Declaración%20de%20Variables%20y%20Alcance-787a77"></a>
+<a href="#13--especificadores-de-almacenamiento-de-los-tipos-de-datos"><img src="https://img.shields.io/badge/1.3.%20Especificadores%20de%20Almacenamiento-787a77"></a>
+<a href="#14--constantes"><img src="https://img.shields.io/badge/1.4.%20Constantes-787a77"></a>
 
 ---
 
 ### ➕ **Operadores**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-" style="text-decoration: none;">2. Operadores</a></td>
-    <td>
-      <a href="#21--operadores-aritm%C3%A9ticos" style="text-decoration: none;">2.1. Operadores Aritméticos</a><br>
-      <a href="#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos" style="text-decoration: none;">2.2. Operadores Relacionales y Lógicos</a><br>
-      <a href="#23--operador-asignaci%C3%B3n" style="text-decoration: none;">2.3. Operador Asignación</a><br>
-      <a href="#24--operador-sizeof" style="text-decoration: none;">2.4. Operador sizeof</a><br>
-      <a href="#25--operadores-sobre-bits" style="text-decoration: none;">2.5. Operadores sobre Bits</a><br>
-      <a href="#26--el-operador-" style="text-decoration: none;">2.6. Operador Ternario</a>
-    </td>
-  </tr>
-</table>
+<a href="#2---operadores-aritm%C3%A9ticos-relaci%C3%B3nales-y-l%C3%B3gicos-operador-asignaci%C3%B3n-operador-sizeof-y-operadores-avanzados-operadores-sobre-bits-y-operador-"><img src="https://img.shields.io/badge/2.%20Operadores-787a77"></a>
+<a href="#21--operadores-aritm%C3%A9ticos"><img src="https://img.shields.io/badge/2.1.%20Operadores%20Aritm%C3%A9ticos-787a77"></a>
+<a href="#22--operadores-relaci%C3%B3nales-y-l%C3%B3gicos"><img src="https://img.shields.io/badge/2.2.%20Operadores%20Relacionales%20y%20L%C3%B3gicos-787a77"></a>
+<a href="#23--operador-asignaci%C3%B3n"><img src="https://img.shields.io/badge/2.3.%20Operador%20Asignaci%C3%B3n-787a77"></a>
+<a href="#24--operador-sizeof"><img src="https://img.shields.io/badge/2.4.%20Operador%20sizeof-787a77"></a>
+<a href="#25--operadores-sobre-bits"><img src="https://img.shields.io/badge/2.5.%20Operadores%20sobre%20Bits-787a77"></a>
+<a href="#26--el-operador-"><img src="https://img.shields.io/badge/2.6.%20Operador%20Ternario-787a77"></a>
 
 ---
 
 ### 🔁 **Conversión de Tipos**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#3---conversi%C3%B3n-de-tipos-de-datos" style="text-decoration: none;">3. Conversión de Tipos de Datos</a></td>
-    <td>
-      <a href="#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos" style="text-decoration: none;">3.1. Conversión Automática</a><br>
-      <a href="#32--conversi%C3%B3n-forzada-de-tipos-datos" style="text-decoration: none;">3.2. Conversión Forzada</a>
-    </td>
-  </tr>
-</table>
+<a href="#3---conversi%C3%B3n-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.%20Conversión%20de%20Tipos%20de%20Datos-787a77"></a>
+<a href="#31--conversi%C3%B3n-autom%C3%A1tica-de-tipos-de-datos"><img src="https://img.shields.io/badge/3.1.%20Conversión%20Automática-787a77"></a>
+<a href="#32--conversi%C3%B3n-forzada-de-tipos-datos"><img src="https://img.shields.io/badge/3.2.%20Conversión%20Forzada-787a77"></a>
 
 ---
 
 ### 🧩 **Control de Flujo**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#4---sentencias-de-control-y-bucles" style="text-decoration: none;">4. Sentencias de Control y Bucles</a></td>
-    <td>
-      <a href="#41-sentencia-de-control-if" style="text-decoration: none;">4.1. Sentencia if</a><br>
-      <a href="#42-sentencia-de-control-switch" style="text-decoration: none;">4.2. Sentencia switch</a><br>
-      <a href="#43-bucle-for" style="text-decoration: none;">4.3. Bucle for</a><br>
-      <a href="#44--bucle-while" style="text-decoration: none;">4.4. Bucle while</a><br>
-      <a href="#45-bucle-dowhile" style="text-decoration: none;">4.5. Bucle do/while</a><br>
-      <a href="#46-sentencias-de-control-break-y-continue-" style="text-decoration: none;">4.6. Sentencias break y continue</a>
-    </td>
-  </tr>
-</table>
+<a href="#4---sentencias-de-control-y-bucles"><img src="https://img.shields.io/badge/4.%20Sentencias%20de%20Control%20y%20Bucles-787a77"></a>
+<a href="#41-sentencia-de-control-if"><img src="https://img.shields.io/badge/4.1.%20Sentencia%20if-787a77"></a>
+<a href="#42-sentencia-de-control-switch"><img src="https://img.shields.io/badge/4.2.%20Sentencia%20switch-787a77"></a>
+<a href="#43-bucle-for"><img src="https://img.shields.io/badge/4.3.%20Bucle%20for-787a77"></a>
+<a href="#44--bucle-while"><img src="https://img.shields.io/badge/4.4.%20Bucle%20while-787a77"></a>
+<a href="#45-bucle-dowhile"><img src="https://img.shields.io/badge/4.5.%20Bucle%20do/while-787a77"></a>
+<a href="#46-sentencias-de-control-break-y-continue-"><img src="https://img.shields.io/badge/4.6.%20Sentencias%20break%20y%20continue-787a77"></a>
 
 ---
 
 ### 🧵 **Arrays, Cadenas y Punteros**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#tema-5---arrays-cadenas-y-punteros" style="text-decoration: none;">5. Arrays, Cadenas y Punteros</a></td>
-    <td>
-      <a href="#51-arrays-y-cadenas" style="text-decoration: none;">5.1. Arrays y Cadenas</a><br>
-      <a href="#52-punteros" style="text-decoration: none;">5.2. Punteros</a>
-    </td>
-  </tr>
-</table>
+<a href="#tema-5---arrays-cadenas-y-punteros"><img src="https://img.shields.io/badge/5.%20Arrays,%20Cadenas%20y%20Punteros-787a77"></a>
+<a href="#51-arrays-y-cadenas"><img src="https://img.shields.io/badge/5.1.%20Arrays%20y%20Cadenas-787a77"></a>
+<a href="#52-punteros"><img src="https://img.shields.io/badge/5.2.%20Punteros-787a77"></a>
 
 ---
 
 ### 🛠️ **Funciones**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#tema-6---funciones" style="text-decoration: none;">6. Funciones</a></td>
-    <td>
-      <a href="#61-la-sentencia-return" style="text-decoration: none;">6.1. Sentencia return</a><br>
-      <a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia" style="text-decoration: none;">6.2. Argumentos de Funciones</a><br>
-      <a href="#63-arrays-como-argumentos-de-funciones" style="text-decoration: none;">6.3. Arrays como Argumentos</a><br>
-      <a href="#64-argumentos-de-la-función-main" style="text-decoration: none;">6.4. Argumentos de main()</a><br>
-      <a href="#65-recursividad" style="text-decoration: none;">6.5. Recursividad</a><br>
-      <a href="#66punteros-a-funciones" style="text-decoration: none;">6.6. Punteros a Funciones</a><br>
-      <a href="#67-el-modificador-de-almacenamiento-static-aplicado-a-funciones" style="text-decoration: none;">6.7. static en Funciones</a>
-    </td>
-  </tr>
-</table>
+<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-787a77"></a>
+<a href="#61-la-sentencia-return"><img src="https://img.shields.io/badge/6.1.%20Sentencia%20return-787a77"></a>
+<a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia"><img src="https://img.shields.io/badge/6.2.%20Argumentos%20de%20Funciones-787a77"></a>
+<a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-787a77"></a>
+<a href="#64-argumentos-de-la-función-main"><img src="https://img.shields.io/badge/6.4.%20Argumentos%20de%20main()-787a77"></a>
+<a href="#65-recursividad"><img src="https://img.shields.io/badge/6.5.%20Recursividad-787a77"></a>
+<a href="#66punteros-a-funciones"><img src="https://img.shields.io/badge/6.6.%20Punteros%20a%20Funciones-787a77"></a>
+<a href="#67-el-modificador-de-almacenamiento-static-aplicado-a-funciones"><img src="https://img.shields.io/badge/6.7.%20static%20en%20Funciones-787a77"></a>
 
 ---
 
 ### 🧱 **Estructuras y Tipos Compuestos**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#tema-7---estructuras-campos-de-bit-uniones-y" style="text-decoration: none;">7. Estructuras, Campos de Bit, Uniones y Enumeraciones</a></td>
-    <td>
-      <a href="#71-estructuras" style="text-decoration: none;">7.1. Estructuras</a><br>
-      <a href="#72-campos-de-bit" style="text-decoration: none;">7.2. Campos de Bit</a><br>
-      <a href="#73-uniones" style="text-decoration: none;">7.3. Uniones</a><br>
-      <a href="#74enumeraciones" style="text-decoration: none;">7.4. Enumeraciones</a><br>
-      <a href="#75la-palabra-reservada-typedef" style="text-decoration: none;">7.5. typedef</a>
-    </td>
-  </tr>
-</table>
+<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-787a77"></a>
+<a href="#71-estructuras"><img src="https://img.shields.io/badge/7.1.%20Estructuras-787a77"></a>
+<a href="#72-campos-de-bit"><img src="https://img.shields.io/badge/7.2.%20Campos%20de%20Bit-787a77"></a>
+<a href="#73-uniones"><img src="https://img.shields.io/badge/7.3.%20Uniones-787a77"></a>
+<a href="#74enumeraciones"><img src="https://img.shields.io/badge/7.4.%20Enumeraciones-787a77"></a>
+<a href="#75la-palabra-reservada-typedef"><img src="https://img.shields.io/badge/7.5.%20typedef-787a77"></a>
 
 ---
 
 ### ⚙️ **Preprocesador**
 
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#tema-8---el-preprocesador" style="text-decoration: none;">8. El Preprocesador</a></td>
-    <td>
-      <a href="#81-directiva-define" style="text-decoration: none;">8.1. Directiva #define</a><br>
-      <a href="#82-directiva-undef" style="text-decoration: none;">8.2. Directiva #undef</a><br>
-      <a href="#83-directiva-error" style="text-decoration: none;">8.3. Directiva #error</a><br>
-      <a href="#84-directiva-include" style="text-decoration: none;">8.4. Directiva #include</a><br>
-      <a href="#85-directivas-if-ifdef-ifndef-else-elif-endif" style="text-decoration: none;">8.5. Directivas Condicionales</a><br>
-      <a href="#86-directiva-line" style="text-decoration: none;">8.6. Directiva #line</a><br>
-      <a href="#87-directiva-pragma" style="text-decoration: none;">8.7. Directiva #pragma</a>
-    </td>
-  </tr>
-</table>
-
----
-
-### 📥 **Entrada y Salida**
-
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#tema-9---entrada-y-salida" style="text-decoration: none;">9. Entrada y Salida</a></td>
-    <td>
-      <a href="#91-entrada-y-salida-desde-consola" style="text-decoration: none;">9.1. Entrada/Salida desde Consola</a><br>
-      <a href="#92-entrada-y-salida-desde-fichero" style="text-decoration: none;">9.2. Entrada/Salida desde Fichero</a>
-    </td>
-  </tr>
-</table>
-
----
-
-### 🧠 **Memoria Dinámica**
-
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#tema-10---asignación-dinámica-de-memoria" style="text-decoration: none;">10. Asignación Dinámica de Memoria</a></td>
-    <td>
-      <a href="#101-reserva-dinámica-de-memoria" style="text-decoration: none;">10.1. Reserva Dinámica</a><br>
-      <a href="#102-liberación-dinámica-de-memoria" style="text-decoration: none;">10.2. Liberación Dinámica</a><br>
-      <a href="#103-ejemplo-de-asignación-y-liberación-dinámica-de-memoria" style="text-decoration: none;">10.3. Ejemplo Práctico</a>
-    </td>
-  </tr>
-</table>
-
----
-
-### 📌 **Apéndices**
-
-<table style="border: none; width: 100%;">
-  <tr>
-    <td><a href="#ap%C3%A9ndice-a---funciones-de-biblioteca-del" style="text-decoration: none;">A. Apéndices</a></td>
-    <td>
-      <a href="#a1-funciones-de-entrada-y-salida-de-datos" style="text-decoration: none;">A.1. Funciones de Biblioteca ANSI C</a><br>
-      <a href="#a2---funciones-de-caracteres-ctypeh" style="text-decoration: none;">A.2. Funciones de caracateres</a><br>
-      <a href="#a3---funciones-de-cadenas-stringh" style="text-decoration: none;">A.3. Funciones de cadenas (<string.h>)</a><br>
-      <a href="#a4---funciones-matemáticas" style="text-decoration: none;">A.4. Funciones Matemáticas</a><br>
-      <a href="#a5---asignación-dinámica-de-memoria" style="text-decoration: none;">A.5. Asignación dinámica de memoria</a><br>
-      <a href="#a6---funciones-varias" style="text-decoration: none;">A.6. Funciones varias</a>        
-    </td>
-  </tr>
-</table>
-
+<a href="#tema-8---el-preprocesador"><img src="https://img.shields.io/badge/8.%20El%20Preprocesador-787a77"></a>
 ---
 
 
