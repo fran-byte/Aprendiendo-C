@@ -74,7 +74,7 @@
 
 ### 🧱 **Estructuras y Tipos Compuestos**
 
-<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="57%"></a><br>
+<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="59%"></a><br>
 <a href="#71-estructuras"><img src="https://img.shields.io/badge/7.1.%20Estructuras-0b9000"></a>
 <a href="#72-campos-de-bit"><img src="https://img.shields.io/badge/7.2.%20Campos%20de%20Bit-0b9000"></a>
 <a href="#73-uniones"><img src="https://img.shields.io/badge/7.3.%20Uniones-0b9000"></a><br>
@@ -98,7 +98,7 @@
 
 ### 📥 **Entrada y Salida**
 
-<a href="#tema-9---entrada-y-salida"><img src="https://img.shields.io/badge/9.%20Entrada%20y%20Salida-dedede" width="21%"></a><br>
+<a href="#tema-9---entrada-y-salida"><img src="https://img.shields.io/badge/9.%20Entrada%20y%20Salida-dedede" width="23%"></a><br>
 <a href="#91-entrada-y-salida-desde-consola"><img src="https://img.shields.io/badge/9.1.%20Entrada/Salida%20desde%20Consola-0b9000"></a>
 <a href="#92-entrada-y-salida-desde-fichero"><img src="https://img.shields.io/badge/9.2.%20Entrada/Salida%20desde%20Fichero-0b9000"></a>
 
@@ -106,7 +106,7 @@
 
 ### 🧠 **Memoria Dinámica**
 
-<a href="#tema-10---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.%20Asignación%20Dinámica%20de%20Memoria-dedede" width="40%"></a><br>
+<a href="#tema-10---asignación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.%20Asignación%20Dinámica%20de%20Memoria-dedede" width="42%"></a><br>
 <a href="#101-reserva-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.1.%20Reserva%20Dinámica-0b9000"></a>
 <a href="#102-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.2.%20Liberación%20Dinámica-0b9000"></a>
 <a href="#103-ejemplo-de-asignación-y-liberación-dinámica-de-memoria"><img src="https://img.shields.io/badge/10.3.%20Ejemplo%20Práctico-0b9000"></a>
