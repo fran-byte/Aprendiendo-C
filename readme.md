@@ -53,7 +53,7 @@
 
 ### 🧵 **Arrays, Cadenas y Punteros**
 
-<a href="#tema-5---arrays-cadenas-y-punteros"><img src="https://img.shields.io/badge/5.%20Arrays,%20Cadenas%20y%20Punteros-dedede" width="37%"></a><br>
+<a href="#tema-5---arrays-cadenas-y-punteros"><img src="https://img.shields.io/badge/5.%20Arrays,%20Cadenas%20y%20Punteros-dedede" width="35%"></a><br>
 <a href="#51-arrays-y-cadenas"><img src="https://img.shields.io/badge/5.1.%20Arrays%20y%20Cadenas-0b9000"></a>
 <a href="#52-punteros"><img src="https://img.shields.io/badge/5.2.%20Punteros-0b9000"></a>
 
