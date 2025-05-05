@@ -61,7 +61,7 @@
 
 ### 🛠️ **Funciones**
 
-<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="18%"></a><br>
+<a href="#tema-6---funciones"><img src="https://img.shields.io/badge/6.%20Funciones-dedede" width="16%"></a><br>
 <a href="#61-la-sentencia-return"><img src="https://img.shields.io/badge/6.1.%20Sentencia%20return-0b9000"></a>
 <a href="#62-argumentos-de-las-funciones-llamada-por-valor-y-por-referencia"><img src="https://img.shields.io/badge/6.2.%20Argumentos%20de%20Funciones-0b9000"></a>
 <a href="#63-arrays-como-argumentos-de-funciones"><img src="https://img.shields.io/badge/6.3.%20Arrays%20como%20Argumentos-0b9000"></a><br>
@@ -74,7 +74,7 @@
 
 ### 🧱 **Estructuras y Tipos Compuestos**
 
-<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="50%"></a><br>
+<a href="#tema-7---estructuras-campos-de-bit-uniones-y"><img src="https://img.shields.io/badge/7.%20Estructuras,%20Campos%20de%20Bit,%20Uniones%20y%20Enumeraciones-dedede" width="52%"></a><br>
 <a href="#71-estructuras"><img src="https://img.shields.io/badge/7.1.%20Estructuras-0b9000"></a>
 <a href="#72-campos-de-bit"><img src="https://img.shields.io/badge/7.2.%20Campos%20de%20Bit-0b9000"></a>
 <a href="#73-uniones"><img src="https://img.shields.io/badge/7.3.%20Uniones-0b9000"></a><br>
