@@ -2758,12 +2758,12 @@ cabeza = LiberarLista(cabeza, dato);
 ```
 
 
-## Apéndice A - Funciones de biblioteca del
+## Apéndice A - Funciones de biblioteca del estándar ANSI de C
 
 [![INDICE](https://img.shields.io/badge/%20<<%20I%20n%20d%20i%20c%20e%20-84ff38)](https://github.com/fran-byte/Learn-C/blob/main/readme.md#-programando-en-c---material-did%C3%A1ctico)
 
 
-Antes de comenzar a describir las funciones de biblioteca del estándar ANSI de C, es importante tener en cuenta lo siguiente:
+⚠️ A tener en cuenta lo siguiente:
 
 * Existen **muchas más funciones** que las aquí descritas.
 * Sin embargo, este conjunto representa una base **suficientemente amplia** para realizar todas las operaciones básicas necesarias.
@@ -2784,7 +2784,8 @@ Cada función se presenta con la siguiente información:
 
 * **Descripción breve de la función:**
   Cierra un archivo previamente abierto. Libera los recursos asociados y asegura que toda la información pendiente se haya escrito correctamente.
-
+  
+---
 
 ## A.1 Funciones de entrada y salida de datos
 
